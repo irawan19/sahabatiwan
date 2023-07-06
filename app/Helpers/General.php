@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 use Auth;
 use Datetime;
+use DB;
 use Illuminate\Support\Str;
 use \App\Models\Master_menu;
 
@@ -52,6 +53,15 @@ class General
 			return $jumlah_lihat + $jumlah_baca + $jumlah_edit + $jumlah_hapus;
 		}
 	//Hak Akses
+
+	//Auto Increment
+		public static function AutoIncrementKey($table='',$id='')
+		{
+			$autoincrement 		= DB::table($table)->max($id);
+			$id_auto_increment 	= $autoincrement + 1;
+			return $id_auto_increment;
+		}
+	//Auto Increment
 
     //Notifikasi
 		public static function pesanErrorForm($form_input='')

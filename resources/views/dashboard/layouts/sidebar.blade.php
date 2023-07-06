@@ -18,7 +18,7 @@
 	    	</a>
 	  	</li>
 	  	@php($id_user               = Auth::user()->id)
-        @php($get_menus             = \App\Models\Master_menu::where('menus_id',0)
+        @php($get_menus             = \App\Models\Master_menu::where('menus_id',null)
                                                         ->orderBy('order_menus')
                                                         ->get())
         @foreach($get_menus as $menus)
@@ -27,7 +27,7 @@
                                                         ->join('master_akses','master_fiturs.id_fiturs','=','master_akses.fiturs_id')
                                                         ->join('master_level_sistems','master_akses.level_sistems_id','=','master_level_sistems.id_level_sistems')
                                                         ->join('users','master_level_sistems.id_level_sistems','=','users.level_sistems_id')
-                                                        ->where('menus_id',$id_menus)
+                                                        ->where('master_menus.menus_id',$id_menus)
                                                         ->where('id',$id_user)
                                                         ->where('nama_fiturs','lihat')
                                                         ->groupBy('nama_menus')
@@ -37,7 +37,7 @@
                                                         ->join('master_akses','master_fiturs.id_fiturs','=','master_akses.fiturs_id')
                                                         ->join('master_level_sistems','master_akses.level_sistems_id','=','master_level_sistems.id_level_sistems')
                                                         ->join('users','master_level_sistems.id_level_sistems','=','users.level_sistems_id')
-                                                        ->where('menus_id',$id_menus)
+                                                        ->where('master_menus.menus_id',$id_menus)
                                                         ->where('id',$id_user)
                                                         ->where('nama_fiturs','lihat')
                                                         ->count())
