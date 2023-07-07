@@ -8,7 +8,7 @@
 	</svg>
 </button>
 <a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="#">
-	<img class="c-header-brand-minimized c-d-dark-none" src="{{URL::asset($lihat_konfigurasi_aplikasis->logo_text_konfigurasi_aplikasis)}}" width="46" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
+	<img class="c-header-brand-minimized c-d-dark-none" src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_text_konfigurasi_aplikasis)}}" width="46" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
 </a>
 <b class="jam">{{General::ubahDBKeTanggal($tanggal_sekarang)}}, <onload="timeJavascript()" id="output"></b>
 <ul class="c-header-nav ml-auto"></ul>

@@ -5,8 +5,8 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show c-sidebar-unfoldable" id="sidebar">
 	<div class="c-sidebar-brand d-md-down-none">
 		<a href="{{URL('/')}}" target="_blank">
-			<img class="c-sidebar-brand-full" src="{{URL::asset($url_logo)}}" width="150" alt="{{$nama_logo}}">
-			<img class="c-sidebar-brand-minimized" src="{{URL::asset($url_logo_minimized)}}" width="50" alt="{{$nama_logo}}">
+			<img class="c-sidebar-brand-full" src="{{URL::asset('storage/'.$url_logo)}}" width="150" alt="{{$nama_logo}}">
+			<img class="c-sidebar-brand-minimized" src="{{URL::asset('storage/'.$url_logo_minimized)}}" width="50" alt="{{$nama_logo}}">
 		</a>
 	</div>
 	<ul class="c-sidebar-nav">

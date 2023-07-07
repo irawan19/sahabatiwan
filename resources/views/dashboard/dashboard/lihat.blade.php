@@ -35,7 +35,7 @@
 				    	<div class="row">
 				    		<div class="col-sm-12">
 					        	<div style="text-align: center;">
-					        		<img src="{{URL::asset($lihat_konfigurasi_aplikasis->logo_text_konfigurasi_aplikasis)}}">
+					        		<img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_text_konfigurasi_aplikasis)}}">
 					        	</div>
 					        </div>
 				    		<div class="col-sm-12">
