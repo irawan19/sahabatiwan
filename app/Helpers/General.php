@@ -5,6 +5,7 @@ namespace App\Helpers;
 use Auth;
 use Datetime;
 use DB;
+use URL;
 use Illuminate\Support\Str;
 use \App\Models\Master_menu;
 
@@ -98,51 +99,58 @@ class General
 	//Tombol
 		public static function simpan()
 		{
-			echo 	'<button class="btn bg-gradient-success mb-0" type="submit" name="simpan" value="simpan">
-						<i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Simpan
-					</button>';
-		}
-		public static function kirim()
-		{
-			echo 	'<button class="btn bg-gradient-success mb-0" type="submit" name="kirim" value="kirim">
-						<i class="fas fa-sent" aria-hidden="true"></i>&nbsp;&nbsp;Kirim
-					</button>';
+			echo '<button class="btn btn-sm btn-success" type="submit" name="simpan" value="simpan">
+					<svg class="c-icon" style="margin-right:5px;">
+						<use xlink:href="'.URL::asset('template/back/assets/icons/coreui/free.svg#cil-plus').'"></use>
+					</svg> Simpan
+				</button>';
 		}
 
 		public static function simpankembali()
 		{
-			echo 	'<button class="btn bg-gradient-success mb-0" type="submit" name="simpan_kembali" value="simpan_kembali">
-						<i class="fas fa-refresh" aria-hidden="true"></i>&nbsp;&nbsp;Simpan Kembali
-					</button>';
+			echo '<button class="btn btn-sm btn-success active" type="submit" name="simpan_kembali" value="simpan_kembali">
+					<svg class="c-icon" style="margin-right:5px;">
+						<use xlink:href="'.URL::asset('template/back/assets/icons/coreui/free.svg#cil-reload').'"></use>
+					</svg> Simpan Kembali
+				</button>';
 		}
 
 		public static function perbarui()
 		{
-			echo 	'<button class="btn bg-gradient-primary mb-0" type="submit">
-						<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;&nbsp;Perbarui
-					</button>';
+			echo '<button class="btn btn-sm btn-primary" type="submit">
+					<svg class="c-icon" style="margin-right:5px;">
+						<use xlink:href="'.URL::asset('template/back/assets/icons/coreui/free.svg#cil-pencil').'"></use>
+					</svg> Perbarui
+				</button>';
 		}
 
-		public static function batal($ambil_kembali='')
+		public static function kembali($url_kembali='')
 		{
-			echo 	'<a class="btn bg-gradient-danger mb-0" href="'.$ambil_kembali.'">
-						<i class="fas fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Batal
-					</a>';
+			echo '<a class="btn btn-sm btn-danger" href="'.$url_kembali.'">
+					<svg class="c-icon" style="margin-right:5px;">
+						<use xlink:href="'.URL::asset('template/back/assets/icons/coreui/free.svg#cil-ban').'"></use>
+					</svg> Kembali
+				</a>';
 		}
 
-		public static function kembali($ambil_kembali='')
+		public static function batal($url_kembali='')
 		{
-			echo 	'<a class="btn bg-gradient-danger mb-0" href="'.$ambil_kembali.'">
-						<i class="fas fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Kembali
-					</a>';
+			echo '<a class="btn btn-sm btn-danger" href="'.$url_kembali.'">
+					<svg class="c-icon" style="margin-right:5px;">
+						<use xlink:href="'.URL::asset('template/back/assets/icons/coreui/free.svg#cil-ban').'"></use>
+					</svg> Batal
+				</a>';
+
 		}
 
 		public static function tambah($link_menus = '', $link = '')
 		{
 			if (General::hakAkses($link_menus, 'tambah') == 'true') {
 				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-success">
-							<i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Tambah
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-plus') . '"></use>
+								</svg> Tambah
+							</a>';
 			}
 		}
 
@@ -150,8 +158,10 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'cetak') == 'true') {
 				echo 	'<a target="_blank" href="' . URL($link) . '" class="btn btn-sm btn-success">
-							<i class="fas fa-print" aria-hidden="true"></i>&nbsp;&nbsp;Cetak
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-print') . '"></use>
+								</svg> Cetak
+							</a>';
 			}
 		}
 
@@ -159,8 +169,10 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'cetak') == 'true') {
 				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-success">
-							<i class="fas fa-print" aria-hidden="true"></i>&nbsp;&nbsp;Cetak Excel
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-cloud-download') . '"></use>
+								</svg> Cetak Excel
+							</a>';
 			}
 		}
 
@@ -168,8 +180,10 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'cetak') == 'true') {
 				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-success">
-							<i class="fas fa-print" aria-hidden="true"></i>&nbsp;&nbsp;Cetak
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-print') . '"></use>
+								</svg> Cetak
+							</a>';
 			}
 		}
 
@@ -177,8 +191,21 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'lihat') == 'true') {
 				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-secondary">
-							<i class="fas fa-list-ol" aria-hidden="true"></i>&nbsp;&nbsp;Urutan
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-list-numbered') . '"></use>
+								</svg> Urutan
+							</a>';
+			}
+		}
+
+		public static function subKategori($link_menus = '', $link = '')
+		{
+			if (General::hakAkses($link_menus, 'lihat') == 'true') {
+				echo 	'<a class="dropdown-item" href="' . URL($link) . '" style="color:green">
+								<svg class="c-icon" style="margin-right:5px;margin-top:-3px">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-menu') . '"></use>
+								</svg> Sub Kategori
+							</a>';
 			}
 		}
 
@@ -186,8 +213,10 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'lihat') == 'true') {
 				echo 	'<a class="dropdown-item" href="' . URL($link) . '" style="color:green">
-							<i class="fas fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Sub Menu
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;margin-top:-3px">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-menu') . '"></use>
+								</svg> Sub Menu
+							</a>';
 			}
 		}
 
@@ -195,17 +224,21 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'baca') == 'true') {
 				echo 	'<a class="dropdown-item" href="' . URL($link) . '" style="color:orange">
-							<i class="fas fa-folder-open" aria-hidden="true"></i>&nbsp;&nbsp;Baca
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;margin-top:-3px">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-folder-open') . '"></use>
+								</svg> Baca
+							</a>';
 			}
 		}
-		
-		public static function bacaButton($link_menus = '', $link = '')
+
+		public static function cetaklist($link_menus = '', $link = '')
 		{
-			if (General::hakAkses($link_menus, 'baca') == 'true') {
-				echo '<a href="'. URL($link) .'" class="btn bg-gradient-warning mb-0">
-							<i class="fas fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Baca
-						</a>';
+			if (General::hakAkses($link_menus, 'cetak') == 'true') {
+				echo 	'<a class="dropdown-item" href="' . URL($link) . '" style="color:green">
+								<svg class="c-icon" style="margin-right:5px;margin-top:-3px">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-print') . '"></use>
+								</svg> Cetak
+							</a>';
 			}
 		}
 
@@ -213,8 +246,10 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'edit') == 'true') {
 				echo 	'<a class="dropdown-item" href="' . URL($link) . '" style="color:purple">
-							<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;&nbsp;Edit
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;margin-top:-3px">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-pencil') . '"></use>
+								</svg> Edit
+							</a>';
 			}
 		}
 
@@ -222,8 +257,10 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'edit') == 'true') {
 				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-success">
-							<i class="fas fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Edit
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-check') . '"></use>
+								</svg> Aktif
+							</a>';
 			}
 		}
 
@@ -231,8 +268,10 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'edit') == 'true') {
 				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-danger">
-							<i class="fas fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Edit
-						</a>';
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-ban') . '"></use>
+								</svg> Non Aktif
+							</a>';
 			}
 		}
 
@@ -240,8 +279,10 @@ class General
 		{
 			if (General::hakAkses($link_menus, 'hapus') == 'true') {
 				echo 	'<button type="button" class="dropdown-item showModalHapus" style="color:red" data-link="' . URL($link) . '" data-nama="' . $label . '">
-							<i class="fas fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;Hapus
-						</button>';
+								<svg class="c-icon" style="margin-right:5px;margin-top:-3px">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-trash') . '"></use>
+								</svg> Hapus
+							</button>';
 			}
 		}
 	//Tombol

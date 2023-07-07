@@ -81,7 +81,7 @@
 										<td>
 											<b style="color:#cc0000">
 												<svg class="c-sidebar-nav-icon" style="width: 50px;">
-										          	<use xlink:href="{{URL::asset('public/template/back/assets/icons/coreui/free.svg#'.$sub_menus->icon_menus)}}"></use>
+										          	<use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#'.$sub_menus->icon_menus)}}"></use>
 										        </svg>{{ $sub_menus->nama_menus }}
 										    </b>
 									    </td>
