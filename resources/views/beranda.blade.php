@@ -1,16 +1,17 @@
+@php($ambil_konfigurasi_aplikasis = \App\Models\Master_konfigurasi_aplikasi::where('id_konfigurasi_aplikasis',1)->first())
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Home One || govity || govity HTML 5 Template </title>
+    <title>{{$ambil_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{URL::asset('template/front/images/favicons/apple-touch-icon.png')}}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('template/front/images/favicons/favicon-32x32.png')}}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('template/front/images/favicons/favicon-16x16.png')}}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{URL::asset('storage/'.$ambil_konfigurasi_aplikasis->icon_konfigurasi_aplikasis)}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('storage/'.$ambil_konfigurasi_aplikasis->icon_konfigurasi_aplikasis)}}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('storage/'.$ambil_konfigurasi_aplikasis->icon_konfigurasi_aplikasis)}}" />
     <link rel="manifest" href="{{URL::asset('template/front/images/favicons/site.webmanifest')}}" />
-    <meta name="description" content="govity HTML 5 Template " />
+    <meta name="description" content="{{$ambil_konfigurasi_aplikasis->deskripsi_konfigurasi_aplikasis}}" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,33 +44,31 @@
     <link rel="stylesheet" href="{{URL::asset('template/front/vendors/timepicker/timePicker.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/vendors/nice-select/nice-select.css')}}" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
+
     <!-- template styles -->
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity-responsive.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/css/custom.css')}}" />
 </head>
 
 <body class="custom-cursor">
-
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
-
-
-
-
 
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
     <!-- /.preloader -->
-
-
     <div class="page-wrapper">
         <header class="main-header">
             <nav class="main-menu">
                 <div class="main-menu__wrapper">
                     <div class="main-menu__wrapper-inner">
                         <div class="main-menu__logo">
-                            <a href="index.html"><img src="{{URL::asset('template/front/images/resources/logo-1.png')}}" alt=""></a>
+                            <a href="{{URL('/')}}">
+                                <p class="fontlogo">Iwan Nurdin</p>
+                            </a>
                         </div>
                         <div class="main-menu__top">
                             <div class="main-menu__top-inner">
