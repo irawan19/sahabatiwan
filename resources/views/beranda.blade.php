@@ -1,140 +1,1941 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Home One || govity || govity HTML 5 Template </title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{URL::asset('template/front/images/favicons/apple-touch-icon.png')}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('template/front/images/favicons/favicon-32x32.png')}}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('template/front/images/favicons/favicon-16x16.png')}}" />
+    <link rel="manifest" href="{{URL::asset('template/front/images/favicons/site.webmanifest')}}" />
+    <meta name="description" content="govity HTML 5 Template " />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/bootstrap/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/animate/animate.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/animate/custom-animate.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/fontawesome/css/all.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/jarallax/jarallax.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/jquery-magnific-popup/jquery.magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/nouislider/nouislider.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/nouislider/nouislider.pips.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/odometer/odometer.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/swiper/swiper.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/govity-icons/style.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/tiny-slider/tiny-slider.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/reey-font/stylesheet.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/owl-carousel/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/owl-carousel/owl.theme.default.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/bxslider/jquery.bxslider.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/bootstrap-select/css/bootstrap-select.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/vegas/vegas.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/jquery-ui/jquery-ui.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/timepicker/timePicker.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/vendors/nice-select/nice-select.css')}}" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{{URL::asset('template/front/css/govity.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('template/front/css/govity-responsive.css')}}" />
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+
+
+
+
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+
+
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu">
+                <div class="main-menu__wrapper">
+                    <div class="main-menu__wrapper-inner">
+                        <div class="main-menu__logo">
+                            <a href="index.html"><img src="{{URL::asset('template/front/images/resources/logo-1.png')}}" alt=""></a>
+                        </div>
+                        <div class="main-menu__top">
+                            <div class="main-menu__top-inner">
+                                <div class="main-menu__top-left">
+                                    <div class="main-menu__social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                                <div class="main-menu__top-right">
+                                    <ul class="list-unstyled main-menu__contact-list">
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="text">
+                                                <p>Open hours: Mon - Fri 8.00 am - 6.00 pm</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="list-unstyled main-menu__top-menu">
+                                        <li><a href="about.html">Council</a></li>
+                                        <li><a href="about.html">Government</a></li>
+                                        <li><a href="contact.html">Complaints</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-menu__bottom">
+                            <div class="main-menu__bottom-inner">
+                                <div class="main-menu__main-menu-box">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <ul class="main-menu__list">
+                                        <li class="dropdown megamenu">
+                                            <a href="index.html">Home </a>
+                                            <ul>
+                                                <li>
+                                                    <section class="home-showcase">
+                                                        <div class="container">
+                                                            <div class="home-showcase__inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-3">
+                                                                        <div class="home-showcase__item">
+                                                                            <div class="home-showcase__image">
+                                                                                <img src="{{URL::asset('template/front/images/home-showcase/home-showcase-1-1.jpg')}}"
+                                                                                    alt="">
+                                                                                <div class="home-showcase__buttons">
+                                                                                    <a href="index.html"
+                                                                                        class="thm-btn home-showcase__buttons__item">Multi
+                                                                                        Page</a>
+                                                                                    <a href="index-one-page.html"
+                                                                                        class="thm-btn home-showcase__buttons__item">One
+                                                                                        Page</a>
+                                                                                </div>
+                                                                                <!-- /.home-showcase__buttons -->
+                                                                            </div><!-- /.home-showcase__image -->
+                                                                            <h3 class="home-showcase__title">Home
+                                                                                Page
+                                                                                01</h3>
+                                                                            <!-- /.home-showcase__title -->
+                                                                        </div><!-- /.home-showcase__item -->
+                                                                    </div><!-- /.col-lg-3 -->
+                                                                    <div class="col-lg-3">
+                                                                        <div class="home-showcase__item">
+                                                                            <div class="home-showcase__image">
+                                                                                <img src="{{URL::asset('template/front/images/home-showcase/home-showcase-1-2.jpg')}}"
+                                                                                    alt="">
+                                                                                <div class="home-showcase__buttons">
+                                                                                    <a href="index2.html"
+                                                                                        class="thm-btn home-showcase__buttons__item">Multi
+                                                                                        Page</a>
+                                                                                    <a href="index2-one-page.html"
+                                                                                        class="thm-btn home-showcase__buttons__item">One
+                                                                                        Page</a>
+                                                                                </div>
+                                                                                <!-- /.home-showcase__buttons -->
+                                                                            </div><!-- /.home-showcase__image -->
+                                                                            <h3 class="home-showcase__title">Home
+                                                                                Page
+                                                                                02
+                                                                            </h3><!-- /.home-showcase__title -->
+                                                                        </div><!-- /.home-showcase__item -->
+                                                                    </div><!-- /.col-lg-3 -->
+                                                                    <div class="col-lg-3">
+                                                                        <div class="home-showcase__item">
+                                                                            <div class="home-showcase__image">
+                                                                                <img src="{{URL::asset('template/front/images/home-showcase/home-showcase-1-3.jpg')}}"
+                                                                                    alt="">
+                                                                                <div class="home-showcase__buttons">
+                                                                                    <a href="index3.html"
+                                                                                        class="thm-btn home-showcase__buttons__item">Multi
+                                                                                        Page</a>
+                                                                                    <a href="index3-one-page.html"
+                                                                                        class="thm-btn home-showcase__buttons__item">One
+                                                                                        Page</a>
+                                                                                </div>
+                                                                                <!-- /.home-showcase__buttons -->
+                                                                            </div><!-- /.home-showcase__image -->
+                                                                            <h3 class="home-showcase__title">Home
+                                                                                Page
+                                                                                03
+                                                                            </h3><!-- /.home-showcase__title -->
+                                                                        </div><!-- /.home-showcase__item -->
+                                                                    </div><!-- /.col-lg-3 -->
+                                                                    <div class="col-lg-3">
+                                                                        <div class="home-showcase__item">
+                                                                            <div class="home-showcase__image">
+                                                                                <img src="{{URL::asset('template/front/images/home-showcase/home-showcase-1-4.jpg')}}"
+                                                                                    alt="">
+                                                                                <div class="home-showcase__buttons">
+                                                                                    <a href="index-dark.html"
+                                                                                        class="thm-btn home-showcase__buttons__item">View
+                                                                                        Page</a>
+                                                                                </div>
+                                                                                <!-- /.home-showcase__buttons -->
+                                                                            </div><!-- /.home-showcase__image -->
+                                                                            <h3 class="home-showcase__title">Home
+                                                                                Page
+                                                                                04
+                                                                            </h3><!-- /.home-showcase__title -->
+                                                                        </div><!-- /.home-showcase__item -->
+                                                                    </div><!-- /.col-lg-3 -->
+                                                                </div><!-- /.row -->
+                                                            </div><!-- /.home-showcase__inner -->
+
+                                                        </div><!-- /.container -->
+                                                    </section>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Pages</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="about.html">About us</a></li>
+                                                <li><a href="our-history.html">Our history</a></li>
+                                                <li><a href="team.html">Team</a></li>
+                                                <li><a href="team-details.html">Team details</a></li>
+                                                <li><a href="portfolio.html">Portfolio</a></li>
+                                                <li><a href="portfolio-details.html">Portfolio details</a></li>
+                                                <li><a href="events.html">Events</a></li>
+                                                <li><a href="event-details.html">Event details</a></li>
+                                                <li><a href="pricing.html">Pricing</a></li>
+                                                <li><a href="faq.html">FAQs</a></li>
+                                                <li><a href="404.html">404 error</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Services</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="our-services.html">Services</a></li>
+                                                <li><a href="building-permission.html">Building permission</a></li>
+                                                <li><a href="driving-license.html">Driving license</a></li>
+                                                <li><a href="report-polution.html">Report polution</a></li>
+                                                <li><a href="parking-permission.html">Parking permission</a></li>
+                                                <li><a href="tax-return.html">Tax return</a></li>
+                                                <li><a href="birth-certificate.html">Birth certificate</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Departments</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="departments.html">Departments</a></li>
+                                                <li><a href="department-details.html">Department details</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a href="#">News</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="news.html">News</a></li>
+                                                <li><a href="news-sidebar.html">News sidebar</a></li>
+                                                <li><a href="news-details.html">News details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Shop</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="shop.html">Shop</a></li>
+                                                <li><a href="shop-details.html">Shop details</a></li>
+                                                <li><a href="cart.html">Cart</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="main-menu__right">
+                                    <div class="main-menu__call">
+                                        <div class="main-menu__call-icon">
+                                            <span class="icon-telephone"></span>
+                                        </div>
+                                        <div class="main-menu__call-content">
+                                            <p class="main-menu__call-sub-title">Call Anytime</p>
+                                            <h5 class="main-menu__call-number"><a href="tel:9212340800">+92 (1234)
+                                                    0800</a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="main-menu__search-box">
+                                        <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
+                                    </div>
+                                    <div class="language-switcher">
+                                        <select class="selectpicker">
+                                            <option
+                                                data-content="<span class='lang-en'><img src='{{URL::asset('template/front/images/lang-flag/en.png')}}' alt=''>English</span>"
+                                                value="en" selected>English</option>
+                                            <option
+                                                data-content="<span class='lang-fr'><img src='{{URL::asset('template/front/images/lang-flag/fr.png')}}' alt=''>French</span>"
+                                                value="fr">French
+                                            </option>
+
+                                            <option
+                                                data-content="<span class='lang-it'><img src='{{URL::asset('template/front/images/lang-flag/it.png')}}' alt=''>Italian</span>"
+                                                value="it">
+                                                Italian</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="main-menu__btn-box">
+                                        <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            @endif
+            </nav>
+        </header>
 
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
 
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
+        <!-- Main Sllider Start -->
+        <section class="main-slider">
+            <div class="main-slider__carousel owl-carousel owl-theme thm-owl__carousel"
+                data-owl-options='{"loop": true, "items": 1, "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"], "margin": 0, "dots": true, "nav": true, "animateOut": "slideOutDown", "animateIn": "fadeIn", "active": true, "smartSpeed": 1000, "autoplay": true, "autoplayTimeout": 7000, "autoplayHoverPause": false}'>
+
+                <div class="item main-slider__slide-1">
+                    <div class="main-slider__bg"
+                        style="background-image: url(template/front/images/backgrounds/slider-1-1.jpg);">
+                    </div><!-- /.slider-one__bg -->
+                    <div class="main-slider__shape-1">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-1.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__shape-2">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-2.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__shape-3">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-3.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__meta-box">
+                        <ul class="main-slider__meta list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <span class="fas fa-sun"></span>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
+                                <div class="text">
+                                    <p>Today: 32 0C</p>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fas fa-clock"></span>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
+                                <div class="text">
+                                    <p>Time: 09:28 pm</p>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="main-slider__content">
+                            <p class="main-slider__sub-title">2 Millions Visitors Every Year</p>
+                            <h2 class="main-slider__title">Safest City in
+                                <br> the World.</h2>
+                            <div class="main-slider__btn-box">
+                                <a href="about.html" class="main-slider__btn thm-btn">Discover More</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                        <div class="flex items-center gap-4">
-                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                </svg>
-                                Sponsor
-                            </a>
+                <div class="item main-slider__slide-2">
+                    <div class="main-slider__bg"
+                        style="background-image: url(template/front/images/backgrounds/slider-1-2.jpg);">
+                    </div><!-- /.slider-one__bg -->
+                    <div class="main-slider__shape-1">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-1.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__shape-2">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-2.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__shape-3">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-3.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__meta-box">
+                        <ul class="main-slider__meta list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <span class="fas fa-sun"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Today: 32 0C</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fas fa-clock"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Time: 09:28 pm</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="main-slider__content">
+                            <p class="main-slider__sub-title">2 Millions Visitors Every Year</p>
+                            <h2 class="main-slider__title">Safest City in
+                                <br> the World.</h2>
+                            <div class="main-slider__btn-box">
+                                <a href="about.html" class="main-slider__btn thm-btn">Discover More</a>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                <div class="item main-slider__slide-3">
+                    <div class="main-slider__bg"
+                        style="background-image: url(template/front/images/backgrounds/slider-1-3.jpg);">
+                    </div><!-- /.slider-one__bg -->
+                    <div class="main-slider__shape-1">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-1.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__shape-2">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-2.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__shape-3">
+                        <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-3.png')}}" alt="">
+                    </div>
+                    <div class="main-slider__meta-box">
+                        <ul class="main-slider__meta list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <span class="fas fa-sun"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Today: 32 0C</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fas fa-clock"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Time: 09:28 pm</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="main-slider__content">
+                            <p class="main-slider__sub-title">2 Millions Visitors Every Year</p>
+                            <h2 class="main-slider__title">Safest City in
+                                <br> the World.</h2>
+                            <div class="main-slider__btn-box">
+                                <a href="about.html" class="main-slider__btn thm-btn">Discover More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Main Sllider Start -->
+
+        <!--Department One Start-->
+        <section class="department-one">
+            <div class="department-one__bg"
+                style="background-image: url(template/front/images/backgrounds/department-one-bg.png);"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="department-one__inner">
+                            <ul class="department-one__list list-unstyled">
+                                <li class="department-one__single">
+                                    <div class="department-one__content">
+                                        <h3 class="department-one__title"><a href="department-details.html">Your
+                                                <br> Government</a></h3>
+                                        <div class="department-one__icon">
+                                            <span class="icon-parthenon"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="department-one__single">
+                                    <div class="department-one__content">
+                                        <h3 class="department-one__title"><a href="department-details.html">Jobs &
+                                                <br> Unemployment</a></h3>
+                                        <div class="department-one__icon">
+                                            <span class="icon-suitcase"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="department-one__single">
+                                    <div class="department-one__content">
+                                        <h3 class="department-one__title"><a href="department-details.html">Business
+                                                <br> & Industrials</a></h3>
+                                        <div class="department-one__icon">
+                                            <span class="icon-industry"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="department-one__single">
+                                    <div class="department-one__content">
+                                        <h3 class="department-one__title"><a href="department-details.html">Roads &
+                                                <br> Transportation</a></h3>
+                                        <div class="department-one__icon">
+                                            <span class="icon-bus"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="department-one__single">
+                                    <div class="department-one__content">
+                                        <h3 class="department-one__title"><a href="department-details.html">Culture &
+                                                <br> Recreations</a></h3>
+                                        <div class="department-one__icon">
+                                            <span class="icon-lotus"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p class="department-one__text">Get our quick services from the municipal. <a href="">View
+                                    all services</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <!--Department One End-->
+
+        <!--About One Start-->
+        <section class="about-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="about-one__left">
+                            <div class="about-one__shape-1 float-bob-x">
+                                <img src="{{URL::asset('template/front/images/shapes/about-one-shape-1.png')}}" alt="">
+                            </div>
+                            <div class="about-one__shape-3 float-bob-y">
+                                <img src="{{URL::asset('template/front/images/shapes/about-one-shape-3.png')}}" alt="">
+                            </div>
+                            <div class="about-one__img-box">
+                                <div class="about-one__img">
+                                    <img src="{{URL::asset('template/front/images/resources/about-one-img-1.jpg')}}" alt="">
+                                </div>
+                                <div class="about-one__img-2">
+                                    <img src="{{URL::asset('template/front/images/resources/about-one-img-2.jpg')}}" alt="">
+                                </div>
+                                <div class="about-one__shape-2">
+                                    <img src="{{URL::asset('template/front/images/shapes/about-one-shape-2.png')}}" alt="">
+                                </div>
+                                <div class="about-one__video-link">
+                                    <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
+                                        <div class="about-one__video-icon">
+                                            <span class="fa fa-play"></span>
+                                            <i class="ripple"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="about-one__call-box">
+                                    <div class="about-one__call-icon">
+                                        <span class="icon-government-1"></span>
+                                    </div>
+                                    <div class="about-one__call-box-content">
+                                        <p class="about-one__call-text">Mayor Office</p>
+                                        <h4 class="about-one__call-number"><a href="tel:9212340800">+92 (1234) 0800</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="about-one__right">
+                            <div class="section-title text-left">
+                                <div class="section-title__icon">
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span class="section-title__tagline">Welcome to govity</span>
+                                <h2 class="section-title__title">Meet Ideological leader
+                                    for youth generation</h2>
+                            </div>
+                            <p class="about-one__text">There are many variations of passages of available but the
+                                majority have suffered alteration in some form, by injected hum randomised words which
+                                don't slightly.</p>
+                            <div class="about-one__icon-and-big-text">
+                                <div class="about-one__icon">
+                                    <span class="icon-cityscape"></span>
+                                </div>
+                                <p class="about-one__big-text">Great city & place to develop your career &
+                                    business.</p>
+                            </div>
+                            <p class="about-one__text-2">There are many variations of passages of available but the
+                                majority have suffered alteration in some form.</p>
+                            <div class="about-one__btn-box-and-signature">
+                                <a href="about.html" class="about-one__btn thm-btn">Discover More</a>
+                                <div class="about-one__signature">
+                                    <img src="{{URL::asset('template/front/images/resources/about-one-signeture.png')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--About One End-->
+
+        <!--Feature One Start-->
+        <section class="feature-one">
+            <div class="container">
+                <div class="row">
+                    <!--Feature One Single Start-->
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="feature-one__single">
+                            <div class="feature-one__img-box">
+                                <div class="feature-one__img">
+                                    <img src="{{URL::asset('template/front/images/resources/feature-1-1.jpg')}}" alt="">
+                                </div>
+                                <div class="feature-one__content">
+                                    <div class="feature-one__icon">
+                                        <span class="icon-history"></span>
+                                    </div>
+                                    <h3 class="feature-one__title"><a href="our-services.html">History &
+                                            <br> establishment</a></h3>
+                                </div>
+                                <div class="feature-one__content-two">
+                                    <div class="feature-one__content-two-top">
+                                        <div class="feature-one__icon-2">
+                                            <span class="icon-history"></span>
+                                        </div>
+                                        <h3 class="feature-one__title-2"><a href="our-services.html">History &
+                                                <br> establishment</a></h3>
+                                    </div>
+                                    <div class="feature-one__content-two-bottom">
+                                        <p class="feature-one__content-two-text">Aliquam viverra arcu. Donec aliquet
+                                            blandit enim. Suspendisse id quam <br> sed eros luctus sit ame.</p>
+                                        <div class="feature-one__content-two-btn-box">
+                                            <a href="our-services.html" class="feature-one__content-two-read-more">Read
+                                                More<i class="icon-right-arrow feature-one__content-two-arrow"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Feature One Single End-->
+                    <!--Feature One Single Start-->
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="feature-one__single">
+                            <div class="feature-one__img-box">
+                                <div class="feature-one__img">
+                                    <img src="{{URL::asset('template/front/images/resources/feature-1-2.jpg')}}" alt="">
+                                </div>
+                                <div class="feature-one__content">
+                                    <div class="feature-one__icon">
+                                        <span class="icon-cityscape"></span>
+                                    </div>
+                                    <h3 class="feature-one__title"><a href="our-services.html">Tourism &
+                                            <br> visitor guides</a></h3>
+                                </div>
+                                <div class="feature-one__content-two">
+                                    <div class="feature-one__content-two-top">
+                                        <div class="feature-one__icon-2">
+                                            <span class="icon-cityscape"></span>
+                                        </div>
+                                        <h3 class="feature-one__title-2"><a href="our-services.html">Tourism &
+                                                <br> visitor guides</a></h3>
+                                    </div>
+                                    <div class="feature-one__content-two-bottom">
+                                        <p class="feature-one__content-two-text">Aliquam viverra arcu. Donec aliquet
+                                            blandit enim. Suspendisse id quam <br> sed eros luctus sit ame.</p>
+                                        <div class="feature-one__content-two-btn-box">
+                                            <a href="our-services.html" class="feature-one__content-two-read-more">Read
+                                                More<i class="icon-right-arrow feature-one__content-two-arrow"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Feature One Single End-->
+                    <!--Feature One Single Start-->
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="feature-one__single">
+                            <div class="feature-one__img-box">
+                                <div class="feature-one__img">
+                                    <img src="{{URL::asset('template/front/images/resources/feature-1-3.jpg')}}" alt="">
+                                </div>
+                                <div class="feature-one__content">
+                                    <div class="feature-one__icon">
+                                        <span class="icon-corporate"></span>
+                                    </div>
+                                    <h3 class="feature-one__title"><a href="our-services.html">Service &
+                                            <br> departments</a></h3>
+                                </div>
+                                <div class="feature-one__content-two">
+                                    <div class="feature-one__content-two-top">
+                                        <div class="feature-one__icon-2">
+                                            <span class="icon-corporate"></span>
+                                        </div>
+                                        <h3 class="feature-one__title-2"><a href="our-services.html">Service &
+                                                <br> departments</a></h3>
+                                    </div>
+                                    <div class="feature-one__content-two-bottom">
+                                        <p class="feature-one__content-two-text">Aliquam viverra arcu. Donec aliquet
+                                            blandit enim. Suspendisse id quam <br> sed eros luctus sit ame.</p>
+                                        <div class="feature-one__content-two-btn-box">
+                                            <a href="our-services.html" class="feature-one__content-two-read-more">Read
+                                                More<i class="icon-right-arrow feature-one__content-two-arrow"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Feature One Single End-->
+                </div>
+            </div>
+        </section>
+        <!--Feature One End-->
+
+        <!--Services One Start-->
+        <section class="services-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="services-one__left">
+                            <div class="services-one__shape-2 img-bounce">
+                                <img src="{{URL::asset('template/front/images/shapes/services-one-shape-2.png')}}" alt="">
+                            </div>
+                            <div class="services-one__img-box">
+                                <div class="services-one__img">
+                                    <img src="{{URL::asset('template/front/images/resources/services-one-img-1.png')}}" alt="">
+                                    <div class="services-one__img-shadow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="services-one__right">
+                            <div class="services-one__shape-1 float-bob-x">
+                                <img src="{{URL::asset('template/front/images/shapes/services-one-shape-1.png')}}" alt="">
+                            </div>
+                            <div class="services-one__shape-3 float-bob-x">
+                                <img src="{{URL::asset('template/front/images/shapes/services-one-shape-3.png')}}" alt="">
+                            </div>
+                            <div class="services-one__points-title-box">
+                                <p>Explore online services & resource</p>
+                            </div>
+                            <div class="services-one__points-box">
+                                <ul class="services-one__points-list list-unstyled">
+                                    <li>
+                                        <a href="parking-permission.html">Parking Permission<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="tax-return.html">File a Tax Return<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="birth-certificate.html">Order Birth Certificate<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="building-permission.html">Get Building Permission<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="driving-license.html">Apply for Driving License<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="report-polution.html">Report Polution<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                </ul>
+                                <ul class="services-one__points-list list-unstyled">
+                                    <li>
+                                        <a href="report-polution.html">Public Service Identity<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="birth-certificate.html">Apply for a City Job<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="driving-license.html">Professional Licenses<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="building-permission.html">National Planning Framework<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="driving-license.html">Apply for Business License<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="parking-permission.html">Online Court Services<span
+                                                class="fa fa-angle-right"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Services One End-->
+
+        <!--Video One Start-->
+        <section class="video-one">
+            <div class="video-one__bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+                style="background-image: url(template/front/images/backgrounds/video-one-bg.jpg);"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="video-one__inner">
+                            <div class="video-one__video-link">
+                                <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
+                                    <div class="video-one__video-icon">
+                                        <span class="fa fa-play"></span>
+                                        <i class="ripple"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <h2 class="video-one__video-title">We help you solve your
+                                <br> city government problems</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Video One End-->
+
+        <!--Documents One Start-->
+        <section class="documents-one">
+            <div class="container">
+                <div class="documents-one__inner">
+                    <div class="documents-one__left">
+                        <p>Recent <br> documents</p>
+                    </div>
+                    <div class="documents-one__right">
+                        <ul class="documents-one__points list-unstyled">
+                            <li>
+                                <div class="documents-one__single">
+                                    <div class="documents-one__content">
+                                        <div class="documents-one__icon">
+                                            <span class="icon-download-circular-button"></span>
+                                        </div>
+                                        <h3 class="documents-one__title"><a href="about.html">Vehicle Parking
+                                                License</a></h3>
+                                        <p class="documents-one__text">Download the license details file</p>
+                                    </div>
+                                    <div class="documents-one__icon-two">
+                                        <span class="icon-pdf-file"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="documents-one__single">
+                                    <div class="documents-one__content">
+                                        <div class="documents-one__icon">
+                                            <span class="icon-download-circular-button"></span>
+                                        </div>
+                                        <h3 class="documents-one__title"><a href="about.html">City Board
+                                                Applications</a></h3>
+                                        <p class="documents-one__text">Download the license details file</p>
+                                    </div>
+                                    <div class="documents-one__icon-two">
+                                        <span class="icon-pdf-file"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Documents One End-->
+
+        <!--Counter One Start-->
+        <section class="counter-one">
+            <div class="counter-one__bg" style="background-image: url(template/front/images/backgrounds/counter-one-bg.jpg);">
+            </div>
+            <div class="container">
+                <div class="counter-one__inner">
+                    <ul class="counter-one__list list-unstyled">
+                        <li>
+                            <div class="counter-one__count">
+                                <h3 class="odometer" data-count="82">00</h3>
+                                <span class="">k</span>
+                            </div>
+                            <p class="counter-one__text">Total people lived
+                                <br> in our city</p>
+                        </li>
+                        <li>
+                            <div class="counter-one__count">
+                                <h3 class="odometer" data-count="4">00</h3>
+                                <span class="">th</span>
+                            </div>
+                            <p class="counter-one__text">Average home costs
+                                <br> of ownership</p>
+                        </li>
+                        <li>
+                            <div class="counter-one__count">
+                                <h3 class="odometer" data-count="26">00</h3>
+                                <span class="">%</span>
+                            </div>
+                            <p class="counter-one__text">Private & domestic
+                                <br> garden land</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Counter One End-->
+
+        <!--Team One Start-->
+        <section class="team-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">our team members</span>
+                    <h2 class="section-title__title">Meet great city council
+                        <br> members</h2>
+                </div>
+                <div class="team-one__inner">
+                    <div class="row">
+                        <!--Team One Single Start-->
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="team-one__single">
+                                <div class="team-one__shape-1">
+                                    <img src="{{URL::asset('template/front/images/shapes/team-one-shape-1.png')}}" alt="">
+                                </div>
+                                <div class="team-one__img-box">
+                                    <div class="team-one__img">
+                                        <img src="{{URL::asset('template/front/images/team/team-1-1.jpg')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="team-one__content">
+                                    <h3 class="team-one__name"><a href="team-details.html">Michale smith</a></h3>
+                                    <p class="team-one__sub-title">Mayor</p>
+                                    <div class="team-one__social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Team One Single End-->
+                        <!--Team One Single Start-->
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="team-one__single">
+                                <div class="team-one__shape-2">
+                                    <img src="{{URL::asset('template/front/images/shapes/team-one-shape-2.png')}}" alt="">
+                                </div>
+                                <div class="team-one__img-box">
+                                    <div class="team-one__img">
+                                        <img src="{{URL::asset('template/front/images/team/team-1-2.jpg')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="team-one__content">
+                                    <h3 class="team-one__name"><a href="team-details.html">Jessica brown</a></h3>
+                                    <p class="team-one__sub-title">Mayor</p>
+                                    <div class="team-one__social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Team One Single End-->
+                        <!--Team One Single Start-->
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="team-one__single">
+                                <div class="team-one__shape-3">
+                                    <img src="{{URL::asset('template/front/images/shapes/team-one-shape-3.png')}}" alt="">
+                                </div>
+                                <div class="team-one__img-box">
+                                    <div class="team-one__img">
+                                        <img src="{{URL::asset('template/front/images/team/team-1-3.jpg')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="team-one__content">
+                                    <h3 class="team-one__name"><a href="team-details.html">Harold cooper</a></h3>
+                                    <p class="team-one__sub-title">City Developer</p>
+                                    <div class="team-one__social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Team One Single End-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Team One End-->
+
+        <!--Testimonial One Start-->
+        <section class="testimonial-one">
+            <div class="testimonial-one__bg"
+                style="background-image: url(template/front/images/backgrounds/testimonial-one-bg.jpg);"></div>
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">Our testimonials</span>
+                    <h2 class="section-title__title">People are appreciating
+                        <br> our city & work?</h2>
+                </div>
+                <div class="testimonial-one__bottom">
+                    <div class="testimonial-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+                        "items": 3,
+                        "margin": 30,
+                        "smartSpeed": 700,
+                        "loop":true,
+                        "autoplay": false,
+                        "nav":false,
+                        "dots":false,
+                        "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                        "responsive":{
+                            "0":{
+                                "items":1
+                            },
+                            "768":{
+                                "items":2
+                            },
+                            "992":{
+                                "items": 2
+                            }
+                        }
+                    }'>
+                        <!--Testimonial One Single Start-->
+                        <div class="item">
+                            <div class="testimonial-one__single">
+                                <div class="testimonial-one__single-inner">
+                                    <div class="testimonial-one__shape-1">
+                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial-one__shape-2">
+                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial-one__quote">
+                                        <span class="icon-quote"></span>
+                                    </div>
+                                    <p class="testimonial-one__text">Leverage agile frameworks to provide a robust
+                                        synopsis
+                                        for
+                                        high level overviews. Iterative approaches to corporate strategy data foster to
+                                        collaborative thinking.</p>
+                                    <div class="testimonial-one__client-info">
+                                        <div class="testimonial-one__client-img-box">
+                                            <div class="testimonial-one__client-img">
+                                                <img src="{{URL::asset('template/front/images/testimonial/testimonial-1-1.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-one__client-content">
+                                            <div class="testimonial-one__client-rating">
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                            <h3 class="testimonial-one__client-name">Donald hardson</h3>
+                                            <p class="testimonial-one__client-sub-title">CEO - CO Founder</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Testimonial One Single End-->
+                        <!--Testimonial One Single Start-->
+                        <div class="item">
+                            <div class="testimonial-one__single">
+                                <div class="testimonial-one__single-inner">
+                                    <div class="testimonial-one__shape-1">
+                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial-one__shape-2">
+                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial-one__quote">
+                                        <span class="icon-quote"></span>
+                                    </div>
+                                    <p class="testimonial-one__text">Leverage agile frameworks to provide a robust
+                                        synopsis
+                                        for
+                                        high level overviews. Iterative approaches to corporate strategy data foster to
+                                        collaborative thinking.</p>
+                                    <div class="testimonial-one__client-info">
+                                        <div class="testimonial-one__client-img-box">
+                                            <div class="testimonial-one__client-img">
+                                                <img src="{{URL::asset('template/front/images/testimonial/testimonial-1-2.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-one__client-content">
+                                            <div class="testimonial-one__client-rating">
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                            <h3 class="testimonial-one__client-name">Aleesha brown</h3>
+                                            <p class="testimonial-one__client-sub-title">CEO - CO Founder</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Testimonial One Single End-->
+                        <!--Testimonial One Single Start-->
+                        <div class="item">
+                            <div class="testimonial-one__single">
+                                <div class="testimonial-one__single-inner">
+                                    <div class="testimonial-one__shape-1">
+                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial-one__shape-2">
+                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial-one__quote">
+                                        <span class="icon-quote"></span>
+                                    </div>
+                                    <p class="testimonial-one__text">Leverage agile frameworks to provide a robust
+                                        synopsis
+                                        for
+                                        high level overviews. Iterative approaches to corporate strategy data foster to
+                                        collaborative thinking.</p>
+                                    <div class="testimonial-one__client-info">
+                                        <div class="testimonial-one__client-img-box">
+                                            <div class="testimonial-one__client-img">
+                                                <img src="{{URL::asset('template/front/images/testimonial/testimonial-1-3.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-one__client-content">
+                                            <div class="testimonial-one__client-rating">
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                            <h3 class="testimonial-one__client-name">Aleesha martin</h3>
+                                            <p class="testimonial-one__client-sub-title">CEO - CO Founder</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Testimonial One Single End-->
+                        <!--Testimonial One Single Start-->
+                        <div class="item">
+                            <div class="testimonial-one__single">
+                                <div class="testimonial-one__single-inner">
+                                    <div class="testimonial-one__shape-1">
+                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial-one__shape-2">
+                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial-one__quote">
+                                        <span class="icon-quote"></span>
+                                    </div>
+                                    <p class="testimonial-one__text">Leverage agile frameworks to provide a robust
+                                        synopsis
+                                        for
+                                        high level overviews. Iterative approaches to corporate strategy data foster to
+                                        collaborative thinking.</p>
+                                    <div class="testimonial-one__client-info">
+                                        <div class="testimonial-one__client-img-box">
+                                            <div class="testimonial-one__client-img">
+                                                <img src="{{URL::asset('template/front/images/testimonial/testimonial-1-4.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-one__client-content">
+                                            <div class="testimonial-one__client-rating">
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                            <h3 class="testimonial-one__client-name">David coper</h3>
+                                            <p class="testimonial-one__client-sub-title">CEO - CO Founder</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Testimonial One Single End-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Testimonial One End-->
+
+        <!--Portfolio One Start-->
+        <section class="portfolio-one">
+            <div class="portfolio-one__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="portfolio-one__left">
+                                <div class="section-title text-left">
+                                    <div class="section-title__icon">
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <span class="section-title__tagline">Recent work</span>
+                                    <h2 class="section-title__title">Explore city beautiful
+                                        <br> highlights portfolio</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="portfolio-one__right">
+                                <div class="portfolio-one__text">
+                                    <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id quam sed
+                                        eros tincidunt luctus sit amet eu nibh egestas tempus turpis, sit amet mattis
+                                        magna varius non.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-one__bottom">
+                <div class="container">
+                    <div class="portfolio-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+                        "items": 3,
+                        "margin": 60,
+                        "smartSpeed": 700,
+                        "loop":true,
+                        "autoplay": true,
+                        "nav":false,
+                        "dots":false,
+                        "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                        "responsive":{
+                            "0":{
+                                "items":1
+                            },
+                            "768":{
+                                "items":2
+                            },
+                            "992":{
+                                "items": 3
+                            },
+                            "1200":{
+                                "items":3
+                            }
+                        }
+                    }'>
+                        <!--Portfolio One Single Start-->
+                        <div class="item">
+                            <div class="portfolio-one__single">
+                                <div class="portfolio-one__img-box">
+                                    <div class="portfolio-one__img">
+                                        <img src="{{URL::asset('template/front/images/project/portfolio-1-1.jpg')}}" alt="">
+                                    </div>
+                                    <div class="portfolio-one__content">
+                                        <p class="portfolio-one__sub-title">Culture</p>
+                                        <h4 class="portfolio-one__title"><a href="portfolio-details.html">Town of
+                                                Rome</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Portfolio One Single End-->
+                        <!--Portfolio One Single Start-->
+                        <div class="item">
+                            <div class="portfolio-one__single mar-top">
+                                <div class="portfolio-one__img-box">
+                                    <div class="portfolio-one__img">
+                                        <img src="{{URL::asset('template/front/images/project/portfolio-1-2.jpg')}}" alt="">
+                                    </div>
+                                    <div class="portfolio-one__content">
+                                        <p class="portfolio-one__sub-title">Culture</p>
+                                        <h4 class="portfolio-one__title"><a href="portfolio-details.html">Town of
+                                                Rome</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Portfolio One Single End-->
+                        <!--Portfolio One Single Start-->
+                        <div class="item">
+                            <div class="portfolio-one__single">
+                                <div class="portfolio-one__img-box">
+                                    <div class="portfolio-one__img">
+                                        <img src="{{URL::asset('template/front/images/project/portfolio-1-3.jpg')}}" alt="">
+                                    </div>
+                                    <div class="portfolio-one__content">
+                                        <p class="portfolio-one__sub-title">Culture</p>
+                                        <h4 class="portfolio-one__title"><a href="portfolio-details.html">Town of
+                                                Rome</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Portfolio One Single End-->
+                        <!--Portfolio One Single Start-->
+                        <div class="item">
+                            <div class="portfolio-one__single mar-top">
+                                <div class="portfolio-one__img-box">
+                                    <div class="portfolio-one__img">
+                                        <img src="{{URL::asset('template/front/images/project/portfolio-1-4.jpg')}}" alt="">
+                                    </div>
+                                    <div class="portfolio-one__content">
+                                        <p class="portfolio-one__sub-title">Culture</p>
+                                        <h4 class="portfolio-one__title"><a href="portfolio-details.html">Town of
+                                                Rome</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Portfolio One Single End-->
+                        <!--Portfolio One Single Start-->
+                        <div class="item">
+                            <div class="portfolio-one__single">
+                                <div class="portfolio-one__img-box">
+                                    <div class="portfolio-one__img">
+                                        <img src="{{URL::asset('template/front/images/project/portfolio-1-5.jpg')}}" alt="">
+                                    </div>
+                                    <div class="portfolio-one__content">
+                                        <p class="portfolio-one__sub-title">Culture</p>
+                                        <h4 class="portfolio-one__title"><a href="portfolio-details.html">Town of
+                                                Rome</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Portfolio One Single End-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Portfolio One End-->
+
+        <!--Brand One Start-->
+        <section class="brand-one">
+            <div class="container">
+                <div class="brand-one__title">
+                    <p>Our partners & suppoters</p>
+                </div>
+                <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+                    "items": 3,
+                    "margin": 0,
+                    "smartSpeed": 700,
+                    "loop":true,
+                    "autoplay": 6000,
+                    "nav":false,
+                    "dots":false,
+                    "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                    "responsive":{
+                        "0":{
+                            "items":1
+                        },
+                        "768":{
+                            "items":3
+                        },
+                        "992":{
+                            "items": 5
+                        }
+                    }
+                }'>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="{{URL::asset('template/front/images/brand/brand-1-1.png')}}" alt="">
+                        </div>
+                    </div>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="{{URL::asset('template/front/images/brand/brand-1-2.png')}}" alt="">
+                        </div>
+                    </div>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="{{URL::asset('template/front/images/brand/brand-1-3.png')}}" alt="">
+                        </div>
+                    </div>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="{{URL::asset('template/front/images/brand/brand-1-4.png')}}" alt="">
+                        </div>
+                    </div>
+                    <!--Brand One Single-->
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <img src="{{URL::asset('template/front/images/brand/brand-1-5.png')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need navigation buttons -->
+            </div>
+        </section>
+        <!--Brand One End-->
+
+        <!--Event One Start-->
+        <section class="event-one">
+            <div class="event-one__shape-1">
+                <img src="{{URL::asset('template/front/images/shapes/event-one-shape-1.jpg')}}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8">
+                        <div class="event-one__left">
+                            <div class="section-title text-left">
+                                <div class="section-title__icon">
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span class="section-title__tagline">Latest events</span>
+                                <h2 class="section-title__title">Upcoming city activities & <br>
+                                    events schedule</h2>
+                            </div>
+                            <ul class="event-one__points list-unstyled">
+                                <li>
+                                    <div class="event-one__single">
+                                        <div class="event-one__img-box">
+                                            <div class="event-one__img">
+                                                <img src="{{URL::asset('template/front/images/events/event-1-1.jpg')}}" alt="">
+                                            </div>
+                                            <div class="event-one__date">
+                                                <p>30 <br> MAY</p>
+                                            </div>
+                                        </div>
+                                        <div class="event-one__content">
+                                            <div class="event-one__tag">
+                                                <p>Celebration</p>
+                                            </div>
+                                            <ul class="event-one__meta list-unstyled">
+                                                <li>
+                                                    <div class="icon">
+                                                        <span class="fas fa-clock"></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>08:00am - 05:00pm</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="icon">
+                                                        <span class="fas fa-map-marker"></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>New Hyde Park, NY 11040</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <h3 class="event-one__title"><a href="event-details.html">The city
+                                                    photography new
+                                                    contest</a></h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="event-one__single">
+                                        <div class="event-one__img-box">
+                                            <div class="event-one__img">
+                                                <img src="{{URL::asset('template/front/images/events/event-1-2.jpg')}}" alt="">
+                                            </div>
+                                            <div class="event-one__date">
+                                                <p>30 <br> MAY</p>
+                                            </div>
+                                        </div>
+                                        <div class="event-one__content">
+                                            <div class="event-one__tag">
+                                                <p>Celebration</p>
+                                            </div>
+                                            <ul class="event-one__meta list-unstyled">
+                                                <li>
+                                                    <div class="icon">
+                                                        <span class="fas fa-clock"></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>08:00am - 05:00pm</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="icon">
+                                                        <span class="fas fa-map-marker"></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>New Hyde Park, NY 11040</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <h3 class="event-one__title"><a href="event-details.html">Activities &
+                                                    events schedule</a></h3>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="event-one__right">
+                            <div class="event-one__subscribe-top">
+                                <div class="event-one__subscribe-top-bg"
+                                    style="background-image: url(template/front/images/backgrounds/event-one-subscribe-top-bg.jpg);">
+                                </div>
+                                <div class="event-one__subscribe-icon">
+                                    <span class="icon-newsletter"></span>
+                                </div>
+                                <p class="event-one__subscribe-text">Subscribe to
+                                    <br> our newslette for
+                                    <br> daily updates</p>
+                                <p class="event-one__subscribe-text-2">Get latest news & events details</p>
+                            </div>
+                            <div class="event-one__subscribe-bottom">
+                                <div class="event-one__subscribe-bottom-bg"
+                                    style="background-image: url(template/front/images/backgrounds/event-one-subscribe-bottom-bg.png);">
+                                </div>
+                                <form class="event-one__email-box">
+                                    <div class="event-one__email-input-box">
+                                        <input type="email" placeholder="Email Address" name="email">
+                                    </div>
+                                    <button type="submit" class="event-one__subscribe-btn thm-btn">Subscribe</button>
+                                </form>
+                                <p class="event-one__subscribe-text-3">Never share your email with others.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Event One End-->
+
+        <!--News One Start-->
+        <section class="news-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">Latest News</span>
+                    <h2 class="section-title__title">Latest news & articles
+                        <br> from the blog</h2>
+                </div>
+                <div class="row">
+                    <!--News One Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="news-one__single">
+                            <div class="news-one__img-box">
+                                <div class="news-one__img">
+                                    <img src="{{URL::asset('template/front/images/blog/news-1-1.jpg')}}" alt="">
+                                </div>
+                                <div class="news-one__date">
+                                    <p>30 <br> JAN</p>
+                                </div>
+                            </div>
+                            <div class="news-one__content">
+                                <div class="news-one__user-and-meta">
+                                    <div class="news-one__user">
+                                        <div class="news-one__user-img">
+                                            <img src="{{URL::asset('template/front/images/blog/news-one-user-img.jpg')}}" alt="">
+                                        </div>
+                                        <div class="news-one__user-text">
+                                            <p>by <br>Admin</p>
+                                        </div>
+                                    </div>
+                                    <div class="news-one__meta">
+                                        <div class="icon">
+                                            <span class="fas fa-comments"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>2 Comments</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="news-one__title"><a href="news-details.html">Supporting local business to
+                                        bounce back</a>
+                                </h3>
+                                <div class="news-one__btn">
+                                    <a href="news-details.html">Read More<i class="icon-right-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--News One Single End-->
+                    <!--News One Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="news-one__single">
+                            <div class="news-one__img-box">
+                                <div class="news-one__img">
+                                    <img src="{{URL::asset('template/front/images/blog/news-1-2.jpg')}}" alt="">
+                                </div>
+                                <div class="news-one__date">
+                                    <p>30 <br> JAN</p>
+                                </div>
+                            </div>
+                            <div class="news-one__content">
+                                <div class="news-one__user-and-meta">
+                                    <div class="news-one__user">
+                                        <div class="news-one__user-img">
+                                            <img src="{{URL::asset('template/front/images/blog/news-one-user-img.jpg')}}" alt="">
+                                        </div>
+                                        <div class="news-one__user-text">
+                                            <p>by <br>Admin</p>
+                                        </div>
+                                    </div>
+                                    <div class="news-one__meta">
+                                        <div class="icon">
+                                            <span class="fas fa-comments"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>2 Comments</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="news-one__title"><a href="news-details.html">The city photography new
+                                        contest</a>
+                                </h3>
+                                <div class="news-one__btn">
+                                    <a href="news-details.html">Read More<i class="icon-right-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--News One Single End-->
+                    <!--News One Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="news-one__single">
+                            <div class="news-one__img-box">
+                                <div class="news-one__img">
+                                    <img src="{{URL::asset('template/front/images/blog/news-1-3.jpg')}}" alt="">
+                                </div>
+                                <div class="news-one__date">
+                                    <p>30 <br> JAN</p>
+                                </div>
+                            </div>
+                            <div class="news-one__content">
+                                <div class="news-one__user-and-meta">
+                                    <div class="news-one__user">
+                                        <div class="news-one__user-img">
+                                            <img src="{{URL::asset('template/front/images/blog/news-one-user-img.jpg')}}" alt="">
+                                        </div>
+                                        <div class="news-one__user-text">
+                                            <p>by <br>Admin</p>
+                                        </div>
+                                    </div>
+                                    <div class="news-one__meta">
+                                        <div class="icon">
+                                            <span class="fas fa-comments"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>2 Comments</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="news-one__title"><a href="news-details.html">Leverage agile frameworks to
+                                        provide</a>
+                                </h3>
+                                <div class="news-one__btn">
+                                    <a href="news-details.html">Read More<i class="icon-right-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--News One Single End-->
+                </div>
+            </div>
+        </section>
+        <!--News One End-->
+
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="site-footer__img">
+                <img src="{{URL::asset('template/front/images/resources/site-footer-img.jpg')}}" alt="">
+            </div>
+            <div class="container">
+                <div class="site-footer__top">
+                    <div class="footer-widget__logo">
+                        <a href="index.html"><img src="{{URL::asset('template/front/images/resources/footer-logo.png')}}" alt=""></a>
+                    </div>
+                    <div class="footer-widget__subscribe-box">
+                        <div class="footer-widget__subscribe-text">
+                            <p>Subscribe to Newsletter</p>
+                        </div>
+                        <form class="footer-widget__email-box mc-form" data-url="#">
+                            <div class="footer-widget__email-input-box">
+                                <input type="email" placeholder="Email Address" name="EMAIL">
+                            </div>
+                            <button type="submit" class="footer-widget__subscribe-btn thm-btn">Subscribe</button>
+                        </form>
+                        <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                    </div>
+                </div>
+                <div class="site-footer__middle">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__column footer-widget__Contact">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Contact</h3>
+                                </div>
+                                <p class="footer-widget__Contact-text">80 Road Broklyn Street, 600 <br> New York, USA
+                                </p>
+                                <ul class="footer-widget__Contact-list list-unstyled">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-email"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fas fa-phone-square"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="tel:+926668880000">+92 666 888 0000</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="site-footer__social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget__link">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Links</h3>
+                                </div>
+                                <ul class="footer-widget__link-list list-unstyled">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="team.html">Our Team</a></li>
+                                    <li><a href="events.html">Upcoming Events</a></li>
+                                    <li><a href="news.html">Latest News</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div class="footer-widget__column footer-widget__departments">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Departments</h3>
+                                </div>
+                                <ul class="footer-widget__link-list list-unstyled">
+                                    <li><a href="about.html">Health & Safety</a></li>
+                                    <li><a href="about.html">Housing & Land</a></li>
+                                    <li><a href="about.html">Legal & Finance</a></li>
+                                    <li><a href="about.html">Transport & Traffic</a></li>
+                                    <li><a href="about.html">Arts & Culture</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                            <div class="footer-widget__column footer-widget__explore">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Explore</h3>
+                                </div>
+                                <ul class="footer-widget__link-list list-unstyled">
+                                    <li><a href="about.html">Administration</a></li>
+                                    <li><a href="about.html">Fire Services</a></li>
+                                    <li><a href="tax-return.html">Business & Taxation</a></li>
+                                    <li><a href="about.html">Circular’s And Go’s</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                            <div class="footer-widget__column footer-widget__gallery">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Gallery</h3>
+                                </div>
+                                <ul class="footer-widget__gallery-list list-unstyled clearfix">
+                                    <li>
+                                        <div class="footer-widget__gallery-img">
+                                            <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-1.jpg')}}" alt="">
+                                            <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-1.jpg')}}"
+                                                class="img-popup"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-widget__gallery-img">
+                                            <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-2.jpg')}}" alt="">
+                                            <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-2.jpg')}}"
+                                                class="img-popup"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-widget__gallery-img">
+                                            <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-3.jpg')}}" alt="">
+                                            <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-3.jpg')}}"
+                                                class="img-popup"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-widget__gallery-img">
+                                            <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-4.jpg')}}" alt="">
+                                            <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-4.jpg')}}"
+                                                class="img-popup"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-widget__gallery-img">
+                                            <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-5.jpg')}}" alt="">
+                                            <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-5.jpg')}}"
+                                                class="img-popup"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-widget__gallery-img">
+                                            <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-6.jpg')}}" alt="">
+                                            <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-6.jpg')}}"
+                                                class="img-popup"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <p class="site-footer__bottom-text">© Copyright 2023 by <a href="#">Govity Template</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="{{URL::asset('template/front/images/resources/logo-1.png')}}" width="94"
+                        alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@packageName__.com">needhelp@govity.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:666-888-0000">666 888 0000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
         </div>
-    </body>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
+
+
+    <script src="{{URL::asset('template/front/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/jarallax/jarallax.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/jquery-appear/jquery.appear.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/jquery-circle-progress/jquery.circle-progress.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/jquery-validate/jquery.validate.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/nouislider/nouislider.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/odometer/odometer.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/swiper/swiper.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/tiny-slider/tiny-slider.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/wnumb/wNumb.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/wow/wow.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/isotope/isotope.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/countdown/countdown.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/bxslider/jquery.bxslider.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/vegas/vegas.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/jquery-ui/jquery-ui.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/timepicker/timePicker.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/circleType/jquery.circleType.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/circleType/jquery.lettering.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/nice-select/jquery.nice-select.min.js')}}"></script>
+
+
+
+
+    <!-- template js -->
+    <script src="{{URL::asset('template/front/js/govity.js')}}"></script>
+</body>
+
 </html>
