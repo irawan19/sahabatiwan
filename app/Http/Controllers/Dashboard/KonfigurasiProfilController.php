@@ -5,8 +5,8 @@ use Illuminate\Http\Request;
 use App\Helpers\General;
 use Auth;
 use Storage;
-use \App\Models\Master_level_sistem;
-use \App\Models\User;
+use App\Models\Master_level_sistem;
+use App\Models\User;
 
 class KonfigurasiProfilController extends AdminCoreController
 {

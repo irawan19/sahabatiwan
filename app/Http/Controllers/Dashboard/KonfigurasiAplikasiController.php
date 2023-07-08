@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Helpers\General;
 use Storage;
-use \App\Models\Master_konfigurasi_aplikasi;
+use App\Models\Master_konfigurasi_aplikasi;
 
 class KonfigurasiAplikasiController extends AdminCoreController
 {

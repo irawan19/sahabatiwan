@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Helpers\General;
 use DB;
-use \App\Models\Master_level_sistem;
-use \App\Models\Master_menu;
-use \App\Models\Master_akses;
-use \App\Models\User;
+use App\Models\Master_level_sistem;
+use App\Models\Master_menu;
+use App\Models\Master_akses;
+use App\Models\User;
 
 class LevelSistemController extends AdminCoreController
 {

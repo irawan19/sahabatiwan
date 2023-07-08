@@ -7,7 +7,7 @@ use Datetime;
 use DB;
 use URL;
 use Illuminate\Support\Str;
-use \App\Models\Master_menu;
+use App\Models\Master_menu;
 
 class General
 {

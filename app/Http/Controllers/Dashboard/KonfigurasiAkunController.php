@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use Auth;
-use \App\Models\User;
+use App\Models\User;
 
 class KonfigurasiAkunController extends AdminCoreController
 {

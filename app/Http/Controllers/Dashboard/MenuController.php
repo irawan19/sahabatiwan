@@ -3,9 +3,9 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Helpers\General;
-use \App\Models\Master_menu;
-use \App\Models\Master_akses;
-use \App\Models\Master_fitur;
+use App\Models\Master_menu;
+use App\Models\Master_akses;
+use App\Models\Master_fitur;
 
 class MenuController extends AdminCoreController
 {
