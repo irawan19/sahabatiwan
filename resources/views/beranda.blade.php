@@ -342,7 +342,7 @@
                                     <img src="{{URL::asset('template/front/images/shapes/about-one-shape-2.png')}}" alt="">
                                 </div>
                                 <div class="about-one__video-link">
-                                    <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
+                                    <a href="{{$lihat_profils->url_youtube_profils}}" class="video-popup">
                                         <div class="about-one__video-icon">
                                             <span class="fa fa-play"></span>
                                             <i class="ripple"></i>
@@ -350,13 +350,9 @@
                                     </a>
                                 </div>
                                 <div class="about-one__call-box">
-                                    <div class="about-one__call-icon">
-                                        <span class="icon-government-1"></span>
-                                    </div>
                                     <div class="about-one__call-box-content">
-                                        <p class="about-one__call-text">Mayor Office</p>
-                                        <h4 class="about-one__call-number"><a href="tel:9212340800">+92 (1234) 0800</a>
-                                        </h4>
+                                        <h4 class="about-one__call-number">{{$lihat_profils->nama_profils}}</h4>
+                                        <p class="about-one__call-text">Untuk DPR RI DAPIL BAYUMAS - CILACAP</p>
                                     </div>
                                 </div>
                             </div>
@@ -368,9 +364,8 @@
                                 <div class="section-title__icon">
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="section-title__tagline">Welcome to govity</span>
-                                <h2 class="section-title__title">Meet Ideological leader
-                                    for youth generation</h2>
+                                <span class="section-title__tagline">Selamat Datang</span>
+                                <h2 class="section-title__title">Sahabat Iwan</h2>
                             </div>
                             <p class="about-one__text">There are many variations of passages of available but the
                                 majority have suffered alteration in some form, by injected hum randomised words which
