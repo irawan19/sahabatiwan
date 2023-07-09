@@ -72,10 +72,9 @@
                             <div class="main-menu__top-inner">
                                 <div class="main-menu__top-left">
                                     <div class="main-menu__social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        @foreach($lihat_sosial_medias as $sosial_medias)
+                                            <a href="{{$sosial_medias->url_sosial_medias}}" target="_blank"><i class="fab fa-{{$sosial_medias->icon_sosial_medias}}"></i></a>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="main-menu__top-right">
@@ -85,15 +84,7 @@
                                                 <i class="fas fa-envelope"></i>
                                             </div>
                                             <div class="text">
-                                                <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <i class="fas fa-clock"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Open hours: Mon - Fri 8.00 am - 6.00 pm</p>
+                                                <p><a href="mailto:{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}">{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}</a></p>
                                             </div>
                                         </li>
                                     </ul>

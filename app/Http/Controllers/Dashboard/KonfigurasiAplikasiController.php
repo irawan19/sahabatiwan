@@ -31,42 +31,21 @@ class KonfigurasiAplikasiController extends AdminCoreController
                 'nama_konfigurasi_aplikasis'                => 'required',
                 'deskripsi_konfigurasi_aplikasis'           => 'required',
                 'keywords_konfigurasi_aplikasis'            => 'required',
-                'alamat_konfigurasi_aplikasis'              => 'required',
                 'email_konfigurasi_aplikasis'               => 'required',
-                'telepon_konfigurasi_aplikasis'             => 'required',
             ];
             $error_pesan = [
                 'nama_konfigurasi_aplikasis.required'       => 'Form Email Harus Diisi.',
                 'deskripsi_konfigurasi_aplikasis.required'  => 'Form Deskripsi Harus Diisi.',
                 'keywords_konfigurasi_aplikasis.required'   => 'Form Keywords Harus Diisi.',
-                'alamat_konfigurasi_aplikasis.required'     => 'Form Alamat Harus Diisi.',
                 'email_konfigurasi_aplikasis.required'      => 'Form Email Harus Diisi.',
-                'telepon_konfigurasi_aplikasis.required'    => 'Form Telepon Harus Diisi.',
             ];
             $this->validate($request, $aturan, $error_pesan);
-
-            $facebook_konfigurasi_aplikasis = '';
-            if(!empty($request->facebook_konfigurasi_aplikasis))
-                $facebook_konfigurasi_aplikasis = $request->facebook_konfigurasi_aplikasis;
-            
-            $twitter_konfigurasi_aplikasis = '';
-            if(!empty($request->twitter_konfigurasi_aplikasis))
-                $twitter_konfigurasi_aplikasis = $request->twitter_konfigurasi_aplikasis;
-
-            $instagram_konfigurasi_aplikasis = '';
-            if(!empty($request->instagram_konfigurasi_aplikasis))
-                $instagram_konfigurasi_aplikasis = $request->instagram_konfigurasi_aplikasis;
 
             $konfigurasi_aplikasi_data = [
                 'nama_konfigurasi_aplikasis'                    => $request->nama_konfigurasi_aplikasis,
                 'deskripsi_konfigurasi_aplikasis'               => $request->deskripsi_konfigurasi_aplikasis,
                 'keywords_konfigurasi_aplikasis'                => $request->keywords_konfigurasi_aplikasis,
-                'alamat_konfigurasi_aplikasis'                  => $request->alamat_konfigurasi_aplikasis,
                 'email_konfigurasi_aplikasis'                   => $request->email_konfigurasi_aplikasis,
-                'telepon_konfigurasi_aplikasis'                 => $request->telepon_konfigurasi_aplikasis,
-                'facebook_konfigurasi_aplikasis'                => $request->facebook_konfigurasi_aplikasis,
-                'twitter_konfigurasi_aplikasis'                 => $request->twitter_konfigurasi_aplikasis,
-                'instagram_konfigurasi_aplikasis'               => $request->instagram_konfigurasi_aplikasis,
                 'updated_at'                                    => date('Y-m-d H:i:s'),
             ];
             Master_konfigurasi_aplikasi::query()->update($konfigurasi_aplikasi_data);

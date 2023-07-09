@@ -114,7 +114,7 @@ class MenuController extends AdminCoreController
         	$data = [
         		'icon_menus'	=> $request->icon_menus,
                 'nama_menus' 	=> $request->nama_menus,
-                'order_menus'	=> General::AutoIncrementKey('master_menus','order_menus'),
+                'order_menus'	=> General::AutoIncrementKeyMenus('master_menus','order_menus',null),
                 'created_at'    => date('Y-m-d H:i:s'),
                 'updated_at'    => date('Y-m-d H:i:s'),
             ];
@@ -362,6 +362,7 @@ class MenuController extends AdminCoreController
                     'icon_menus' 	=> $request->icon_menus,
                     'nama_menus' 	=> $request->nama_menus,
                     'link_menus' 	=> $request->link_menus,
+                    'order_menus'	=> General::AutoIncrementKeyMenus('master_menus','order_menus',$id_menus),
                     'created_at'    => date('Y-m-d H:i:s'),
                     'updated_at'    => date('Y-m-d H:i:s'),
                 ];

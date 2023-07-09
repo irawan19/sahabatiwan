@@ -56,9 +56,9 @@ class General
 	//Hak Akses
 
 	//Auto Increment
-		public static function AutoIncrementKey($table='',$id='')
+		public static function AutoIncrementKeyMenus($table='',$id='', $id_menus='')
 		{
-			$autoincrement 		= DB::table($table)->max($id);
+			$autoincrement 		= DB::table($table)->max($id)->where('menus_id',$id_menus);
 			$id_auto_increment 	= $autoincrement + 1;
 			return $id_auto_increment;
 		}

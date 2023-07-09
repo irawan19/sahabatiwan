@@ -19,6 +19,11 @@
 							{{General::pesanErrorForm($errors->first('nama_konfigurasi_aplikasis'))}}
 						</div>
 						<div class="form-group">
+							<label class="form-col-form-label" for="email_konfigurasi_aplikasis">Email <b style="color:red">*</b></label>
+							<input class="form-control {{ General::validForm($errors->first('email_konfigurasi_aplikasis')) }}" id="email_konfigurasi_aplikasis" type="email" name="email_konfigurasi_aplikasis" value="{{Request::old('email_konfigurasi_aplikasis') == '' ? $lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis : Request::old('email_konfigurasi_aplikasis')}}">
+							{{General::pesanErrorForm($errors->first('email_konfigurasi_aplikasis'))}}
+						</div>
+						<div class="form-group">
 							<label class="form-col-form-label" for="deskripsi_konfigurasi_aplikasis">Deskripsi <b style="color:red">*</b></label>
 							<input class="form-control {{ General::validForm($errors->first('deskripsi_konfigurasi_aplikasis')) }}" id="deskripsi_konfigurasi_aplikasis" type="text" name="deskripsi_konfigurasi_aplikasis" value="{{Request::old('deskripsi_konfigurasi_aplikasis') == '' ? $lihat_konfigurasi_aplikasis->deskripsi_konfigurasi_aplikasis : Request::old('deskripsi_konfigurasi_aplikasis')}}">
 							{{General::pesanErrorForm($errors->first('deskripsi_konfigurasi_aplikasis'))}}

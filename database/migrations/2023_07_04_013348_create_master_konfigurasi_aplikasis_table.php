@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('master_konfigurasi_aplikasis', function (Blueprint $table) {
             $table->id('id_konfigurasi_aplikasis');
             $table->string('nama_konfigurasi_aplikasis');
+            $table->string('email_konfigurasi_aplikasis');
             $table->longtext('deskripsi_konfigurasi_aplikasis');
             $table->longtext('keywords_konfigurasi_aplikasis');
             $table->string('icon_konfigurasi_aplikasis');

@@ -18,6 +18,7 @@ use App\Http\Controllers\Dashboard\KonfigurasiAkunController as DashboardKonfigu
 //Konfigurasi Web
 use App\Http\Controllers\Dashboard\SlideshowController as DashboardSlideshow;
 use App\Http\Controllers\Dashboard\ProfilController as DashboardProfil;
+use App\Http\Controllers\Dashboard\SosialMediaController as DashboardSosialMedia;
 
 //Konfigurasi Aplikasi
 use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
@@ -75,6 +76,17 @@ Route::middleware([
             Route::group(['prefix' => 'profil'], function() {
                 Route::get('/', [DashboardProfil::class, 'index']);
                 Route::post('/prosesedit', [DashboardProfil::class, 'prosesedit']);
+            });
+
+            //Sosial Media
+            Route::group(['prefix' => 'sosial_media'], function() {
+                Route::get('/', [DashboardSosialMedia::class, 'index']);
+                Route::get('/cari', [DashboardSosialMedia::class, 'cari']);
+                Route::get('/tambah', [DashboardSosialMedia::class, 'tambah']);
+                Route::post('/prosestambah', [DashboardSosialMedia::class, 'prosestambah']);
+                Route::get('/edit/{id}', [DashboardSosialMedia::class, 'edit']);
+                Route::post('/prosesedit/{id}', [DashboardSosialMedia::class, 'prosesedit']);
+                Route::get('/hapus/{id}', [DashboardSosialMedia::class, 'hapus']);
             });
 
         //Konfigurasi Aplikasi
