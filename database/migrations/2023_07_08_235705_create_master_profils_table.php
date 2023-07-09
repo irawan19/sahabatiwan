@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('text1_profils');
             $table->string('text2_profils');
             $table->string('nama_profils');
+            $table->string('keterangan_nama_profils');
             $table->string('konten_profils');
             $table->string('url_youtube_profils');
             $table->timestamps();

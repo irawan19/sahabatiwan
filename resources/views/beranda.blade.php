@@ -333,10 +333,10 @@
                             </div>
                             <div class="about-one__img-box">
                                 <div class="about-one__img">
-                                    <img src="{{URL::asset('template/front/images/resources/about-one-img-1.jpg')}}" alt="">
+                                    <img src="{{URL::asset('storage/'.$lihat_profils->foto1_profils)}}" alt="">
                                 </div>
                                 <div class="about-one__img-2">
-                                    <img src="{{URL::asset('template/front/images/resources/about-one-img-2.jpg')}}" alt="">
+                                    <img src="{{URL::asset('storage/'.$lihat_profils->foto2_profils)}}" alt="">
                                 </div>
                                 <div class="about-one__shape-2">
                                     <img src="{{URL::asset('template/front/images/shapes/about-one-shape-2.png')}}" alt="">
@@ -352,7 +352,7 @@
                                 <div class="about-one__call-box">
                                     <div class="about-one__call-box-content">
                                         <h4 class="about-one__call-number">{{$lihat_profils->nama_profils}}</h4>
-                                        <p class="about-one__call-text">Untuk DPR RI DAPIL BAYUMAS - CILACAP</p>
+                                        <p class="about-one__call-text">{{$lihat_profils->keterangan_nama_profils}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -364,8 +364,8 @@
                                 <div class="section-title__icon">
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="section-title__tagline">Selamat Datang</span>
-                                <h2 class="section-title__title">Sahabat Iwan</h2>
+                                <span class="section-title__tagline">{{$lihat_profils->text1_profils}}</span>
+                                <h2 class="section-title__title">{{$lihat_profils->text2_profils}}</h2>
                             </div>
                             {{$lihat_profils->konten_profils}}
                             <div class="about-one__btn-box-and-signature">
