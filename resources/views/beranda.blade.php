@@ -241,7 +241,7 @@
                         <div class="container">
                             <div class="main-slider__content">
                                 <p class="main-slider__sub-title">{{$slideshows->text1_slideshows}}</p>
-                                <h2 class="main-slider__title">{{$slideshows->text2_slideshows}}</h2>
+                                <h2 class="main-slider__title">{!! nl2br($slideshows->text2_slideshows) !!}</h2>
                                 <div class="main-slider__btn-box">
                                 </div>
                             </div>

@@ -61,7 +61,7 @@
                                                 </a>
                                             </td>
 								    		<td class="nowrap">{{$slideshows->text1_slideshows}}</td>
-								    		<td class="nowrap">{{$slideshows->text2_slideshows}}</td>
+								    		<td class="nowrap">{!! nl2br($slideshows->text2_slideshows) !!}</td>
 								    	</tr>
 								    @endforeach
 								@else

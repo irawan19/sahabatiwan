@@ -28,7 +28,7 @@
 						</div>
 						<div class="form-group">
 							<label class="form-col-form-label" for="text2_slideshows">Text 2 <b style="color:red">*</b></label>
-							<input class="form-control {{ General::validForm($errors->first('text2_slideshows')) }}" id="text2_slideshows" type="text" name="text2_slideshows" value="{{Request::old('text2_slideshows') == '' ? $edit_slideshows->text2_slideshows : Request::old('text2_slideshows')}}">
+							<textarea class="form-control {{ General::validForm($errors->first('text2_slideshows')) }}" id="text2_slideshows" name="text2_slideshows" rows="5">{{Request::old('text2_slideshows') == '' ? $edit_slideshows->text2_slideshows : Request::old('text2_slideshows')}}</textarea>
 							{{General::pesanErrorForm($errors->first('text2_slideshows'))}}
 						</div>
 					</div>

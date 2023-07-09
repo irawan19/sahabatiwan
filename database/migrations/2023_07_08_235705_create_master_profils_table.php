@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id('id_profils');
             $table->string('foto1_profils');
             $table->string('foto2_profils');
+            $table->string('text1_profils');
+            $table->string('text2_profils');
             $table->string('nama_profils');
             $table->string('konten_profils');
             $table->string('url_youtube_profils');
