@@ -17,6 +17,7 @@ use App\Http\Controllers\Dashboard\KonfigurasiAkunController as DashboardKonfigu
 
 //Konfigurasi Web
 use App\Http\Controllers\Dashboard\SlideshowController as DashboardSlideshow;
+use App\Http\Controllers\Dashboard\ProfilController as DashboardProfil;
 
 //Konfigurasi Aplikasi
 use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
@@ -68,6 +69,12 @@ Route::middleware([
                 Route::get('/edit/{id}', [DashboardSlideshow::class, 'edit']);
                 Route::post('/prosesedit/{id}', [DashboardSlideshow::class, 'prosesedit']);
                 Route::get('/hapus/{id}', [DashboardSlideshow::class, 'hapus']);
+            });
+
+            //Profil
+            Route::group(['prefix' => 'profil'], function() {
+                Route::get('/', [DashboardProfil::class, 'index']);
+                Route::post('/prosesedit', [DashboardProfil::class, 'prosesedit']);
             });
 
         //Konfigurasi Aplikasi

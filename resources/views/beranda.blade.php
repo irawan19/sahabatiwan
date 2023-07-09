@@ -367,23 +367,9 @@
                                 <span class="section-title__tagline">Selamat Datang</span>
                                 <h2 class="section-title__title">Sahabat Iwan</h2>
                             </div>
-                            <p class="about-one__text">There are many variations of passages of available but the
-                                majority have suffered alteration in some form, by injected hum randomised words which
-                                don't slightly.</p>
-                            <div class="about-one__icon-and-big-text">
-                                <div class="about-one__icon">
-                                    <span class="icon-cityscape"></span>
-                                </div>
-                                <p class="about-one__big-text">Great city & place to develop your career &
-                                    business.</p>
-                            </div>
-                            <p class="about-one__text-2">There are many variations of passages of available but the
-                                majority have suffered alteration in some form.</p>
+                            {{$lihat_profils->konten_profils}}
                             <div class="about-one__btn-box-and-signature">
-                                <a href="about.html" class="about-one__btn thm-btn">Discover More</a>
-                                <div class="about-one__signature">
-                                    <img src="{{URL::asset('template/front/images/resources/about-one-signeture.png')}}" alt="">
-                                </div>
+                                <a href="about.html" class="about-one__btn thm-btn">Lihat Selengkapnya</a>
                             </div>
                         </div>
                     </div>
