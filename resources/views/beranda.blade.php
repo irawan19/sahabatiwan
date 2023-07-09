@@ -47,7 +47,11 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity-responsive.css')}}" />
-    <link rel="stylesheet" href="{{URL::asset('template/front/css/custom.css')}}" />
+    <style>
+        .jam{
+            color: #000 !important;
+        }
+    </style>
 </head>
 
 <body class="custom-cursor">
@@ -64,9 +68,7 @@
                 <div class="main-menu__wrapper">
                     <div class="main-menu__wrapper-inner">
                         <div class="main-menu__logo">
-                            <a href="{{URL('/')}}">
-                                <p class="fontlogo">Iwan Nurdin</p>
-                            </a>
+                            <a href="{{URL('/')}}"><img src="{{URL::asset('storage/logo/logopublic.png')}}" alt=""></a>
                         </div>
                         <div class="main-menu__top">
                             <div class="main-menu__top-inner">
@@ -89,9 +91,7 @@
                                         </li>
                                     </ul>
                                     <ul class="list-unstyled main-menu__top-menu">
-                                        <li><a href="about.html">Council</a></li>
-                                        <li><a href="about.html">Government</a></li>
-                                        <li><a href="contact.html">Complaints</a></li>
+                                        <li><b class="jam">{{General::ubahDBKeTanggal($tanggal_sekarang)}}, <onload="timeJavascript()" id="output"></b></li>
                                     </ul>
                                 </div>
                             </div>
@@ -119,35 +119,8 @@
                                     </ul>
                                 </div>
                                 <div class="main-menu__right">
-                                    <div class="main-menu__call">
-                                        <div class="main-menu__call-icon">
-                                            <span class="icon-telephone"></span>
-                                        </div>
-                                        <div class="main-menu__call-content">
-                                            <p class="main-menu__call-sub-title">Call Anytime</p>
-                                            <h5 class="main-menu__call-number"><a href="tel:9212340800">+92 (1234)
-                                                    0800</a></h5>
-                                        </div>
-                                    </div>
                                     <div class="main-menu__search-box">
                                         <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
-                                    </div>
-                                    <div class="language-switcher">
-                                        <select class="selectpicker">
-                                            <option
-                                                data-content="<span class='lang-en'><img src='{{URL::asset('template/front/images/lang-flag/en.png')}}' alt=''>English</span>"
-                                                value="en" selected>English</option>
-                                            <option
-                                                data-content="<span class='lang-fr'><img src='{{URL::asset('template/front/images/lang-flag/fr.png')}}' alt=''>French</span>"
-                                                value="fr">French
-                                            </option>
-
-                                            <option
-                                                data-content="<span class='lang-it'><img src='{{URL::asset('template/front/images/lang-flag/it.png')}}' alt=''>Italian</span>"
-                                                value="it">
-                                                Italian</option>
-                                        </select>
-
                                     </div>
                                     <div class="main-menu__btn-box">
                                         <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
@@ -1656,6 +1629,16 @@
 
     <!-- template js -->
     <script src="{{URL::asset('template/front/js/govity.js')}}"></script>
+
+    <script type="text/javascript">
+        window.setTimeout("timeJavascript()",1000);
+        function timeJavascript()
+        {     
+            var dateNow = new Date().toLocaleTimeString("en-US",{timeZone: "Asia/Jakarta", hour12: false});
+            setTimeout("timeJavascript()",1000);
+            document.getElementById("output").innerHTML = dateNow;
+        }
+    </script>
 </body>
 
 </html>

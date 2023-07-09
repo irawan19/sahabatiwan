@@ -529,7 +529,7 @@ ul {
   align-items: center;
   justify-content: center;
   background-color: var(--govity-black);
-  padding: 56px 80px;
+  padding: 7px;
 }
 
 .main-menu {
@@ -760,16 +760,6 @@ ul {
   margin-left: 60px;
   margin-right: 30px;
   padding: 14.5px 0;
-}
-
-.main-menu__search-box:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -30px;
-  width: 1px;
-  background-color: var(--govity-bdr-color);
 }
 
 .main-menu__search {
