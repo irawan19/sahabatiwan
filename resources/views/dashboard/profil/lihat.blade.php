@@ -52,7 +52,7 @@
 						</div>
 						<div class="form-group">
 							<label class="form-col-form-label" for="keterangan_nama_profils">Keterangan Nama <b style="color:red">*</b></label>
-							<input class="form-control {{ General::validForm($errors->first('keterangan_nama_profils')) }}" id="keterangan_nama_profils" type="text" name="keterangan_nama_profils" value="{{Request::old('keterangan_nama_profils') == '' ? $lihat_profils->nama_profils : Request::old('keterangan_nama_profils')}}">
+							<input class="form-control {{ General::validForm($errors->first('keterangan_nama_profils')) }}" id="keterangan_nama_profils" type="text" name="keterangan_nama_profils" value="{{Request::old('keterangan_nama_profils') == '' ? $lihat_profils->keterangan_nama_profils : Request::old('keterangan_nama_profils')}}">
 							{{General::pesanErrorForm($errors->first('keterangan_nama_profils'))}}
 						</div>
 						<div class="form-group">

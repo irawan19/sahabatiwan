@@ -111,63 +111,19 @@
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
                                         <li class="dropdown megamenu">
-                                            <a href="index.html">Home </a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Pages</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="about.html">About us</a></li>
-                                                <li><a href="our-history.html">Our history</a></li>
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="team-details.html">Team details</a></li>
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                                <li><a href="portfolio-details.html">Portfolio details</a></li>
-                                                <li><a href="events.html">Events</a></li>
-                                                <li><a href="event-details.html">Event details</a></li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="faq.html">FAQs</a></li>
-                                                <li><a href="404.html">404 error</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Services</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="our-services.html">Services</a></li>
-                                                <li><a href="building-permission.html">Building permission</a></li>
-                                                <li><a href="driving-license.html">Driving license</a></li>
-                                                <li><a href="report-polution.html">Report polution</a></li>
-                                                <li><a href="parking-permission.html">Parking permission</a></li>
-                                                <li><a href="tax-return.html">Tax return</a></li>
-                                                <li><a href="birth-certificate.html">Birth certificate</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Departments</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="departments.html">Departments</a></li>
-                                                <li><a href="department-details.html">Department details</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown">
-                                            <a href="#">News</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="news.html">News</a></li>
-                                                <li><a href="news-sidebar.html">News sidebar</a></li>
-                                                <li><a href="news-details.html">News details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Shop</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="shop-details.html">Shop details</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                            </ul>
+                                            <a href="{{URL('/')}}">Beranda </a>
                                         </li>
                                         <li>
-                                            <a href="contact.html">Contact</a>
+                                            <a href="{{URL('sosok')}}">Sosok</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{URL('swara-nusvantara')}}">Swara Nusvantara</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{URL('laporan-sahabat')}}">Laporan Sahabat</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{URL('dukungan-sahabat')}}">Dukungan Sahabat</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -361,9 +317,7 @@
                     <div class="col-xl-6">
                         <div class="about-one__right">
                             <div class="section-title text-left">
-                                <div class="section-title__icon">
-                                    <span class="fa fa-star"></span>
-                                </div>
+                                <div class="section-title__icon"></div>
                                 <span class="section-title__tagline">{{$lihat_profils->text1_profils}}</span>
                                 <h2 class="section-title__title">{{$lihat_profils->text2_profils}}</h2>
                             </div>
