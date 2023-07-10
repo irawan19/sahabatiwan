@@ -47,6 +47,31 @@ class TestimoniController extends AdminCoreController
             return redirect('dashboard/testimoni');
     }
 
+    public function publikasi($id_testimonis=0)
+    {
+        $link_testimoni = 'testimoni';
+        if (General::hakAkses($link_testimoni, 'baca') == 'true') {
+            $cek_testimonis = Testimoni::where('id_testimonis',$id_testimonis)->first();
+            if(!empty($cek_testimonis))
+            {
+                if($cek_testimonis->status_publikasi_testimonis == 0)
+                    $status_publikasi_testimonis = 1;
+                else
+                    $status_publikasi_testimonis = 0;
+
+                $testimoni_data = [
+                    'status_publikasi_testimonis' => $status_publikasi_testimonis,
+                ];
+                Testimoni::where('id_testimonis',$id_testimonis)
+                        ->update($testimoni_data);
+                return redirect('dashboard/testimoni');
+            }
+            else
+                return redirect('dashboard/testimoni');
+        } else
+            return redirect('dashboard/testimoni');
+    }
+
     public function baca($id_testimonis=0)
     {
         $link_testimoni = 'testimoni';

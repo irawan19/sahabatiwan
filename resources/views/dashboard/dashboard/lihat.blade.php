@@ -59,8 +59,8 @@
 					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-list')}}"></use>
 					                    </svg>
 					                </div>
-					                <div class="text-value-lg">{{General::konversiNilai($total_pesanans)}} <span>{{General::konversiNilaiString($total_pesanans)}}</span></div>
-					                <div class="textnotifberanda">Pesanan Hari Ini</div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_testimonis)}} <span>{{General::konversiNilaiString($total_testimonis)}}</span></div>
+					                <div class="textnotifberanda">Testimoni</div>
 					            </div>
 					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
 					        </div>
@@ -75,8 +75,8 @@
 					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-tag')}}"></use>
 					                    </svg>
 					                </div>
-					                <div class="text-value-lg">{{General::konversiNilai($total_items)}} <span>{{General::konversiNilaiString($total_items)}}</span></div>
-					                <div class="textnotifberanda">Item</div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_beritas)}} <span>{{General::konversiNilaiString($total_beritas)}}</span></div>
+					                <div class="textnotifberanda">Berita</div>
 					            </div>
 					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
 					        </div>
@@ -91,8 +91,8 @@
 					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-user-follow')}}"></use>
 					                    </svg>
 					                </div>
-					                <div class="text-value-lg">{{General::konversiNilai($total_pelanggans)}} <span>{{General::konversiNilaiString($total_pelanggans)}}</span></div>
-					                <div class="textnotifberanda">Pembeli</div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_artikels)}} <span>{{General::konversiNilaiString($total_artikels)}}</span></div>
+					                <div class="textnotifberanda">Artikel</div>
 					            </div>
 					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
 					        </div>

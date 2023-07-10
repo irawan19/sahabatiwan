@@ -46,9 +46,6 @@
 	               	@else
 	               		@php($ambil_kembali = URL('dashboard/testimoni'))
 	               	@endif
-					@if($baca_testimonis->status_publikasi_testimonis == 0)
-						{{General::publikasi($link_testimoni, 'dashboard/testimoni/publikasi/'.$baca_testimonis->id_testimonis)}}
-					@endif
 					{{General::kembali($ambil_kembali)}}
 				</div>
 			</div>

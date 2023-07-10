@@ -30,10 +30,10 @@ class DashboardController extends AdminCoreController
     public function index()
     {
         $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
-        $data['total_pesanans']                 = 0;
-        $data['total_items']                    = 0;
-        $data['total_pelanggans']               = 0;
-        $data['total_admins']                   = 0;
+        $data['total_testimonis']               = 0;
+        $data['total_beritas']                  = 0;
+        $data['total_artikels']                 = 0;
+        $data['total_admins']                   = User::count();
         return view('dashboard.dashboard.lihat',$data);
     }
 

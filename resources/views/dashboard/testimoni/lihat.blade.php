@@ -29,7 +29,6 @@
 						    			<th width="5px"></th>
 						    		@endif
 				    				<th class="nowrap">Tanggal</th>
-				    				<th class="nowrap">Foto</th>
 				    				<th class="nowrap">Nama</th>
 				    				<th class="nowrap">Profesi</th>
 				    				<th class="nowrap">Status</th>
@@ -47,11 +46,6 @@
 								    			<td class="nowrap">{{General::bacaButton($link_testimoni, 'dashboard/testimoni/baca/'.$testimonis->id_testimonis)}}</td>
 								    		@endif
 								    		<td class="nowrap">{{General::ubahDBKeTanggalwaktu($testimonis->created_at)}}</td>
-								    		<td class="nowrap">
-                                                <a data-fancybox="gallery" href="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}">
-                                                    <img src="{{ URL::asset('storage/'.$testimonis->foto_testimonis) }}" width="108">
-                                                </a>
-                                            </td>
 								    		<td class="nowrap">{{$testimonis->nama_testimonis}}</td>
 								    		<td class="nowrap">{{$testimonis->profesi_testimonis}}</td>
 								    		<td class="nowrap center-align">
@@ -74,14 +68,12 @@
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_testimoni) != 0)
-											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
+											<td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
+											<td colspan="3" class="center-align">Tidak ada data ditampilkan</td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@endif
