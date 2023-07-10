@@ -68,7 +68,7 @@
                 <div class="main-menu__wrapper">
                     <div class="main-menu__wrapper-inner">
                         <div class="main-menu__logo">
-                            <a href="{{URL('/')}}"><img src="{{URL::asset('storage/logo/logopublic.png')}}" alt=""></a>
+                            <a href="{{URL('/')}}"><img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis)}}" alt=""></a>
                         </div>
                         <div class="main-menu__top">
                             <div class="main-menu__top-inner">

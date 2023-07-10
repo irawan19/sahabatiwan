@@ -1,42 +1,26 @@
 <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
-        <x-validation-errors class="mb-4" />
-
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="text" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
+<form method="post" action="{{ route('login') }}">
+        @csrf
+        <div class="form-group">
+            <label class="form-col-form-label" for="email">Email</label>
+            <input id="email" class="form-control {{ General::validForm($errors->first('email')) }}" autofocus type="text" placeholder="Username atau email" name="email" value="{{Request::old('email')}}">
+            {{General::pesanErrorForm($errors->first('email'))}}
+        </div>
+        <div class="form-group">
+            <label class="form-col-form-label" for="password">Password</label>
+            <input id="password" class="form-control {{ General::validForm($errors->first('password')) }}" type="password" placeholder="Password" name="password" autocomplete="current-password">
+            {{General::pesanErrorForm($errors->first('password'))}}
+        </div>
+        <div class="row" style="margin-bottom:40px;">
+            <div class="col-12">
                 <label for="remember_me" class="flex items-center">
                     <x-checkbox id="remember_me" name="remember" />
                     <span class="ml-2 text-sm text-gray-600">{{ __('Ingat saya') }}</span>
                 </label>
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-button>
+            <div class="col-12">
+                <button type="submit" style="width:100%" class="btn btn-login" type="button">Login</button>
             </div>
-        </form>
-    </x-authentication-card>
+        </div>
+    </form>
 </x-guest-layout>
