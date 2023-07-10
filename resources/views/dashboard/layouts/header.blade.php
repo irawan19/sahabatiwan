@@ -1,4 +1,3 @@
-@php($lihat_konfigurasi_aplikasis 	= \App\Models\Master_konfigurasi_aplikasi::first())
 @php($ambil_level_sistems 			= \App\Models\Master_level_sistem::where('id_level_sistems',Auth::user()->level_sistems_id)
 																	->first())
 @php($tanggal_sekarang				= date('Y-m-d'))
@@ -8,7 +7,7 @@
 	</svg>
 </button>
 <a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="#">
-	<img class="c-header-brand-minimized c-d-dark-none" src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_text_konfigurasi_aplikasis)}}" width="46" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
+	<img class="c-header-brand-minimized c-d-dark-none" src="{{URL::asset('storage/'.$ambil_konfigurasi_aplikasis->logo_text_konfigurasi_aplikasis)}}" width="46" alt="{{$ambil_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
 </a>
 <b class="jam">{{General::ubahDBKeTanggal($tanggal_sekarang)}}, <onload="timeJavascript()" id="output"></b>
 <ul class="c-header-nav ml-auto"></ul>
@@ -46,7 +45,7 @@
 		  	</div>
 		  	<div class="dropdown-header py-2" style="background-color: #edc20f; color: #fff">
 		  		<strong>
-			  		{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}
+			  		{{$ambil_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}
 		  		</strong>
 		  	</div>
 		  	<div class="dropdown-header bg-light py-2">

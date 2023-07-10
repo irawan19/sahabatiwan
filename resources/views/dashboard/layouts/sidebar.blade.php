@@ -1,7 +1,6 @@
-@php($lihat_konfigurasi_aplikasis = \App\Models\Master_konfigurasi_aplikasi::first())
-@php($nama_logo 			= 'Logo '.$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis)
-@php($url_logo 				= $lihat_konfigurasi_aplikasis->logo_text_konfigurasi_aplikasis)
-@php($url_logo_minimized 	= $lihat_konfigurasi_aplikasis->icon_konfigurasi_aplikasis)
+@php($nama_logo 			= 'Logo '.$ambil_konfigurasi_aplikasis->nama_konfigurasi_aplikasis)
+@php($url_logo 				= $ambil_konfigurasi_aplikasis->logo_text_konfigurasi_aplikasis)
+@php($url_logo_minimized 	= $ambil_konfigurasi_aplikasis->icon_konfigurasi_aplikasis)
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show c-sidebar-unfoldable" id="sidebar">
 	<div class="c-sidebar-brand d-md-down-none">
 		<a href="{{URL('/')}}" target="_blank">
