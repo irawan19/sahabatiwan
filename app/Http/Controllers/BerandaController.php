@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Storage;
 use App\Models\Master_konfigurasi_aplikasi;
-use App\Models\Master_sosial_media;
 use App\Models\Master_slideshow;
 use App\Models\Master_profil;
 use App\Models\Testimoni;
@@ -16,7 +15,6 @@ class BerandaController extends Controller
     {
         $data['tanggal_sekarang']               = date('Y-m-d');
         $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
-        $data['lihat_sosial_medias']            = Master_sosial_media::get();
         $data['lihat_slideshows']               = Master_slideshow::get();
         $data['lihat_profils']                  = Master_profil::first();
         $data['lihat_testimonis']               = Testimoni::where('status_publikasi_testimonis',1)->get();

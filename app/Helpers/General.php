@@ -285,6 +285,28 @@ class General
 							</button>';
 			}
 		}
+
+		public static function publikasi($link_menus = '', $link = '')
+		{
+			if (General::hakAkses($link_menus, 'edit') == 'true') {
+				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-success">
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-check') . '"></use>
+								</svg> Publikasi
+							</a>';
+			}
+		}
+
+		public static function nonpublikasi($link_menus = '', $link = '')
+		{
+			if (General::hakAkses($link_menus, 'edit') == 'true') {
+				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-danger">
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-ban') . '"></use>
+								</svg> Belum Dipublikasi
+							</a>';
+			}
+		}
 	//Tombol
 
     //Library

@@ -1,3 +1,5 @@
+@php($lihat_konfigurasi_aplikasis       = \App\Models\Master_konfigurasi_aplikasi::first())
+@php($lihat_sosial_medias               = \App\Models\Master_sosial_media::get())
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,13 +40,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity-responsive.css')}}" />
-    <style>
-        @media (max-width: 1399px) {
-            .main-menu__logo a img {
-                width:89px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{URL::asset('template/front/css/custom.css')}}" />
 </head>
 
 <body class="custom-cursor">
