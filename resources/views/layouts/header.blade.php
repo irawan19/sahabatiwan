@@ -26,7 +26,7 @@
                                 </li>
                             </ul>
                             <ul class="list-unstyled main-menu__top-menu">
-                                <li><b class="jam">{{General::ubahDBKeTanggal($tanggal_sekarang)}}, <onload="timeJavascript()" id="output"></b></li>
+                                <li></li>
                             </ul>
                         </div>
                     </div>

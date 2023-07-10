@@ -38,11 +38,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity-responsive.css')}}" />
-    <style>
-        .jam{
-            color: #000 !important;
-        }
-    </style>
 </head>
 
 <body class="custom-cursor">
@@ -109,16 +104,6 @@
 
     <!-- template js -->
     <script src="{{URL::asset('template/front/js/govity.js')}}"></script>
-
-    <script type="text/javascript">
-        window.setTimeout("timeJavascript()",1000);
-        function timeJavascript()
-        {     
-            var dateNow = new Date().toLocaleTimeString("en-US",{timeZone: "Asia/Jakarta", hour12: false});
-            setTimeout("timeJavascript()",1000);
-            document.getElementById("output").innerHTML = dateNow;
-        }
-    </script>
 </body>
 
 </html>
