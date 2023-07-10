@@ -58,7 +58,7 @@ class General
 	//Auto Increment
 		public static function AutoIncrementKeyMenus($table='',$id='', $id_menus='')
 		{
-			$autoincrement 		= DB::table($table)->max($id)->where('menus_id',$id_menus);
+			$autoincrement 		= DB::table($table)->where('menus_id',$id_menus)->max($id);
 			$id_auto_increment 	= $autoincrement + 1;
 			return $id_auto_increment;
 		}

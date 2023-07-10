@@ -19,6 +19,7 @@ use App\Http\Controllers\Dashboard\KonfigurasiAkunController as DashboardKonfigu
 use App\Http\Controllers\Dashboard\SlideshowController as DashboardSlideshow;
 use App\Http\Controllers\Dashboard\ProfilController as DashboardProfil;
 use App\Http\Controllers\Dashboard\SosialMediaController as DashboardSosialMedia;
+use App\Http\Controllers\Dashboard\TestimoniController as DashboardTestimoni;
 
 //Konfigurasi Aplikasi
 use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
@@ -87,6 +88,14 @@ Route::middleware([
                 Route::get('/edit/{id}', [DashboardSosialMedia::class, 'edit']);
                 Route::post('/prosesedit/{id}', [DashboardSosialMedia::class, 'prosesedit']);
                 Route::get('/hapus/{id}', [DashboardSosialMedia::class, 'hapus']);
+            });
+
+            //Testimoni
+            Route::group(['prefix' => 'testimoni'], function() {
+                Route::get('/', [DashboardTestimoni::class, 'index']);
+                Route::get('/cari', [DashboardTestimoni::class, 'cari']);
+                Route::get('/publikasi/{id}', [DashboardTestimoni::class, 'publikasi']);
+                Route::get('/hapus/{id}', [DashboardTestimoni::class, 'hapus']);
             });
 
         //Konfigurasi Aplikasi

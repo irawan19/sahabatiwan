@@ -144,7 +144,9 @@
                     <div class="col-xl-6">
                         <div class="about-one__right">
                             <div class="section-title text-left">
-                                <div class="section-title__icon"></div>
+                                <div class="section-title__icon">
+                                    <span class="fa fa-star"></span>
+                                </div>
                                 <span class="section-title__tagline">{{$lihat_profils->text1_profils}}</span>
                                 <h2 class="section-title__title">{{$lihat_profils->text2_profils}}</h2>
                             </div>
@@ -570,193 +572,63 @@
                     <div class="section-title__icon">
                         <span class="fa fa-star"></span>
                     </div>
-                    <span class="section-title__tagline">Our testimonials</span>
-                    <h2 class="section-title__title">People are appreciating
-                        <br> our city & work?</h2>
+                    <span class="section-title__tagline">Testimoni</span>
+                    <h2 class="section-title__title">Testimonial {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}</h2>
                 </div>
                 <div class="testimonial-one__bottom">
-                    <div class="testimonial-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
-                        "items": 3,
-                        "margin": 30,
-                        "smartSpeed": 700,
-                        "loop":true,
-                        "autoplay": false,
-                        "nav":false,
-                        "dots":false,
-                        "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-                        "responsive":{
-                            "0":{
-                                "items":1
-                            },
-                            "768":{
-                                "items":2
-                            },
-                            "992":{
-                                "items": 2
+                    @if(!$lihat_testimonis->isEmpty())
+                        <div class="testimonial-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+                            "items": 3,
+                            "margin": 30,
+                            "smartSpeed": 700,
+                            "loop":true,
+                            "autoplay": false,
+                            "nav":false,
+                            "dots":false,
+                            "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                            "responsive":{
+                                "0":{
+                                    "items":1
+                                },
+                                "768":{
+                                    "items":2
+                                },
+                                "992":{
+                                    "items": 2
+                                }
                             }
-                        }
-                    }'>
-                        <!--Testimonial One Single Start-->
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__shape-2">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
-                                    <p class="testimonial-one__text">Leverage agile frameworks to provide a robust
-                                        synopsis
-                                        for
-                                        high level overviews. Iterative approaches to corporate strategy data foster to
-                                        collaborative thinking.</p>
-                                    <div class="testimonial-one__client-info">
-                                        <div class="testimonial-one__client-img-box">
-                                            <div class="testimonial-one__client-img">
-                                                <img src="{{URL::asset('template/front/images/testimonial/testimonial-1-1.jpg')}}" alt="">
-                                            </div>
+                        }'>
+                        @foreach($lihat_testimonis as $testimonis)
+                            <div class="item">
+                                <div class="testimonial-one__single">
+                                    <div class="testimonial-one__single-inner">
+                                        <div class="testimonial-one__shape-1">
+                                            <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
                                         </div>
-                                        <div class="testimonial-one__client-content">
-                                            <div class="testimonial-one__client-rating">
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
+                                        <div class="testimonial-one__shape-2">
+                                            <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
+                                        </div>
+                                        <div class="testimonial-one__quote">
+                                            <span class="icon-quote"></span>
+                                        </div>
+                                        <p class="testimonial-one__text">{!! nl2br($testimonis->konten_testimonis) !!}</p>
+                                        <div class="testimonial-one__client-info">
+                                            <div class="testimonial-one__client-img-box">
+                                                <div class="testimonial-one__client-img">
+                                                    <img src="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}" alt="">
+                                                </div>
                                             </div>
-                                            <h3 class="testimonial-one__client-name">Donald hardson</h3>
-                                            <p class="testimonial-one__client-sub-title">CEO - CO Founder</p>
+                                            <div class="testimonial-one__client-content">
+                                                <h3 class="testimonial-one__client-name">{{$testimonis->nama_testimonis}}</h3>
+                                                <p class="testimonial-one__client-sub-title">{{$testimonis->profesi_testimonis}}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                        <!--Testimonial One Single End-->
-                        <!--Testimonial One Single Start-->
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__shape-2">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
-                                    <p class="testimonial-one__text">Leverage agile frameworks to provide a robust
-                                        synopsis
-                                        for
-                                        high level overviews. Iterative approaches to corporate strategy data foster to
-                                        collaborative thinking.</p>
-                                    <div class="testimonial-one__client-info">
-                                        <div class="testimonial-one__client-img-box">
-                                            <div class="testimonial-one__client-img">
-                                                <img src="{{URL::asset('template/front/images/testimonial/testimonial-1-2.jpg')}}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-one__client-content">
-                                            <div class="testimonial-one__client-rating">
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                            <h3 class="testimonial-one__client-name">Aleesha brown</h3>
-                                            <p class="testimonial-one__client-sub-title">CEO - CO Founder</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Testimonial One Single End-->
-                        <!--Testimonial One Single Start-->
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__shape-2">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
-                                    <p class="testimonial-one__text">Leverage agile frameworks to provide a robust
-                                        synopsis
-                                        for
-                                        high level overviews. Iterative approaches to corporate strategy data foster to
-                                        collaborative thinking.</p>
-                                    <div class="testimonial-one__client-info">
-                                        <div class="testimonial-one__client-img-box">
-                                            <div class="testimonial-one__client-img">
-                                                <img src="{{URL::asset('template/front/images/testimonial/testimonial-1-3.jpg')}}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-one__client-content">
-                                            <div class="testimonial-one__client-rating">
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                            <h3 class="testimonial-one__client-name">Aleesha martin</h3>
-                                            <p class="testimonial-one__client-sub-title">CEO - CO Founder</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Testimonial One Single End-->
-                        <!--Testimonial One Single Start-->
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__shape-2">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
-                                    <p class="testimonial-one__text">Leverage agile frameworks to provide a robust
-                                        synopsis
-                                        for
-                                        high level overviews. Iterative approaches to corporate strategy data foster to
-                                        collaborative thinking.</p>
-                                    <div class="testimonial-one__client-info">
-                                        <div class="testimonial-one__client-img-box">
-                                            <div class="testimonial-one__client-img">
-                                                <img src="{{URL::asset('template/front/images/testimonial/testimonial-1-4.jpg')}}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-one__client-content">
-                                            <div class="testimonial-one__client-rating">
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                            <h3 class="testimonial-one__client-name">David coper</h3>
-                                            <p class="testimonial-one__client-sub-title">CEO - CO Founder</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Testimonial One Single End-->
-                    </div>
+                    @endif
                 </div>
             </div>
         </section>
