@@ -35,12 +35,9 @@ class General
 
 		public static function totalHakAkses($link_akses = '')
 		{
-			$jumlah_lihat 	= 0;
 			$jumlah_baca 	= 0;
 			$jumlah_edit 	= 0;
 			$jumlah_hapus 	= 0;
-			if (General::hakAkses($link_akses, 'lihat') == 'true')
-				$jumlah_lihat = 1;
 
 			if (General::hakAkses($link_akses, 'baca') == 'true')
 				$jumlah_baca = 1;
@@ -51,7 +48,7 @@ class General
 			if (General::hakAkses($link_akses, 'hapus') == 'true')
 				$jumlah_hapus = 1;
 
-			return $jumlah_lihat + $jumlah_baca + $jumlah_edit + $jumlah_hapus;
+			return $jumlah_baca + $jumlah_edit + $jumlah_hapus;
 		}
 	//Hak Akses
 
@@ -225,6 +222,17 @@ class General
 			if (General::hakAkses($link_menus, 'baca') == 'true') {
 				echo 	'<a class="dropdown-item" href="' . URL($link) . '" style="color:orange">
 								<svg class="c-icon" style="margin-right:5px;margin-top:-3px">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-folder-open') . '"></use>
+								</svg> Baca
+							</a>';
+			}
+		}
+
+		public static function bacaButton($link_menus = '', $link = '')
+		{
+			if (General::hakAkses($link_menus, 'baca') == 'true') {
+				echo 	'<a href="' . URL($link) . '" class="btn btn-sm btn-warning">
+								<svg class="c-icon" style="margin-right:5px;">
 									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-folder-open') . '"></use>
 								</svg> Baca
 							</a>';

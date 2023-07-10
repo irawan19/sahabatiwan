@@ -94,6 +94,7 @@ Route::middleware([
             Route::group(['prefix' => 'testimoni'], function() {
                 Route::get('/', [DashboardTestimoni::class, 'index']);
                 Route::get('/cari', [DashboardTestimoni::class, 'cari']);
+                Route::get('/baca/{id}', [DashboardTestimoni::class, 'baca']);
                 Route::get('/publikasi/{id}', [DashboardTestimoni::class, 'publikasi']);
                 Route::get('/hapus/{id}', [DashboardTestimoni::class, 'hapus']);
             });

@@ -598,34 +598,34 @@
                             }
                         }
                     }'>
-                    @foreach($lihat_testimonis as $testimonis)
-                        <div class="item">
-                            <div class="testimonial-one__single">
-                                <div class="testimonial-one__single-inner">
-                                    <div class="testimonial-one__shape-1">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__shape-2">
-                                        <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
-                                    </div>
-                                    <div class="testimonial-one__quote">
-                                        <span class="icon-quote"></span>
-                                    </div>
-                                    <p class="testimonial-one__text">{!! nl2br($testimonis->konten_testimonis) !!}</p>
-                                    <div class="testimonial-one__client-info">
-                                        <div class="testimonial-one__client-img-box">
-                                            <div class="testimonial-one__client-img">
-                                                <img src="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}" alt="">
-                                            </div>
+                        @foreach($lihat_testimonis as $testimonis)
+                            <div class="item">
+                                <div class="testimonial-one__single">
+                                    <div class="testimonial-one__single-inner">
+                                        <div class="testimonial-one__shape-1">
+                                            <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-1.png')}}" alt="">
                                         </div>
-                                        <div class="testimonial-one__client-content">
-                                            <h3 class="testimonial-one__client-name">{{$testimonis->nama_testimonis}}</h3>
-                                            <p class="testimonial-one__client-sub-title">{{$testimonis->profesi_testimonis}}</p>
+                                        <div class="testimonial-one__shape-2">
+                                            <img src="{{URL::asset('template/front/images/shapes/testimonial-one-shape-2.png')}}" alt="">
+                                        </div>
+                                        <div class="testimonial-one__quote">
+                                            <span class="icon-quote"></span>
+                                        </div>
+                                        <p class="testimonial-one__text">{!! nl2br($testimonis->konten_testimonis) !!}</p>
+                                        <div class="testimonial-one__client-info">
+                                            <div class="testimonial-one__client-img-box">
+                                                <div class="testimonial-one__client-img">
+                                                    <img src="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-one__client-content">
+                                                <h3 class="testimonial-one__client-name">{{$testimonis->nama_testimonis}}</h3>
+                                                <p class="testimonial-one__client-sub-title">{{$testimonis->profesi_testimonis}}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 @endif
