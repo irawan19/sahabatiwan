@@ -93,4 +93,20 @@ class TestimoniController extends AdminCoreController
             return redirect('dashboard/testimoni');
     }
 
+    public function hapus($id_testimonis=0)
+    {
+        $link_testimoni = 'testimoni';
+        if (General::hakAkses($link_testimoni, 'baca') == 'true') {
+            $cek_testimonis = Testimoni::where('id_testimonis',$id_testimonis)->first();
+            if(!empty($cek_testimonis))
+            {
+                Testimoni::where('id_testimonis',$id_testimonis)->delete();
+                return response()->json(["sukses" => "sukses"], 200);
+            }
+            else
+                return redirect('dashboard/testimoni');
+        } else
+            return redirect('dashboard/testimoni');
+    }
+
 }

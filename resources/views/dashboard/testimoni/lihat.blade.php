@@ -43,8 +43,17 @@
 										@endif
 								    	<tr {{$textbold}}>
 											@if(General::totalHakAkses($link_testimoni) != 0)
-								    			<td class="nowrap">{{General::bacaButton($link_testimoni, 'dashboard/testimoni/baca/'.$testimonis->id_testimonis)}}</td>
-								    		@endif
+					    						<td class="nowrap">
+											      	<div class="dropdown">
+										            	<button class="btn btn-sm btn-success dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+										            	<div class="dropdown-menu" aria-labelledby="dropdownMenu2" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 34px, 0px); top: 0px; left: 0px; will-change: transform;">
+										            		{{General::baca($link_testimoni,'dashboard/testimoni/baca/'.$testimonis->id_testimonis)}}
+										            		<div class="dropdown-divider"></div>
+										            		{{General::hapus($link_testimoni,'dashboard/testimoni/hapus/'.$testimonis->id_testimonis, $testimonis->nam_testimonis)}}
+										            	</div>
+										            </div>
+											    </td>
+									    	@endif
 								    		<td class="nowrap">{{General::ubahDBKeTanggalwaktu($testimonis->created_at)}}</td>
 								    		<td class="nowrap">{{$testimonis->nama_testimonis}}</td>
 								    		<td class="nowrap">{{$testimonis->profesi_testimonis}}</td>
@@ -68,12 +77,14 @@
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_testimoni) != 0)
-											<td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="3" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@endif
