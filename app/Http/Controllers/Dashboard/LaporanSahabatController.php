@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Helpers\General;
 use App\Models\Laporan_sahabat;
+use Storage;
 
 class LaporanSahabatController extends AdminCoreController
 {
@@ -75,6 +76,7 @@ class LaporanSahabatController extends AdminCoreController
             $cek_laporan_sahabats = Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->first();
             if(!empty($cek_laporan_sahabats))
             {
+                Storage::disk('public')->delete($cek_laporan_sahabats->file_laporan_sahabats);
                 Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->delete();
                 return response()->json(["sukses" => "sukses"], 200);
             }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Helpers\General;
 use App\Models\Testimoni;
+use Storage;
 
 class TestimoniController extends AdminCoreController
 {
@@ -99,6 +100,7 @@ class TestimoniController extends AdminCoreController
             $cek_testimonis = Testimoni::where('id_testimonis',$id_testimonis)->first();
             if(!empty($cek_testimonis))
             {
+                Storage::disk('public')->delete($cek_testimonis->foto_testimonis);
                 Testimoni::where('id_testimonis',$id_testimonis)->delete();
                 return response()->json(["sukses" => "sukses"], 200);
             }

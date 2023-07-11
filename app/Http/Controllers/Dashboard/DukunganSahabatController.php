@@ -3,84 +3,86 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Helpers\General;
-use App\Models\Laporan_sahabat;
+use App\Models\Dukungan_sahabat;
+use Storage;
 
-class LaporanSahabatController extends AdminCoreController
+class DukunganSahabatController extends AdminCoreController
 {
 
     public function index(Request $request)
     {
-        $link_laporan_sahabat = 'laporan_sahabat';
-        if (General::hakAkses($link_laporan_sahabat, 'lihat') == 'true') {
-            $data['link_laporan_sahabat']           = $link_laporan_sahabat;
-            $data['hasil_kata']                     = '';
-            $url_sekarang                           = $request->fullUrl();
-            $data['lihat_laporan_sahabats']         = Laporan_sahabat::orderBy('status_baca_laporan_sahabats')
+        $link_dukungan_sahabat = 'dukungan_sahabat';
+        if (General::hakAkses($link_dukungan_sahabat, 'lihat') == 'true') {
+            $data['link_dukungan_sahabat']              = $link_dukungan_sahabat;
+            $data['hasil_kata']                         = '';
+            $url_sekarang                               = $request->fullUrl();
+            $data['lihat_dukungan_sahabats']            = Dukungan_sahabat::orderBy('status_baca_dukungan_sahabats')
                                                                     ->orderBy('created_at')
                                                                     ->paginate(10);
             session()->forget('halaman');
             session()->forget('hasil_kata');
             session(['halaman' => $url_sekarang]);
-            return view('dashboard.laporan_sahabat.lihat', $data);
+            return view('dashboard.dukungan_sahabat.lihat', $data);
         } else
             return redirect('dashboard');
     }
 
     public function cari(Request $request)
     {
-        $link_laporan_sahabat = 'laporan_sahabat';
-        if (General::hakAkses($link_laporan_sahabat, 'lihat') == 'true') {
-            $data['link_laporan_sahabat']   = $link_laporan_sahabat;
-            $url_sekarang                   = $request->fullUrl();
-            $hasil_kata                     = $request->cari_kata;
-            $data['hasil_kata']             = $hasil_kata;
-            $data['lihat_laporan_sahabats'] = Laporan_sahabat::where('nama_laporan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
-                                                                ->orWhere('telepon_laporan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
-                                                                ->orderBy('status_baca_laporan_sahabats')
+        $link_dukungan_sahabat = 'dukungan_sahabat';
+        if (General::hakAkses($link_dukungan_sahabat, 'lihat') == 'true') {
+            $data['link_dukungan_sahabat']      = $link_dukungan_sahabat;
+            $url_sekarang                       = $request->fullUrl();
+            $hasil_kata                         = $request->cari_kata;
+            $data['hasil_kata']                 = $hasil_kata;
+            $data['lihat_dukungan_sahabats']    = Dukungan_sahabat::where('nama_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                ->orWhere('telepon_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                ->orderBy('status_baca_dukungan_sahabats')
                                                                 ->orderBy('created_at')
                                                                 ->paginate(10);
             session(['halaman' => $url_sekarang]);
             session(['hasil_kata' => $hasil_kata]);
-            return view('dashboard.laporan_sahabat.lihat', $data);
+            return view('dashboard.dukungan_sahabat.lihat', $data);
         } else
-            return redirect('dashboard/laporan_sahabat');
+            return redirect('dashboard/dukungan_sahabat');
     }
 
-    public function baca($id_laporan_sahabats=0)
+    public function baca($id_dukungan_sahabats=0)
     {
-        $link_laporan_sahabat = 'laporan_sahabat';
-        if (General::hakAkses($link_laporan_sahabat, 'baca') == 'true') {
-            $cek_laporan_sahabats = Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->first();
-            if(!empty($cek_laporan_sahabats))
+        $link_dukungan_sahabat = 'dukungan_sahabat';
+        if (General::hakAkses($link_dukungan_sahabat, 'baca') == 'true') {
+            $cek_dukungan_sahabats = Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->first();
+            if(!empty($cek_dukungan_sahabats))
             {
-                $data['link_laporan_sahabat']       = $link_laporan_sahabat;
-                $data['baca_laporan_sahabats']      = $cek_laporan_sahabats;
-                $laporan_sahabats_data = [
-                    'status_baca_laporan_sahabats'    => 1
+                $data['link_dukungan_sahabat']       = $link_dukungan_sahabat;
+                $data['baca_dukungan_sahabats']      = $cek_dukungan_sahabats;
+                $dukungan_sahabats_data = [
+                    'status_baca_dukungan_sahabats'    => 1
                 ];
-                Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->update($laporan_sahabats_data);
-                return view('dashboard.laporan_sahabat.baca',$data);
+                Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->update($dukungan_sahabats_data);
+                return view('dashboard.dukungan_sahabat.baca',$data);
             }
             else
-                return redirect('dashboard/laporan_sahabat');
+                return redirect('dashboard/dukungan_sahabat');
         } else
-            return redirect('dashboard/laporan_sahabat');
+            return redirect('dashboard/dukungan_sahabat');
     }
 
-    public function hapus($id_laporan_sahabats=0)
+    public function hapus($id_dukungan_sahabats=0)
     {
-        $link_laporan_sahabat = 'laporan_sahabat';
-        if (General::hakAkses($link_laporan_sahabat, 'baca') == 'true') {
-            $cek_laporan_sahabats = Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->first();
-            if(!empty($cek_laporan_sahabats))
+        $link_dukungan_sahabat = 'dukungan_sahabat';
+        if (General::hakAkses($link_dukungan_sahabat, 'baca') == 'true') {
+            $cek_dukungan_sahabats = Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->first();
+            if(!empty($cek_dukungan_sahabats))
             {
-                Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->delete();
+                Storage::disk('public')->delete($cek_dukungan_sahabats->file_dukungan_sahabats);
+                Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->delete();
                 return response()->json(["sukses" => "sukses"], 200);
             }
             else
-                return redirect('dashboard/laporan_sahabat');
+                return redirect('dashboard/dukungan_sahabat');
         } else
-            return redirect('dashboard/laporan_sahabat');
+            return redirect('dashboard/dukungan_sahabat');
     }
 
 }
