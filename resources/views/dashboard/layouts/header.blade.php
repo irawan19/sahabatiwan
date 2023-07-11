@@ -13,19 +13,25 @@
 <ul class="c-header-nav ml-auto"></ul>
 <ul class="c-header-nav">
 	<li class="c-header-nav-item dropdown d-md-down-none mx-2"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-   	    @php($pesanan 			= 0)
-        @php($total_notifikasi 	= $pesanan)
+   	    @php($testimoni 			= \App\Models\Testimoni::where('status_baca_testimonis',0)->count())
+        @php($total_notifikasi 		= $testimoni)
    		<svg class="c-icon">
    		  	<use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-bell')}}"></use>
    		</svg><span class="badge badge-pill badge-danger">{{$total_notifikasi}}</span></a>
    		<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0" style="width:250px">
    			<div class="dropdown-header bg-light">
-   				<strong>Ada {{$total_notifikasi}} Notifikasi</strong>
+   				<strong>
+					@if($total_notifikasi == 0)
+						Tidak ada notifikasi baru
+					@else
+						Ada {{$total_notifikasi}} notifikasi
+					@endif
+				</strong>
    			</div>
    			<a class="dropdown-item" href="{{URL('/dashboard/penjualan')}}">
-		   		<svg class="c-icon mr-2 text-danger">
-		   		  	<use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-file')}}"></use>
-		   		</svg> Pesanan Belum Selesai <span class="badge badge-pill badge-danger">{{$pesanan}}</span>
+		   		<svg class="c-icon mr-2 text-success">
+		   		  	<use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-comment-square')}}"></use>
+		   		</svg> Testimoni <span class="badge badge-pill badge-danger">{{$testimoni}}</span>
 		   	</a>
    		</div>
     </li>

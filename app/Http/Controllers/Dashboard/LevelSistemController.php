@@ -70,10 +70,7 @@ class LevelSistemController extends AdminCoreController
             $aturan = [
                 'nama_level_sistems'           => 'required',
             ];
-            $error_pesan = [
-                'nama_level_sistems.required'   => 'Form Nama Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $data = [
                 'nama_level_sistems'    => $request->nama_level_sistems,
@@ -174,10 +171,7 @@ class LevelSistemController extends AdminCoreController
                 $aturan = [
                     'nama_level_sistems'           => 'required',
                 ];
-                $error_pesan = [
-                    'nama_level_sistems.required'   => 'Form Nama Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
 
                 $data = [
                     'nama_level_sistems'    => $request->nama_level_sistems,

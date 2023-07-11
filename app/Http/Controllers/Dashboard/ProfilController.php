@@ -29,15 +29,7 @@ class ProfilController extends AdminCoreController
                 'konten_profils'                => 'required',
                 'url_youtube_profils'           => 'required',
             ];
-            $error_pesan = [
-                'text1_profils.required'            => 'Form Text 1 Harus Diisi.',
-                'text2_profils.required'            => 'Form Text 2 Harus Diisi.',
-                'nama_profils.required'             => 'Form Nama Harus Diisi.',
-                'keterangan_nama_profils.required'  => 'Form Keterangan Harus Diisi.',
-                'konten_profils.required'           => 'Form Konten Harus Diisi.',
-                'url_youtube_profils.required'      => 'Form URL Youtube Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $profils_data = [
                 'text1_profils'                     => $request->text1_profils,
@@ -55,10 +47,7 @@ class ProfilController extends AdminCoreController
                 $aturan = [
                     'userfile_foto1'     => 'required|mimes:png,jpg,jpeg,svg',
                 ];
-                $error_pesan = [
-                    'userfile_foto1.required'   => 'Form Foto 1 Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
     
                 $cek_foto1       = Master_profil::first();
                 if (!empty($cek_foto1)) {
@@ -84,10 +73,7 @@ class ProfilController extends AdminCoreController
                 $aturan = [
                     'userfile_foto2'     => 'required|mimes:png,jpg,jpeg,svg',
                 ];
-                $error_pesan = [
-                    'userfile_foto2.required'   => 'Form Foto 2 Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
     
                 $cek_foto2       = Master_profil::first();
                 if (!empty($cek_foto2)) {

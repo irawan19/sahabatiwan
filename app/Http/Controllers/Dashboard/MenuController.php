@@ -105,11 +105,7 @@ class MenuController extends AdminCoreController
                 'icon_menus'                  => 'required',
                 'nama_menus'                  => 'required',
             ];
-            $error_pesan = [
-                'icon_menus.required'           => 'Form Icon Harus Diisi.',
-                'nama_menus.required'           => 'Form Nama Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
         	$data = [
         		'icon_menus'	=> $request->icon_menus,
@@ -197,11 +193,7 @@ class MenuController extends AdminCoreController
                     'icon_menus'                  => 'required',
                     'nama_menus'                  => 'required',
                 ];
-                $error_pesan = [
-                    'icon_menus.required'           => 'Form Icon Harus Diisi.',
-                    'nama_menus.required'           => 'Form Nama Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
 
             	$data = [
                     'icon_menus'    => $request->icon_menus,
@@ -349,13 +341,7 @@ class MenuController extends AdminCoreController
                     'link_menus'        => 'required',
                     'nama_fiturs.0'     => 'required',
                 ];
-                $error_pesan = [
-                    'icon_menus.required'           => 'Form Icon Harus Diisi.',
-                    'nama_menus.required'           => 'Form Nama Harus Diisi.',
-                    'link_menus.required'           => 'Form Link Harus Diisi.',
-                    'nama_fiturs.0.required'        => 'Form Nama Fitur Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
 
             	$data = [
             		'menus_id'	=> $id_menus,
@@ -485,13 +471,7 @@ class MenuController extends AdminCoreController
                     'link_menus'        => 'required',
                     'nama_fiturs.0'     => 'required',
                 ];
-                $error_pesan = [
-                    'icon_menus.required'           => 'Form Icon Harus Diisi.',
-                    'nama_menus.required'           => 'Form Nama Harus Diisi.',
-                    'link_menus.required'           => 'Form Link Harus Diisi.',
-                    'nama_fiturs.0.required'        => 'Form Nama Fitur Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
 
             	$data = [
                     'icon_menus' => $request->icon_menus,

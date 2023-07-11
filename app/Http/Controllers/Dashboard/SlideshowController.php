@@ -61,13 +61,7 @@ class SlideshowController extends AdminCoreController
                 'text1_slideshows'          => 'required',
                 'text2_slideshows'           => 'required',
             ];
-
-            $error_pesan = [
-                'userfile_gambar_slideshow.required' => 'Form Gambar Harus Diisi.',
-                'text1_slideshows.required'          => 'Form Text 1 Harus Diisi.',
-                'text2_slideshows.required'          => 'Form Text 2 Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $nama_gambar_slideshow = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_gambar_slideshow')->getClientOriginalName())));
             $path_gambar_slideshow = 'slideshow/';
@@ -129,13 +123,7 @@ class SlideshowController extends AdminCoreController
                         'text1_slideshows' => 'required',
                         'text2_slideshows' => 'required',
                     ];
-
-                    $error_pesan = [
-                        'userfile_gambar_slideshow.required' => 'Form Gambar Harus Diisi.',
-                        'text1_slideshows.required' => 'Form Text 1 Harus Diisi.',
-                        'text2_slideshows.required' => 'Form Text 2 Harus Diisi.',
-                    ];
-                    $this->validate($request, $aturan, $error_pesan);
+                    $this->validate($request, $aturan);
 
                     $gambar_slideshow_lama = $cek_slideshows->gambar_slideshows;
                     if (Storage::disk('public')->exists($gambar_slideshow_lama))
@@ -158,12 +146,7 @@ class SlideshowController extends AdminCoreController
                         'text1_slideshows' => 'required',
                         'text2_slideshows' => 'required',
                     ];
-
-                    $error_pesan = [
-                        'text1_slideshows.required' => 'Form Text 1 Harus Diisi.',
-                        'text2_slideshows.required' => 'Form Text 2 Harus Diisi.',
-                    ];
-                    $this->validate($request, $aturan, $error_pesan);
+                    $this->validate($request, $aturan);
 
                     $slideshows_data = [
                         'text1_slideshows' => $request->text1_slideshows,

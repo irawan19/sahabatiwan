@@ -27,11 +27,7 @@ class KonfigurasiProfilController extends AdminCoreController
                 'userfile_foto_user'    => 'required|mimes:png,jpg,jpeg,svg',
                 'name'                  => 'required',
             ];
-            $error_pesan = [
-                'userfile_foto_user.required'   => 'Form Foto Harus Diisi.',
-                'name.required'                 => 'Form Nama Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $cek_foto_user       = User::where('id',$id_users)->first();
             if(!empty($cek_foto_user))
@@ -56,10 +52,7 @@ class KonfigurasiProfilController extends AdminCoreController
             $aturan = [
                 'name'                  => 'required',
             ];
-            $error_pesan = [
-                'name.required'                 => 'Form Nama Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $data = [
                 'name' 			     	=> $request->name,

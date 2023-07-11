@@ -33,13 +33,7 @@ class KonfigurasiAplikasiController extends AdminCoreController
                 'keywords_konfigurasi_aplikasis'            => 'required',
                 'email_konfigurasi_aplikasis'               => 'required',
             ];
-            $error_pesan = [
-                'nama_konfigurasi_aplikasis.required'       => 'Form Email Harus Diisi.',
-                'deskripsi_konfigurasi_aplikasis.required'  => 'Form Deskripsi Harus Diisi.',
-                'keywords_konfigurasi_aplikasis.required'   => 'Form Keywords Harus Diisi.',
-                'email_konfigurasi_aplikasis.required'      => 'Form Email Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $konfigurasi_aplikasi_data = [
                 'nama_konfigurasi_aplikasis'                    => $request->nama_konfigurasi_aplikasis,
@@ -68,10 +62,7 @@ class KonfigurasiAplikasiController extends AdminCoreController
             $aturan = [
                 'userfile_logo'     => 'required|mimes:png,jpg,jpeg,svg',
             ];
-            $error_pesan = [
-                'userfile_logo.required'   => 'Form Logo Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $cek_logo       = Master_konfigurasi_aplikasi::first();
             if (!empty($cek_logo)) {
@@ -109,10 +100,7 @@ class KonfigurasiAplikasiController extends AdminCoreController
             $aturan = [
                 'userfile_icon'             => 'required|mimes:png,jpg,jpeg,svg',
             ];
-            $error_pesan = [
-                'userfile_icon.required'    => 'Form Icon Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $cek_icon       = Master_konfigurasi_aplikasi::first();
             if (!empty($cek_icon)) {
@@ -150,10 +138,7 @@ class KonfigurasiAplikasiController extends AdminCoreController
             $aturan = [
                 'userfile_logo_text'            => 'required|mimes:png,jpg,jpeg,svg',
             ];
-            $error_pesan = [
-                'userfile_logo_text.required'   => 'Form Logo Text Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $cek_logo_text       = Master_konfigurasi_aplikasi::first();
             if (!empty($cek_logo_text)) {
@@ -191,10 +176,7 @@ class KonfigurasiAplikasiController extends AdminCoreController
             $aturan = [
                 'userfile_background_website'     => 'required|mimes:png,jpg,jpeg,svg',
             ];
-            $error_pesan = [
-                'userfile_background_website.required'   => 'Form Logo Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $cek_background_website       = Master_konfigurasi_aplikasi::first();
             if (!empty($cek_background_website)) {

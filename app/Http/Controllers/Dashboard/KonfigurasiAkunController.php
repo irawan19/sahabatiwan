@@ -23,12 +23,7 @@ class KonfigurasiAkunController extends AdminCoreController
                 'email'             => 'required|unique:users,email,'.$id_users.',id',
                 'password'			=> 'required'
             ];
-            $error_pesan = [
-                'username.required' => 'Form Username Harus Diisi.',
-                'email.required'   	=> 'Form Email Harus Diisi.',
-                'password.required'	=> 'Form Password Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
 	        $data = [
                 'username'              => $request->username,
@@ -43,11 +38,7 @@ class KonfigurasiAkunController extends AdminCoreController
                 'username'          => 'required|unique:users,username,'.$id_users.',id',
                 'email'             => 'required|unique:users,email,'.$id_users.',id',
             ];
-            $error_pesan = [
-                'username.required' => 'Form Username Harus Diisi.',
-                'email.required'   	=> 'Form Email Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
 	        $data = [
                 'username'              => $request->username,

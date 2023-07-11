@@ -66,11 +66,7 @@ class SosialMediaController extends AdminCoreController
                 'sosial_medias'                     => 'required',
                 'url_sosial_medias'                 => 'required',
             ];
-            $error_pesan = [
-                'sosial_medias.required'            => 'Form Sosial Media Harus Diisi.',
-                'url_sosial_medias.required'        => 'Form Url Harus Diisi.',
-            ];
-            $this->validate($request, $aturan, $error_pesan);
+            $this->validate($request, $aturan);
 
             $ambil_sosial_media = $request->sosial_medias;
             $pisah_sosial_media = explode('_',$ambil_sosial_media);
@@ -144,11 +140,7 @@ class SosialMediaController extends AdminCoreController
                     'sosial_medias'                     => 'required',
                     'url_sosial_medias'                 => 'required',
                 ];
-                $error_pesan = [
-                    'sosial_medias.required'            => 'Form Sosial Media Harus Diisi.',
-                    'url_sosial_medias.required'        => 'Form Url Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
 
                 $ambil_sosial_media = $request->sosial_medias;
             	$pisah_sosial_media = explode('_',$ambil_sosial_media);

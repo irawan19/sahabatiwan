@@ -84,16 +84,7 @@ class AdminController extends AdminCoreController
                     'email'                 => 'required|unique:users',
                     'password'              => 'required|string|min:6|confirmed',
                 ];
-                $error_pesan = [
-                    'userfile_foto_user.required'   => 'Form Foto Harus Dipilih.',
-                    'level_sistems_id.required'     => 'Form Level Sistem Harus Dipilih.',
-                    'name.required'                 => 'Form Nama Harus Diisi.',
-                    'username.required'             => 'Form Username Harus Diisi.',
-                    'email.required'                => 'Form Email Harus Diisi.',
-                    'email.unique'                  => 'Email Sudah Terdaftar, Silahkan Gunakan Email Lain.',
-                    'password.required'             => 'Form Password Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
 
                 $nama_foto_user = date('Ymd').date('His').str_replace(')','',str_replace('(','',str_replace(' ','-',$request->file('userfile_foto_user')->getClientOriginalName())));
                 $path_foto_user = 'user/';
@@ -119,15 +110,7 @@ class AdminController extends AdminCoreController
                     'email'                 => 'required|unique:users',
                     'password'              => 'required|string|min:6|confirmed',
                 ];
-                $error_pesan = [
-                    'level_sistems_id.required'     => 'Form Level Sistem Harus Dipilih.',
-                    'name.required'                 => 'Form Nama Harus Diisi.',
-                    'username.required'             => 'Form Username Harus Diisi.',
-                    'email.required'                => 'Form Email Harus Diisi.',
-                    'email.unique'                  => 'Email Sudah Terdaftar, Silahkan Gunakan Email Lain.',
-                    'password.required'             => 'Form Password Harus Diisi.',
-                ];
-                $this->validate($request, $aturan, $error_pesan);
+                $this->validate($request, $aturan);
 
                 $data = [
                     'level_sistems_id'   	=> $request->level_sistems_id,
@@ -233,16 +216,7 @@ class AdminController extends AdminCoreController
                             'email'                 => 'required|unique:users,email,'.$id_admins.',id',
                             'password'              => 'required|string|min:6|confirmed',
                         ];
-                        $error_pesan = [
-                            'userfile_foto_user.required'   => 'Form Foto Harus Dipilih.',
-                            'level_sistems_id.required'     => 'Form Level Sistem Harus Dipilih.',
-                            'name.required'                 => 'Form Nama Harus Diisi.',
-                            'username.required'             => 'Form Username Harus Diisi.',
-                            'email.required'                => 'Form Email Harus Diisi.',
-                            'email.unique'                  => 'Email Sudah Terdaftar, Silahkan Gunakan Email Lain.',
-                            'password.required'             => 'Form Password Harus Diisi.',
-                        ];
-                        $this->validate($request, $aturan, $error_pesan);
+                        $this->validate($request, $aturan);
 
                         $foto_user_lama        = $cek_admins->profile_photo_path;
                         if (Storage::disk('public')->exists($foto_user_lama))
@@ -271,15 +245,7 @@ class AdminController extends AdminCoreController
                             'email'                 => 'required|unique:users,email,'.$id_admins.',id',
                             'password'              => 'required|string|min:6|confirmed',
                         ];
-                        $error_pesan = [
-                            'level_sistems_id.required'     => 'Form Level Sistem Harus Dipilih.',
-                            'name.required'                 => 'Form Nama Harus Diisi.',
-                            'username.required'             => 'Form Username Harus Diisi.',
-                            'email.required'                => 'Form Email Harus Diisi.',
-                            'email.unique'                  => 'Email Sudah Terdaftar, Silahkan Gunakan Email Lain.',
-                            'password.required'             => 'Form Password Harus Diisi.',
-                        ];
-                        $this->validate($request, $aturan, $error_pesan);
+                        $this->validate($request, $aturan);
 
                 	    $data = [
                 	        'name' 			        => $request->name,
@@ -303,15 +269,7 @@ class AdminController extends AdminCoreController
                             'name'                  => 'required',
                             'email'                 => 'required|unique:users,email,'.$id_admins.',id',
                         ];
-                        $error_pesan = [
-                            'userfile_foto_user.required'   => 'Form Foto Harus Dipilih.',
-                            'level_sistems_id.required'     => 'Form Level Sistem Harus Dipilih.',
-                            'username.required'             => 'Form Username Harus Diisi.',
-                            'name.required'                 => 'Form Nama Harus Diisi.',
-                            'email.required'                => 'Form Email Harus Diisi.',
-                            'email.unique'                  => 'Email Sudah Terdaftar, Silahkan Gunakan Email Lain.',
-                        ];
-                        $this->validate($request, $aturan, $error_pesan);
+                        $this->validate($request, $aturan);
 
                         $foto_user_lama        = $cek_admins->profile_photo_path;
                         if (Storage::disk('public')->exists($foto_user_lama))
@@ -338,14 +296,7 @@ class AdminController extends AdminCoreController
                             'name'                  => 'required',
                             'email'                 => 'required|unique:users,email,'.$id_admins.',id',
                         ];
-                        $error_pesan = [
-                            'level_sistems_id.required'     => 'Form Level Sistem Harus Dipilih.',
-                            'name.required'                 => 'Form Nama Harus Diisi.',
-                            'username.required'             => 'Form Username Harus Diisi.',
-                            'email.required'                => 'Form Email Harus Diisi.',
-                            'email.unique'                  => 'Email Sudah Terdaftar, Silahkan Gunakan Email Lain.',
-                        ];
-                        $this->validate($request, $aturan, $error_pesan);
+                        $this->validate($request, $aturan);
                         
                 	    $data = [
                             'username'              => $request->username,
