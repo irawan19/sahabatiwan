@@ -121,7 +121,7 @@ Route::middleware([
             //Laporan Sahabat
             Route::group(['prefix' => 'laporan_sahabat'], function() {
                 Route::get('/', [DashboardLaporanSahabat::class, 'index']);
-                Route::get('/cari'. [DashboardLaporanSahabat::class, 'cari']);
+                Route::get('/cari', [DashboardLaporanSahabat::class, 'cari']);
                 Route::get('/baca/{id}', [DashboardLaporanSahabat::class, 'baca']);
                 Route::get('/hapus/{id}', [DashboardLaporanSahabat::class, 'hapus']);
             });
@@ -129,7 +129,7 @@ Route::middleware([
             //Dukungan Sahabat
             Route::group(['prefix' => 'dukungan_sahabat'], function() {
                 Route::get('/', [DashboardDukunganSahabat::class, 'index']);
-                Route::get('/cari'. [DashboardDukunganSahabat::class, 'cari']);
+                Route::get('/cari', [DashboardDukunganSahabat::class, 'cari']);
                 Route::get('/baca/{id}', [DashboardDukunganSahabat::class, 'baca']);
                 Route::get('/hapus/{id}', [DashboardDukunganSahabat::class, 'hapus']);
             });
