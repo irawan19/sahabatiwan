@@ -5,6 +5,18 @@ use Illuminate\Support\Facades\Route;
 //Beranda
 use App\Http\Controllers\BerandaController as Beranda;
 
+//Sosok
+use App\Http\Controllers\SosokController as Sosok;
+
+//Suara Nusvantara
+use App\Http\Controllers\SuaraNusvantaraController as SuaraNusvantara;
+
+//Laporan Sahabat
+use App\Http\Controllers\LaporanSahabatController as LaporanSahabat;
+
+//Dukungan Sahabat
+use App\Http\Controllers\DukunganSahabatController as DukunganSahabat;
+
 //Dashboard
 use App\Http\Controllers\Dashboard\DashboardController as Dashboard;
 
@@ -39,6 +51,12 @@ use App\Http\Controllers\Dashboard\KonfigurasiAplikasiController as DashboardKon
 */
 
 Route::get('/', [Beranda::class, 'index']);
+Route::get('/sosok', [Sosok::class, 'index']);
+Route::get('/swara-nusvantara', [SuaraNusvantara::class, 'index']);
+Route::get('/laporan-sahabat', [LaporanSahabat::class, 'index']);
+Route::post('/lpoaran-sahabat/kirim', [LaporanSahabat::class, 'kirim']);
+Route::get('/dukungan-sahabat', [DukunganSahabat::class, 'index']);
+Route::post('/dukungan-sahabat/kirim', [DukunganSahabat::class, 'kirim']);
 
 Route::middleware([
     'auth:sanctum',
