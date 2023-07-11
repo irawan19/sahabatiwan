@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nik_dukungan_sahabats');
             $table->string('telepon_dukungan_sahabats');
             $table->longtext('alamat_dukungan_sahabats');
+            $table->boolean('status_baca_dukungan_sahabats')->default(0);
             $table->timestamps();
         });
     }

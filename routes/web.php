@@ -20,7 +20,6 @@ use App\Http\Controllers\DukunganSahabatController as DukunganSahabat;
 //Dashboard
 use App\Http\Controllers\Dashboard\DashboardController as Dashboard;
 
-
 //Konfigurasi Profil
 use App\Http\Controllers\Dashboard\KonfigurasiProfilController as DashboardKonfigurasiProfil;
 
@@ -32,6 +31,8 @@ use App\Http\Controllers\Dashboard\SlideshowController as DashboardSlideshow;
 use App\Http\Controllers\Dashboard\ProfilController as DashboardProfil;
 use App\Http\Controllers\Dashboard\SosialMediaController as DashboardSosialMedia;
 use App\Http\Controllers\Dashboard\TestimoniController as DashboardTestimoni;
+use App\Http\Controllers\Dashboard\LaporanSahabatController as DashboardLaporanSahabat;
+use App\Http\Controllers\Dashboard\DukunganSahabatController as DashboardDukunganSahabat;
 
 //Konfigurasi Aplikasi
 use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
@@ -115,6 +116,22 @@ Route::middleware([
                 Route::get('/baca/{id}', [DashboardTestimoni::class, 'baca']);
                 Route::get('/publikasi/{id}', [DashboardTestimoni::class, 'publikasi']);
                 Route::get('/hapus/{id}', [DashboardTestimoni::class, 'hapus']);
+            });
+
+            //Laporan Sahabat
+            Route::group(['prefix' => 'laporan_sahabat'], function() {
+                Route::get('/', [DashboardLaporanSahabat::class, 'index']);
+                Route::get('/cari'. [DashboardLaporanSahabat::class, 'cari']);
+                Route::get('/baca/{id}', [DashboardLaporanSahabat::class, 'baca']);
+                Route::get('/hapus/{id}', [DashboardLaporanSahabat::class, 'hapus']);
+            });
+
+            //Dukungan Sahabat
+            Route::group(['prefix' => 'dukungan_sahabat'], function() {
+                Route::get('/', [DashboardDukunganSahabat::class, 'index']);
+                Route::get('/cari'. [DashboardDukunganSahabat::class, 'cari']);
+                Route::get('/baca/{id}', [DashboardDukunganSahabat::class, 'baca']);
+                Route::get('/hapus/{id}', [DashboardDukunganSahabat::class, 'hapus']);
             });
 
         //Konfigurasi Aplikasi
