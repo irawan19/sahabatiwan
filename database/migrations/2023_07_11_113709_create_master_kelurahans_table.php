@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_kelurahans');
             $table->bigInteger('kecamatans_id')->unsigned()->index()->nullable();
             $table->foreign('kecamatans_id')->references('id_kecamatans')->on('master_kecamatans')->onUpdate('set null')->onDelete('set null');
+            $table->string('nama_kelurahans');
             $table->timestamps();
         });
     }
