@@ -58,6 +58,9 @@ Route::get('/laporan-sahabat', [LaporanSahabat::class, 'index']);
 Route::post('/lpoaran-sahabat/kirim', [LaporanSahabat::class, 'kirim']);
 Route::get('/dukungan-sahabat', [DukunganSahabat::class, 'index']);
 Route::post('/dukungan-sahabat/kirim', [DukunganSahabat::class, 'kirim']);
+Route::get('/sitemap', function(){
+    return redirect('sitemap.xml');
+});
 
 Route::middleware([
     'auth:sanctum',
