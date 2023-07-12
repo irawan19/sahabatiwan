@@ -49,6 +49,8 @@
 											      	<div class="dropdown">
 										            	<button class="btn btn-sm btn-primary dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
 										            	<div class="dropdown-menu" aria-labelledby="dropdownMenu2" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 34px, 0px); top: 0px; left: 0px; will-change: transform;">
+										            		{{General::baca($link_swara_nusvantara,'dashboard/swara_nusvantara/baca/'.$swara_nusvantaras->id_swara_nusvantaras)}}
+										            		<div class="dropdown-divider"></div>
 										            		{{General::edit($link_swara_nusvantara,'dashboard/swara_nusvantara/edit/'.$swara_nusvantaras->id_swara_nusvantaras)}}
 										            		<div class="dropdown-divider"></div>
 										            		{{General::hapus($link_swara_nusvantara,'dashboard/swara_nusvantara/hapus/'.$swara_nusvantaras->id_swara_nusvantaras, $swara_nusvantaras->id_swara_nusvantaras.' - '.$swara_nusvantaras->judul_swara_nusvantaras)}}
@@ -56,7 +58,7 @@
 										            </div>
 											    </td>
 								    		@endif
-								    		<td class="nowrap">{{General::ubahDBKeTanggalwaktu($swara_nusvantaras->tanggal_publikasi)}}</td>
+								    		<td class="nowrap">{{General::ubahDBKeTanggalwaktu($swara_nusvantaras->tanggal_publikasi_swara_nusvantaras)}}</td>
 								    		<td class="nowrap">{{$swara_nusvantaras->judul_swara_nusvantaras}}</td>
 								    		<td class="nowrap">{{$swara_nusvantaras->total_baca_swara_nusvantaras}}</td>
 								    		<td class="nowrap">{{$swara_nusvantaras->total_komentar_swara_nusvantaras}}</td>

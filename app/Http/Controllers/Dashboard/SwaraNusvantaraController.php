@@ -82,7 +82,7 @@ class SwaraNusvantaraController extends AdminCoreController
 
             $data = [
                 'gambar_swara_nusvantaras'              => $path_gambar_swara_nusvantara.$nama_gambar_swara_nusvantara,
-                'tanggal_publikasi_swara_nusvantaras'   => General::ubahTanggalKeDB($request->tanggal_publikasi_swara_nusvantaras),
+                'tanggal_publikasi_swara_nusvantaras'   => General::ubahTanggalwaktuKeDB($request->tanggal_publikasi_swara_nusvantaras),
                 'kategori_swara_nusvantaras_id'         => $request->kategori_swara_nusvantaras_id,
                 'judul_swara_nusvantaras'               => $request->judul_swara_nusvantaras,
                 'konten_swara_nusvantaras'              => $request->konten_swara_nusvantaras,
@@ -124,7 +124,10 @@ class SwaraNusvantaraController extends AdminCoreController
             $cek_swara_nusvantaras = Master_swara_nusvantara::where('id_swara_nusvantaras',$id_swara_nusvantaras)->count();
             if($cek_swara_nusvantaras != 0)
             {
-                $data['baca_swara_nusvantaras'] = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
+                $data['baca_swara_nusvantaras'] = Master_swara_nusvantara::selectRaw('*,
+                                                                                    master_swara_nusvantaras.created_at as tanggal_dibuat,
+                                                                                    master_swara_nusvantaras.updated_at as tanggal_diperbarui')
+                                                                        ->join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                         ->first();
                 return view('dashboard.swara_nusvantara.baca',$data);
             }
@@ -189,7 +192,7 @@ class SwaraNusvantaraController extends AdminCoreController
         
                     $data = [
                         'gambar_swara_nusvantaras'              => $path_gambar_swara_nusvantara.$nama_gambar_swara_nusvantara,
-                        'tanggal_publikasi_swara_nusvantaras'   => General::ubahTanggalKeDB($request->tanggal_publikasi_swara_nusvantaras),
+                        'tanggal_publikasi_swara_nusvantaras'   => General::ubahTanggalwaktuKeDB($request->tanggal_publikasi_swara_nusvantaras),
                         'kategori_swara_nusvantaras_id'         => $request->kategori_swara_nusvantaras_id,
                         'judul_swara_nusvantaras'               => $request->judul_swara_nusvantaras,
                         'konten_swara_nusvantaras'              => $request->konten_swara_nusvantaras,

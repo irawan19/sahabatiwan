@@ -24,9 +24,9 @@
 							{{General::pesanErrorForm($errors->first('userfile_gambar_swara_nusvantara'))}}
 						</div>
 						<div class="form-group">
-							<label class="form-col-form-label" for="tanggal_publikasi_swara_nusvantara">Tanggal Publikasi <b style="color:red">*</b></label>
-							<input readonly class="form-control getDate {{ General::validForm($errors->first('tanggal_publikasi_swara_nusvantara')) }}" id="tanggal_publikasi_swara_nusvantara" type="text" name="tanggal_publikasi_swara_nusvantara" value="{{Request::old('tanggal_publikasi_swara_nusvantara') == '' ? General::ubahDBKeTanggal(date('Y-m-d')) : Request::old('tanggal_publikasi_swara_nusvantara')}}">
-							{{General::pesanErrorForm($errors->first('tanggal_publikasi_swara_nusvantara'))}}
+							<label class="form-col-form-label" for="tanggal_publikasi_swara_nusvantaras">Tanggal Publikasi <b style="color:red">*</b></label>
+							<input readonly class="form-control getDateTime {{ General::validForm($errors->first('tanggal_publikasi_swara_nusvantaras')) }}" id="tanggal_publikasi_swara_nusvantara" type="text" name="tanggal_publikasi_swara_nusvantaras" value="{{Request::old('tanggal_publikasi_swara_nusvantaras') == '' ? General::ubahDBKeTanggalwaktu(date('Y-m-d H:i:s')) : Request::old('tanggal_publikasi_swara_nusvantaras')}}">
+							{{General::pesanErrorForm($errors->first('tanggal_publikasi_swara_nusvantaras'))}}
 						</div>
 						<div class="form-group">
 							<label class="form-col-form-label" for="judul_swara_nusvantaras">Judul <b style="color:red">*</b></label>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longtext('konten_swara_nusvantaras');
             $table->datetime('tanggal_publikasi_swara_nusvantaras');
             $table->double('total_baca_swara_nusvantaras');
-            $table->double('total_komentas_swara_nusvantaras');
+            $table->double('total_komentar_swara_nusvantaras');
             $table->timestamps();
             $table->softDeletes();
         });
