@@ -66,6 +66,7 @@ class KategoriSwaraNusvantaraController extends AdminCoreController
 
             $data = [
                 'nama_kategori_swara_nusvantaras'       => $request->nama_kategori_swara_nusvantaras,
+                'slug_kategori_swara_nusvantaras'       => str_slug($request->nama_kategori_swara_nusvantaras),
                 'created_at'                            => date('Y-m-d H:i:s'),
             ];
             Master_kategori_swara_nusvantara::insert($data);
@@ -132,6 +133,7 @@ class KategoriSwaraNusvantaraController extends AdminCoreController
 
                 $data = [
 		        	'nama_kategori_swara_nusvantaras'	=> $request->nama_kategori_swara_nusvantaras,
+                    'slug_kategori_swara_nusvantaras'   => str_slug($request->nama_kategori_swara_nusvantaras),
                     'updated_at'                        => date('Y-m-d H:i:s')
                 ];
                 Master_kategori_swara_nusvantara::where('id_kategori_swara_nusvantaras', $id_kategori_swara_nusvantaras)

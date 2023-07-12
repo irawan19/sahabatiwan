@@ -2,9 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Master_kategori_swara_nusvantara;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Tags\Url;
 use Spatie\Sitemap\Sitemap;
+use App\Models\Master_swara_nusvantara;
 
 class GenerateSitemap extends Command
 {
@@ -43,11 +45,20 @@ class GenerateSitemap extends Command
                 ->setPriority(0.8)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
         );
-        $sitemap->add(
-            Url::create("swara-nusvantara")
-                ->setPriority(0.8)
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-        );
+        Master_kategori_swara_nusvantara::orderBy('nama_kategori_swara_nusvantaras')->get()->each(function (Master_kategori_swara_nusvantara $kategori_swara_nusvantaras) use ($sitemap) {
+            $sitemap->add(
+                Url::create("/swara-nusvantara/{$kategori_swara_nusvantaras->slug_kategori_swara_nusvantaras}")
+                    ->setPriority(0.8)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+            );
+        });
+        Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')->orderBy('nama_kategori_swara_nusvantaras')->orderBy('judul_swara_nusvantaras')->get()->each(function (Master_swara_nusvantara $swara_nusvantara) use ($sitemap) {
+            $sitemap->add(
+                Url::create("/swara-nusvantara/{$swara_nusvantara->slug_kategori_swara_nusvantaras}/{$swara_nusvantara->slug_swara_nusvantaras}")
+                    ->setPriority(0.8)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+            );
+        });
         $sitemap->add(
             Url::create("laporan-sahabat")
                 ->setPriority(0.8)
