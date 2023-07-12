@@ -7,6 +7,7 @@ use App\Models\Master_konfigurasi_aplikasi;
 use App\Models\Master_slideshow;
 use App\Models\Master_profil;
 use App\Models\Testimoni;
+use App\Models\Master_swara_nusvantara;
 
 class BerandaController extends Controller
 {
@@ -17,6 +18,10 @@ class BerandaController extends Controller
         $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
         $data['lihat_slideshows']               = Master_slideshow::get();
         $data['lihat_profils']                  = Master_profil::first();
+        $data['lihat_swara_nusvantaras']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
+                                                                            ->orderBy('tanggal_publikasi_swara_nusvantaras')
+                                                                            ->limit(3)
+                                                                            ->get();
         $data['lihat_testimonis']               = Testimoni::where('status_publikasi_testimonis',1)->get();
         return view('beranda',$data);
     }

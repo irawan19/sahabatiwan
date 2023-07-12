@@ -3,7 +3,7 @@
         <div class="main-menu__wrapper">
             <div class="main-menu__wrapper-inner">
                 <div class="main-menu__logo">
-                    <a href="{{URL('/')}}"><img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis)}}" alt=""></a>
+                    <a href="{{URL('/')}}"><img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis)}}" alt="logo {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}"></a>
                 </div>
                 <div class="main-menu__top">
                     <div class="main-menu__top-inner">
@@ -21,7 +21,7 @@
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                     <div class="text">
-                                        <p><a href="mailto:{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}">{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}</a></p>
+                                        <p>{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}</p>
                                     </div>
                                 </li>
                             </ul>
@@ -58,7 +58,7 @@
                                 <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
                             </div>
                             <div class="main-menu__btn-box">
-                                <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
+                                <a href="mailto:{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}" class="thm-btn main-menu__btn">Kirim Email</a>
                             </div>
                         </div>
                     </div>

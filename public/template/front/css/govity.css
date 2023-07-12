@@ -5119,11 +5119,12 @@ ul {
 .news-one__btn {
   position: relative;
   display: block;
+  margin-top:20px;
+  text-align:right;
 }
 
 .news-one__btn a {
   position: relative;
-  display: flex;
   align-items: center;
   font-size: 14px;
   font-weight: 500;

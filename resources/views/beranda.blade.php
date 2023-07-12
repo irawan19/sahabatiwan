@@ -977,131 +977,55 @@
                 <div class="section-title__icon">
                     <span class="fa fa-star"></span>
                 </div>
-                <span class="section-title__tagline">Latest News</span>
-                <h2 class="section-title__title">Latest news & articles
-                    <br> from the blog</h2>
+                <span class="section-title__tagline">Swara Nusvantara</span>
+                <h2 class="section-title__title">Swara Nusvantara Terbaru</h2>
             </div>
             <div class="row">
-                <!--News One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="news-one__single">
-                        <div class="news-one__img-box">
-                            <div class="news-one__img">
-                                <img src="{{URL::asset('template/front/images/blog/news-1-1.jpg')}}" alt="">
-                            </div>
-                            <div class="news-one__date">
-                                <p>30 <br> JAN</p>
-                            </div>
-                        </div>
-                        <div class="news-one__content">
-                            <div class="news-one__user-and-meta">
-                                <div class="news-one__user">
-                                    <div class="news-one__user-img">
-                                        <img src="{{URL::asset('template/front/images/blog/news-one-user-img.jpg')}}" alt="">
-                                    </div>
-                                    <div class="news-one__user-text">
-                                        <p>by <br>Admin</p>
-                                    </div>
+                @foreach($lihat_swara_nusvantaras as $swara_nusvantaras)
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="news-one__single">
+                            <div class="news-one__img-box">
+                                <div class="news-one__img">
+                                    <img src="{{URL::asset('storage/'.$swara_nusvantaras->gambar_swara_nusvantaras)}}" alt="">
                                 </div>
-                                <div class="news-one__meta">
-                                    <div class="icon">
-                                        <span class="fas fa-comments"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>2 Comments</p>
-                                    </div>
+                                <div class="news-one__date">
+                                    @php($tanggal_publikasi_swara_nusvantaras = $swara_nusvantaras->tanggal_publikasi_swara_nusvantaras)
+                                    @php($pecah_tanggal_publikasi_swara_nusvantaras = explode(' ',$tanggal_publikasi_swara_nusvantaras))
+                                    <p>
+                                        {{General::ubahDBKeTanggal($pecah_tanggal_publikasi_swara_nusvantaras[0])}}
+                                        <br/>
+                                        {{$pecah_tanggal_publikasi_swara_nusvantaras[1]}}
+                                    </p>
                                 </div>
                             </div>
-                            <h3 class="news-one__title"><a href="news-details.html">Supporting local business to
-                                    bounce back</a>
-                            </h3>
-                            <div class="news-one__btn">
-                                <a href="news-details.html">Read More<i class="icon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--News One Single End-->
-                <!--News One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="news-one__single">
-                        <div class="news-one__img-box">
-                            <div class="news-one__img">
-                                <img src="{{URL::asset('template/front/images/blog/news-1-2.jpg')}}" alt="">
-                            </div>
-                            <div class="news-one__date">
-                                <p>30 <br> JAN</p>
-                            </div>
-                        </div>
-                        <div class="news-one__content">
-                            <div class="news-one__user-and-meta">
-                                <div class="news-one__user">
-                                    <div class="news-one__user-img">
-                                        <img src="{{URL::asset('template/front/images/blog/news-one-user-img.jpg')}}" alt="">
+                            <div class="news-one__content">
+                                <div class="news-one__user-and-meta">
+                                    <div class="news-one__user">
+                                        <div class="icon">
+                                            <span class="fas fa-tags"></span>
+                                        </div>
+                                        <div class="news-one__user-text">
+                                            <p>{{$swara_nusvantaras->nama_kategori_swara_nusvantaras}}</p>
+                                        </div>
                                     </div>
-                                    <div class="news-one__user-text">
-                                        <p>by <br>Admin</p>
+                                    <div class="news-one__meta">
+                                        <div class="icon">
+                                            <span class="fas fa-comments"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>{{$swara_nusvantaras->total_komentar_swara_nusvantaras}} Komentar</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="news-one__meta">
-                                    <div class="icon">
-                                        <span class="fas fa-comments"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>2 Comments</p>
-                                    </div>
+                                <h3 class="news-one__title">{{$swara_nusvantaras->judul_swara_nusvantaras}}</h3>
+                                <p>{!! General::potongText($swara_nusvantaras->konten_swara_nusvantaras,120) !!}</p>
+                                <div class="news-one__btn">
+                                    <a href="{{URL('/swara-nusvantara/'.$swara_nusvantaras->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantaras->slug_swara_nusvantaras)}}">Baca Selengkapnya<i class="icon-right-arrow"></i></a>
                                 </div>
-                            </div>
-                            <h3 class="news-one__title"><a href="news-details.html">The city photography new
-                                    contest</a>
-                            </h3>
-                            <div class="news-one__btn">
-                                <a href="news-details.html">Read More<i class="icon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--News One Single End-->
-                <!--News One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="news-one__single">
-                        <div class="news-one__img-box">
-                            <div class="news-one__img">
-                                <img src="{{URL::asset('template/front/images/blog/news-1-3.jpg')}}" alt="">
-                            </div>
-                            <div class="news-one__date">
-                                <p>30 <br> JAN</p>
-                            </div>
-                        </div>
-                        <div class="news-one__content">
-                            <div class="news-one__user-and-meta">
-                                <div class="news-one__user">
-                                    <div class="news-one__user-img">
-                                        <img src="{{URL::asset('template/front/images/blog/news-one-user-img.jpg')}}" alt="">
-                                    </div>
-                                    <div class="news-one__user-text">
-                                        <p>by <br>Admin</p>
-                                    </div>
-                                </div>
-                                <div class="news-one__meta">
-                                    <div class="icon">
-                                        <span class="fas fa-comments"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>2 Comments</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3 class="news-one__title"><a href="news-details.html">Leverage agile frameworks to
-                                    provide</a>
-                            </h3>
-                            <div class="news-one__btn">
-                                <a href="news-details.html">Read More<i class="icon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--News One Single End-->
+                @endforeach
             </div>
         </div>
     </section>
