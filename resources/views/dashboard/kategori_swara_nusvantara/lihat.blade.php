@@ -7,17 +7,17 @@
 				<div class="card-header">
 					<div class="row">
 						<div class="col-sm-6">
-							<strong>Slideshow</strong>
+							<strong>Kategori Nusvantara</strong>
 						</div>
 						<div class="col-sm-6">
 							<div class="right-align">
-								{{ General::tambah($link_slideshow,'dashboard/slideshow/tambah') }}
+								{{ General::tambah($link_kategori_swara_nusvantara,'dashboard/kategori_swara_nusvantara/tambah') }}
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="card-body">
-					<form method="GET" action="{{ URL('dashboard/slideshow/cari') }}">
+					<form method="GET" action="{{ URL('dashboard/kategori_swara_nusvantara/cari') }}">
 						@csrf
 	                	<div class="input-group">
 	                		<input class="form-control" id="input2-group2" type="text" name="cari_kata" placeholder="Cari" value="{{$hasil_kata}}">
@@ -31,50 +31,38 @@
                         <table id="tablesort" class="table table-responsive-sm table-bordered table-striped table-sm">
 				    		<thead>
 				    			<tr>
-				    				@if(General::totalHakAkses($link_slideshow) != 0)
+				    				@if(General::totalHakAkses($link_kategori_swara_nusvantara) != 0)
 						    			<th width="5px"></th>
 						    		@endif
-				    				<th class="nowrap">Gambar</th>
-				    				<th class="nowrap">Text 1</th>
-				    				<th class="nowrap">Text 2</th>
+				    				<th class="nowrap">Nama</th>
 				    			</tr>
 				    		</thead>
 				    		<tbody>
-				    			@if(!$lihat_slideshows->isEmpty())
-		            				@foreach($lihat_slideshows as $slideshows)
+				    			@if(!$lihat_kategori_swara_nusvantaras->isEmpty())
+		            				@foreach($lihat_kategori_swara_nusvantaras as $kategori_swara_nusvantaras)
 								    	<tr>
-								    		@if(General::totalHakAkses($link_slideshow) != 0)
+								    		@if(General::totalHakAkses($link_kategori_swara_nusvantara) != 0)
 								    			<td class="nowrap">
 											      	<div class="dropdown">
 										            	<button class="btn btn-sm btn-primary dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
 										            	<div class="dropdown-menu" aria-labelledby="dropdownMenu2" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 34px, 0px); top: 0px; left: 0px; will-change: transform;">
-										            		{{General::edit($link_slideshow,'dashboard/slideshow/edit/'.$slideshows->id_slideshows)}}
+										            		{{General::edit($link_kategori_swara_nusvantara,'dashboard/kategori_swara_nusvantara/edit/'.$kategori_swara_nusvantaras->id_kategori_swara_nusvantaras)}}
 										            		<div class="dropdown-divider"></div>
-										            		{{General::hapus($link_slideshow,'dashboard/slideshow/hapus/'.$slideshows->id_slideshows, $slideshows->id_slideshows.' - '.$slideshows->text1_slideshows)}}
+										            		{{General::hapus($link_kategori_swara_nusvantara,'dashboard/kategori_swara_nusvantara/hapus/'.$kategori_swara_nusvantaras->id_kategori_swara_nusvantaras, $kategori_swara_nusvantaras->id_kategori_swara_nusvantaras.' - '.$kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras)}}
 										            	</div>
 										            </div>
 											    </td>
 								    		@endif
-								    		<td class="nowrap">
-                                                <a data-fancybox="gallery" href="{{URL::asset('storage/'.$slideshows->gambar_slideshows)}}">
-                                                    <img src="{{ URL::asset('storage/'.$slideshows->gambar_slideshows) }}" width="108">
-                                                </a>
-                                            </td>
-								    		<td class="nowrap">{{$slideshows->text1_slideshows}}</td>
-								    		<td class="nowrap">{!! nl2br($slideshows->text2_slideshows) !!}</td>
+								    		<td class="nowrap">{{$kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras}}</td>
 								    	</tr>
 								    @endforeach
 								@else
 									<tr>
-										@if(General::totalHakAkses($link_slideshow) != 0)
-											<td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
+										@if(General::totalHakAkses($link_kategori_swara_nusvantara) != 0)
+											<td colspan="2" class="center-align">Tidak ada data ditampilkan</td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="3" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
+											<td class="center-align">Tidak ada data ditampilkan</td>
 										@endif
 									</tr>
 								@endif
@@ -82,7 +70,7 @@
 				    	</table>
 				    </div>
 					<br/>
-				   	{{ $lihat_slideshows->appends(Request::except('page'))->links('vendor.pagination.custom') }}
+				   	{{ $lihat_kategori_swara_nusvantaras->appends(Request::except('page'))->links('vendor.pagination.custom') }}
 				</div>
 			</div>
 		</div>

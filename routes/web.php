@@ -8,8 +8,8 @@ use App\Http\Controllers\BerandaController as Beranda;
 //Sosok
 use App\Http\Controllers\SosokController as Sosok;
 
-//Suara Nusvantara
-use App\Http\Controllers\SuaraNusvantaraController as SuaraNusvantara;
+//Swara Nusvantara
+use App\Http\Controllers\SwaraNusvantara as SwaraNusvantara;
 
 //Laporan Sahabat
 use App\Http\Controllers\LaporanSahabatController as LaporanSahabat;
@@ -31,6 +31,8 @@ use App\Http\Controllers\Dashboard\SlideshowController as DashboardSlideshow;
 use App\Http\Controllers\Dashboard\ProfilController as DashboardProfil;
 use App\Http\Controllers\Dashboard\SosialMediaController as DashboardSosialMedia;
 use App\Http\Controllers\Dashboard\TestimoniController as DashboardTestimoni;
+use App\Http\Controllers\Dashboard\KategoriSwaraNusvantaraController as DashboardKategoriSwaraNusvantara;
+use App\Http\Controllers\Dashboard\SwaraNusvantaraController as DashboardSwaraNusvantara;
 use App\Http\Controllers\Dashboard\LaporanSahabatController as DashboardLaporanSahabat;
 use App\Http\Controllers\Dashboard\DukunganSahabatController as DashboardDukunganSahabat;
 
@@ -53,7 +55,7 @@ use App\Http\Controllers\Dashboard\KonfigurasiAplikasiController as DashboardKon
 
 Route::get('/', [Beranda::class, 'index']);
 Route::get('/sosok', [Sosok::class, 'index']);
-Route::get('/swara-nusvantara', [SuaraNusvantara::class, 'index']);
+Route::get('/swara-nusvantara', [SwaraNusvantara::class, 'index']);
 Route::get('/laporan-sahabat', [LaporanSahabat::class, 'index']);
 Route::post('/lpoaran-sahabat/kirim', [LaporanSahabat::class, 'kirim']);
 Route::get('/dukungan-sahabat', [DukunganSahabat::class, 'index']);
@@ -119,6 +121,29 @@ Route::middleware([
                 Route::get('/baca/{id}', [DashboardTestimoni::class, 'baca']);
                 Route::get('/publikasi/{id}', [DashboardTestimoni::class, 'publikasi']);
                 Route::get('/hapus/{id}', [DashboardTestimoni::class, 'hapus']);
+            });
+
+            //Kategori Swara Nusvantara
+            Route::group(['prefix' => 'kategori_swara_nusvantara'], function(){
+                Route::get('/', [DashboardKategoriSwaraNusvantara::class, 'index']);
+                Route::get('/cari', [DashboardKategoriSwaraNusvantara::class, 'cari']);
+                ROute::get('/tambah', [DashboardKategoriSwaraNusvantara::class, 'tambah']);
+                Route::post('/prosestambah', [DashboardKategoriSwaraNusvantara::class, 'prosestambah']);
+                Route::get('/edit/{id}', [DashboardKategoriSwaraNusvantara::class, 'edit']);
+                Route::post('/prosesedit/{id}', [DashboardKategoriSwaraNusvantara::class, 'prosesedit']);
+                Route::get('/hapus/{id}', [DashboardKategoriSwaraNusvantara::class, 'hapus']);
+            });
+
+            //Swara Nusvantara
+            Route::group(['prefix' => 'swara_nusvantara'], function() {
+                Route::get('/', [DashboardSwaraNusvantara::class, 'index']);
+                Route::get('/cari', [DashboardSwaraNusvantara::class, 'cari']);
+                ROute::get('/tambah', [DashboardSwaraNusvantara::class, 'tambah']);
+                Route::post('/prosestambah', [DashboardSwaraNusvantara::class, 'prosestambah']);
+                Route::get('/baca/{id}', [DashboardSwaraNusvantara::class, 'baca']);
+                Route::get('/edit/{id}', [DashboardSwaraNusvantara::class, 'edit']);
+                Route::post('/prosesedit/{id}', [DashboardSwaraNusvantara::class, 'prosesedit']);
+                Route::get('/hapus/{id}', [DashboardSwaraNusvantara::class, 'hapus']);
             });
 
             //Laporan Sahabat

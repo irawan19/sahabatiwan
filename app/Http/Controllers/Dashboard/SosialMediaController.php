@@ -76,7 +76,6 @@ class SosialMediaController extends AdminCoreController
                 'url_sosial_medias'         => $request->url_sosial_medias,
                 'icon_sosial_medias'        => $pisah_sosial_media[0],
                 'created_at'                => date('Y-m-d H:i:s'),
-                'updated_at'                => date('Y-m-d H:i:s'),
             ];
             Master_sosial_media::insert($data);
 
