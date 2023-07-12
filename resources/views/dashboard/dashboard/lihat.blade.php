@@ -51,32 +51,16 @@
 			<div class="col-sm-4">
 				<div class="row">
 					<div class="col-sm-6">
-					    <a href="{{URL('dashboard/penjualan')}}" class="nonstyle">
-					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
-					            <div class="card-body pb-0">
-					                <div class="btn-group float-right">
-					                    <svg class="c-icon">
-					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-list')}}"></use>
-					                    </svg>
-					                </div>
-					                <div class="text-value-lg">{{General::konversiNilai($total_testimonis)}} <span>{{General::konversiNilaiString($total_testimonis)}}</span></div>
-					                <div class="textnotifberanda">Testimoni</div>
-					            </div>
-					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
-					        </div>
-					    </a>
-					</div>
-					<div class="col-sm-6">
 					    <a href="{{URL('dashboard/item')}}" class="nonstyle">
 					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
 					            <div class="card-body pb-0">
 					                <div class="btn-group float-right">
 					                    <svg class="c-icon">
-					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-tag')}}"></use>
+					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-newspaper')}}"></use>
 					                    </svg>
 					                </div>
-					                <div class="text-value-lg">{{General::konversiNilai($total_beritas)}} <span>{{General::konversiNilaiString($total_beritas)}}</span></div>
-					                <div class="textnotifberanda">Berita</div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_swara_nusvantara)}} <span>{{General::konversiNilaiString($total_swara_nusvantara)}}</span></div>
+					                <div class="textnotifberanda">Swara Nusvantara</div>
 					            </div>
 					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
 					        </div>
@@ -88,11 +72,59 @@
 					            <div class="card-body pb-0">
 					                <div class="btn-group float-right">
 					                    <svg class="c-icon">
-					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-user-follow')}}"></use>
+					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-comment-bubble')}}"></use>
 					                    </svg>
 					                </div>
-					                <div class="text-value-lg">{{General::konversiNilai($total_artikels)}} <span>{{General::konversiNilaiString($total_artikels)}}</span></div>
-					                <div class="textnotifberanda">Artikel</div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_komentar)}} <span>{{General::konversiNilaiString($total_komentar)}}</span></div>
+					                <div class="textnotifberanda">Total Komentar</div>
+					            </div>
+					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
+					        </div>
+					    </a>
+					</div>
+					<div class="col-sm-6">
+					    <a href="{{URL('dashboard/item')}}" class="nonstyle">
+					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
+					            <div class="card-body pb-0">
+					                <div class="btn-group float-right">
+					                    <svg class="c-icon">
+					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-info')}}"></use>
+					                    </svg>
+					                </div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_laporan_sahabat)}} <span>{{General::konversiNilaiString($total_laporan_sahabat)}}</span></div>
+					                <div class="textnotifberanda">Laporan Sahabat</div>
+					            </div>
+					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
+					        </div>
+					    </a>
+					</div>
+					<div class="col-sm-6">
+					    <a href="{{URL('dashboard/user')}}" class="nonstyle">
+					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
+					            <div class="card-body pb-0">
+					                <div class="btn-group float-right">
+					                    <svg class="c-icon">
+					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-hand-point-up')}}"></use>
+					                    </svg>
+					                </div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_dukungan_sahabat)}} <span>{{General::konversiNilaiString($total_dukungan_sahabat)}}</span></div>
+					                <div class="textnotifberanda">Dukuingan Sahabat</div>
+					            </div>
+					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
+					        </div>
+					    </a>
+					</div>
+					<div class="col-sm-6">
+					    <a href="{{URL('dashboard/penjualan')}}" class="nonstyle">
+					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
+					            <div class="card-body pb-0">
+					                <div class="btn-group float-right">
+					                    <svg class="c-icon">
+					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-list')}}"></use>
+					                    </svg>
+					                </div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_testimonis)}} <span>{{General::konversiNilaiString($total_testimonis)}}</span></div>
+					                <div class="textnotifberanda">Testimoni</div>
 					            </div>
 					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
 					        </div>
