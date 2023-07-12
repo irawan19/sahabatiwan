@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_swara_nusvantaras');
             $table->bigInteger('kategori_swara_nusvantaras_id')->unsigned()->index()->nullable();
             $table->foreign('kategori_swara_nusvantaras_id')->references('id_kategori_swara_nusvantaras')->on('master_kategori_swara_nusvantaras')->onUpdate('set null')->onDelete('set null');
-            $table->string('foto_swara_nusvantaras');
+            $table->string('gambar_swara_nusvantaras');
             $table->string('judul_swara_nusvantaras');
             $table->longtext('konten_swara_nusvantaras');
             $table->datetime('tanggal_publikasi_swara_nusvantaras');
