@@ -54,8 +54,12 @@ use App\Http\Controllers\Dashboard\KonfigurasiAplikasiController as DashboardKon
 */
 
 Route::get('/', [Beranda::class, 'index']);
+Route::post('/cari', [Beranda::class, 'cari']);
+Route::post('/testimoni/kirim', [Beranda::class, 'kirimtestimoni']);
 Route::get('/sosok', [Sosok::class, 'index']);
 Route::get('/swara-nusvantara', [SwaraNusvantara::class, 'index']);
+Route::get('/swara-nusvantara/{slug_kategori_swara_nusvantara}', [SwaraNusvantara::class, 'kategori']);
+Route::get('/swara-nusvantara/{slug_kategori_swara_nusvantara}/{slug_swara_nusvantara}', [SwaraNusvantara::class, 'baca']);
 Route::get('/laporan-sahabat', [LaporanSahabat::class, 'index']);
 Route::post('/lpoaran-sahabat/kirim', [LaporanSahabat::class, 'kirim']);
 Route::get('/dukungan-sahabat', [DukunganSahabat::class, 'index']);
