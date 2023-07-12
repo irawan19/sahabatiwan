@@ -29,7 +29,7 @@ class BerandaController extends Controller
     public function kirimtestimoni(Request $request)
     {
         $nama_foto_testimoni = date('Ymd').date('His').str_replace(')','',str_replace('(','',str_replace(' ','-',$request->file('userfile_foto_testimoni')->getClientOriginalName())));
-        $path_foto_testimoni = 'user/';
+        $path_foto_testimoni = 'testimoni/';
         Storage::disk('public')->put($path_foto_testimoni.$nama_foto_testimoni, file_get_contents($request->file('userfile_foto_testimoni')));
 
         $testimonis_data = [
