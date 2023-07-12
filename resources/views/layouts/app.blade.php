@@ -41,6 +41,20 @@
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity-responsive.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/custom.css')}}" />
+    <style>
+        .preloader__image {
+            animation-fill-mode: both;
+            animation-name: flipInY;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            background-image: url('storage/{{$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis}}');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 256px auto;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body class="custom-cursor">
