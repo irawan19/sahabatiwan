@@ -116,6 +116,25 @@ class SwaraNusvantaraController extends AdminCoreController
             return redirect('dashboard/swara_nusvantara');
     }
 
+    public function baca($id_swara_nusvantaras=0)
+    {
+        $link_swara_nusvantas = 'swara_nusvantara';
+        if (General::hakAkses($link_swara_nusvantas, 'baca') == 'true')
+        {
+            $cek_swara_nusvantaras = Master_swara_nusvantara::where('id_swara_nusvantaras',$id_swara_nusvantaras)->count();
+            if($cek_swara_nusvantaras != 0)
+            {
+                $data['baca_swara_nusvantaras'] = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
+                                                                        ->first();
+                return view('dashboard.swara_nusvantara.baca',$data);
+            }
+            else
+                return redirect('dashboard/swara_nusvantara');
+        }
+        else
+            return redirect('dashboard/swara_nusvantara');
+    }
+
     public function edit($id_swara_nusvantaras=0)
     {
         $link_swara_nusvantara = 'swara_nusvantara';
