@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('provinsis_id')->references('id_provinsis')->on('master_provinsis')->onUpdate('set null')->onDelete('set null');
             $table->string('nama_kota_kabupatens');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

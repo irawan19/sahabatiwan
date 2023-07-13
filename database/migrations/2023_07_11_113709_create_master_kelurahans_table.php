@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('kecamatans_id')->references('id_kecamatans')->on('master_kecamatans')->onUpdate('set null')->onDelete('set null');
             $table->string('nama_kelurahans');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
