@@ -30,7 +30,9 @@ class LaporanSahabatController extends Controller
             'nama_laporan_sahabats'                 => $request->nama_laporan_sahabats,
             'nik_laporan_sahabats'                  => $request->nik_laporan_sahabats,
             'telepon_laporan_sahabats'              => $request->telepon_laporan_sahabats,
+            'email_laporan_sahabats'                => $request->email_laporan_sahabats,
             'alamat_laporan_sahabats'               => $request->alamat_laporan_sahabats,
+            'aduan_laporan_sahabats'                => $request->aduan_laporan_sahabats,
             'status_baca_laporan_sahabats'          => 0,
             'created_at'                            => date('Y-m-d H:i:s'),
         ];
