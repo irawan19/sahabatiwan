@@ -18,7 +18,7 @@
 							<th>File</th>
 							<th>:</th>
 							<td>
-                                <a href="{{URL::asset('storage/'.$baca_laporan_sahabats->file_laporan)}}">
+                                <a target="_blank" href="{{URL::asset('storage/'.$baca_laporan_sahabats->file_laporan_sahabats)}}">
                                     Klik untuk download file
                                 </a>
                             </td>

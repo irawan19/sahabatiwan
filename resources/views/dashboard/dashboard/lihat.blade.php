@@ -51,7 +51,7 @@
 			<div class="col-sm-4">
 				<div class="row">
 					<div class="col-sm-6">
-					    <a href="{{URL('dashboard/item')}}" class="nonstyle">
+					    <a href="{{URL('dashboard/swara_nusvantara')}}" class="nonstyle">
 					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
 					            <div class="card-body pb-0">
 					                <div class="btn-group float-right">
@@ -67,7 +67,7 @@
 					    </a>
 					</div>
 					<div class="col-sm-6">
-					    <a href="{{URL('dashboard/user')}}" class="nonstyle">
+					    <a href="{{URL('dashboard/komentar')}}" class="nonstyle">
 					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
 					            <div class="card-body pb-0">
 					                <div class="btn-group float-right">
@@ -83,7 +83,7 @@
 					    </a>
 					</div>
 					<div class="col-sm-6">
-					    <a href="{{URL('dashboard/item')}}" class="nonstyle">
+					    <a href="{{URL('dashboard/laporan_sahabat')}}" class="nonstyle">
 					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
 					            <div class="card-body pb-0">
 					                <div class="btn-group float-right">
@@ -99,7 +99,7 @@
 					    </a>
 					</div>
 					<div class="col-sm-6">
-					    <a href="{{URL('dashboard/user')}}" class="nonstyle">
+					    <a href="{{URL('dashboard/dukungan_sahabat')}}" class="nonstyle">
 					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
 					            <div class="card-body pb-0">
 					                <div class="btn-group float-right">
@@ -115,7 +115,7 @@
 					    </a>
 					</div>
 					<div class="col-sm-6">
-					    <a href="{{URL('dashboard/penjualan')}}" class="nonstyle">
+					    <a href="{{URL('dashboard/testimoni')}}" class="nonstyle">
 					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
 					            <div class="card-body pb-0">
 					                <div class="btn-group float-right">

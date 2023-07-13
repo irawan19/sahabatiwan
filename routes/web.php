@@ -65,7 +65,7 @@ Route::get('/swara-nusvantara', [SwaraNusvantara::class, 'index']);
 Route::get('/swara-nusvantara/{slug_kategori_swara_nusvantara}', [SwaraNusvantara::class, 'kategori']);
 Route::get('/swara-nusvantara/{slug_kategori_swara_nusvantara}/{slug_swara_nusvantara}', [SwaraNusvantara::class, 'baca']);
 Route::get('/laporan-sahabat', [LaporanSahabat::class, 'index']);
-Route::post('/lpoaran-sahabat/kirim', [LaporanSahabat::class, 'kirim']);
+Route::post('/laporan-sahabat/kirim', [LaporanSahabat::class, 'kirim']);
 Route::get('/dukungan-sahabat', [DukunganSahabat::class, 'index']);
 Route::post('/dukungan-sahabat/kirim', [DukunganSahabat::class, 'kirim']);
 Route::get('/sitemap', function(){

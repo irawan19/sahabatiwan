@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_laporan_sahabats');
             $table->bigInteger('kelurahans_id')->unsigned()->index()->nullable();
             $table->foreign('kelurahans_id')->references('id_kelurahans')->on('master_kelurahans')->onUpdate('set null')->onDelete('set null');
-            $table->string('nama_laporan_sahabat');
+            $table->string('nama_laporan_sahabats');
             $table->string('telepon_laporan_sahabats');
             $table->string('email_laporan_sahabats');
             $table->string('alamat_laporan_sahabats');

@@ -32,7 +32,6 @@
 				    				<th class="nowrap">Nama</th>
 				    				<th class="nowrap">Telepon</th>
 				    				<th class="nowrap">Email</th>
-				    				<th class="nowrap">Status</th>
 				    			</tr>
 				    		</thead>
 				    		<tbody>
@@ -63,35 +62,18 @@
                                                     {{$laporan_sahabats->email_laporan_sahabats}}
                                                 </a>
                                             </td>
-								    		<td class="nowrap center-align">
-												@if(General::hakAkses($link_laporan_sahabat, 'edit') == 'true')
-													@if($laporan_sahabats->status_publikasi_laporan_sahabats == 0)
-														{{General::nonpublikasi($link_laporan_sahabat, 'dashboard/laporan_sahabat/publikasi/'.$laporan_sahabats->id_laporan_sahabats)}}
-													@else
-														{{General::publikasi($link_laporan_sahabat, 'dashboard/laporan_sahabat/publikasi/'.$laporan_sahabats->id_laporan_sahabats)}}
-													@endif
-												@else
-													@if($laporan_sahabats->status_publikasi_laporan_sahabats == 0)
-														Belum Dipublikasi
-													@else
-														Pulbikasi
-													@endif
-												@endif
-											</td>
 								    	</tr>
 								    @endforeach
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_laporan_sahabat) != 0)
-											<td colspan="6" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
+											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
+											<td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>

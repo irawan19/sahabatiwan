@@ -7,6 +7,10 @@ use Auth;
 use App\Models\Session;
 use App\Models\User;
 use App\Models\Master_konfigurasi_aplikasi;
+use App\Models\Master_swara_nusvantara;
+use App\Models\Laporan_sahabat;
+use App\Models\Dukungan_sahabat;
+use App\Models\Testimoni;
 
 class DashboardController extends AdminCoreController
 {
@@ -30,11 +34,11 @@ class DashboardController extends AdminCoreController
     public function index()
     {
         $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
-        $data['total_swara_nusvantara']         = 0;
+        $data['total_swara_nusvantara']         = Master_swara_nusvantara::where('tanggal_publikasi_swara_nusvantaras','>=',date('Y-m-d H:i:s'))->count();
         $data['total_komentar']                 = 0;
-        $data['total_laporan_sahabat']          = 0;
-        $data['total_dukungan_sahabat']         = 0;
-        $data['total_testimonis']               = 0;
+        $data['total_laporan_sahabat']          = Laporan_sahabat::count();
+        $data['total_dukungan_sahabat']         = Dukungan_sahabat::count();
+        $data['total_testimonis']               = Testimoni::count();
         $data['total_admins']                   = User::count();
         return view('dashboard.dashboard.lihat',$data);
     }
