@@ -17,6 +17,9 @@ use App\Http\Controllers\LaporanSahabatController as LaporanSahabat;
 //Dukungan Sahabat
 use App\Http\Controllers\DukunganSahabatController as DukunganSahabat;
 
+//Wilayah
+use App\Http\Controllers\WilayahController as Wilayah;
+
 //Dashboard
 use App\Http\Controllers\Dashboard\DashboardController as Dashboard;
 
@@ -68,6 +71,9 @@ Route::post('/dukungan-sahabat/kirim', [DukunganSahabat::class, 'kirim']);
 Route::get('/sitemap', function(){
     return redirect('sitemap.xml');
 });
+Route::get('/kota-kabupaten/{id}', [Wilayah::class, 'kotakabupaten']);
+Route::get('/kecamatan/{id}', [Wilayah::class, 'kecamatan']);
+Route::get('/kelurahan/{id}', [Wilayah::class, 'kelurahan']);
 
 Route::middleware([
     'auth:sanctum',

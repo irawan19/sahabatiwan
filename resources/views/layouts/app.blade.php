@@ -38,9 +38,12 @@
     <link rel="stylesheet" href="{{URL::asset('template/front/vendors/timepicker/timePicker.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/vendors/nice-select/nice-select.css')}}" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
+	<link type="text/css" media="screen" rel="stylesheet" href="{{{ URL::asset('template/back/vendors/select2/dist/css/select2.min.css')}}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/govity-responsive.css')}}" />
     <link rel="stylesheet" href="{{URL::asset('template/front/css/custom.css')}}" />
+	<meta name="_token" content="{{ csrf_token() }}">
+    <script src="{{URL::asset('template/front/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
     <style>
         .preloader__image {
             animation-fill-mode: both;
@@ -54,7 +57,31 @@
             width: 100%;
             height: 100%;
         }
+	    .select2-container .select2-selection--single{
+	    	height: 35px;
+	    }
+	    .select2-container .select2-selection--single .select2-selection__rendered{
+	    	margin-top: 2px;
+	    }
+	    .select2-container--default .select2-selection--single .select2-selection__arrow b{
+	    	margin-top: 2px;
+	    }
+	    .errorform {
+	        color: red;
+	    }
+	    .errorformfile {
+	        padding-top: 10px;
+	        color: red;
+	    }
     </style>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            //Select2
+                $('.select2').select2({
+                    width: '100%',
+                });
+        });
+    </script>
 </head>
 
 <body class="custom-cursor">
@@ -92,7 +119,6 @@
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
 
 
-    <script src="{{URL::asset('template/front/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/jarallax/jarallax.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js')}}"></script>
@@ -117,6 +143,7 @@
     <script src="{{URL::asset('template/front/vendors/circleType/jquery.circleType.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/circleType/jquery.lettering.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/nice-select/jquery.nice-select.min.js')}}"></script>
+	<script type="text/javascript" src="{{ URL::asset('template/back/vendors/select2/dist/js/select2.full.min.js') }}"></script>
 
 
     <!-- template js -->

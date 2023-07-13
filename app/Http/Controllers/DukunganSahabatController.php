@@ -11,7 +11,6 @@ use App\Models\Master_kontak_kami;
 
 class DukunganSahabatController extends Controller
 {
-
     public function index()
     {
         $data['lihat_provinsis']                = Master_provinsi::orderBy('nama_provinsis')
@@ -24,6 +23,16 @@ class DukunganSahabatController extends Controller
 
     public function kirim(Request $request)
     {
+        $aturan = [
+            'userfile_ktp_dukungan_sahabat'     => 'required|mimes:png,jpg,jpeg,svg',
+            'nama_dukungan_sahabats'            => 'required',
+            'nik_dukungan_sahabats'             => 'required',
+            'telepon_dukungan_sahabats'         => 'required',
+            'alamat_dukungan_sahabats'          => 'required',
+            'kelurahans_id'                     => 'required',
+        ];
+        $this->validate($request, $aturan);
+
         $nama_ktp_dukungan_sahabat = date('Ymd').date('His').str_replace(')','',str_replace('(','',str_replace(' ','-',$request->file('userfile_ktp_dukungan_sahabat')->getClientOriginalName())));
         $path_ktp_dukungan_sahabat = 'dukungansahabat/';
         Storage::disk('public')->put($path_ktp_dukungan_sahabat.$nama_ktp_dukungan_sahabat, file_get_contents($request->file('userfile_ktp_dukungan_sahabat')));
@@ -39,8 +48,8 @@ class DukunganSahabatController extends Controller
             'created_at'                            => date('Y-m-d H:i:s'),
         ];
         Dukungan_sahabat::insert($dukungan_sahabats_data);
-
-        return response()->json(["sukses" => "sukses"], 200);
+        
+        return redirect('dukungan-sahabat');
     }
 
 }
