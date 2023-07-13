@@ -108,8 +108,6 @@ class SosialMediaController extends AdminCoreController
         $link_sosial_media = 'sosial_media';
         if(General::hakAkses($link_sosial_media,'edit') == 'true')
         {
-            if (!is_numeric($id_sosial_medias))
-                $id_sosial_medias = 0;
             $cek_sosial_medias = Master_sosial_media::where('id_sosial_medias',$id_sosial_medias)->count();
             if($cek_sosial_medias != 0)
             {
@@ -130,8 +128,6 @@ class SosialMediaController extends AdminCoreController
         $link_sosial_media = 'sosial_media';
         if(General::hakAkses($link_sosial_media,'edit') == 'true')
         {
-            if (!is_numeric($id_sosial_medias))
-                $id_sosial_medias = 0;
             $cek_sosial_medias = Master_sosial_media::where('id_sosial_medias',$id_sosial_medias)->first();
             if(!empty($cek_sosial_medias))
             {
@@ -171,8 +167,6 @@ class SosialMediaController extends AdminCoreController
         $link_sosial_media = 'sosial_media';
         if(General::hakAkses($link_sosial_media,'hapus') == 'true')
         {
-            if (!is_numeric($id_sosial_medias))
-                $id_sosial_medias = 0;
             $cek_sosial_medias = Master_sosial_media::where('id_sosial_medias',$id_sosial_medias)->first();
             if(!empty($cek_sosial_medias))
             {

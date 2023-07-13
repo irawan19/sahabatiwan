@@ -34,7 +34,7 @@ class DashboardController extends AdminCoreController
     public function index()
     {
         $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
-        $data['total_swara_nusvantara']         = Master_swara_nusvantara::where('tanggal_publikasi_swara_nusvantaras','>=',date('Y-m-d H:i:s'))->count();
+        $data['total_swara_nusvantara']         = Master_swara_nusvantara::where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))->count();
         $data['total_komentar']                 = 0;
         $data['total_laporan_sahabat']          = Laporan_sahabat::count();
         $data['total_dukungan_sahabat']         = Dukungan_sahabat::count();

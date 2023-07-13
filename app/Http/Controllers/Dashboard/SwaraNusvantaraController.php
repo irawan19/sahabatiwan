@@ -144,8 +144,6 @@ class SwaraNusvantaraController extends AdminCoreController
         $link_swara_nusvantara = 'swara_nusvantara';
         if(General::hakAkses($link_swara_nusvantara,'edit') == 'true')
         {
-            if (!is_numeric($id_swara_nusvantaras))
-                $id_swara_nusvantaras = 0;
             $cek_swara_nusvantaras = Master_swara_nusvantara::where('id_swara_nusvantaras',$id_swara_nusvantaras)->count();
             if($cek_swara_nusvantaras != 0)
             {
@@ -167,8 +165,6 @@ class SwaraNusvantaraController extends AdminCoreController
         $link_swara_nusvantara = 'swara_nusvantara';
         if(General::hakAkses($link_swara_nusvantara,'edit') == 'true')
         {
-            if (!is_numeric($id_swara_nusvantaras))
-                $id_swara_nusvantaras = 0;
             $cek_swara_nusvantaras = Master_swara_nusvantara::where('id_swara_nusvantaras',$id_swara_nusvantaras)->first();
             if(!empty($cek_swara_nusvantaras))
             {
@@ -246,8 +242,6 @@ class SwaraNusvantaraController extends AdminCoreController
         $link_swara_nusvantara = 'swara_nusvantara';
         if(General::hakAkses($link_swara_nusvantara,'hapus') == 'true')
         {
-            if (!is_numeric($id_swara_nusvantaras))
-                $id_swara_nusvantaras = 0;
             $cek_swara_nusvantaras = Master_swara_nusvantara::where('id_swara_nusvantaras',$id_swara_nusvantaras)->first();
             if(!empty($cek_swara_nusvantaras))
             {

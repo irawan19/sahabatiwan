@@ -100,8 +100,6 @@ class KategoriSwaraNusvantaraController extends AdminCoreController
         $link_kategori_swara_nusvantara = 'kategori_swara_nusvantara';
         if(General::hakAkses($link_kategori_swara_nusvantara,'edit') == 'true')
         {
-            if (!is_numeric($id_kategori_swara_nusvantaras))
-                $id_kategori_swara_nusvantaras = 0;
             $cek_kategori_swara_nusvantaras = Master_kategori_swara_nusvantara::where('id_kategori_swara_nusvantaras',$id_kategori_swara_nusvantaras)->count();
             if($cek_kategori_swara_nusvantaras != 0)
             {
@@ -121,8 +119,6 @@ class KategoriSwaraNusvantaraController extends AdminCoreController
         $link_kategori_swara_nusvantara = 'kategori_swara_nusvantara';
         if(General::hakAkses($link_kategori_swara_nusvantara,'edit') == 'true')
         {
-            if (!is_numeric($id_kategori_swara_nusvantaras))
-                $id_kategori_swara_nusvantaras = 0;
             $cek_kategori_swara_nusvantaras = Master_kategori_swara_nusvantara::where('id_kategori_swara_nusvantaras',$id_kategori_swara_nusvantaras)->first();
             if(!empty($cek_kategori_swara_nusvantaras))
             {
@@ -158,8 +154,6 @@ class KategoriSwaraNusvantaraController extends AdminCoreController
         $link_kategori_swara_nusvantara = 'kategori_swara_nusvantara';
         if(General::hakAkses($link_kategori_swara_nusvantara,'hapus') == 'true')
         {
-            if (!is_numeric($id_kategori_swara_nusvantaras))
-                $id_kategori_swara_nusvantaras = 0;
             $cek_kategori_swara_nusvantaras = Master_kategori_swara_nusvantara::where('id_kategori_swara_nusvantaras',$id_kategori_swara_nusvantaras)->first();
             if(!empty($cek_kategori_swara_nusvantaras))
             {

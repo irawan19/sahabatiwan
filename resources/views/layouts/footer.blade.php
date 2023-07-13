@@ -1,10 +1,10 @@
 @php($lihat_profils = \App\Models\Master_profil::first())
-@php($lihat_lima_swara_nusvantara = \App\Models\Master_swara_nusvantara::selectraw('nama_kategori_swara_nusvantaras,
+@php($lihat_lima_swara_nusvantara = \App\Models\Master_swara_nusvantara::selectRaw('nama_kategori_swara_nusvantaras,
                                                                                     slug_kategori_swara_nusvantaras,
                                                                                     judul_swara_nusvantaras,
                                                                                     slug_swara_nusvantaras')
                                                                         ->join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
-                                                                        ->where('tanggal_publikasi_swara_nusvantaras','>=', date('Y-m-d H:i:s'))
+                                                                        ->where('tanggal_publikasi_swara_nusvantaras','<=', date('Y-m-d H:i:s'))
                                                                         ->orderBy('tanggal_publikasi_swara_nusvantaras','asc')
                                                                         ->limit(5)
                                                                         ->get()))
@@ -88,7 +88,7 @@
                         </div>
                         <ul class="footer-widget__link-list list-unstyled">
                             @foreach($lihat_lima_swara_nusvantara as $lima_swara_nusvantaras)
-                                <li><a href="{{URL('swara-nusvantara/'.$lima_swara_nusvantaras->slug_kategori_swara_nusvantaras.'/'.$lima_swara_nusvantaras->slug_swara_nusvantaras)}}">{{$$lima_swara_nusvantaras->judul_swara_nusvantaras}}</a></li>
+                                <li><a href="{{URL('swara-nusvantara/'.$lima_swara_nusvantaras->slug_kategori_swara_nusvantaras.'/'.$lima_swara_nusvantaras->slug_swara_nusvantaras)}}">{{$lima_swara_nusvantaras->judul_swara_nusvantaras}}</a></li>
                             @endforeach
                         </ul>
                     </div>

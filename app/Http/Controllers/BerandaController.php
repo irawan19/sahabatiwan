@@ -19,7 +19,7 @@ class BerandaController extends Controller
         $data['lihat_slideshows']               = Master_slideshow::get();
         $data['lihat_profils']                  = Master_profil::first();
         $data['lihat_swara_nusvantaras']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
-                                                                            ->where('tanggal_publikasi_swara_nusvantaras','>=',date('Y-m-d H:i:s'))
+                                                                            ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
                                                                             ->orderBy('tanggal_publikasi_swara_nusvantaras')
                                                                             ->limit(3)
                                                                             ->get();
