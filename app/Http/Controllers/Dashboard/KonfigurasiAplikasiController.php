@@ -35,11 +35,16 @@ class KonfigurasiAplikasiController extends AdminCoreController
             ];
             $this->validate($request, $aturan);
 
+            $telepon_konfigurasi_aplikasis = '';
+            if(!empty($request->telepon_konfigurasi_aplikasis))
+                $telepon_konfigurasi_aplikasis = $request->telepon_konfigurasi_aplikasis;
+
             $konfigurasi_aplikasi_data = [
                 'nama_konfigurasi_aplikasis'                    => $request->nama_konfigurasi_aplikasis,
                 'deskripsi_konfigurasi_aplikasis'               => $request->deskripsi_konfigurasi_aplikasis,
                 'keywords_konfigurasi_aplikasis'                => $request->keywords_konfigurasi_aplikasis,
                 'email_konfigurasi_aplikasis'                   => $request->email_konfigurasi_aplikasis,
+                'telepon_konfigurasi_aplikasis'                 => $telepon_konfigurasi_aplikasis,
                 'updated_at'                                    => date('Y-m-d H:i:s'),
             ];
             Master_konfigurasi_aplikasi::query()->update($konfigurasi_aplikasi_data);
@@ -168,39 +173,39 @@ class KonfigurasiAplikasiController extends AdminCoreController
             return redirect('dashboard');
     }
 
-    public function proseseditbackgroundwebsite(Request $request)
+    public function proseseditheader(Request $request)
     {
         $link_konfigurasi_aplikasi = 'konfigurasi_aplikasi';
         if(General::hakAkses($link_konfigurasi_aplikasi, 'lihat') == 'true')
         {
             $aturan = [
-                'userfile_background_website'     => 'required|mimes:png,jpg,jpeg,svg',
+                'userfile_header'     => 'required|mimes:png,jpg,jpeg,svg',
             ];
             $this->validate($request, $aturan);
 
-            $cek_background_website       = Master_konfigurasi_aplikasi::first();
-            if (!empty($cek_background_website)) {
-                $background_website_lama        = $cek_background_website->background_website_konfigurasi_aplikasis;
-                if (Storage::disk('public')->exists($background_website_lama))
-                    Storage::disk('public')->delete($background_website_lama);
+            $cek_header       = Master_konfigurasi_aplikasi::first();
+            if (!empty($cek_header)) {
+                $header_lama        = $cek_header->header_konfigurasi_aplikasis;
+                if (Storage::disk('public')->exists($header_lama))
+                    Storage::disk('public')->delete($header_lama);
             }
 
-            $nama_background_website = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_background_website')->getClientOriginalName())));
-            $path_background_website = 'logo/';
-            Storage::disk('public')->put($path_background_website.$nama_background_website, file_get_contents($request->file('userfile_background_website')));
+            $nama_header = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_header')->getClientOriginalName())));
+            $path_header = 'logo/';
+            Storage::disk('public')->put($path_header.$nama_header, file_get_contents($request->file('userfile_header')));
 
             $data = [
-                'background_website_konfigurasi_aplikasis'    => $path_background_website . $nama_background_website,
+                'header_konfigurasi_aplikasis'    => $path_header . $nama_header,
                 'updated_at'                    => date('Y-m-d H:i:s'),
             ];
 
             Master_konfigurasi_aplikasi::query()->update($data);
 
-            $setelah_simpan_background_website = [
+            $setelah_simpan_header = [
                 'alert'                     => 'sukses',
-                'text'                      => 'Logo berhasil diperbarui',
+                'text'                      => 'Header berhasil diperbarui',
             ];
-            return redirect()->back()->with('setelah_simpan_background_website', $setelah_simpan_background_website);
+            return redirect()->back()->with('setelah_simpan_header', $setelah_simpan_header);
         }
         else
             return redirect('dashboard');

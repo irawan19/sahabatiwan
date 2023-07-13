@@ -6,6 +6,8 @@ use Storage;
 use App\Models\Master_konfigurasi_aplikasi;
 use App\Models\Laporan_sahabat;
 use App\Models\Master_provinsi;
+use App\Models\Master_sosial_media;
+use App\Models\Master_kontak_kami;
 
 class LaporanSahabatController extends Controller
 {
@@ -15,6 +17,8 @@ class LaporanSahabatController extends Controller
         $data['lihat_provinsis']                = Master_provinsi::orderBy('nama_provinsis')
                                                                 ->get();
         $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
+        $data['lihat_kontak_kamis']             = Master_kontak_kami::first();
+        $data['lihat_sosial_medias']            = Master_sosial_media::get();
         return view('laporan_sahabat',$data);
     }
 

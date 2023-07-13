@@ -764,6 +764,16 @@ ul {
   color: var(--govity-base);
 }
 
+.main-menu__search-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -30px;
+  width: 1px;
+  background-color: var(--govity-bdr-color);
+}
+
 .language-switcher {
   position: relative;
   display: flex;
@@ -5199,7 +5209,7 @@ ul {
 }
 
 .footer-widget__subscribe-text p {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 30px;
   color: var(--govity-white);
@@ -5237,7 +5247,7 @@ ul {
   outline: none;
   border: none;
   background-color: var(--govity-base);
-  margin-left: 10px;
+  margin-left: 5px;
   padding: 12px 50px 12px;
 }
 

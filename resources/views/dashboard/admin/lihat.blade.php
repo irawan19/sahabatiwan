@@ -54,8 +54,10 @@
 										            		{{General::baca($link_admin,'dashboard/admin/baca/'.$admins->id)}}
 										            		<div class="dropdown-divider"></div>
 										            		{{General::edit($link_admin,'dashboard/admin/edit/'.$admins->id)}}
-										            		<div class="dropdown-divider"></div>
-										            		{{General::hapus($link_admin,'dashboard/admin/hapus/'.$admins->id, $admins->name)}}
+															@if($admins->level_sistems_id != 1)
+																<div class="dropdown-divider"></div>
+																{{General::hapus($link_admin,'dashboard/admin/hapus/'.$admins->id, $admins->name)}}
+															@endif
 										            	</div>
 										            </div>
 											    </td>

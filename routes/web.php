@@ -35,6 +35,7 @@ use App\Http\Controllers\Dashboard\KategoriSwaraNusvantaraController as Dashboar
 use App\Http\Controllers\Dashboard\SwaraNusvantaraController as DashboardSwaraNusvantara;
 use App\Http\Controllers\Dashboard\LaporanSahabatController as DashboardLaporanSahabat;
 use App\Http\Controllers\Dashboard\DukunganSahabatController as DashboardDukunganSahabat;
+use App\Http\Controllers\Dashboard\KontakKamiController as DashboardKontakKami;
 
 //Konfigurasi Aplikasi
 use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
@@ -166,6 +167,12 @@ Route::middleware([
                 Route::get('/hapus/{id}', [DashboardDukunganSahabat::class, 'hapus']);
             });
 
+            //Kontak Kami
+            Route::group(['prefix' => 'kontak_kami'], function() {
+                Route::get('/', [DashboardKontakKami::class, 'index']);
+                Route::post('/prosesedit', [DashboardKontakKami::class, 'prosesedit']);
+            });
+
         //Konfigurasi Aplikasi
             //Menu
             Route::group(['prefix' => 'menu'], function () {
@@ -221,7 +228,7 @@ Route::middleware([
                 Route::post('/proseseditlogo', [DashboardKonfigurasiAplikasi::class, 'proseseditlogo']);
                 Route::post('/prosesediticon', [DashboardKonfigurasiAplikasi::class, 'prosesediticon']);
                 Route::post('/proseseditlogotext', [DashboardKonfigurasiAplikasi::class, 'proseseditlogotext']);
-                Route::post('/proseseditbackgroundwebsite', [DashboardKonfigurasiAplikasi::class, 'proseseditbackgroundwebsite']);
+                Route::post('/proseseditheader', [DashboardKonfigurasiAplikasi::class, 'proseseditheader']);
             });
 
         //Logout

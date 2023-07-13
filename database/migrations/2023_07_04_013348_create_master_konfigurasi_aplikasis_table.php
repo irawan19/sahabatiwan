@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id('id_konfigurasi_aplikasis');
             $table->string('nama_konfigurasi_aplikasis');
             $table->string('email_konfigurasi_aplikasis');
+            $table->string('telepon_konfigurasi_aplikasis');
             $table->longtext('deskripsi_konfigurasi_aplikasis');
             $table->longtext('keywords_konfigurasi_aplikasis');
             $table->string('icon_konfigurasi_aplikasis');
             $table->string('logo_konfigurasi_aplikasis');
             $table->string('logo_text_konfigurasi_aplikasis');
+            $table->string('header_konfigurasi_aplikasis');
             $table->timestamps();
         });
     }

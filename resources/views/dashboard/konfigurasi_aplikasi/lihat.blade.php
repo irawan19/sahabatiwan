@@ -24,6 +24,11 @@
 							{{General::pesanErrorForm($errors->first('email_konfigurasi_aplikasis'))}}
 						</div>
 						<div class="form-group">
+							<label class="form-col-form-label" for="telepon_konfigurasi_aplikasis">Telepon</label>
+							<input class="form-control {{ General::validForm($errors->first('telepon_konfigurasi_aplikasis')) }}" id="telepon_konfigurasi_aplikasis" type="email" name="telepon_konfigurasi_aplikasis" value="{{Request::old('telepon_konfigurasi_aplikasis') == '' ? $lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis : Request::old('telepon_konfigurasi_aplikasis')}}">
+							{{General::pesanErrorForm($errors->first('telepon_konfigurasi_aplikasis'))}}
+						</div>
+						<div class="form-group">
 							<label class="form-col-form-label" for="deskripsi_konfigurasi_aplikasis">Deskripsi <b style="color:red">*</b></label>
 							<input class="form-control {{ General::validForm($errors->first('deskripsi_konfigurasi_aplikasis')) }}" id="deskripsi_konfigurasi_aplikasis" type="text" name="deskripsi_konfigurasi_aplikasis" value="{{Request::old('deskripsi_konfigurasi_aplikasis') == '' ? $lihat_konfigurasi_aplikasis->deskripsi_konfigurasi_aplikasis : Request::old('deskripsi_konfigurasi_aplikasis')}}">
 							{{General::pesanErrorForm($errors->first('deskripsi_konfigurasi_aplikasis'))}}
@@ -123,6 +128,36 @@
 	                <div class="card-footer right-align">
 						{{General::perbarui()}}
 	                </div>
+				</form>
+			</div>
+
+			<div class="card">
+				<form class="form-horizontal m-t-40" action="{{ URL('dashboard/konfigurasi_aplikasi/proseseditheader') }}" enctype="multipart/form-data" method="POST">
+					{{ csrf_field() }}
+					<div class="card-header">
+						<strong>Header</strong>
+					</div>
+					<div class="card-body">
+						@if (Session::get('setelah_simpan_header.alert') == 'sukses')
+							{{ General::pesanSuksesForm(Session::get('setelah_simpan_header.text')) }}
+						@endif
+						<div class="form-group center-align">
+							<a data-fancybox="gallery" href="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->header_konfigurasi_aplikasis)}}">
+								<img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->header_konfigurasi_aplikasis)}}" width="256">
+							</a>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-12 center-align">
+								<label class="form-col-form-label" for="userfile_gambar_slideshow">1894x381px</label>
+								<br/>
+								<input id="userfile_header" type="file" name="userfile_header">
+								{{General::pesanErrorFormFile($errors->first('userfile_header'))}}
+							</div>
+						</div>
+					</div>
+					<div class="card-footer right-align">
+						{{General::perbarui()}}
+					</div>
 				</form>
 			</div>
 		</div>

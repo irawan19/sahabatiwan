@@ -54,6 +54,17 @@
                             </ul>
                         </div>
                         <div class="main-menu__right">
+                            @if(!empty($lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis))
+                                <div class="main-menu__call">
+                                    <div class="main-menu__call-icon">
+                                        <span class="icon-telephone"></span>
+                                    </div>
+                                    <div class="main-menu__call-content">
+                                        <p class="main-menu__call-sub-title">Telepon</p>
+                                        <h5 class="main-menu__call-number"><a href="tel:{{$lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis}}">{{$lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis}}</a></h5>
+                                    </div>
+                                </div>
+                            @endif
                             <div class="main-menu__search-box">
                                 <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
                             </div>
