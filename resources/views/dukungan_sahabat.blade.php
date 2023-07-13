@@ -117,13 +117,13 @@
                         </div>
                         <div class="col-xl-12">
                             <div class="contact-one__input-box">
-                                <input type="text" placeholder="Telepon" name="telepon_dukungan_sahabats" value="{{Request::old('telepon_dukungan_sahabats')}}">
+                                <input type="number" placeholder="Telepon" name="telepon_dukungan_sahabats" value="{{Request::old('telepon_dukungan_sahabats')}}">
                                 {{General::pesanErrorForm($errors->first('telepon_dukungan_sahabats'))}}
                             </div>
                         </div>
                         <div class="col-xl-12">
                             <div class="contact-one__input-box">
-                                <input type="text" placeholder="NIK" name="nik_dukungan_sahabats" value="{{Request::old('nik_dukungan_sahabats')}}">
+                                <input type="number" placeholder="NIK" name="nik_dukungan_sahabats" value="{{Request::old('nik_dukungan_sahabats')}}">
                                 {{General::pesanErrorForm($errors->first('nik_dukungan_sahabats'))}}
                             </div>
                         </div>

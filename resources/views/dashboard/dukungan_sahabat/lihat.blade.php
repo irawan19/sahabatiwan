@@ -32,7 +32,6 @@
 				    				<th class="nowrap">Nama</th>
 				    				<th class="nowrap">Telepon</th>
 				    				<th class="nowrap">NIK</th>
-				    				<th class="nowrap">Status</th>
 				    			</tr>
 				    		</thead>
 				    		<tbody>
@@ -59,35 +58,18 @@
 								    		<td class="nowrap">{{$dukungan_sahabats->nama_dukungan_sahabats}}</td>
 								    		<td class="nowrap">{{$dukungan_sahabats->telepon_dukungan_sahabats}}</td>
 								    		<td class="nowrap">{{$dukungan_sahabats->nik_dukungan_sahabats}}</td>
-								    		<td class="nowrap center-align">
-												@if(General::hakAkses($link_dukungan_sahabat, 'edit') == 'true')
-													@if($dukungan_sahabats->status_publikasi_dukungan_sahabats == 0)
-														{{General::nonpublikasi($link_dukungan_sahabat, 'dashboard/dukungan_sahabat/publikasi/'.$dukungan_sahabats->id_dukungan_sahabats)}}
-													@else
-														{{General::publikasi($link_dukungan_sahabat, 'dashboard/dukungan_sahabat/publikasi/'.$dukungan_sahabats->id_dukungan_sahabats)}}
-													@endif
-												@else
-													@if($dukungan_sahabats->status_publikasi_dukungan_sahabats == 0)
-														Belum Dipublikasi
-													@else
-														Pulbikasi
-													@endif
-												@endif
-											</td>
 								    	</tr>
 								    @endforeach
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_dukungan_sahabat) != 0)
-											<td colspan="6" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
+											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
+											<td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>

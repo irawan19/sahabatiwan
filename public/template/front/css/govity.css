@@ -10779,7 +10779,8 @@ ul {
 }
 
 .contact-one__input-box input[type=text],
-.contact-one__input-box input[type=email] {
+.contact-one__input-box input[type=email],
+.contact-one__input-box input[type=number] {
   height: 58px;
   width: 100%;
   border: none;

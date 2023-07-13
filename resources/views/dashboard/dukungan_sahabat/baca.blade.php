@@ -19,7 +19,7 @@
 							<th>:</th>
 							<td>
                                 <a data-fancybox="gallery" href="{{URL::asset('storage/'.$baca_dukungan_sahabats->ktp_dukungan_sahabats)}}">
-                                    <img src="{{ $baca_dukungan_sahabats->ktp_dukungan_sahabats }}" width="108">
+                                    <img src="{{ URL::asset('storage/'.$baca_dukungan_sahabats->ktp_dukungan_sahabats) }}" width="108">
                                 </a>
                             </td>
 						</tr>
