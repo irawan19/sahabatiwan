@@ -97,6 +97,9 @@ class SwaraNusvantaraController extends Controller
                 $data['lihat_komentar_swara_nusvantaras']       = Komentar_swara_nusvantara::orderBy('created_at','desc')
                                                                                             ->limit(5)
                                                                                             ->get();
+                $data['lihat_komentars']                        = Komentar_swara_nusvantara::where('swara_nusvantaras_id',$cek_swara_nusvantaras->id_swara_nusvantaras)
+                                                                                        ->orderBy('created_at','desc')
+                                                                                        ->get();
                 return view('swara_nusvantara_detail',$data);
             }
             else

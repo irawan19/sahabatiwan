@@ -50,10 +50,8 @@
                         <div class="news-details__bottom">
                             <p class="news-details__tags"></p>
                             <div class="news-details__social-list">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/share?url={{URL::current()}}&text={{$lihat_swara_nusvantaras->judul_swara_nusvantaras}}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{URL::current()}}" target="_blank"><i class="fab fa-facebook"></i></a>
                             </div>
                         </div>
                         <div class="news-details__pagenation-box">
@@ -63,7 +61,8 @@
                             </ul>
                         </div>
                         <div class="comment-one">
-                            <h3 class="comment-one__title">2 comments</h3>
+                            <h3 class="comment-one__title">{{$lihat_swara_nusvantaras->total_komentar_swara_nusvantaras}} Komentar</h3>
+                            @foreach($lihat_komentars as $komentars)
                             <div class="comment-one__single">
                                 <div class="comment-one__image">
                                     <img src="assets/images/blog/comment-1-1.jpg" alt="">
@@ -76,21 +75,10 @@
                                     <a href="news-details.html" class="thm-btn comment-one__btn">Reply</a>
                                 </div>
                             </div>
-                            <div class="comment-one__single">
-                                <div class="comment-one__image">
-                                    <img src="assets/images/blog/comment-1-2.jpg" alt="">
-                                </div>
-                                <div class="comment-one__content">
-                                    <h3>Sarah albert</h3>
-                                    <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.
-                                        Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,
-                                        sollicitudin at euismod.</p>
-                                    <a href="news-details.html" class="thm-btn comment-one__btn">Reply</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="comment-form">
-                            <h3 class="comment-form__title">Leave a comment</h3>
+                            <h3 class="comment-form__title">Berikan komentar</h3>
                             <form action="assets/inc/sendemail.php" class="comment-one__form contact-form-validated"
                                 novalidate="novalidate">
                                 <div class="row">

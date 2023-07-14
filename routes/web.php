@@ -164,6 +164,7 @@ Route::middleware([
                 Route::get('/', [DashboardKomentarSwaraNusvantara::class, 'index']);
                 Route::get('/cari', [DashboardKomentarSwaraNusvantara::class, 'cari']);
                 Route::get('/baca/{id}', [DashboardKomentarSwaraNusvantara::class, 'baca']);
+                Route::get('/publikasi/{id}', [DashboardKomentarSwaraNusvantara::class, 'publikasi']);
                 Route::get('/hapus/{id}', [DashboardKomentarSwaraNusvantara::class, 'hapus']);
             });
 
