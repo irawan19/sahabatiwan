@@ -25,7 +25,11 @@
 				    				@if(General::totalHakAkses($link_komentar_swara_nusvantara) != 0)
 						    			<th width="5px"></th>
 						    		@endif
+				    				<th class="nowrap">Tanggal</th>
+				    				<th class="nowrap">Judul</th>
 				    				<th class="nowrap">Nama</th>
+				    				<th class="nowrap">Email</th>
+				    				<th class="nowrap">Status</th>
 				    			</tr>
 				    		</thead>
 				    		<tbody>
@@ -46,16 +50,48 @@
 										            </div>
 											    </td>
 								    		@endif
+								    		<td class="nowrap">{{$komentar_swara_nusvantaras->tanggal_dibuat}}</td>
+								    		<td class="nowrap">{{$komentar_swara_nusvantaras->judul_swara_nusvantaras}}</td>
 								    		<td class="nowrap">{{$komentar_swara_nusvantaras->nama_komentar_swara_nusvantaras}}</td>
+								    		<td class="nowrap">
+												@if(!empty($komentar_swara_nusvantaras->email_komentar_swara_nusvantara))
+													<a href="mailto:{{$komentar_swara_nusvantaras->email_swara_nusvantaras}}">
+														{{$komentar_swara_nusvantaras->email_komentar_swara_nusvantara}}
+													</a>
+												@endif
+											</td>
+								    		<td class="nowrap center-align">
+												@if(General::hakAkses($link_komentar_swara_nusvantara, 'edit') == 'true')
+													@if($komentar_swara_nusvantaras->status_publikasi_komentar_swara_nusvantaras == 0)
+														{{General::nonpublikasi($link_komentar_swara_nusvantara, 'dashboard/komentar_swara_nusvantara/publikasi/'.$komentar_swara_nusvantaras->id_komentar_swara_nusvantaras)}}
+													@else
+														{{General::publikasi($link_komentar_swara_nusvantara, 'dashboard/komentar_swara_nusvantara/publikasi/'.$komentar_swara_nusvantaras->id_komentar_swara_nusvantaras)}}
+													@endif
+												@else
+													@if($komentar_swara_nusvantaras->status_publikasi_komentar_swara_nusvantaras == 0)
+														Belum Dipublikasi
+													@else
+														Pulbikasi
+													@endif
+												@endif
+											</td>
 								    	</tr>
 								    @endforeach
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_komentar_swara_nusvantara) != 0)
-											<td colspan="2" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="6" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
 										@endif
 									</tr>
 								@endif
