@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id('id_komentar_swara_nusvantaras');
             $table->bigInteger('swara_nusvantaras_id')->unsigned()->index()->nullable();
             $table->foreign('swara_nusvantaras_id')->references('id_swara_nusvantaras')->on('master_swara_nusvantaras')->onUpdate('set null')->onDelete('set null');
-            $table->bigInteger('komentar_swara_nusvantaras_id')->unsigned()->index()->nullable();
-            $table->foreign('komentar_swara_nusvantaras_id')->references('id_komentar_swara_nusvantaras')->on('komentar_swara_nusvantaras')->onUpdate('set null')->onDelete('set null');
             $table->string('nama_komentar_swara_nusvantaras');
             $table->string('email_komentar_swara_nusvantaras');
             $table->longtext('konten_deskripsi_swara_nusvantaras');
