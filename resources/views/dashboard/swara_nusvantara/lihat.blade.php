@@ -7,7 +7,7 @@
 				<div class="card-header">
 					<div class="row">
 						<div class="col-sm-6">
-							<strong>Nusvantara</strong>
+							<strong>Swara Nusvantara</strong>
 						</div>
 						<div class="col-sm-6">
 							<div class="right-align">

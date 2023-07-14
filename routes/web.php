@@ -36,7 +36,7 @@ use App\Http\Controllers\Dashboard\SosialMediaController as DashboardSosialMedia
 use App\Http\Controllers\Dashboard\TestimoniController as DashboardTestimoni;
 use App\Http\Controllers\Dashboard\KategoriSwaraNusvantaraController as DashboardKategoriSwaraNusvantara;
 use App\Http\Controllers\Dashboard\SwaraNusvantaraController as DashboardSwaraNusvantara;
-use App\Http\Controllers\Dashboard\KomentarController as DashboardKomentar;
+use App\Http\Controllers\Dashboard\KomentarSwaraNusvantaraController as DashboardKomentarSwaraNusvantara;
 use App\Http\Controllers\Dashboard\LaporanSahabatController as DashboardLaporanSahabat;
 use App\Http\Controllers\Dashboard\DukunganSahabatController as DashboardDukunganSahabat;
 use App\Http\Controllers\Dashboard\KontakKamiController as DashboardKontakKami;
@@ -159,11 +159,11 @@ Route::middleware([
             });
 
             //Komentar Swara Nusvantara
-            Route::group(['prefix' => 'swara_nusvantara'], function() {
-                Route::get('/', [DashboardSwaraNusvantara::class, 'index']);
-                Route::get('/cari', [DashboardSwaraNusvantara::class, 'cari']);
-                Route::get('/baca/{id}', [DashboardSwaraNusvantara::class, 'baca']);
-                Route::get('/hapus/{id}', [DashboardSwaraNusvantara::class, 'hapus']);
+            Route::group(['prefix' => 'komentar_swara_nusvantara'], function() {
+                Route::get('/', [DashboardKomentarSwaraNusvantara::class, 'index']);
+                Route::get('/cari', [DashboardKomentarSwaraNusvantara::class, 'cari']);
+                Route::get('/baca/{id}', [DashboardKomentarSwaraNusvantara::class, 'baca']);
+                Route::get('/hapus/{id}', [DashboardKomentarSwaraNusvantara::class, 'hapus']);
             });
 
             //Laporan Sahabat

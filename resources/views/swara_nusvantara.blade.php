@@ -92,7 +92,7 @@
                             <ul class="sidebar__category-list list-unstyled">
                                 @foreach($lihat_kategori_swara_nusvantaras as $kategori_swara_nusvantaras)
                                     <li>
-                                        <a href="{{URL('swara-nusvantara/'.$kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras)}}">{{$kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras}}<span class="icon-right-arrow"></span></a>
+                                        <a href="{{URL('swara-nusvantara/'.$kategori_swara_nusvantaras->slug_kategori_swara_nusvantaras)}}">{{$kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras}}<span class="icon-right-arrow"></span></a>
                                     </li>
                                 @endforeach
                             </ul>
