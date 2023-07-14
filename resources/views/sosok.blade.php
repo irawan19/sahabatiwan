@@ -1,19 +1,8 @@
 @extends('layouts.app')
 @section('content')
     
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url({{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->header_konfigurasi_aplikasis)}})">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>Sosok</h2>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
+    @include('layouts.pageheader')
     
-    <!--Team Details Start-->
     <section class="team-details">
         <div class="container">
             <div class="team-details__top">
@@ -54,6 +43,5 @@
             </div>
         </div>
     </section>
-    <!--Team Details End-->
 
 @endsection

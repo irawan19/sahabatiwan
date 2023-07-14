@@ -1,15 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(storage/{{$lihat_konfigurasi_aplikasis->header_konfigurasi_aplikasis}})">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>Dukungan Sahabat</h2>
-            </div>
-        </div>
-    </section>
+    @include('layouts.pageheader')
 
     <section class="contact-page">
         <div class="container">
