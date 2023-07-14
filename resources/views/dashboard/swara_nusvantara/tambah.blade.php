@@ -22,7 +22,7 @@
 				            </select>
 		                </div>
 						<div class="form-group">
-							<label class="form-col-form-label" for="userfile_gambar_swara_nusvantara">Gambar (770x248px) <b style="color:red">*</b></label>
+							<label class="form-col-form-label" for="userfile_gambar_swara_nusvantara">Gambar (770x428px) <b style="color:red">*</b></label>
 							<br/>
 							<input id="userfile_gambar_swara_nusvantara" type="file" name="userfile_gambar_swara_nusvantara">
 							{{General::pesanErrorForm($errors->first('userfile_gambar_swara_nusvantara'))}}

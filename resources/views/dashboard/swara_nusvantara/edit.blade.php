@@ -29,7 +29,7 @@
 				            </select>
 		                </div>
 						<div class="form-group">
-							<label class="form-col-form-label" for="userfile_gambar_swara_nusvantaras">Gambar  (770x248px)</label>
+							<label class="form-col-form-label" for="userfile_gambar_swara_nusvantaras">Gambar  (770x428px)</label>
 							<br/>
 							<div class="form-group center-align">
 							    <a data-fancybox="gallery" href="{{URL::asset('storage/'.$edit_swara_nusvantaras->gambar_swara_nusvantaras)}}">

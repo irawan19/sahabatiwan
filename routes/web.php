@@ -9,7 +9,7 @@ use App\Http\Controllers\BerandaController as Beranda;
 use App\Http\Controllers\SosokController as Sosok;
 
 //Swara Nusvantara
-use App\Http\Controllers\SwaraNusvantara as SwaraNusvantara;
+use App\Http\Controllers\SwaraNusvantaraController as SwaraNusvantara;
 
 //Laporan Sahabat
 use App\Http\Controllers\LaporanSahabatController as LaporanSahabat;
