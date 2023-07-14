@@ -3,7 +3,6 @@
     
     @include('layouts.pageheader')
 
-    <!--News Sidebar Start-->
     <div class="news-sidebar">
         <div class="container">
             <div class="row">
@@ -11,10 +10,9 @@
                     <div class="news-sidebar__left">
                         <div class="news-sidebar__content">
                             @foreach($lihat_swara_nusvantaras as $swara_nusvantaras)
-                                <!--News Sidebar Single Start-->
                                 <div class="news-sidebar__single">
                                     <div class="news-sidebar__img">
-                                        <img src="{{URL('storage/'.$swara_nusvantaras->gambar_swara_nusvantaras)}}" alt="">
+                                        <img src="{{URL('storage/'.$swara_nusvantaras->gambar_swara_nusvantaras)}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
                                         <div class="news-sidebar__date">
                                             @php($tanggal_publikasi_swara_nusvantaras = $swara_nusvantaras->tanggal_publikasi_swara_nusvantaras)
                                             @php($pecah_tanggal_publikasi_swara_nusvantaras = explode(' ',$tanggal_publikasi_swara_nusvantaras))
@@ -52,7 +50,6 @@
                                         <a href="news-details.html" class="news-sidebar__read-more">LIhat Selengkapnya<span class="icon-right-arrow"></span></a>
                                     </div>
                                 </div>
-                                <!--News Sidebar Single End-->
                             @endforeach
                         </div>
                         <div class="news-sidebar__load-more">
@@ -74,7 +71,7 @@
                                 @foreach($lihat_swara_nusvantara_populers as $swara_nusvantara_populers)
                                     <li>
                                         <div class="sidebar__post-image">
-                                            <img src="{{URL::asset('storage/'.$swara_nusvantara_populers->gambar_swara_nusvantaras)}}" alt="">
+                                            <img src="{{URL::asset('storage/'.$swara_nusvantara_populers->gambar_swara_nusvantaras)}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
@@ -117,6 +114,5 @@
             </div>
         </div>
     </div>
-    <!--News Sidebar End-->
 
 @endsection

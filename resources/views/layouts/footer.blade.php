@@ -10,12 +10,14 @@
                                                                         ->get()))
 <footer class="site-footer">
     <div class="site-footer__img">
-        <img src="{{URL::asset('template/front/images/resources/site-footer-img.jpg')}}" alt="">
+        <img src="{{URL::asset('template/front/images/resources/site-footer-img.jpg')}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
     </div>
     <div class="container">
         <div class="site-footer__top">
             <div class="footer-widget__logo">
-                <a href="index.html"><img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis)}}" alt="Logo {{$lihat_konfigurasi_aplikasis->nama_logo_konfigurasi_aplikasis}}"></a>
+                <a href="{{URL('/')}}">
+                    <img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis)}}" alt="Logo {{$lihat_konfigurasi_aplikasis->nama_logo_konfigurasi_aplikasis}}">
+                </a>
             </div>
             <div class="footer-widget__subscribe-box">
                 <div class="footer-widget__subscribe-text">

@@ -49,7 +49,10 @@ class DukunganSahabatController extends Controller
         ];
         Dukungan_sahabat::insert($dukungan_sahabats_data);
         
-        return redirect('dukungan-sahabat');
+        $setelah_simpan = [
+            'alert'  => 'sukses',
+        ];
+        return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
     }
 
 }

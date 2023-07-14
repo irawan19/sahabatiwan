@@ -7,7 +7,9 @@
         <div class="container">
             <div class="contact-page__top">
                 @if($errors->isEmpty())
-                    <div class="alert alert-success" style="display:none" role="alert">Laporan anda sudah masuk ke dalam sistem kami. Terimakasih atas laporan anda.</div>
+				    @if (Session::get('setelah_simpan.alert') == 'sukses')
+                        <div class="alert alert-success" role="alert">Laporan anda sudah masuk ke dalam sistem kami. Terimakasih atas laporan anda.</div>
+				    @endif
                 @else
                     <div class="alert alert-danger" role="alert">Opss... Ada kesalahan saat memasukkan data</div>
                 @endif
@@ -16,7 +18,7 @@
                         <div class="contact-page__left">
                             <div class="contact-page__img-box">
                                 <div class="contact-page__img">
-                                    <img src="{{'storage/'.$lihat_kontak_kamis->gambar_kontak_kamis}}" alt="">
+                                    <img src="{{'storage/'.$lihat_kontak_kamis->gambar_kontak_kamis}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
                                 </div>
                             </div>
                         </div>
@@ -66,7 +68,7 @@
                 <div class="contact-page__bottom-right">
                     <div class="contact-page__social">
                         <div class="contact-page__social-shape-1 float-bob-x">
-                            <img src="template/front/images/shapes/contact-page-shape-1.png" alt="">
+                            <img src="template/front/images/shapes/contact-page-shape-1.png" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
                         </div>
                         <span>Sosial Media</span>
                         @foreach($lihat_sosial_medias as $sosial_medias)

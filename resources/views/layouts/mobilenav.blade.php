@@ -4,7 +4,7 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
         <div class="logo-box">
             <a href="{{URL('/')}}" aria-label="logo {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}"><img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis)}}" width="94"
-                    alt="" /></a>
+                    alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}" /></a>
         </div>
         <div class="mobile-nav__container"></div>
         <ul class="mobile-nav__contact list-unstyled">

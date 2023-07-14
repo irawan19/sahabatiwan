@@ -37,6 +37,8 @@
 											      	<div class="dropdown">
 										            	<button class="btn btn-sm btn-primary dropdown-toggle" id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
 										            	<div class="dropdown-menu" aria-labelledby="dropdownMenu2" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 34px, 0px); top: 0px; left: 0px; will-change: transform;">
+										            		{{General::baca($link_komentar_swara_nusvantara,'dashboard/komentar_swara_nusvantara/baca/'.$komentar_swara_nusvantaras->id_komentar_swara_nusvantaras)}}
+										            		<div class="dropdown-divider"></div>
 										            		{{General::edit($link_komentar_swara_nusvantara,'dashboard/komentar_swara_nusvantara/edit/'.$komentar_swara_nusvantaras->id_komentar_swara_nusvantaras)}}
 										            		<div class="dropdown-divider"></div>
 										            		{{General::hapus($link_komentar_swara_nusvantara,'dashboard/komentar_swara_nusvantara/hapus/'.$komentar_swara_nusvantaras->id_komentar_swara_nusvantaras, $komentar_swara_nusvantaras->id_komentar_swara_nusvantaras.' - '.$komentar_swara_nusvantaras->nama_komentar_swara_nusvantaras)}}

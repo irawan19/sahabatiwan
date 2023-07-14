@@ -11,6 +11,7 @@ use App\Models\Master_swara_nusvantara;
 use App\Models\Laporan_sahabat;
 use App\Models\Dukungan_sahabat;
 use App\Models\Testimoni;
+use App\Models\Komentar_swara_nusvantara;
 
 class DashboardController extends AdminCoreController
 {
@@ -35,7 +36,7 @@ class DashboardController extends AdminCoreController
     {
         $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
         $data['total_swara_nusvantara']         = Master_swara_nusvantara::where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))->count();
-        $data['total_komentar']                 = 0;
+        $data['total_komentar']                 = Komentar_swara_nusvantara::count();
         $data['total_laporan_sahabat']          = Laporan_sahabat::count();
         $data['total_dukungan_sahabat']         = Dukungan_sahabat::count();
         $data['total_testimonis']               = Testimoni::count();

@@ -10,7 +10,7 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="team-details__left">
                             <div class="team-details__img">
-                                <img src="{{URL::asset('storage/'.$lihat_profils->foto3_profils)}}" alt="">
+                                <img src="{{URL::asset('storage/'.$lihat_profils->foto3_profils)}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
                             </div>
                         </div>
                     </div>

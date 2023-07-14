@@ -7,7 +7,9 @@
         <div class="container">
             <div class="contact-page__top">
                 @if($errors->isEmpty())
-                    <div class="alert alert-success" style="display:none" role="alert">Dukungan anda sudah masuk ke dalam sistem kami. Terimakasih atas dukungan anda.</div>
+				    @if (Session::get('setelah_simpan.alert') == 'sukses')
+                        <div class="alert alert-success" role="alert">Laporan anda sudah masuk ke dalam sistem kami. Terimakasih atas laporan anda.</div>
+				    @endif
                 @else
                     <div class="alert alert-danger" role="alert">Opss... Ada kesalahan saat memasukkan data</div>
                 @endif

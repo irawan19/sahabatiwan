@@ -52,7 +52,10 @@ class LaporanSahabatController extends Controller
         ];
         Laporan_sahabat::insert($laporan_sahabats_data);
         
-        return redirect('laporan-sahabat');
+        $setelah_simpan = [
+            'alert'  => 'sukses',
+        ];
+        return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
     }
 
 }
