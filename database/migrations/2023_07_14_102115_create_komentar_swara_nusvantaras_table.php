@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreign('swara_nusvantaras_id')->references('id_swara_nusvantaras')->on('master_swara_nusvantaras')->onUpdate('set null')->onDelete('set null');
             $table->string('nama_komentar_swara_nusvantaras');
             $table->string('email_komentar_swara_nusvantaras');
-            $table->longtext('konten_deskripsi_swara_nusvantaras');
-            $table->boolean('statu_baca_komentar_swara_nusvantaras')->default(0);
+            $table->longtext('konten_komentar_swara_nusvantaras');
+            $table->boolean('status_baca_komentar_swara_nusvantaras')->default(0);
             $table->boolean('status_publikasi_komentar_swara_nusvantaras')->default(0);
             $table->timestamps();
         });

@@ -102,7 +102,6 @@
 
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
         <div class="search-popup__content">
             <form action="{{URL('cari')}}" method="GET" name="cari">
                 <label for="search" class="sr-only">Silahkan masukkan kata pencarian</label><!-- /.sr-only -->
@@ -112,9 +111,7 @@
                 </button>
             </form>
         </div>
-        <!-- /.search-popup__content -->
     </div>
-    <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
 

@@ -55,7 +55,7 @@ class LaporanSahabatController extends Controller
         $setelah_simpan = [
             'alert'  => 'sukses',
         ];
-        return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
+        return redirect()->back()->with('setelah_simpan', $setelah_simpan);
     }
 
 }

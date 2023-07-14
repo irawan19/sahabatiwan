@@ -7,7 +7,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
-                <div class="news-details__left">
+                    <div class="news-details__left">
+                        @if($errors->isEmpty())
+                            @if (Session::get('setelah_simpan.alert') == 'sukses')
+                                <div class="alert alert-success" role="alert">Komentar anda sudah masuk ke dalam sistem kami. Kami akan mereview komentar anda. Terimakasih atas komentar anda.</div>
+                            @endif
+                        @else
+                            <div class="alert alert-danger" role="alert">Opss... Ada kesalahan saat memasukkan komentar</div>
+                        @endif
                         <div class="news-details__img-box">
                             <div class="news-details__img">
                                 <img src="{{URL::asset('storage/'.$lihat_swara_nusvantaras->gambar_swara_nusvantaras)}}" alt="{{$lihat_swara_nusvantaras->judul_swara_nusvantaras}}">
@@ -56,8 +63,9 @@
                         </div>
                         <div class="news-details__pagenation-box">
                             <ul class="list-unstyled news-details__pagenation">
-                                <li>Everyone should live once in a smart city</li>
-                                <li>The best city in world with amazing art & culture</li>
+                                @foreach($lihat_berita_lainnya as $berita_lainnya)
+                                    <li>{{$berita_lainnya->judul_swara_nusvantaras}}</li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="comment-one">
@@ -79,28 +87,32 @@
                         </div>
                         <div class="comment-form">
                             <h3 class="comment-form__title">Berikan komentar</h3>
-                            <form action="assets/inc/sendemail.php" class="comment-one__form contact-form-validated"
+                            <form action="{{URL('swara-nusvantara/komentar/kirim')}}" method="POST" class="comment-one__form"
                                 novalidate="novalidate">
+					            {{ csrf_field() }}
+                                <input type="hidden" name="id_swara_nusvantaras" value="{{$lihat_swara_nusvantaras->id_swara_nusvantaras}}">
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="comment-form__input-box">
-                                            <input type="text" placeholder="Your Name" name="name">
+                                            <input type="text" name="nama_komentar_swara_nusvantaras" placeholder="Nama" value="{{Request::old('nama_komentar_swara_nusvantaras')}}">
+                                        {{General::pesanErrorForm($errors->first('nama_komentar_swara_nusvantaras'))}}
                                         </div>
                                     </div>
                                     <div class="col-xl-6">
                                         <div class="comment-form__input-box">
-                                            <input type="email" placeholder="Email Address" name="email">
+                                            <input type="email" placeholder="Email" name="email_komentar_swara_nusvantaras" value="{{Request::old('email_komentar_swara_nusvantaras')}}">
+                                            {{General::pesanErrorForm($errors->first('email_komentar_swara_nusvantaras'))}}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="comment-form__input-box text-message-box">
-                                            <textarea name="message" placeholder="Write Comment"></textarea>
+                                            <textarea name="konten_komentar_swara_nusvantaras" placeholder="Komentar">{!! Request::old('konten_komentar_swara_nusvantaras') !!}</textarea>
+                                            {{General::pesanErrorForm($errors->first('konten_komentar_swara_nusvantaras'))}}
                                         </div>
                                         <div class="comment-form__btn-box">
-                                            <button type="submit" class="thm-btn comment-form__btn">Submit
-                                                Comment</button>
+                                            <button type="submit" class="thm-btn comment-form__btn">Kirim Komentar</button>
                                         </div>
                                     </div>
                                 </div>
