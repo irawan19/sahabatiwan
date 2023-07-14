@@ -55,11 +55,8 @@
                                 <!--News Sidebar Single End-->
                             @endforeach
                         </div>
-                        <div class="news-sidebar__bottom-box"></div>
-                        <div class="news-sidebar__government-services"></div>
                         <div class="news-sidebar__load-more">
-                            <a href="news-details.html" class="thm-btn news-sidebar__load-more-btn">Load More
-                                Posts</a>
+                            {{ $lihat_swara_nusvantaras->appends(Request::except('page'))->links('vendor.pagination.custom') }}
                         </div>
                     </div>
                 </div>
@@ -103,42 +100,16 @@
                         <div class="sidebar__single sidebar__comments">
                             <h3 class="sidebar__title">Komentar</h3>
                             <ul class="sidebar__comments-list list-unstyled">
-                                <li>
-                                    <div class="sidebar__comments-icon">
-                                        <i class="fas fa-comment"></i>
-                                    </div>
-                                    <div class="sidebar__comments-text-box">
-                                        <p>A Wordpress Commenter
-                                            <br> on Launch New Mobile App</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar__comments-icon">
-                                        <i class="fas fa-comment"></i>
-                                    </div>
-                                    <div class="sidebar__comments-text-box">
-                                        <p> <span>John Doe</span> on Template:
-                                            Comments</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar__comments-icon">
-                                        <i class="fas fa-comment"></i>
-                                    </div>
-                                    <div class="sidebar__comments-text-box">
-                                        <p>A Wordpress Commenter on
-                                            <br> Launch New Mobile App</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar__comments-icon">
-                                        <i class="fas fa-comment"></i>
-                                    </div>
-                                    <div class="sidebar__comments-text-box">
-                                        <p> <span>John Doe</span> on Template:
-                                            Comments</p>
-                                    </div>
-                                </li>
+                                @foreach($lihat_komentar_swara_nusvantaras as $komentar_swara_nusvantaras)
+                                    <li>
+                                        <div class="sidebar__comments-icon">
+                                            <i class="fas fa-comment"></i>
+                                        </div>
+                                        <div class="sidebar__comments-text-box">
+                                            <p>{!! $komentar_swara_nusvantaras->konten_komentar_swara_nusvantaras !!}</p>
+                                        </div>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

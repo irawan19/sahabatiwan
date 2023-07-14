@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Master_konfigurasi_aplikasi;
 use App\Models\Master_swara_nusvantara;
 use App\Models\Master_kategori_swara_nusvantara;
+use App\Models\Komentar_swara_nusvantara;
 
 class SwaraNusvantaraController extends Controller
 {
@@ -20,6 +21,9 @@ class SwaraNusvantaraController extends Controller
                                                                                 ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
                                                                                 ->limit(5)
                                                                                 ->get();
+        $data['lihat_komentar_swara_nusvantaras']       = Komentar_swara_nusvantara::orderBy('created_at','desc')
+                                                                                    ->limit(5)
+                                                                                    ->get();
         return view('swara_nusvantara',$data);
     }
 
