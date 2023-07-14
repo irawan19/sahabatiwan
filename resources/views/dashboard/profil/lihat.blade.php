@@ -36,6 +36,17 @@
 			            </div>
 						{{General::pesanErrorFormFile($errors->first('userfile_foto2'))}}
 						<div class="form-group">
+							<label class="form-col-form-label" for="userfile_foto3">Foto 3  (550x573px) <b style="color:red">*</b></label>
+							<br/>
+							<div class="form-group center-align">
+							    <a data-fancybox="gallery" href="{{URL::asset('storage/'.$lihat_profils->foto3_profils)}}">
+							    	<img src="{{URL::asset('storage/'.$lihat_profils->foto3_profils)}}" width="108">
+							    </a>
+							</div>
+			                <input id="userfile_foto3" type="file" name="userfile_foto3">
+			            </div>
+						{{General::pesanErrorFormFile($errors->first('userfile_foto3'))}}
+						<div class="form-group">
 							<label class="form-col-form-label" for="text1_profils">Text 1 <b style="color:red">*</b></label>
 							<input class="form-control {{ General::validForm($errors->first('text1_profils')) }}" id="text1_profils" type="text" name="text1_profils" value="{{Request::old('text1_profils') == '' ? $lihat_profils->text1_profils : Request::old('text1_profils')}}">
 							{{General::pesanErrorForm($errors->first('text1_profils'))}}
@@ -56,8 +67,13 @@
 							{{General::pesanErrorForm($errors->first('keterangan_nama_profils'))}}
 						</div>
 						<div class="form-group">
+							<label class="form-col-form-label" for="sekilas_konten_profils">Sekilas <b style="color:red">*</b></label>
+							<textarea class="form-control {{ General::validForm($errors->first('sekilas_konten_profils')) }}" id="sekilas_konten_profils" name="sekilas_konten_profils" rows="5">{{Request::old('sekilas_konten_profils') == '' ? $lihat_profils->sekilas_konten_profils : Request::old('sekilas_konten_profils')}}</textarea>
+							{{General::pesanErrorForm($errors->first('sekilas_konten_profils'))}}
+						</div>
+						<div class="form-group">
 							<label class="form-col-form-label" for="konten_profils">Konten <b style="color:red">*</b></label>
-							<textarea class="form-control {{ General::validForm($errors->first('konten_profils')) }}" id="konten_profils" name="konten_profils" rows="5">{{Request::old('konten_profils') == '' ? $lihat_profils->konten_profils : Request::old('konten_profils')}}</textarea>
+							<textarea class="form-control {{ General::validForm($errors->first('konten_profils')) }}" id="editor1" name="konten_profils" rows="5">{{Request::old('konten_profils') == '' ? $lihat_profils->konten_profils : Request::old('konten_profils')}}</textarea>
 							{{General::pesanErrorForm($errors->first('konten_profils'))}}
 						</div>
 						<div class="form-group">

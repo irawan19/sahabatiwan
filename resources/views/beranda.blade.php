@@ -150,9 +150,9 @@
                             <span class="section-title__tagline">{{$lihat_profils->text1_profils}}</span>
                             <h2 class="section-title__title">{{$lihat_profils->text2_profils}}</h2>
                         </div>
-                        {{$lihat_profils->konten_profils}}
+                        {{$lihat_profils->sekilas_konten_profils}}
                         <div class="about-one__btn-box-and-signature">
-                            <a href="about.html" class="about-one__btn thm-btn">Lihat Selengkapnya</a>
+                            <a href="{{URL('sosok')}}" class="about-one__btn thm-btn">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
