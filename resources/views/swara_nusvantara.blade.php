@@ -12,48 +12,52 @@
                             @if(Request::segment(2) == 'kategori')
                                 <h4 class="titlekategori">Kategori {{$baca_kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras}}</h4>
                             @endif
-                            @foreach($lihat_swara_nusvantaras as $swara_nusvantaras)
-                                <div class="news-sidebar__single">
-                                    <div class="news-sidebar__img">
-                                        <img src="{{URL('storage/'.$swara_nusvantaras->gambar_swara_nusvantaras)}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
-                                        <div class="news-sidebar__date">
-                                            @php($tanggal_publikasi_swara_nusvantaras = $swara_nusvantaras->tanggal_publikasi_swara_nusvantaras)
-                                            @php($pecah_tanggal_publikasi_swara_nusvantaras = explode(' ',$tanggal_publikasi_swara_nusvantaras))
-                                            <p>
-                                                {{General::ubahDBKeTanggal($pecah_tanggal_publikasi_swara_nusvantaras[0])}}
-                                                <br/>
-                                                <br/>
-                                                {{$pecah_tanggal_publikasi_swara_nusvantaras[1]}}
-                                            </p>
+                            @if(!$lihat_swara_nusvantaras->isEmpty())
+                                @foreach($lihat_swara_nusvantaras as $swara_nusvantaras)
+                                    <div class="news-sidebar__single">
+                                        <div class="news-sidebar__img">
+                                            <img src="{{URL('storage/'.$swara_nusvantaras->gambar_swara_nusvantaras)}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
+                                            <div class="news-sidebar__date">
+                                                @php($tanggal_publikasi_swara_nusvantaras = $swara_nusvantaras->tanggal_publikasi_swara_nusvantaras)
+                                                @php($pecah_tanggal_publikasi_swara_nusvantaras = explode(' ',$tanggal_publikasi_swara_nusvantaras))
+                                                <p>
+                                                    {{General::ubahDBKeTanggal($pecah_tanggal_publikasi_swara_nusvantaras[0])}}
+                                                    <br/>
+                                                    <br/>
+                                                    {{$pecah_tanggal_publikasi_swara_nusvantaras[1]}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="news-sidebar__content-box">
+                                            <ul class="list-unstyled news-sidebar__meta">
+                                                <li>
+                                                    <div class="icon">
+                                                        <span class="fas fa-tags"></span>
+                                                    </div>
+                                                    <div class="news-one__user-text">
+                                                        <p>{{$swara_nusvantaras->nama_kategori_swara_nusvantaras}}</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="icon">
+                                                        <span class="fas fa-comments"></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>{{$swara_nusvantaras->total_komentar_swara_nusvantaras}} Komentar</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <h3 class="news-sidebar__title">
+                                                <a href="{{URL('swara-nusvantara/detail/'.$swara_nusvantaras->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantaras->slug_swara_nusvantaras)}}">{{$swara_nusvantaras->judul_swara_nusvantaras}}</a>
+                                            </h3>
+                                            <p class="news-sidebar__text">{!! General::potongText($swara_nusvantaras->konten_swara_nusvantaras,200) !!}</p>
+                                            <a href="{{URL('swara-nusvantara/detail/'.$swara_nusvantaras->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantaras->slug_swara_nusvantaras)}}" class="news-sidebar__read-more">LIhat Selengkapnya<span class="icon-right-arrow"></span></a>
                                         </div>
                                     </div>
-                                    <div class="news-sidebar__content-box">
-                                        <ul class="list-unstyled news-sidebar__meta">
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="fas fa-tags"></span>
-                                                </div>
-                                                <div class="news-one__user-text">
-                                                    <p>{{$swara_nusvantaras->nama_kategori_swara_nusvantaras}}</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="fas fa-comments"></span>
-                                                </div>
-                                                <div class="text">
-                                                    <p>{{$swara_nusvantaras->total_komentar_swara_nusvantaras}} Komentar</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <h3 class="news-sidebar__title">
-                                            <a href="news-details.html">{{$swara_nusvantaras->judul_swara_nusvantaras}}</a>
-                                        </h3>
-                                        <p class="news-sidebar__text">{!! General::potongText($swara_nusvantaras->konten_swara_nusvantaras,200) !!}</p>
-                                        <a href="news-details.html" class="news-sidebar__read-more">LIhat Selengkapnya<span class="icon-right-arrow"></span></a>
-                                    </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            @else
+                                <h4 class="titlekategori">Tidak ada pencarian yang ditemukan</h4>
+                            @endif
                         </div>
                         <div class="news-sidebar__load-more">
                             {{ $lihat_swara_nusvantaras->appends(Request::except('page'))->links('vendor.pagination.custom') }}
@@ -80,7 +84,7 @@
                                             <h3>
                                                 <span class="sidebar__post-content-meta"><i
                                                         class="fas fa-tags"></i>{{$swara_nusvantara_populers->nama_kategori_swara_nusvantaras}}</span>
-                                                <a href="news-details.html">{{$swara_nusvantaras->judul_swara_nusvantaras}}</a>
+                                                <a href="{{URL('swara-nusvantara/detail/'.$swara_nusvantara_populers->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantara_populers->slug_swara_nusvantaras)}}">{{$swara_nusvantara_populers->judul_swara_nusvantaras}}</a>
                                             </h3>
                                         </div>
                                     </li>

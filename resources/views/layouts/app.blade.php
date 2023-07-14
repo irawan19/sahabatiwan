@@ -104,9 +104,9 @@
         <div class="search-popup__overlay search-toggler"></div>
         <!-- /.search-popup__overlay -->
         <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-                <input type="text" id="search" placeholder="Search Here..." />
+            <form action="{{URL('cari')}}" method="GET" name="cari">
+                <label for="search" class="sr-only">Silahkan masukkan kata pencarian</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Silahkan masukkan kata pencarian..." name="cari" />
                 <button type="submit" aria-label="search submit" class="thm-btn">
                     <i class="icon-magnifying-glass"></i>
                 </button>
