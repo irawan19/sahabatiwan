@@ -47,14 +47,14 @@ class GenerateSitemap extends Command
         );
         Master_kategori_swara_nusvantara::orderBy('nama_kategori_swara_nusvantaras')->get()->each(function (Master_kategori_swara_nusvantara $kategori_swara_nusvantaras) use ($sitemap) {
             $sitemap->add(
-                Url::create("/swara-nusvantara/{$kategori_swara_nusvantaras->slug_kategori_swara_nusvantaras}")
+                Url::create("/swara-nusvantara/kategori/{$kategori_swara_nusvantaras->slug_kategori_swara_nusvantaras}")
                     ->setPriority(0.8)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
             );
         });
         Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')->orderBy('nama_kategori_swara_nusvantaras')->orderBy('judul_swara_nusvantaras')->get()->each(function (Master_swara_nusvantara $swara_nusvantara) use ($sitemap) {
             $sitemap->add(
-                Url::create("/swara-nusvantara/{$swara_nusvantara->slug_kategori_swara_nusvantaras}/{$swara_nusvantara->slug_swara_nusvantaras}")
+                Url::create("/swara-nusvantara/detail/{$swara_nusvantara->slug_kategori_swara_nusvantaras}/{$swara_nusvantara->slug_swara_nusvantaras}")
                     ->setPriority(0.8)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
             );

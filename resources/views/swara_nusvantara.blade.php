@@ -9,6 +9,9 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="news-sidebar__left">
                         <div class="news-sidebar__content">
+                            @if(Request::segment(2) == 'kategori')
+                                <h4 class="titlekategori">Kategori {{$baca_kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras}}</h4>
+                            @endif
                             @foreach($lihat_swara_nusvantaras as $swara_nusvantaras)
                                 <div class="news-sidebar__single">
                                     <div class="news-sidebar__img">
@@ -89,7 +92,7 @@
                             <ul class="sidebar__category-list list-unstyled">
                                 @foreach($lihat_kategori_swara_nusvantaras as $kategori_swara_nusvantaras)
                                     <li>
-                                        <a href="{{URL('swara-nusvantara/'.$kategori_swara_nusvantaras->slug_kategori_swara_nusvantaras)}}">{{$kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras}}<span class="icon-right-arrow"></span></a>
+                                        <a href="{{URL('swara-nusvantara/kategori/'.$kategori_swara_nusvantaras->slug_kategori_swara_nusvantaras)}}">{{$kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras}}<span class="icon-right-arrow"></span></a>
                                     </li>
                                 @endforeach
                             </ul>

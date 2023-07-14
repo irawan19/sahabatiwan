@@ -3,7 +3,15 @@
     </div>
     <div class="container">
         <div class="page-header__inner">
-            <h2>Sosok</h2>
+            @if(Request::segment(1) == 'sosok')
+                <h2>Sosok</h2>
+            @elseif(Request::segment(1) == 'swara-nusvantara')
+                <h2>Swara Nusvantara</h2>
+            @elseif(Request::segment(1) == 'laporan-sahabat')
+                <h2>Laporan Sahabat</h2>
+            @elseif(Request::segment(1) == 'dukungan-sahabat')
+                <h2>Dukungan Sahabat</h2>
+            @endif
         </div>
     </div>
 </section>

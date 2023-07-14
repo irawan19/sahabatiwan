@@ -22,3 +22,11 @@
 .news-sidebar__load-more{
     margin-top: 100px;
 }
+
+.titlekategori{
+    font-weight: bold;
+    margin-bottom: 75px;
+    text-align: center;
+    font-size: 40px;
+    color:#00764b;
+}
