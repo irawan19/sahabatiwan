@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 
 //Beranda
 use App\Http\Controllers\BerandaController as Beranda;
+
+//Testimoni
+use App\Http\Controllers\TestimoniController as Testimoni;
 
 //Sosok
 use App\Http\Controllers\SosokController as Sosok;
@@ -59,8 +63,10 @@ use App\Http\Controllers\Dashboard\KonfigurasiAplikasiController as DashboardKon
 */
 
 Route::get('/', [Beranda::class, 'index']);
-Route::post('/cari', [Beranda::class, 'cari']);
-Route::post('/testimoni/kirim', [Beranda::class, 'kirimtestimoni']);
+Route::get('/cari', [Beranda::class, 'cari']);
+Route::post('/subscribe', [BerandaController::class, 'subscribe']);
+Route::get('/testimoni', [Testimoni::class, 'index']);
+Route::post('/testimoni/kirim', [Testimoni::class, 'kirim']);
 Route::get('/sosok', [Sosok::class, 'index']);
 Route::get('/swara-nusvantara', [SwaraNusvantara::class, 'index']);
 Route::get('/swara-nusvantara/cari', [SwaraNusvantara::class, 'cari']);

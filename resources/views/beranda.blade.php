@@ -629,9 +629,6 @@
                         @endforeach
                     </div>
                 @endif
-                <div class="divtombolkirimtestimoni">
-                    <button class="about-one__btn thm-btn tombolkirimtestimoni">Kirim Testimoni</button>
-                </div>
             </div>
         </div>
     </section>

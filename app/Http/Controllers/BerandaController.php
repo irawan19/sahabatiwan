@@ -47,4 +47,20 @@ class BerandaController extends Controller
         return response()->json(["sukses" => "sukses"], 200);
     }
 
+    public function cari(Request $request)
+    {
+        $hasil_kata                             = $request->cari;
+        $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
+        $data['lihat_swara_nusvantaras']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
+                                                                            ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
+                                                                            ->where('judul_swara_nusvantaras', 'LIKE', '%'.$hasil_kata.'%')
+                                                                            ->get();
+        return view('pencarian',$data);
+    }
+
+    public function subcribe(Request $request)
+    {
+        
+    }
+
 }

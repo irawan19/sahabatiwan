@@ -5231,7 +5231,8 @@ ul {
   width: 100%;
 }
 
-.footer-widget__email-input-box input[type=email] {
+.footer-widget__email-input-box input[type=email],
+.footer-widget__email-input-box input[type=text] {
   height: 54px;
   width: 100%;
   background-color: var(--govity-white);

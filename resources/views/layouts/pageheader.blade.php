@@ -11,6 +11,8 @@
                 <h2>Laporan Sahabat</h2>
             @elseif(Request::segment(1) == 'dukungan-sahabat')
                 <h2>Dukungan Sahabat</h2>
+            @elseif(Request::segment(1) == 'cari')
+                <h2>Pencarian</h2>
             @endif
         </div>
     </div>

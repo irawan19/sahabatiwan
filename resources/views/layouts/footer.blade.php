@@ -23,7 +23,7 @@
                 <div class="footer-widget__subscribe-text">
                     <p>Langganan Swara Nusvantara</p>
                 </div>
-                <form class="footer-widget__email-box mc-form" data-url="#">
+                <form class="footer-widget__email-box" data-url="#">
                     <div class="footer-widget__email-input-box">
                         <input type="email" placeholder="Email Address" name="EMAIL">
                     </div>

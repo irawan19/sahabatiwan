@@ -21,7 +21,11 @@
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                     <div class="text">
-                                        <p>{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}</p>
+                                        <p>
+                                            <a href="mailto:{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}">
+                                                {{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}
+                                            </a>
+                                        </p>
                                     </div>
                                 </li>
                             </ul>
@@ -69,7 +73,7 @@
                                 <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
                             </div>
                             <div class="main-menu__btn-box">
-                                <a href="mailto:{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}" class="thm-btn main-menu__btn">Kirim Email</a>
+                                <a href="{{URL('testimoni')}}" class="thm-btn main-menu__btn">Kirim Testimoni</a>
                             </div>
                         </div>
                     </div>
