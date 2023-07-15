@@ -96,7 +96,7 @@ class TestimoniController extends AdminCoreController
     public function hapus($id_testimonis=0)
     {
         $link_testimoni = 'testimoni';
-        if (General::hakAkses($link_testimoni, 'baca') == 'true') {
+        if (General::hakAkses($link_testimoni, 'hapus') == 'true') {
             $cek_testimonis = Testimoni::where('id_testimonis',$id_testimonis)->first();
             if(!empty($cek_testimonis))
             {

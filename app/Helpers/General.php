@@ -294,6 +294,17 @@ class General
 			}
 		}
 
+		public static function hapusButton($link_menus = '', $link = '', $label = '')
+		{
+			if (General::hakAkses($link_menus, 'hapus') == 'true') {
+				echo 	'<button  data-link="' . URL($link) . '" data-nama="' . $label . '" class="btn btn-sm btn-danger showModalHapus">
+								<svg class="c-icon" style="margin-right:5px;">
+									<use xlink:href="' . URL::asset('template/back/assets/icons/coreui/free.svg#cil-trash') . '"></use>
+								</svg> Hapus
+							</button>';
+			}
+		}
+
 		public static function publikasi($link_menus = '', $link = '')
 		{
 			if (General::hakAkses($link_menus, 'edit') == 'true') {

@@ -72,7 +72,7 @@ class LaporanSahabatController extends AdminCoreController
     public function hapus($id_laporan_sahabats=0)
     {
         $link_laporan_sahabat = 'laporan_sahabat';
-        if (General::hakAkses($link_laporan_sahabat, 'baca') == 'true') {
+        if (General::hakAkses($link_laporan_sahabat, 'hapus') == 'true') {
             $cek_laporan_sahabats = Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->first();
             if(!empty($cek_laporan_sahabats))
             {

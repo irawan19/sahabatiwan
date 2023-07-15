@@ -44,6 +44,9 @@ use App\Http\Controllers\Dashboard\KomentarSwaraNusvantaraController as Dashboar
 use App\Http\Controllers\Dashboard\LaporanSahabatController as DashboardLaporanSahabat;
 use App\Http\Controllers\Dashboard\DukunganSahabatController as DashboardDukunganSahabat;
 use App\Http\Controllers\Dashboard\KontakKamiController as DashboardKontakKami;
+use App\Http\Controllers\Dashboard\SubscribeController as DashboardSubscribe;
+use App\Http\Controllers\Dashboard\GaleriController as DashboardGaleri;
+use App\Http\Controllers\Dashboard\WidgetController as DashboardWidget;
 
 //Konfigurasi Aplikasi
 use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
@@ -195,6 +198,28 @@ Route::middleware([
             Route::group(['prefix' => 'kontak_kami'], function() {
                 Route::get('/', [DashboardKontakKami::class, 'index']);
                 Route::post('/prosesedit', [DashboardKontakKami::class, 'prosesedit']);
+            });
+
+            //Subscribe
+            Route::group(['prefix' => 'subscribe'], function() {
+                Route::get('/', [DashboardSubscribe::class, 'index']);
+                Route::get('/hapus/{id}', [DashboardSubscribe::class, 'hapus']);
+            });
+
+            //Galeri
+            Route::group(['prefix' => 'galeri'], function() {
+                Route::get('/', [DashboardGaleri::class, 'index']);
+                Route::get('/cari', [DashboardGaleri::class, 'cari']);
+                Route::get('/tambah', [DashboardGaleri::Class, 'tambah']);
+                Route::post('/prosestambah', [DashboardGaleri::class, 'prosestambah']);
+                Route::get('/edit/{id}', [DashboardGaleri::class, 'edit']);
+                Route::post('/prosesedit/{id}', [DashboardGaleri::class, 'prosesedit']);
+                Route::get('/hapus/{id}', [DashboardGaleri::class, 'hapus']);
+            });
+
+            //Widget
+            Route::group(['prefix' => 'widget'], function() {
+                Route::get('/', [DashboardWidget::class, 'index']);
             });
 
         //Konfigurasi Aplikasi

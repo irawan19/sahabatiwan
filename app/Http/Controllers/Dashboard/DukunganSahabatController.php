@@ -71,7 +71,7 @@ class DukunganSahabatController extends AdminCoreController
     public function hapus($id_dukungan_sahabats=0)
     {
         $link_dukungan_sahabat = 'dukungan_sahabat';
-        if (General::hakAkses($link_dukungan_sahabat, 'baca') == 'true') {
+        if (General::hakAkses($link_dukungan_sahabat, 'hapus') == 'true') {
             $cek_dukungan_sahabats = Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->first();
             if(!empty($cek_dukungan_sahabats))
             {
