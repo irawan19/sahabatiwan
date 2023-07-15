@@ -340,7 +340,7 @@
                 <span class="section-title__tagline">Galeri</span>
             </div>
             <div class="brand-one__title">
-                <p>Foto Dokumentasi</p>
+                <p>Foto Galeri</p>
             </div>
             <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
                 "items": 3,
@@ -363,38 +363,24 @@
                     }
                 }
             }'>
-                <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="{{URL::asset('template/front/images/brand/brand-1-1.png')}}" alt="">
+                @foreach($lihat_galeris as $galeris)
+                    <div class="brand-one__single">
+                        <div class="brand-one__img">
+                            <a data-caption="{{$galeris->judul_galeris}}" data-fancybox="{{$galeris->judul_galeris}}" href="{{URL::asset('storage/'.$galeris->foto_galeris)}}">
+                                <img src="{{URL::asset('storage/'.$galeris->foto_galeris)}}" alt="{{$galeris->judul_galeris}}">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="{{URL::asset('template/front/images/brand/brand-1-2.png')}}" alt="">
-                    </div>
-                </div>
-                <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="{{URL::asset('template/front/images/brand/brand-1-3.png')}}" alt="">
-                    </div>
-                </div>
-                <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="{{URL::asset('template/front/images/brand/brand-1-4.png')}}" alt="">
-                    </div>
-                </div>
-                <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="{{URL::asset('template/front/images/brand/brand-1-5.png')}}" alt="">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
     <section class="event-one">
         <div class="event-one__shape-1">
-            <img src="{{URL::asset('template/front/images/shapes/event-one-shape-1.jpg')}}" alt="">
+
+                <img src="{{URL::asset('template/front/images/shapes/event-one-shape-1.jpg')}}" alt="">
+        
         </div>
         <div class="container">
             <div class="row">

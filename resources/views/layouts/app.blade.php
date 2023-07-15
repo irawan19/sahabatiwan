@@ -45,6 +45,8 @@
 	<meta name="_token" content="{{ csrf_token() }}">
     <script src="{{URL::asset('template/front/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+	<link rel="stylesheet" href="{{URL::asset('template/back/vendors/fancybox/jquery.fancybox.min.css')}}" />
+
     <style>
         .preloader__image {
             animation-fill-mode: both;
@@ -141,6 +143,7 @@
     <script src="{{URL::asset('template/front/vendors/circleType/jquery.lettering.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/nice-select/jquery.nice-select.min.js')}}"></script>
 	<script type="text/javascript" src="{{ URL::asset('template/back/vendors/select2/dist/js/select2.full.min.js') }}"></script>
+	<script src="{{URL::asset('template/back/vendors/fancybox/jquery.fancybox.min.js')}}"></script>
 
 
     <!-- template js -->

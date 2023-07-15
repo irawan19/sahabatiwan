@@ -8,6 +8,7 @@
                                                                         ->orderBy('tanggal_publikasi_swara_nusvantaras','asc')
                                                                         ->limit(5)
                                                                         ->get()))
+@php($lihat_galeris = \App\Models\Master_galeri::limit(6)->get())
 <footer class="site-footer">
     <div class="site-footer__img">
         <img src="{{URL::asset('template/front/images/resources/site-footer-img.jpg')}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
@@ -102,51 +103,19 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                     <div class="footer-widget__column footer-widget__gallery">
                         <div class="footer-widget__title-box">
-                            <h3 class="footer-widget__title">Gallery</h3>
+                            <h3 class="footer-widget__title">Galeri</h3>
                         </div>
                         <ul class="footer-widget__gallery-list list-unstyled clearfix">
-                            <li>
-                                <div class="footer-widget__gallery-img">
-                                    <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-1.jpg')}}" alt="">
-                                    <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-1.jpg')}}"
-                                        class="img-popup"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__gallery-img">
-                                    <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-2.jpg')}}" alt="">
-                                    <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-2.jpg')}}"
-                                        class="img-popup"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__gallery-img">
-                                    <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-3.jpg')}}" alt="">
-                                    <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-3.jpg')}}"
-                                        class="img-popup"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__gallery-img">
-                                    <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-4.jpg')}}" alt="">
-                                    <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-4.jpg')}}"
-                                        class="img-popup"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__gallery-img">
-                                    <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-5.jpg')}}" alt="">
-                                    <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-5.jpg')}}"
-                                        class="img-popup"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__gallery-img">
-                                    <img src="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-6.jpg')}}" alt="">
-                                    <a href="{{URL::asset('template/front/images/gallery/footer-widget-gallery-img-6.jpg')}}"
-                                        class="img-popup"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
+                            @foreach($lihat_galeris as $galeris)
+                                <li>
+                                    <div class="footer-widget__gallery-img">
+                                        <img src="{{URL::asset('storage/'.$galeris->foto_galeris)}}" width="80px" alt="{{$galeris->judul_galeris}}">
+                                        <a data-caption="{{$galeris->judul_galeris}}" data-fancybox="{{$galeris->judul_galeris}}" href="{{URL::asset('storage/'.$galeris->foto_galeris)}}">
+                                            <span class="fab fa-instagram"></span>
+                                        </a>
+                                    </div>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
