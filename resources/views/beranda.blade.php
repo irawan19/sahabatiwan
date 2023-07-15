@@ -441,7 +441,7 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                            <h3 class="event-one__title"><a href="event-details.html">{{$swara_nusvantara_populers->judul_swara_nusvantaras}}</a></h3>
+                                            <h3 class="event-one__title"><a href="{{URL('swara-nusvantara/detail/'.$swara_nusvantara_populers->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantara_populers->slug_swara_nusvantaras)}}">{{$swara_nusvantara_populers->judul_swara_nusvantaras}}</a></h3>
                                         </div>
                                     </div>
                                 </li>
@@ -563,6 +563,7 @@
                                 data: {email_subscribes: emailsubscribeberanda},
                                 success: function(data)
                                 {
+                                    emailsubscribeberanda = $('#email_subscribesberanda').val('');
                                     $('.successemailsubscribeberanda').css('display','block');
                                 },
                                 error: function(data) {

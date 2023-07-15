@@ -186,6 +186,7 @@
                             data: {email_subscribes: emailsubscribe},
                             success: function(data)
                             {
+                                emailsubscribeberanda = $('#email_subscribesberanda').val('');
                                 $('.successemailsubscribe').css('display','block');
                             },
                             error: function(data) {
