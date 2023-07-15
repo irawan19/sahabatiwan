@@ -46,8 +46,11 @@
                         <ul class="department-one__list list-unstyled">
                             <li class="department-one__single">
                                 <div class="department-one__content">
-                                    <h3 class="department-one__title"><a href="department-details.html">Your
-                                            <br> Government</a></h3>
+                                    <h3 class="department-one__title">
+                                        <a href="{{URL('/')}}">Beranda</a>
+                                        <br/>
+                                        <br/>
+                                    </h3>
                                     <div class="department-one__icon">
                                         <span class="icon-parthenon"></span>
                                     </div>
@@ -55,44 +58,43 @@
                             </li>
                             <li class="department-one__single">
                                 <div class="department-one__content">
-                                    <h3 class="department-one__title"><a href="department-details.html">Jobs &
-                                            <br> Unemployment</a></h3>
+                                    <h3 class="department-one__title">
+                                        <a href="{{URL('sosok')}}">Sosok</a>
+                                        <br/>
+                                        <br/>
+                                    </h3>
                                     <div class="department-one__icon">
-                                        <span class="icon-suitcase"></span>
+                                        <span class="icon-career-choice"></span>
                                     </div>
                                 </div>
                             </li>
                             <li class="department-one__single">
                                 <div class="department-one__content">
-                                    <h3 class="department-one__title"><a href="department-details.html">Business
-                                            <br> & Industrials</a></h3>
+                                    <h3 class="department-one__title">
+                                        <a href="{{URL('swara-nusvantara')}}">Swara Nusvantara</a>
+                                    </h3>
                                     <div class="department-one__icon">
-                                        <span class="icon-industry"></span>
+                                        <span class="icon-newsletter"></span>
                                     </div>
                                 </div>
                             </li>
                             <li class="department-one__single">
                                 <div class="department-one__content">
-                                    <h3 class="department-one__title"><a href="department-details.html">Roads &
-                                            <br> Transportation</a></h3>
+                                    <h3 class="department-one__title"><a href="{{URL('laporan-sahabat')}}">Laporan Sahabat</a></h3>
                                     <div class="department-one__icon">
-                                        <span class="icon-bus"></span>
+                                        <span class="icon-police-badge"></span>
                                     </div>
                                 </div>
                             </li>
                             <li class="department-one__single">
                                 <div class="department-one__content">
-                                    <h3 class="department-one__title"><a href="department-details.html">Culture &
-                                            <br> Recreations</a></h3>
+                                    <h3 class="department-one__title"><a href="{{URL('dukungan-sahabat')}}">Dukungan Sahabat</a></h3>
                                     <div class="department-one__icon">
-                                        <span class="icon-lotus"></span>
+                                        <span class="icon-goals"></span>
                                     </div>
                                 </div>
                             </li>
                         </ul>
-                        <p class="department-one__text">Get our quick services from the municipal. <a href="">View
-                                all services</a>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -106,9 +108,6 @@
                     <div class="about-one__left">
                         <div class="about-one__shape-1 float-bob-x">
                             <img src="{{URL::asset('template/front/images/shapes/about-one-shape-1.png')}}" alt="">
-                        </div>
-                        <div class="about-one__shape-3 float-bob-y">
-                            <img src="{{URL::asset('template/front/images/shapes/about-one-shape-3.png')}}" alt="">
                         </div>
                         <div class="about-one__img-box">
                             <div class="about-one__img">
@@ -396,40 +395,46 @@
                         <ul class="event-one__points list-unstyled">
                             @foreach($lihat_swara_nusvantara_populers as $swara_nusvantara_populers)
                                 <li>
-                                    <div class="event-one__single">
-                                        <div class="event-one__img-box">
-                                            <div class="event-one__img">
-                                                <img src="{{URL::asset('template/front/images/events/event-1-1.jpg')}}" alt="">
+                                    <a href="{{URL('swara-nusvantara/detail/'.$swara_nusvantara_populers->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantara_populers->slug_swara_nusvantaras)}}">
+                                        <div class="event-one__single">
+                                            <div class="event-one__img-box">
+                                                <div class="event-one__img">
+                                                    <img src="{{URL::asset('storage/'.$swara_nusvantara_populers->gambar_swara_nusvantaras)}}" width="166px" height="166px" alt="">
+                                                </div>
+                                                <div class="event-one__date">
+                                                    @php($tanggal_publikasi_swara_nusvantara_populers = $swara_nusvantara_populers->tanggal_publikasi_swara_nusvantaras)
+                                                    @php($pecah_tanggal_publikasi_swara_nusvantara_populers = explode(' ',$tanggal_publikasi_swara_nusvantara_populers))
+                                                    <p>
+                                                        {{General::ubahDBKeTanggal($pecah_tanggal_publikasi_swara_nusvantara_populers[0])}}
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div class="event-one__date">
-                                                <p>30 <br> MAY</p>
+                                            <div class="event-one__content">
+                                                <div class="event-one__tag">
+                                                    <p>{{$swara_nusvantara_populers->nama_kategori_swara_nusvantaras}}</p>
+                                                </div>
+                                                <ul class="event-one__meta list-unstyled">
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="fas fa-clock"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p>{{$pecah_tanggal_publikasi_swara_nusvantara_populers[1]}}</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="fas fa-comments"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p>{{$swara_nusvantara_populers->total_komentar_swara_nusvantaras}}</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <h3 class="event-one__title"><a href="{{URL('swara-nusvantara/detail/'.$swara_nusvantara_populers->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantara_populers->slug_swara_nusvantaras)}}">{{$swara_nusvantara_populers->judul_swara_nusvantaras}}</a></h3>
                                             </div>
                                         </div>
-                                        <div class="event-one__content">
-                                            <div class="event-one__tag">
-                                                <p>{{$swara_nusvantara_populers->nama_kategori_swara_nusvantaras}}</p>
-                                            </div>
-                                            <ul class="event-one__meta list-unstyled">
-                                                <li>
-                                                    <div class="icon">
-                                                        <span class="fas fa-clock"></span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p>08:00am - 05:00pm</p>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="icon">
-                                                        <span class="fas fa-map-marker"></span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p>New Hyde Park, NY 11040</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <h3 class="event-one__title"><a href="{{URL('swara-nusvantara/detail/'.$swara_nusvantara_populers->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantara_populers->slug_swara_nusvantaras)}}">{{$swara_nusvantara_populers->judul_swara_nusvantaras}}</a></h3>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </li>
                             @endforeach
                         </ul>
@@ -439,7 +444,7 @@
                     <div class="event-one__right">
                         <div class="event-one__subscribe-top">
                             <div class="event-one__subscribe-top-bg"
-                                style="background-image: url(template/front/images/backgrounds/event-one-subscribe-top-bg.jpg);">
+                                style="background-image: url({{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->gambar_subscribe_konfigurasi_aplikasis)}});">
                             </div>
                             <div class="event-one__subscribe-icon">
                                 <span class="icon-newsletter"></span>

@@ -289,6 +289,7 @@ Route::middleware([
                 Route::post('/proseseditlogo', [DashboardKonfigurasiAplikasi::class, 'proseseditlogo']);
                 Route::post('/prosesediticon', [DashboardKonfigurasiAplikasi::class, 'prosesediticon']);
                 Route::post('/proseseditlogotext', [DashboardKonfigurasiAplikasi::class, 'proseseditlogotext']);
+                Route::post('/proseseditgambarsubscribe', [DashboardKonfigurasiAplikasi::class, 'proseseditgambarsubscribe']);
                 Route::post('/proseseditheader', [DashboardKonfigurasiAplikasi::class, 'proseseditheader']);
             });
 

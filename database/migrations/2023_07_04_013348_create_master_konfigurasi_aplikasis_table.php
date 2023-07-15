@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('icon_konfigurasi_aplikasis');
             $table->string('logo_konfigurasi_aplikasis');
             $table->string('logo_text_konfigurasi_aplikasis');
+            $table->string('gambar_subscribe_konfigurasi_aplikasis');
             $table->string('header_konfigurasi_aplikasis');
             $table->timestamps();
         });

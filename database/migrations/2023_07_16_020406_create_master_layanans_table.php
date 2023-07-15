@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('master_layanans', function (Blueprint $table) {
             $table->id('id_layanans');
+            $table->string('foto_layanans');
             $table->string('icon_layanans');
             $table->string('nama_layanans');
             $table->string('konten_layanans');
