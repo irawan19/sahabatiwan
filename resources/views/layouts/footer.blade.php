@@ -23,9 +23,9 @@
                 <div class="footer-widget__subscribe-text">
                     <p>Langganan Swara Nusvantara</p>
                 </div>
-                <form class="footer-widget__email-box" data-url="#">
+                <form class="footer-widget__email-box" id="formlangganan">
                     <div class="footer-widget__email-input-box">
-                        <input type="email" placeholder="Email Address" name="EMAIL">
+                        <input type="email" placeholder="Masukkan email anda" name="email">
                     </div>
                     <button type="submit" class="footer-widget__subscribe-btn thm-btn">
                         Berlangganan
