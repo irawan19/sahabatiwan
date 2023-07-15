@@ -23,15 +23,19 @@
                 <div class="footer-widget__subscribe-text">
                     <p>Langganan Swara Nusvantara</p>
                 </div>
-                <form class="footer-widget__email-box" id="formlangganan">
+                <form class="footer-widget__email-box formlangganan" method="POST" action="{{URL('subscribe')}}">
+					{{ csrf_field() }}
                     <div class="footer-widget__email-input-box">
-                        <input type="email" placeholder="Masukkan email anda" name="email">
+                        <input type="email" id="email_subscribes" placeholder="Masukkan email anda" name="email_subscribes">
                     </div>
-                    <button type="submit" class="footer-widget__subscribe-btn thm-btn">
+                    <button type="button" class="footer-widget__subscribe-btn thm-btn btnemailsubcribe">
                         Berlangganan
                     </button>
                 </form>
-                <div class="mc-form__response"></div>
+                <div class="mc-form__response">
+                    <p class="errorform erroremailsubscribe" style="display:none">email harus diisi.</p>
+                    <p class="successemailsubscribe" style="display:none">Email anda berhasil terdaftar untuk langganan swara nusvatara.</p>
+                </div>
             </div>
         </div>
         <div class="site-footer__middle">
@@ -162,3 +166,33 @@
         </div>
     </div>
 </footer>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        $('.btnemailsubcribe').on('click', function() {
+			emailsubscribe = $('#email_subscribes').val();
+            if(emailsubscribe == '') {
+                $('.erroremailsubscribe').css('display','block');
+            } else {
+                $('.erroremailsubscribe').css('display','none');
+                var headerRequest = {
+                            'X-CSRF-Token': $('meta[name="_token"]').attr('content'),
+                            };
+                $.ajax({
+                            url: '{{URL("subscribe")}}',
+                            type: "POST",
+                            dataType: 'JSON',
+						    headers: headerRequest,
+                            data: {email_subscribes: emailsubscribe},
+                            success: function(data)
+                            {
+                                $('.successemailsubscribe').css('display','block');
+                            },
+                            error: function(data) {
+                                console.log(data);
+                            }
+                    });
+            }
+        });
+    });
+</script>

@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="{{URL::asset('template/front/css/custom.css')}}" />
 	<meta name="_token" content="{{ csrf_token() }}">
     <script src="{{URL::asset('template/front/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <style>
         .preloader__image {
             animation-fill-mode: both;
@@ -116,7 +117,6 @@
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
 
 
-    <script src="{{URL::asset('template/front/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/jarallax/jarallax.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/jquery-appear/jquery.appear.min.js')}}"></script>

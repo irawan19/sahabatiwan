@@ -5191,6 +5191,7 @@ ul {
 }
 .footer-widget__subscribe-box .mc-form__response {
   flex: 0 0 100%;
+  margin-left:250px;
 }
 
 .footer-widget__subscribe-box:before {
