@@ -20,6 +20,7 @@ class SwaraNusvantaraController extends Controller
                                                                                 ->paginate(10);
         $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                 ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
+                                                                                ->orderBy('total_komentar_swara_nusvantaras','asc')
                                                                                 ->limit(5)
                                                                                 ->get();
         $data['lihat_komentar_swara_nusvantaras']       = Komentar_swara_nusvantara::where('status_publikasi_komentar_swara_nusvantaras',1)
@@ -45,6 +46,7 @@ class SwaraNusvantaraController extends Controller
                                                                                     ->paginate(10);
             $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                     ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
+                                                                                    ->orderBy('total_komentar_swara_nusvantaras','asc')
                                                                                     ->limit(5)
                                                                                     ->get();
             $data['lihat_komentar_swara_nusvantaras']       = Komentar_swara_nusvantara::where('status_publikasi_komentar_swara_nusvantaras',1)
@@ -69,6 +71,7 @@ class SwaraNusvantaraController extends Controller
                                                                                 ->paginate(10);
         $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                 ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
+                                                                                ->orderBy('total_komentar_swara_nusvantaras','asc')
                                                                                 ->limit(5)
                                                                                 ->get();
         $data['lihat_komentar_swara_nusvantaras']       = Komentar_swara_nusvantara::where('status_publikasi_komentar_swara_nusvantaras',1)
@@ -95,6 +98,7 @@ class SwaraNusvantaraController extends Controller
                                                                                         ->first();
                 $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                         ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
+                                                                                        ->orderBy('total_komentar_swara_nusvantaras','asc')
                                                                                         ->limit(5)
                                                                                         ->get();
                 $data['lihat_komentar_swara_nusvantaras']       = Komentar_swara_nusvantara::where('status_publikasi_komentar_swara_nusvantaras',1)

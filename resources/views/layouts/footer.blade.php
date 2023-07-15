@@ -26,7 +26,7 @@
                 <form class="footer-widget__email-box formlangganan" method="POST" action="{{URL('subscribe')}}">
 					{{ csrf_field() }}
                     <div class="footer-widget__email-input-box">
-                        <input type="email" id="email_subscribes" placeholder="Masukkan email anda" name="email_subscribes">
+                        <input type="email" id="email_subscribes" placeholder="Masukkan email anda..." name="email_subscribes">
                     </div>
                     <button type="button" class="footer-widget__subscribe-btn thm-btn btnemailsubcribe">
                         Berlangganan

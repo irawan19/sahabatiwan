@@ -10,7 +10,7 @@
                 <div class="item main-slider__slide-1">
                     <div class="main-slider__bg"
                         style="background-image: url({{URL::asset('storage/'.$slideshows->gambar_slideshows)}});">
-                    </div><!-- /.slider-one__bg -->
+                    </div>
                     <div class="main-slider__shape-1">
                         <img src="{{URL::asset('template/front/images/shapes/main-slider-shape-1.png')}}" alt="">
                     </div>
@@ -35,9 +35,7 @@
             
         </div>
     </section>
-    <!-- Main Sllider Start -->
 
-    <!--Department One Start-->
     <section class="department-one">
         <div class="department-one__bg"
             style="background-image: url(template/front/images/backgrounds/department-one-bg.png);"></div>
@@ -100,9 +98,7 @@
             </div>
         </div>
     </section>
-    <!--Department One End-->
 
-    <!--About One Start-->
     <section class="about-one">
         <div class="container">
             <div class="row">
@@ -159,13 +155,10 @@
             </div>
         </div>
     </section>
-    <!--About One End-->
 
-    <!--Feature One Start-->
     <section class="feature-one">
         <div class="container">
             <div class="row">
-                <!--Feature One Single Start-->
                 <div class="col-xl-4 col-lg-4">
                     <div class="feature-one__single">
                         <div class="feature-one__img-box">
@@ -199,8 +192,6 @@
                         </div>
                     </div>
                 </div>
-                <!--Feature One Single End-->
-                <!--Feature One Single Start-->
                 <div class="col-xl-4 col-lg-4">
                     <div class="feature-one__single">
                         <div class="feature-one__img-box">
@@ -234,8 +225,6 @@
                         </div>
                     </div>
                 </div>
-                <!--Feature One Single End-->
-                <!--Feature One Single Start-->
                 <div class="col-xl-4 col-lg-4">
                     <div class="feature-one__single">
                         <div class="feature-one__img-box">
@@ -269,13 +258,10 @@
                         </div>
                     </div>
                 </div>
-                <!--Feature One Single End-->
             </div>
         </div>
     </section>
-    <!--Feature One End-->
 
-    <!--Testimonial One Start-->
     <section class="testimonial-one">
         <div class="testimonial-one__bg"
             style="background-image: url(template/front/images/backgrounds/testimonial-one-bg.jpg);"></div>
@@ -327,7 +313,7 @@
                                         <div class="testimonial-one__client-info">
                                             <div class="testimonial-one__client-img-box">
                                                 <div class="testimonial-one__client-img">
-                                                    <img src="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}" alt="">
+                                                    <img src="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}" width="116px" alt="Testimoni {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
                                                 </div>
                                             </div>
                                             <div class="testimonial-one__client-content">
@@ -344,13 +330,17 @@
             </div>
         </div>
     </section>
-    <!--Testimonial One End-->
 
-    <!--Brand One Start-->
     <section class="brand-one">
         <div class="container">
+            <div class="section-title text-center">
+                <div class="section-title__icon">
+                    <span class="fa fa-star"></span>
+                </div>
+                <span class="section-title__tagline">Galeri</span>
+            </div>
             <div class="brand-one__title">
-                <p>Galeri</p>
+                <p>Foto Dokumentasi</p>
             </div>
             <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
                 "items": 3,
@@ -373,43 +363,35 @@
                     }
                 }
             }'>
-                <!--Brand One Single-->
                 <div class="brand-one__single">
                     <div class="brand-one__img">
                         <img src="{{URL::asset('template/front/images/brand/brand-1-1.png')}}" alt="">
                     </div>
                 </div>
-                <!--Brand One Single-->
                 <div class="brand-one__single">
                     <div class="brand-one__img">
                         <img src="{{URL::asset('template/front/images/brand/brand-1-2.png')}}" alt="">
                     </div>
                 </div>
-                <!--Brand One Single-->
                 <div class="brand-one__single">
                     <div class="brand-one__img">
                         <img src="{{URL::asset('template/front/images/brand/brand-1-3.png')}}" alt="">
                     </div>
                 </div>
-                <!--Brand One Single-->
                 <div class="brand-one__single">
                     <div class="brand-one__img">
                         <img src="{{URL::asset('template/front/images/brand/brand-1-4.png')}}" alt="">
                     </div>
                 </div>
-                <!--Brand One Single-->
                 <div class="brand-one__single">
                     <div class="brand-one__img">
                         <img src="{{URL::asset('template/front/images/brand/brand-1-5.png')}}" alt="">
                     </div>
                 </div>
             </div>
-            <!-- If we need navigation buttons -->
         </div>
     </section>
-    <!--Brand One End-->
 
-    <!--Event One Start-->
     <section class="event-one">
         <div class="event-one__shape-1">
             <img src="{{URL::asset('template/front/images/shapes/event-one-shape-1.jpg')}}" alt="">
@@ -422,86 +404,48 @@
                             <div class="section-title__icon">
                                 <span class="fa fa-star"></span>
                             </div>
-                            <span class="section-title__tagline">Latest events</span>
-                            <h2 class="section-title__title">Upcoming city activities & <br>
-                                events schedule</h2>
+                            <span class="section-title__tagline">Swara Nusvantara</span>
+                            <h2 class="section-title__title">Terpopuler</h2>
                         </div>
                         <ul class="event-one__points list-unstyled">
-                            <li>
-                                <div class="event-one__single">
-                                    <div class="event-one__img-box">
-                                        <div class="event-one__img">
-                                            <img src="{{URL::asset('template/front/images/events/event-1-1.jpg')}}" alt="">
+                            @foreach($lihat_swara_nusvantara_populers as $swara_nusvantara_populers)
+                                <li>
+                                    <div class="event-one__single">
+                                        <div class="event-one__img-box">
+                                            <div class="event-one__img">
+                                                <img src="{{URL::asset('template/front/images/events/event-1-1.jpg')}}" alt="">
+                                            </div>
+                                            <div class="event-one__date">
+                                                <p>30 <br> MAY</p>
+                                            </div>
                                         </div>
-                                        <div class="event-one__date">
-                                            <p>30 <br> MAY</p>
-                                        </div>
-                                    </div>
-                                    <div class="event-one__content">
-                                        <div class="event-one__tag">
-                                            <p>Celebration</p>
-                                        </div>
-                                        <ul class="event-one__meta list-unstyled">
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="fas fa-clock"></span>
-                                                </div>
-                                                <div class="text">
-                                                    <p>08:00am - 05:00pm</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="fas fa-map-marker"></span>
-                                                </div>
-                                                <div class="text">
-                                                    <p>New Hyde Park, NY 11040</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <h3 class="event-one__title"><a href="event-details.html">The city
-                                                photography new
-                                                contest</a></h3>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="event-one__single">
-                                    <div class="event-one__img-box">
-                                        <div class="event-one__img">
-                                            <img src="{{URL::asset('template/front/images/events/event-1-2.jpg')}}" alt="">
-                                        </div>
-                                        <div class="event-one__date">
-                                            <p>30 <br> MAY</p>
+                                        <div class="event-one__content">
+                                            <div class="event-one__tag">
+                                                <p>{{$swara_nusvantara_populers->nama_kategori_swara_nusvantaras}}</p>
+                                            </div>
+                                            <ul class="event-one__meta list-unstyled">
+                                                <li>
+                                                    <div class="icon">
+                                                        <span class="fas fa-clock"></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>08:00am - 05:00pm</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="icon">
+                                                        <span class="fas fa-map-marker"></span>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>New Hyde Park, NY 11040</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <h3 class="event-one__title"><a href="event-details.html">{{$swara_nusvantara_populers->judul_swara_nusvantaras}}</a></h3>
                                         </div>
                                     </div>
-                                    <div class="event-one__content">
-                                        <div class="event-one__tag">
-                                            <p>Celebration</p>
-                                        </div>
-                                        <ul class="event-one__meta list-unstyled">
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="fas fa-clock"></span>
-                                                </div>
-                                                <div class="text">
-                                                    <p>08:00am - 05:00pm</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="fas fa-map-marker"></span>
-                                                </div>
-                                                <div class="text">
-                                                    <p>New Hyde Park, NY 11040</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <h3 class="event-one__title"><a href="event-details.html">Activities &
-                                                events schedule</a></h3>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -514,31 +458,33 @@
                             <div class="event-one__subscribe-icon">
                                 <span class="icon-newsletter"></span>
                             </div>
-                            <p class="event-one__subscribe-text">Subscribe to
-                                <br> our newslette for
-                                <br> daily updates</p>
-                            <p class="event-one__subscribe-text-2">Get latest news & events details</p>
+                            <p class="event-one__subscribe-text">Berlangganan
+                                <br> Swara Nusvantara
+                            <p class="event-one__subscribe-text-2">Dapatkan pembaruan</p>
                         </div>
                         <div class="event-one__subscribe-bottom">
                             <div class="event-one__subscribe-bottom-bg"
                                 style="background-image: url(template/front/images/backgrounds/event-one-subscribe-bottom-bg.png);">
                             </div>
-                            <form class="event-one__email-box">
+                            <form class="event-one__email-box formlanggananberanda" method="POST" action="{{URL('subscribe')}}">
+                                {{ csrf_field() }}
                                 <div class="event-one__email-input-box">
-                                    <input type="email" placeholder="Email Address" name="email">
+                                    <input type="email" id="email_subscribesberanda" placeholder="Masukkan email anda..."  name="email_subscribesberanda">
                                 </div>
-                                <button type="submit" class="event-one__subscribe-btn thm-btn">Subscribe</button>
+                                <button type="button" class="event-one__subscribe-btn thm-btn btnemailsubcribeberanda">Berlangganan</button>
                             </form>
-                            <p class="event-one__subscribe-text-3">Never share your email with others.</p>
+                            <div class="mc-form__response">
+                                <p class="errorform erroremailsubscribeberanda" style="display:none">email harus diisi.</p>
+                                <p class="successemailsubscribeberanda" style="display:none">Email anda berhasil terdaftar untuk langganan swara nusvatara.</p>
+                            </div>
+                            <p class="event-one__subscribe-text-3">Jangan berbagi email anda ke orang lain.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--Event One End-->
 
-    <!--News One Start-->
     <section class="news-one">
         <div class="container">
             <div class="section-title text-center">
@@ -597,6 +543,35 @@
             </div>
         </div>
     </section>
-    <!--News One End-->
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $('.btnemailsubcribeberanda').on('click', function() {
+                emailsubscribeberanda = $('#email_subscribesberanda').val();
+                if(emailsubscribeberanda == '') {
+                    $('.erroremailsubscribeberanda').css('display','block');
+                } else {
+                    $('.erroremailsubscribeberanda').css('display','none');
+                    var headerRequest = {
+                                'X-CSRF-Token': $('meta[name="_token"]').attr('content'),
+                                };
+                    $.ajax({
+                                url: '{{URL("subscribe")}}',
+                                type: "POST",
+                                dataType: 'JSON',
+                                headers: headerRequest,
+                                data: {email_subscribes: emailsubscribeberanda},
+                                success: function(data)
+                                {
+                                    $('.successemailsubscribeberanda').css('display','block');
+                                },
+                                error: function(data) {
+                                    console.log(data);
+                                }
+                        });
+                }
+            });
+        });
+    </script>
 
 @endsection

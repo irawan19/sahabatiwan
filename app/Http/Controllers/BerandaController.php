@@ -15,6 +15,7 @@ class BerandaController extends Controller
 
     public function index()
     {
+        $tanggalwaktu_sekarang                  = date('Y-m-d H:i:s');
         $data['tanggal_sekarang']               = date('Y-m-d');
         $data['lihat_konfigurasi_aplikasis']    = Master_konfigurasi_aplikasi::first();
         $data['lihat_slideshows']               = Master_slideshow::get();
@@ -23,6 +24,11 @@ class BerandaController extends Controller
                                                                             ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
                                                                             ->orderBy('tanggal_publikasi_swara_nusvantaras')
                                                                             ->limit(3)
+                                                                            ->get();
+        $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
+                                                                            ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
+                                                                            ->orderBy('total_komentar_swara_nusvantaras','asc')
+                                                                            ->limit(5)
                                                                             ->get();
         $data['lihat_testimonis']               = Testimoni::where('status_publikasi_testimonis',1)->get();
         return view('beranda',$data);
@@ -41,7 +47,7 @@ class BerandaController extends Controller
 
     public function subscribe(Request $request)
     {
-        $cek_subscribes = Master_subscribe::wher('email_subscribes',$request->email_subscribes)->count();
+        $cek_subscribes = Master_subscribe::where('email_subscribes',$request->email_subscribes)->count();
         if($cek_subscribes == 0)
         {
             $subscribes_data = [
