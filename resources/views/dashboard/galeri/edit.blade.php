@@ -11,7 +11,7 @@
 					</div>
 					<div class="card-body">
 						<div class="form-group">
-							<label class="form-col-form-label" for="userfile_foto_galeri">Foto  (400x400px) <b style="color:red">*</b></label>
+							<label class="form-col-form-label" for="userfile_foto_galeri">Foto (400x400px) <b style="color:red">*</b></label>
 							<br/>
 							<div class="form-group center-align">
 							    <a data-fancybox="gallery" href="{{URL::asset('storage/'.$edit_galeris->foto_galeris)}}">
