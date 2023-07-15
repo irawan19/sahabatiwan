@@ -21,6 +21,14 @@ class TestimoniController extends Controller
 
     public function kirim(Request $request)
     {
+        $aturan = [
+            'userfile_foto_testimoni'       => 'required|mimes:png,jpg,jpeg,svg',
+            'nama_testimonis'               => 'required',
+            'profesi_testimonis'            => 'required',
+            'konten_testimonis'             => 'required',
+        ];
+        $this->validate($request, $aturan);
+
         $nama_foto_testimoni = date('Ymd').date('His').str_replace(')','',str_replace('(','',str_replace(' ','-',$request->file('userfile_foto_testimoni')->getClientOriginalName())));
         $path_foto_testimoni = 'testimoni/';
         Storage::disk('public')->put($path_foto_testimoni.$nama_foto_testimoni, file_get_contents($request->file('userfile_foto_testimoni')));

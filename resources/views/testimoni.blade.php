@@ -115,12 +115,6 @@
                                 {{General::pesanErrorForm($errors->first('profesi_testimonis'))}}
                             </div>
                         </div>
-                        <div class="col-xl-12">
-                            <div class="contact-one__input-box">
-                                <input type="email" placeholder="Email" name="email_testimonis" value="{{Request::old('email_testimonis')}}">
-                                {{General::pesanErrorForm($errors->first('email_testimonis'))}}
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-xl-12">
