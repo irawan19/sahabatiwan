@@ -36,14 +36,14 @@
                                 {!! $lihat_kontak_kamis->konten_kontak_kamis !!}
                             </p>
                             <ul class="list-unstyled contact-page__contact-list">
-                                @if(!empty($lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis))
+                                @if(!empty($lihat_konfigurasi_aplikasis->profesi_konfigurasi_aplikasis))
                                     <li>
                                         <div class="icon">
                                             <span class="icon-telephone"></span>
                                         </div>
                                         <div class="content">
                                             <p>Anda memiliki pertanyaan?</p>
-                                            <h4><a href="tel:{{$lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis}}"><span>Bebas</span> {{$lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis}}</a></h4>
+                                            <h4><a href="tel:{{$lihat_konfigurasi_aplikasis->profesi_konfigurasi_aplikasis}}"><span>Bebas</span> {{$lihat_konfigurasi_aplikasis->profesi_konfigurasi_aplikasis}}</a></h4>
                                         </div>
                                     </li>
                                 @endif
@@ -92,15 +92,15 @@
                 <h2 class="section-title__title"></h2>
             </div>
             <div class="contact-one__form-box">
-                <form action="{{URL('/laporan-sahabat/kirim')}}" enctype="multipart/form-data" method="POST" class="contact-one__form">
+                <form action="{{URL('/testimoni/kirim')}}" enctype="multipart/form-data" method="POST" class="contact-one__form">
 					{{ csrf_field() }}
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="contact-one__input-box">
-							    <label class="labelform" for="userfoto_foto_testimoni">Foto </label>
+							    <label class="labelform" for="userfile_foto_testimoni">Foto </label>
                                 <br/>
-                                <input id="userfoto_foto_testimoni" type="foto" name="userfoto_foto_testimoni">
-                                {{General::pesanErrorForm($errors->first('userfoto_foto_testimoni'))}}
+                                <input id="userfile_foto_testimoni" type="file" name="userfile_foto_testimoni">
+                                {{General::pesanErrorForm($errors->first('userfile_foto_testimoni'))}}
                             </div>
                         </div>
                         <div class="col-xl-12">
@@ -111,8 +111,8 @@
                         </div>
                         <div class="col-xl-12">
                             <div class="contact-one__input-box">
-                                <input type="number" placeholder="Telepon" name="telepon_testimonis" value="{{Request::old('telepon_testimonis')}}">
-                                {{General::pesanErrorForm($errors->first('telepon_testimonis'))}}
+                                <input type="text" placeholder="Profesi" name="profesi_testimonis" value="{{Request::old('profesi_testimonis')}}">
+                                {{General::pesanErrorForm($errors->first('profesi_testimonis'))}}
                             </div>
                         </div>
                         <div class="col-xl-12">
@@ -125,14 +125,8 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="contact-one__input-box text-message-box">
-                                <textarea name="alamat_testimonis" placeholder="Alamat">{{Request::old('alamat_testimonis')}}</textarea>
-                                {{General::pesanErrorForm($errors->first('alamat_testimonis'))}}
-                            </div>
-                        </div>
-                        <div class="col-xl-12">
-                            <div class="contact-one__input-box text-message-box">
-                                <textarea name="aduan_testimonis" placeholder="Aduan">{{Request::old('aduan_testimonis')}}</textarea>
-                                {{General::pesanErrorForm($errors->first('aduan_testimonis'))}}
+                                <textarea name="konten_testimonis" placeholder="Konten">{{Request::old('konten_testimonis')}}</textarea>
+                                {{General::pesanErrorForm($errors->first('konten_testimonis'))}}
                             </div>
                         </div>
                     </div>
