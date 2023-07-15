@@ -1,0 +1,19 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/your-username/public_html/
+    - /bin/cp -R app $DEPLOYPATH
+    - /bin/cp -R config $DEPLOYPATH
+    - /bin/cp -R database $DEPLOYPATH
+    - /bin/cp -R node_modules $DEPLOYPATH
+    - /bin/cp -R public $DEPLOYPATH
+    - /bin/cp -R routes $DEPLOYPATH
+    - /bin/cp -R storage $DEPLOYPATH
+    - /bin/cp -R vendor $DEPLOYPATH
+    - /bin/cp -R composer.json $DEPLOYPATH
+    - /bin/cp -R compoer.lock.json $DEPLOYPATH
+    - /bin/cp -R package-lock.json $DEPLOYPATH
+    - /bin/cp -R package.json $DEPLOYPATH
+    - /bin/cp -R phpunit.xml $DEPLOYPATH
+    - /bin/cp -R postcss.config.js $DEPLOYPATH
+    - /bin/cp -R tailwind.config.js $DEPLOYPATH
+    - /bin/cp -R vite.config.js $DEPLOYPATH
