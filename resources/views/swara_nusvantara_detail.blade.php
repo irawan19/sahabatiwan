@@ -61,30 +61,6 @@
                                 <a href="https://www.facebook.com/sharer/sharer.php?u={{URL::current()}}" target="_blank"><i class="fab fa-facebook"></i></a>
                             </div>
                         </div>
-                        <div class="news-details__pagenation-box">
-                            <ul class="list-unstyled news-details__pagenation">
-                                @foreach($lihat_berita_lainnya as $berita_lainnya)
-                                    <li>{{$berita_lainnya->judul_swara_nusvantaras}}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="comment-one">
-                            <h3 class="comment-one__title">{{$lihat_swara_nusvantaras->total_komentar_swara_nusvantaras}} Komentar</h3>
-                            @foreach($lihat_komentars as $komentars)
-                            <div class="comment-one__single">
-                                <div class="comment-one__image">
-                                    <img src="assets/images/blog/comment-1-1.jpg" alt="">
-                                </div>
-                                <div class="comment-one__content">
-                                    <h3>Kevin martin</h3>
-                                    <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.
-                                        Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,
-                                        sollicitudin at euismod.</p>
-                                    <a href="news-details.html" class="thm-btn comment-one__btn">Reply</a>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
                         <div class="comment-form">
                             <h3 class="comment-form__title">Berikan komentar</h3>
                             <form action="{{URL('swara-nusvantara/komentar/kirim')}}" method="POST" class="comment-one__form"
@@ -118,6 +94,23 @@
                                 </div>
                             </form>
                             <div class="result"></div>
+                            <div class="comment-one">
+                                <h3 class="comment-one__title">{{$lihat_swara_nusvantaras->total_komentar_swara_nusvantaras}} Komentar</h3>
+                                @foreach($lihat_komentars as $komentars)
+                                <div class="comment-one__single">
+                                    <div class="comment-one__image">
+                                        <img src="assets/images/blog/comment-1-1.jpg" alt="">
+                                    </div>
+                                    <div class="comment-one__content">
+                                        <h3>Kevin martin</h3>
+                                        <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.
+                                            Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,
+                                            sollicitudin at euismod.</p>
+                                        <a href="news-details.html" class="thm-btn comment-one__btn">Reply</a>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>

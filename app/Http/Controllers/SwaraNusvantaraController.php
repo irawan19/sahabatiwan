@@ -105,7 +105,7 @@ class SwaraNusvantaraController extends Controller
                                                                                         ->where('status_publikasi_komentar_swara_nusvantaras',1)
                                                                                         ->orderBy('created_at','desc')
                                                                                         ->get();
-                $data['lihat_berita_lainnya']                = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
+                $data['lihat_swara_nusvantara_lainnya']         = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                         ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
                                                                                         ->where('id_swara_nusvantaras','!=',$cek_swara_nusvantaras->id_swara_nusvantaras)
                                                                                         ->limit(2)
