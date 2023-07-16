@@ -32,6 +32,7 @@
 				    				<th class="nowrap">Nama</th>
 				    				<th class="nowrap">Telepon</th>
 				    				<th class="nowrap">NIK</th>
+				    				<th class="nowrap">Jenis Kelamin</th>
 				    			</tr>
 				    		</thead>
 				    		<tbody>
@@ -58,18 +59,21 @@
 								    		<td class="nowrap">{{$dukungan_sahabats->nama_dukungan_sahabats}}</td>
 								    		<td class="nowrap">{{$dukungan_sahabats->telepon_dukungan_sahabats}}</td>
 								    		<td class="nowrap">{{$dukungan_sahabats->nik_dukungan_sahabats}}</td>
+								    		<td class="nowrap">{{$dukungan_sahabats->jenis_kelamin_dukungan_sahabats}}</td>
 								    	</tr>
 								    @endforeach
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_dukungan_sahabat) != 0)
-											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="6" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>

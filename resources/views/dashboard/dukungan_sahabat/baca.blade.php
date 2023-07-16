@@ -38,6 +38,11 @@
 							<th>:</th>
 							<td>{{$baca_dukungan_sahabats->nik_dukungan_sahabats}}</td>
 						</tr>
+						<tr>
+							<th>NIK</th>
+							<th>:</th>
+							<td>{{$baca_dukungan_sahabats->jenis_kelamin_dukungan_sahabats}}</td>
+						</tr>
 					</table>
 				</div>
 				<div class="card-footer right-align">

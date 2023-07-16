@@ -120,6 +120,23 @@
                                 <input type="number" placeholder="NIK" name="nik_dukungan_sahabats" value="{{Request::old('nik_dukungan_sahabats')}}">
                                 {{General::pesanErrorForm($errors->first('nik_dukungan_sahabats'))}}
                             </div>
+                        </div><div class="col-xl-12">
+                            <div class="contact-one__input-box">
+				                <select class="form-control select2" id="jenis_kelamin_dukungan_sahabats" name="jenis_kelamin_dukungan_sahabats">
+                                    @php($selected_laki = '')
+                                    @php($selected_perempuan = '')
+                                    @if(Request::old('jenis_kelamin_dukungan_sahabats') == 'Laki-laki')
+                                        @php($selected_laki = 'selected')
+                                        @php($selected_perempuan = '')
+                                    @elseif(Request::old('jenis_kelamin_dukungan_sahabats') == 'Perempuan')
+                                        @php($selected_laki = '')
+                                        @php($selected_perempuan = 'selected')
+                                    @endif
+									<option value="Laki-laki" {{ $selected_laki }}>Laki-laki</option>
+									<option value="Perempuan" {{ $selected_perempuan }}>Perempuan</option>
+				                </select>
+                                {{General::pesanErrorForm($errors->first('jenis_kelamin_dukungan_sahabats'))}}
+                            </div>
                         </div>
                         <div class="col-xl-12">
                             <div class="contact-one__input-box">

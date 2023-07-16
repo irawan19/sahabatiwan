@@ -25,6 +25,7 @@ class DukunganSahabatController extends Controller
     {
         $aturan = [
             'userfile_ktp_dukungan_sahabat'     => 'required|mimes:png,jpg,jpeg,svg',
+            'jenis_kelamin_dukungan_sahabats'   => 'required',
             'nama_dukungan_sahabats'            => 'required',
             'nik_dukungan_sahabats'             => 'required',
             'telepon_dukungan_sahabats'         => 'required',
@@ -42,6 +43,7 @@ class DukunganSahabatController extends Controller
             'ktp_dukungan_sahabats'                 => $path_ktp_dukungan_sahabat.$nama_ktp_dukungan_sahabat,
             'nama_dukungan_sahabats'                => $request->nama_dukungan_sahabats,
             'nik_dukungan_sahabats'                 => $request->nik_dukungan_sahabats,
+            'jenis_kelamin_dukungan_sahabats'       => $request->jenis_kelamin_dukungan_sahabats,
             'telepon_dukungan_sahabats'             => $request->telepon_dukungan_sahabats,
             'alamat_dukungan_sahabats'              => $request->alamat_dukungan_sahabats,
             'status_baca_dukungan_sahabats'         => 0,

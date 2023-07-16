@@ -17,8 +17,8 @@ class DukunganSahabatController extends AdminCoreController
             $data['hasil_kata']                         = '';
             $url_sekarang                               = $request->fullUrl();
             $data['lihat_dukungan_sahabats']            = Dukungan_sahabat::orderBy('status_baca_dukungan_sahabats')
-                                                                    ->orderBy('created_at')
-                                                                    ->paginate(10);
+                                                                            ->orderBy('created_at')
+                                                                            ->paginate(10);
             session()->forget('halaman');
             session()->forget('hasil_kata');
             session(['halaman' => $url_sekarang]);
@@ -36,10 +36,11 @@ class DukunganSahabatController extends AdminCoreController
             $hasil_kata                         = $request->cari_kata;
             $data['hasil_kata']                 = $hasil_kata;
             $data['lihat_dukungan_sahabats']    = Dukungan_sahabat::where('nama_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
-                                                                ->orWhere('telepon_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
-                                                                ->orderBy('status_baca_dukungan_sahabats')
-                                                                ->orderBy('created_at')
-                                                                ->paginate(10);
+                                                                    ->orWhere('telepon_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                    ->orWhere('jenis_kelamin_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                    ->orderBy('status_baca_dukungan_sahabats')
+                                                                    ->orderBy('created_at')
+                                                                    ->paginate(10);
             session(['halaman' => $url_sekarang]);
             session(['hasil_kata' => $hasil_kata]);
             return view('dashboard.dukungan_sahabat.lihat', $data);
