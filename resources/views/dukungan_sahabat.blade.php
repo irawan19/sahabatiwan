@@ -135,7 +135,7 @@
 					                    		@php($selected = 'selected')
 					                    	@endif
 					                    @endif
-									    <option value="{{$provinsis->id_provinsis}}" {{ $selected }}</option>
+									    <option value="{{$provinsis->id_provinsis}}" {{ $selected }}>{{$provinsis->nama_provinsis}}</option>
 				                	@endforeach
 				                </select>
                                 {{General::pesanErrorForm($errors->first('provinsis_id'))}}
