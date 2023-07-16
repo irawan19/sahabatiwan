@@ -125,7 +125,17 @@
                             <div class="contact-one__input-box">
 				                <select class="form-control select2" id="provinsis_id" name="provinsis_id">
 				                	@foreach($lihat_provinsis as $provinsis)
-									    <option value="{{$provinsis->id_provinsis}}" {{ Request::old('provinsis_id') == $provinsis->id_provinsis ? $select='selected' : $select='' }}>{{$provinsis->nama_provinsis}}</option>
+				                    	@php($selected = '')
+					                    @if(Request::old('provinsis_id') == '')
+					                    	@if($provinsis->id_provinsis == 13)
+					                    		@php($selected = 'selected')
+					                    	@endif
+					                    @else
+					                    	@if($provinsis->id_provinsis == Request::old('provinsis_id'))
+					                    		@php($selected = 'selected')
+					                    	@endif
+					                    @endif
+									    <option value="{{$provinsis->id_provinsis}}" {{ $selected }}</option>
 				                	@endforeach
 				                </select>
                                 {{General::pesanErrorForm($errors->first('provinsis_id'))}}
