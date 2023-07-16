@@ -398,7 +398,6 @@
                                 <p class="errorform erroremailsubscribeberanda" style="display:none">email harus diisi.</p>
                                 <p class="successemailsubscribeberanda" style="display:none">Email anda berhasil terdaftar untuk langganan swara nusvatara.</p>
                             </div>
-                            <p class="event-one__subscribe-text-3">Jangan berbagi email anda ke orang lain.</p>
                         </div>
                     </div>
                 </div>
