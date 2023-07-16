@@ -66,6 +66,11 @@ use App\Http\Controllers\Dashboard\KonfigurasiAplikasiController as DashboardKon
 |
 */
 
+Route::get('/storage-link', function() {
+    Artisan::call('storage:link'); 
+    return 'The links have been created.';
+});
+
 Route::get('/', [Beranda::class, 'index']);
 Route::get('/cari', [Beranda::class, 'cari']);
 Route::post('/subscribe', [BerandaController::class, 'subscribe']);
