@@ -3,83 +3,6 @@
 
     @include('layouts.pageheader')
 
-    <section class="contact-page">
-        <div class="container">
-            <div class="contact-page__top">
-                @if($errors->isEmpty())
-				    @if (Session::get('setelah_simpan.alert') == 'sukses')
-                        <div class="alert alert-success" role="alert">Laporan anda sudah masuk ke dalam sistem kami. Terimakasih atas laporan anda.</div>
-				    @endif
-                @else
-                    <div class="alert alert-danger" role="alert">Opss... Ada kesalahan saat memasukkan data</div>
-                @endif
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="contact-page__left">
-                            <div class="contact-page__img-box">
-                                <div class="contact-page__img">
-                                    <img src="{{'storage/'.$lihat_kontak_kamis->gambar_kontak_kamis}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="contact-page__right">
-                            <div class="section-title text-left">
-                                <div class="section-title__icon">
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <span class="section-title__tagline">{{$lihat_kontak_kamis->text1_kontak_kamis}}</span>
-                                <h2 class="section-title__title">{{$lihat_kontak_kamis->text2_kontak_kamis}}</h2>
-                            </div>
-                            <p class="contact-page__text">
-                                {!! $lihat_kontak_kamis->konten_kontak_kamis !!}
-                            </p>
-                            <ul class="list-unstyled contact-page__contact-list">
-                                @if(!empty($lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis))
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-telephone"></span>
-                                        </div>
-                                        <div class="content">
-                                            <p>Anda memiliki pertanyaan?</p>
-                                            <h4><a href="tel:{{$lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis}}"><span>Bebas</span> {{$lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis}}</a></h4>
-                                        </div>
-                                    </li>
-                                @endif
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-email"></span>
-                                    </div>
-                                    <div class="content">
-                                        <p>Tulis Email</p>
-                                        <h4><a href="mailto:{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}">{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}</a></h4>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-page__bottom">
-                <div class="contact-page__bottom-left">
-                    <h4>Form Laporan Sahabat</h4>
-                </div>
-                <div class="contact-page__bottom-right">
-                    <div class="contact-page__social">
-                        <div class="contact-page__social-shape-1 float-bob-x">
-                            <img src="template/front/images/shapes/contact-page-shape-1.png" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
-                        </div>
-                        <span>Sosial Media</span>
-                        @foreach($lihat_sosial_medias as $sosial_medias)
-                            <a href="{{$sosial_medias->url_sosial_medias}}"><i class="fab fa-{{$sosial_medias->icon_sosial_medias}}"></i></a>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="contact-one">
         <div class="contact-one__bg" style="background-image: url(template/front/images/backgrounds/contact-one-bg.png);">
         </div>
@@ -211,6 +134,83 @@
                     </div>
                 </form>
                 <div class="result"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-page__top">
+                @if($errors->isEmpty())
+                    @if (Session::get('setelah_simpan.alert') == 'sukses')
+                        <div class="alert alert-success" role="alert">Laporan anda sudah masuk ke dalam sistem kami. Terimakasih atas laporan anda.</div>
+                    @endif
+                @else
+                    <div class="alert alert-danger" role="alert">Opss... Ada kesalahan saat memasukkan data</div>
+                @endif
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="contact-page__left">
+                            <div class="contact-page__img-box">
+                                <div class="contact-page__img">
+                                    <img src="{{'storage/'.$lihat_kontak_kamis->gambar_kontak_kamis}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="contact-page__right">
+                            <div class="section-title text-left">
+                                <div class="section-title__icon">
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span class="section-title__tagline">{{$lihat_kontak_kamis->text1_kontak_kamis}}</span>
+                                <h2 class="section-title__title">{{$lihat_kontak_kamis->text2_kontak_kamis}}</h2>
+                            </div>
+                            <p class="contact-page__text">
+                                {!! $lihat_kontak_kamis->konten_kontak_kamis !!}
+                            </p>
+                            <ul class="list-unstyled contact-page__contact-list">
+                                @if(!empty($lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis))
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-telephone"></span>
+                                        </div>
+                                        <div class="content">
+                                            <p>Anda memiliki pertanyaan?</p>
+                                            <h4><a href="tel:{{$lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis}}"><span>Bebas</span> {{$lihat_konfigurasi_aplikasis->telepon_konfigurasi_aplikasis}}</a></h4>
+                                        </div>
+                                    </li>
+                                @endif
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-email"></span>
+                                    </div>
+                                    <div class="content">
+                                        <p>Tulis Email</p>
+                                        <h4><a href="mailto:{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}">{{$lihat_konfigurasi_aplikasis->email_konfigurasi_aplikasis}}</a></h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-page__bottom">
+                <div class="contact-page__bottom-left">
+                    <h4>Form Laporan Sahabat</h4>
+                </div>
+                <div class="contact-page__bottom-right">
+                    <div class="contact-page__social">
+                        <div class="contact-page__social-shape-1 float-bob-x">
+                            <img src="template/front/images/shapes/contact-page-shape-1.png" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
+                        </div>
+                        <span>Sosial Media</span>
+                        @foreach($lihat_sosial_medias as $sosial_medias)
+                            <a href="{{$sosial_medias->url_sosial_medias}}"><i class="fab fa-{{$sosial_medias->icon_sosial_medias}}"></i></a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </section>
