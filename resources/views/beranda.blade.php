@@ -158,105 +158,35 @@
     <section class="feature-one">
         <div class="container">
             <div class="row">
-                <div class="col-xl-4 col-lg-4">
-                    <div class="feature-one__single">
-                        <div class="feature-one__img-box">
-                            <div class="feature-one__img">
-                                <img src="{{URL::asset('template/front/images/resources/feature-1-1.jpg')}}" alt="">
-                            </div>
-                            <div class="feature-one__content">
-                                <div class="feature-one__icon">
-                                    <span class="icon-history"></span>
+                @foreach($lihat_programs as $programs)
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="feature-one__single">
+                            <div class="feature-one__img-box">
+                                <div class="feature-one__img">
+                                    <img src="{{URL::asset('storage/'.$programs->gambar_programs)}}" alt="">
                                 </div>
-                                <h3 class="feature-one__title"><a href="our-services.html">History &
-                                        <br> establishment</a></h3>
-                            </div>
-                            <div class="feature-one__content-two">
-                                <div class="feature-one__content-two-top">
-                                    <div class="feature-one__icon-2">
-                                        <span class="icon-history"></span>
+                                <div class="feature-one__content">
+                                    <div class="feature-one__icon">
+                                        <img src="{{URL::asset('storage/'.$programs->icon_programs)}}" width="64px" alt="">
                                     </div>
-                                    <h3 class="feature-one__title-2"><a href="our-services.html">History &
-                                            <br> establishment</a></h3>
+                                    <h3 class="feature-one__title"><a href="#">{{$programs->nama_programs}}</a></h3>
                                 </div>
-                                <div class="feature-one__content-two-bottom">
-                                    <p class="feature-one__content-two-text">Aliquam viverra arcu. Donec aliquet
-                                        blandit enim. Suspendisse id quam <br> sed eros luctus sit ame.</p>
-                                    <div class="feature-one__content-two-btn-box">
-                                        <a href="our-services.html" class="feature-one__content-two-read-more">Read
-                                            More<i class="icon-right-arrow feature-one__content-two-arrow"></i></a>
+                                <div class="feature-one__content-two">
+                                    <div class="feature-one__content-two-top">
+                                        <div class="feature-one__icon-2">
+                                            <img src="{{URL::asset('storage/'.$programs->icon_programs)}}" width="64px" alt="">
+                                        </div>
+                                        <h3 class="feature-one__title-2"><a href="#">{{$programs->nama_programs}}</a></h3>
+                                    </div>
+                                    <div class="feature-one__content-two-bottom">
+                                        <p class="feature-one__content-two-text">{!! $programs->konten_programs !!}</p>
+                                        <div class="feature-one__content-two-btn-box"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-4">
-                    <div class="feature-one__single">
-                        <div class="feature-one__img-box">
-                            <div class="feature-one__img">
-                                <img src="{{URL::asset('template/front/images/resources/feature-1-2.jpg')}}" alt="">
-                            </div>
-                            <div class="feature-one__content">
-                                <div class="feature-one__icon">
-                                    <span class="icon-cityscape"></span>
-                                </div>
-                                <h3 class="feature-one__title"><a href="our-services.html">Tourism &
-                                        <br> visitor guides</a></h3>
-                            </div>
-                            <div class="feature-one__content-two">
-                                <div class="feature-one__content-two-top">
-                                    <div class="feature-one__icon-2">
-                                        <span class="icon-cityscape"></span>
-                                    </div>
-                                    <h3 class="feature-one__title-2"><a href="our-services.html">Tourism &
-                                            <br> visitor guides</a></h3>
-                                </div>
-                                <div class="feature-one__content-two-bottom">
-                                    <p class="feature-one__content-two-text">Aliquam viverra arcu. Donec aliquet
-                                        blandit enim. Suspendisse id quam <br> sed eros luctus sit ame.</p>
-                                    <div class="feature-one__content-two-btn-box">
-                                        <a href="our-services.html" class="feature-one__content-two-read-more">Read
-                                            More<i class="icon-right-arrow feature-one__content-two-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4">
-                    <div class="feature-one__single">
-                        <div class="feature-one__img-box">
-                            <div class="feature-one__img">
-                                <img src="{{URL::asset('template/front/images/resources/feature-1-3.jpg')}}" alt="">
-                            </div>
-                            <div class="feature-one__content">
-                                <div class="feature-one__icon">
-                                    <span class="icon-corporate"></span>
-                                </div>
-                                <h3 class="feature-one__title"><a href="our-services.html">Service &
-                                        <br> departments</a></h3>
-                            </div>
-                            <div class="feature-one__content-two">
-                                <div class="feature-one__content-two-top">
-                                    <div class="feature-one__icon-2">
-                                        <span class="icon-corporate"></span>
-                                    </div>
-                                    <h3 class="feature-one__title-2"><a href="our-services.html">Service &
-                                            <br> departments</a></h3>
-                                </div>
-                                <div class="feature-one__content-two-bottom">
-                                    <p class="feature-one__content-two-text">Aliquam viverra arcu. Donec aliquet
-                                        blandit enim. Suspendisse id quam <br> sed eros luctus sit ame.</p>
-                                    <div class="feature-one__content-two-btn-box">
-                                        <a href="our-services.html" class="feature-one__content-two-read-more">Read
-                                            More<i class="icon-right-arrow feature-one__content-two-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
