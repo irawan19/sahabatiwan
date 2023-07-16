@@ -116,6 +116,13 @@
                                 @endforeach
                             </ul>
                         </div>
+                        <div class="sidebar__single sidebar__comments">
+                            <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100094352257691" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100094352257691" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100094352257691">Sahabat Iwan</a></blockquote></div>
+                        </div>
+                        <div class="sidebar__single sidebar__comments">
+                            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                            <div class="elfsight-app-e1a0bea7-15c0-4be7-a41c-05aeaa20963c"></div>
+                        </div>
                     </div>
                 </div>
             </div>

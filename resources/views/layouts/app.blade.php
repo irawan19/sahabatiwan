@@ -105,6 +105,8 @@
 </head>
 
 <body class="custom-cursor">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v17.0&appId=142317529177681&autoLogAppEvents=1" nonce="XKJLYpM4"></script>
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 

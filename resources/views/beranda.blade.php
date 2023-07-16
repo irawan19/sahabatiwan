@@ -464,6 +464,31 @@
         </div>
     </section>
 
+    <section class="portfolio-one">
+        <div class="portfolio-one__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="portfolio-one__left">
+                            <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100094352257691" data-tabs="timeline" data-width="500" data-height="741" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100094352257691" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100094352257691">Sahabat Iwan</a></blockquote></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="portfolio-one__right">
+                            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                            <div class="elfsight-app-e1a0bea7-15c0-4be7-a41c-05aeaa20963c"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="portfolio-one__right">
+                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sahabatiwan/video/7253462546018012417" data-video-id="7253462546018012417" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@sahabatiwan" href="https://www.tiktok.com/@sahabatiwan?refer=embed">@sahabatiwan</a> <p>Pasal 33</p> <a target="_blank" title="♬ original sound  - sahabatiwan" href="https://www.tiktok.com/music/original-sound-sahabatiwan-7253462932632177409?refer=embed">♬ original sound  - sahabatiwan</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script type="text/javascript">
         jQuery(document).ready(function () {
             $('.btnemailsubcribeberanda').on('click', function() {
