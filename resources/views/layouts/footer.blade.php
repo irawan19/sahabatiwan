@@ -95,7 +95,7 @@
                         </div>
                         <ul class="footer-widget__link-list list-unstyled">
                             @foreach($lihat_lima_swara_nusvantara as $lima_swara_nusvantaras)
-                                <li><a href="{{URL('swara-nusvantara/'.$lima_swara_nusvantaras->slug_kategori_swara_nusvantaras.'/'.$lima_swara_nusvantaras->slug_swara_nusvantaras)}}">{{$lima_swara_nusvantaras->judul_swara_nusvantaras}}</a></li>
+                                <li><a href="{{URL('swara-nusvantara/detail/'.$lima_swara_nusvantaras->slug_kategori_swara_nusvantaras.'/'.$lima_swara_nusvantaras->slug_swara_nusvantaras)}}">{{$lima_swara_nusvantaras->judul_swara_nusvantaras}}</a></li>
                             @endforeach
                         </ul>
                     </div>
