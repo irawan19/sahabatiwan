@@ -123,11 +123,24 @@ class ProgramController extends AdminCoreController
         if (General::hakAkses($link_program, 'edit') == 'true') {
             $cek_programs = Master_program::where('id_programs', $id_programs)->first();
             if (!empty($cek_programs)) {
-                if (!empty($request->userfile_gambar_program)) {
+                $aturan = [
+                    'nama_programs' => 'required',
+                    'konten_programs' => 'required',
+                ];
+                $this->validate($request, $aturan);
+
+                $programs_data = [
+                    'nama_programs' => $request->nama_programs,
+                    'konten_programs' => $request->konten_programs,
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ];
+                Master_program::where('id_programs', $id_programs)
+                    ->update($programs_data);
+
+                if(!empty($request->userfile_gambar_program))
+                {
                     $aturan = [
                         'userfile_gambar_program' => 'required|mimes:jpg,jpeg,png',
-                        'nama_programs' => 'required',
-                        'konten_programs' => 'required',
                     ];
                     $this->validate($request, $aturan);
 
@@ -141,27 +154,35 @@ class ProgramController extends AdminCoreController
 
                     $programs_data = [
                         'gambar_programs' => $path_gambar_program . $nama_gambar_program,
-                        'nama_programs' => $request->nama_programs,
-                        'konten_programs' => $request->nama_programs,
-                        'updated_at' => date('Y-m-d H:i:s'),
-                    ];
-                    Master_program::where('id_programs', $id_programs)
-                        ->update($programs_data);
-                } else {
-                    $aturan = [
-                        'nama_programs' => 'required',
-                        'konten_programs' => 'required',
-                    ];
-                    $this->validate($request, $aturan);
-
-                    $programs_data = [
-                        'nama_programs' => $request->nama_programs,
-                        'konten_programs' => $request->konten_programs,
                         'updated_at' => date('Y-m-d H:i:s'),
                     ];
                     Master_program::where('id_programs', $id_programs)
                         ->update($programs_data);
                 }
+
+                if(!empty($request->userfile_icon_program))
+                {
+                    $aturan = [
+                        'userfile_icon_program' => 'required|mimes:jpg,jpeg,png',
+                    ];
+                    $this->validate($request, $aturan);
+
+                    $icon_program_lama = $cek_programs->icon_programs;
+                    if (Storage::disk('public')->exists($icon_program_lama))
+                        Storage::disk('public')->delete($icon_program_lama);
+
+                    $nama_icon_program = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_icon_program')->getClientOriginalName())));
+                    $path_icon_program = 'program/';
+                    Storage::disk('public')->put($path_icon_program . $nama_icon_program, file_get_contents($request->file('userfile_icon_program')));
+
+                    $programs_data = [
+                        'icon_programs' => $path_icon_program . $nama_icon_program,
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ];
+                    Master_program::where('id_programs', $id_programs)
+                        ->update($programs_data);
+                }
+
 
                 if (request()->session()->get('halaman') != '')
                     $redirect_halaman = request()->session()->get('halaman');
