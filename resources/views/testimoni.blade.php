@@ -7,7 +7,7 @@
         <div class="contact-one__bg" style="background-image: url(template/front/images/backgrounds/contact-one-bg.png);">
         </div>
         <div class="container">
-            <div class="section-title text-center">
+            <div class="section-title text-center" style="margin-top:50px;">
                 <div class="section-title__icon">
                     <span class="fa fa-star"></span>
                 </div>
@@ -15,6 +15,13 @@
                 <h2 class="section-title__title"></h2>
             </div>
             <div class="contact-one__form-box">
+                @if($errors->isEmpty())
+                    @if (Session::get('setelah_simpan.alert') == 'sukses')
+                        <div class="alert alert-success" role="alert">Testimoni anda sudah masuk ke dalam sistem kami. Terimakasih atas testimoni anda.</div>
+                    @endif
+                @else
+                    <div class="alert alert-danger" role="alert">Opss... Ada kesalahan saat memasukkan data</div>
+                @endif
                 <form action="{{URL('/testimoni/kirim')}}" enctype="multipart/form-data" method="POST" class="contact-one__form">
 					{{ csrf_field() }}
                     <div class="row">
@@ -63,13 +70,6 @@
     <section class="contact-page">
         <div class="container">
             <div class="contact-page__top">
-                @if($errors->isEmpty())
-                    @if (Session::get('setelah_simpan.alert') == 'sukses')
-                        <div class="alert alert-success" role="alert">Testimoni anda sudah masuk ke dalam sistem kami. Terimakasih atas testimoni anda.</div>
-                    @endif
-                @else
-                    <div class="alert alert-danger" role="alert">Opss... Ada kesalahan saat memasukkan data</div>
-                @endif
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
                         <div class="contact-page__left">
@@ -119,9 +119,7 @@
                 </div>
             </div>
             <div class="contact-page__bottom">
-                <div class="contact-page__bottom-left">
-                    <h4>Form Testimoni</h4>
-                </div>
+                <div class="contact-page__bottom-left"></div>
                 <div class="contact-page__bottom-right">
                     <div class="contact-page__social">
                         <div class="contact-page__social-shape-1 float-bob-x">
