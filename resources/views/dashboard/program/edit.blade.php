@@ -33,9 +33,9 @@
 			            </div>
 						{{General::pesanErrorFormFile($errors->first('userfile_icon_program'))}}
 						<div class="form-group">
-							<label class="form-col-form-label" for="judul_programs">Judul <b style="color:red">*</b></label>
-							<input class="form-control {{ General::validForm($errors->first('judul_programs')) }}" id="judul_programs" type="text" name="judul_programs" value="{{Request::old('judul_programs') == '' ? $edit_programs->judul_programs : Request::old('judul_programs')}}">
-							{{General::pesanErrorForm($errors->first('judul_programs'))}}
+							<label class="form-col-form-label" for="nama_programs">Nama <b style="color:red">*</b></label>
+							<input class="form-control {{ General::validForm($errors->first('nama_programs')) }}" id="nama_programs" type="text" name="nama_programs" value="{{Request::old('nama_programs') == '' ? $edit_programs->nama_programs : Request::old('nama_programs')}}">
+							{{General::pesanErrorForm($errors->first('nama_programs'))}}
 						</div>
 						<div class="form-group">
 							<label class="form-col-form-label" for="konten_programs">Konten <b style="color:red">*</b></label>
