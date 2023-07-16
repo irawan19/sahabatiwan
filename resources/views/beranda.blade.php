@@ -260,6 +260,33 @@
         </div>
     </section>
 
+    <!--Portfolio One Start-->
+    <section class="portfolio-one">
+        <div class="portfolio-one__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="portfolio-one__left">
+                            <div class="section-title text-left">
+                                <div class="section-title__icon">
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span class="section-title__tagline">Sosial Media</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="portfolio-one__right">
+                            <div id="fb-root"></div>
+                            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v17.0&appId=142317529177681&autoLogAppEvents=1" nonce="srhUybP4"></script>
+                            <div class="fb-page" data-href="https://www.facebook.com/iwan.nurdin.77" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="brand-one">
         <div class="container">
             <div class="section-title text-center">
