@@ -64,6 +64,8 @@
 						</div>
 						<div class="form-group row">
 	                        <div class="col-md-12 center-align">
+								<label class="form-col-form-label" for="userfile_logo">256x128px</label>
+								<br/>
 	                          	<input id="userfile_logo" type="file" name="userfile_logo">
 								{{General::pesanErrorFormFile($errors->first('userfile_logo'))}}
 	                        </div>
@@ -92,6 +94,8 @@
 						</div>
 						<div class="form-group row">
 	                        <div class="col-md-12 center-align">
+								<label class="form-col-form-label" for="userfile_icon">256x256px</label>
+								<br/>
 	                          	<input id="userfile_icon" type="file" name="userfile_icon">
 								{{General::pesanErrorFormFile($errors->first('userfile_icon'))}}
 	                        </div>
@@ -120,6 +124,8 @@
 						</div>
 						<div class="form-group row">
 	                        <div class="col-md-12 center-align">
+								<label class="form-col-form-label" for="userfile_gambar_slideshow">256x256px</label>
+								<br/>
 	                          	<input id="userfile_logo_text" type="file" name="userfile_logo_text">
 								{{General::pesanErrorFormFile($errors->first('userfile_logo_text'))}}
 	                        </div>
