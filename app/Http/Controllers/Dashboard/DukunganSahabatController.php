@@ -56,10 +56,10 @@ class DukunganSahabatController extends AdminCoreController
             if($cek_dukungan_sahabats != 0)
             {
                 $data['link_dukungan_sahabat']       = $link_dukungan_sahabat;
-                $data['baca_dukungan_sahabats']      = Dukungan_sahabat::join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
-                                                                        ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
+                $data['baca_dukungan_sahabats']      = Dukungan_sahabat::join('master_kelurahans','dukungan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
                                                                         ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
-                                                                        ->join('master_kelurahans','dukungan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
+                                                                        ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
+                                                                        ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
                                                                         ->where('id_dukungan_sahabats',$id_dukungan_sahabats)
                                                                         ->first();
                 $dukungan_sahabats_data = [

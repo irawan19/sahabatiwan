@@ -56,10 +56,10 @@ class LaporanSahabatController extends AdminCoreController
             if($cek_laporan_sahabats != 0)
             {
                 $data['link_laporan_sahabat']       = $link_laporan_sahabat;
-                $data['baca_laporan_sahabats']      = Laporan_sahabat::join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
-                                                                    ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
+                $data['baca_laporan_sahabats']      = Laporan_sahabat::join('master_kelurahans','laporan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
                                                                     ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
-                                                                    ->join('master_kelurahans','laporan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
+                                                                    ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
+                                                                    ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
                                                                     ->where('id_laporan_sahabats',$id_laporan_sahabats)
                                                                     ->first();
                 $laporan_sahabats_data = [
