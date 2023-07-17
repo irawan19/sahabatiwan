@@ -210,7 +210,7 @@
                         "smartSpeed": 700,
                         "loop":true,
                         "autoplay": true,
-                        "nav":true,
+                        "nav":false,
                         "dots":false,
                         "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
                         "responsive":{
