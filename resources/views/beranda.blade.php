@@ -174,7 +174,7 @@
                                 <div class="feature-one__content-two">
                                     <div class="feature-one__content-two-top">
                                         <div class="feature-one__icon-2">
-                                            <img src="{{URL::asset('storage/'.$programs->icon_programs)}}" width="64px" alt="">
+                                            <img src="{{URL::asset('storage/'.$programs->icon_programs)}}" style="filter: grayscale(100%);" width="64px" alt="">
                                         </div>
                                         <h3 class="feature-one__title-2"><a href="#">{{$programs->nama_programs}}</a></h3>
                                     </div>
