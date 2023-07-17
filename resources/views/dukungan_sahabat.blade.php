@@ -50,7 +50,14 @@
                                 <input type="number" placeholder="NIK" name="nik_dukungan_sahabats" value="{{Request::old('nik_dukungan_sahabats')}}">
                                 {{General::pesanErrorForm($errors->first('nik_dukungan_sahabats'))}}
                             </div>
-                        </div><div class="col-xl-12">
+                        </div>
+                        <div class="col-xl-12">
+                            <div class="contact-one__input-box">
+                                <input type="text" readonly class="getDate" name="tanggal_lahir_dukungan_sahabats" value="{{Request::old('tanggal_lahir_dukungan_sahabats')}}">
+                                {{General::pesanErrorForm($errors->first('tanggal_lahir_dukungan_sahabats'))}}
+                            </div>
+                        </div>
+                        <div class="col-xl-12">
                             <div class="contact-one__input-box">
 				                <select class="form-control select2" id="jenis_kelamin_dukungan_sahabats" name="jenis_kelamin_dukungan_sahabats">
                                     @php($selected_laki = '')

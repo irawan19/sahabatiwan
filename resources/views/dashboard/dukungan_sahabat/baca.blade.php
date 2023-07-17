@@ -24,6 +24,16 @@
                             </td>
 						</tr>
 						<tr>
+							<th>NIK</th>
+							<th>:</th>
+							<td>{{$baca_dukungan_sahabats->nik_dukungan_sahabats}}</td>
+						</tr>
+						<tr>
+							<th>Tanggal Lahir</th>
+							<th>:</th>
+							<td>{{$baca_dukungan_sahabats->tanggal_lahir_dukugan_sahabats}}</td>
+						</tr>
+						<tr>
 							<th>Nama</th>
 							<th>:</th>
 							<td>{{$baca_dukungan_sahabats->nama_dukungan_sahabats}}</td>
@@ -34,14 +44,34 @@
 							<td>{{$baca_dukungan_sahabats->telepon_dukungan_sahabats}}</td>
 						</tr>
 						<tr>
-							<th>NIK</th>
-							<th>:</th>
-							<td>{{$baca_dukungan_sahabats->nik_dukungan_sahabats}}</td>
-						</tr>
-						<tr>
-							<th>NIK</th>
+							<th>Jenis Kelamin</th>
 							<th>:</th>
 							<td>{{$baca_dukungan_sahabats->jenis_kelamin_dukungan_sahabats}}</td>
+						</tr>
+						<tr>
+							<th>Provinsi</th>
+							<th>:</th>
+							<td>{{$baca_dukungan_sahabats->nama_provinsis}}</td>
+						</tr>
+						<tr>
+							<th>Kota/Kabupaten</th>
+							<th>:</th>
+							<td>{{$baca_dukungan_sahabats->nama_kota_kabupatens}}</td>
+						</tr>
+						<tr>
+							<th>Kecamatan</th>
+							<th>:</th>
+							<td>{{$baca_dukungan_sahabats->nama_kecamatans}}</td>
+						</tr>
+						<tr>
+							<th>Kelurahan</th>
+							<th>:</th>
+							<td>{{$baca_dukungan_sahabats->nama_kelurahans}}</td>
+						</tr>
+						<tr>
+							<th>Alamat</th>
+							<th>:</th>
+							<td>{!! $baca_dukungan_sahabats->alamat_dukungan_sahabats !!}</td>
 						</tr>
 					</table>
 				</div>

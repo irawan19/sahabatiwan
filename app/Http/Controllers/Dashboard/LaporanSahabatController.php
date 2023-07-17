@@ -52,11 +52,16 @@ class LaporanSahabatController extends AdminCoreController
     {
         $link_laporan_sahabat = 'laporan_sahabat';
         if (General::hakAkses($link_laporan_sahabat, 'baca') == 'true') {
-            $cek_laporan_sahabats = Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->first();
-            if(!empty($cek_laporan_sahabats))
+            $cek_laporan_sahabats = Laporan_sahabat::where('id_laporan_sahabats',$id_laporan_sahabats)->count();
+            if($cek_laporan_sahabats != 0)
             {
                 $data['link_laporan_sahabat']       = $link_laporan_sahabat;
-                $data['baca_laporan_sahabats']      = $cek_laporan_sahabats;
+                $data['baca_laporan_sahabats']      = Laporan_sahabat::join('master_kelurahans','master_kecamatans.id_kecamatans','=','master_kelurahans.kecamatans_id')
+                                                                    ->join('master_kecamatans','master_kota_kabupatens.id_kota_kabupatens','=','master_kecamatans.id_kecamatans')
+                                                                    ->join('master_kota_kabupatens','master_provinsis.id_provinsis','=','master_kota_kabupatens.provinsis_id')
+                                                                    ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
+                                                                    ->where('id_laporan_sahabats',$id_laporan_sahabats)
+                                                                    ->first();
                 $laporan_sahabats_data = [
                     'status_baca_laporan_sahabats'    => 1
                 ];

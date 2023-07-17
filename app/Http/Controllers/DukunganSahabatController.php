@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Storage;
+use App\Helpers\General;
 use App\Models\Master_konfigurasi_aplikasi;
 use App\Models\Dukungan_sahabat;
 use App\Models\Master_provinsi;
@@ -25,6 +26,7 @@ class DukunganSahabatController extends Controller
     {
         $aturan = [
             'userfile_ktp_dukungan_sahabat'     => 'required|mimes:png,jpg,jpeg,svg',
+            'tanggal_lahir_dukungan_sahabats'   => 'required',
             'jenis_kelamin_dukungan_sahabats'   => 'required',
             'nama_dukungan_sahabats'            => 'required',
             'nik_dukungan_sahabats'             => 'required',
@@ -40,6 +42,7 @@ class DukunganSahabatController extends Controller
 
         $dukungan_sahabats_data = [
             'kelurahans_id'                         => $request->kelurahans_id,
+            'tanggal_lahir_dukungan_sahabats'       => General::ubahTanggalKeDB($request->tanggal_lahir_dukungan_sahabats),
             'ktp_dukungan_sahabats'                 => $path_ktp_dukungan_sahabat.$nama_ktp_dukungan_sahabat,
             'nama_dukungan_sahabats'                => $request->nama_dukungan_sahabats,
             'nik_dukungan_sahabats'                 => $request->nik_dukungan_sahabats,

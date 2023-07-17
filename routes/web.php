@@ -49,6 +49,9 @@ use App\Http\Controllers\Dashboard\SubscribeController as DashboardSubscribe;
 use App\Http\Controllers\Dashboard\GaleriController as DashboardGaleri;
 use App\Http\Controllers\Dashboard\WidgetController as DashboardWidget;
 
+//Laporan
+use App\Http\Controllers\Dashboard\LaporanDukunganSahabatController as DashboardLaporanDukunganSahabat;
+
 //Konfigurasi Aplikasi
 use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
 use App\Http\Controllers\Dashboard\LevelSistemController as DashboardLevelSistem;
@@ -237,6 +240,14 @@ Route::middleware([
             //Widget
             Route::group(['prefix' => 'widget'], function() {
                 Route::get('/', [DashboardWidget::class, 'index']);
+            });
+        
+        //Laporan
+            //Laporan Dukungan Sahabat
+            Route::group(['prefix' => 'laporan_dukungan_sahabat'], function() {
+                Route::get('/', [DashboardLaporanDukunganSahabat::class, 'index']);
+                Route::get('/cari', [DashboardLaporanDukunganSahabat::class, 'cari']);
+                Route::get('/cetak', [DashboardLaporanDukunganSahabat::class, 'cetak']);
             });
 
         //Konfigurasi Aplikasi

@@ -43,6 +43,31 @@
                             </td>
 						</tr>
 						<tr>
+							<th>Provinsi</th>
+							<th>:</th>
+							<td>{{$baca_laporan_sahabats->nama_provinsis}}</td>
+						</tr>
+						<tr>
+							<th>Kota/Kabupaten</th>
+							<th>:</th>
+							<td>{{$baca_laporan_sahabats->nama_kota_kabupatens}}</td>
+						</tr>
+						<tr>
+							<th>Kecamatan</th>
+							<th>:</th>
+							<td>{{$baca_laporan_sahabats->nama_kecamatans}}</td>
+						</tr>
+						<tr>
+							<th>Kelurahan</th>
+							<th>:</th>
+							<td>{{$baca_laporan_sahabats->nama_kelurahans}}</td>
+						</tr>
+						<tr>
+							<th>Alamat</th>
+							<th>:</th>
+							<td>{!! $baca_laporan_sahabats->alamat_laporan_sahabats !!}</td>
+						</tr>
+						<tr>
 							<th>Aduan</th>
 							<th>:</th>
 							<td>{!! nl2br($baca_laporan_sahabats->aduan_laporan_sahabats) !!}</td>
