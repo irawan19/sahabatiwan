@@ -31,7 +31,7 @@
 						<tr>
 							<th>Tanggal Lahir</th>
 							<th>:</th>
-							<td>{{General::ubahDBKeTanggal($baca_dukungan_sahabats->tanggal_lahir_dukugan_sahabats)}}</td>
+							<td>{{General::ubahDBKeTanggal($baca_dukungan_sahabats->tanggal_lahir_dukungan_sahabats)}}</td>
 						</tr>
 						<tr>
 							<th>Nama</th>
