@@ -47,6 +47,8 @@ class BerandaController extends Controller
                                                                             ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
                                                                             ->orWhere('konten_swara_nusvantaras', 'LIKE', '%'.$hasil_kata.'%')
                                                                             ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
+                                                                            ->orWhere('nama_kategori_swara_nusvantaras', 'LIKE', '%'.$hasil_kata.'%')
+                                                                            ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
                                                                             ->get();
         return view('pencarian',$data);
     }
