@@ -29,7 +29,7 @@
 				    			@if(!$lihat_laporan_dukungan_sahabats->isEmpty())
 		            				@foreach($lihat_laporan_dukungan_sahabats as $laporan_dukungan_sahabats)
 								    	<tr>
-								    		<td class="nowrap">{{General::ubahDBKeTanggalwaktu($laporan_dukungan_sahabats->created_at)}}</td>
+								    		<td class="nowrap">{{General::ubahDBKeTanggalwaktu($laporan_dukungan_sahabats->tanggal_daftar)}}</td>
 								    		<td class="nowrap">
 												<a data-fancybox="gallery" href="{{URL::asset('storage/'.$laporan_dukungan_sahabats->ktp_dukungan_sahabats)}}">
 													<img src="{{ URL::asset('storage/'.$laporan_dukungan_sahabats->ktp_dukungan_sahabats) }}" width="108">
