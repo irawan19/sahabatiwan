@@ -179,7 +179,7 @@
                                         <h3 class="feature-one__title-2"><a href="#">{{$programs->nama_programs}}</a></h3>
                                     </div>
                                     <div class="feature-one__content-two-bottom">
-                                        <p class="feature-one__content-two-text">{!! $programs->konten_programs !!}</p>
+                                        <p class="feature-one__content-two-text" style="font-size:12px !important;">{!! $programs->konten_programs !!}</p>
                                         <div class="feature-one__content-two-btn-box"></div>
                                     </div>
                                 </div>
