@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="footer-widget__column footer-widget__departments">
+                    <div class="footer-widget__column footer-widget__link">
                         <div class="footer-widget__title-box">
                             <h3 class="footer-widget__title">Swara Nusvantara</h3>
                         </div>
