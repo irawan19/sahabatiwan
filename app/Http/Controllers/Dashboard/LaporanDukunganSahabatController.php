@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Helpers\General;
 use App\Models\Dukungan_sahabat;
-use Storage;
+use App\Models\Master_provinsi;
 
 class LaporanDukunganSahabatController extends AdminCoreController
 {
@@ -16,6 +16,8 @@ class LaporanDukunganSahabatController extends AdminCoreController
             $data['link_laporan_dukungan_sahabat']      = $link_laporan_dukungan_sahabat;
             $data['hasil_kata']                         = '';
             $url_sekarang                               = $request->fullUrl();
+            $data['lihat_provinsis']                    = Master_provinsi::orderBy('nama_provinsis')
+                                                                        ->get();
             $data['lihat_laporan_dukungan_sahabats']    = Dukungan_sahabat::selectRaw('*,
                                                                             dukungan_sahabats.created_at as tanggal_daftar')
                                                                             ->join('master_kelurahans','dukungan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
@@ -26,6 +28,11 @@ class LaporanDukunganSahabatController extends AdminCoreController
                                                                             ->get();
             session()->forget('halaman');
             session()->forget('hasil_kata');
+            session()->forget('hasil_provinsi');
+            session()->forget('hasil_kota_kabupaten');
+            session()->forget('hasil_kecamatan');
+            session()->forget('hasil_kelurahan');
+            session()->forget('hasil_jenis_kelamins');
             session(['halaman' => $url_sekarang]);
             return view('dashboard.laporan_dukungan_sahabat.lihat', $data);
         } else

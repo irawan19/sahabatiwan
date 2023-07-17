@@ -242,7 +242,7 @@
                                         <div class="testimonial-one__client-info">
                                             <div class="testimonial-one__client-img-box">
                                                 <div class="testimonial-one__client-img">
-                                                    <img src="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}" width="116px" alt="Testimoni {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
+                                                    <img src="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}" width="116px" height="116px" alt="Testimoni {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
                                                 </div>
                                             </div>
                                             <div class="testimonial-one__client-content">

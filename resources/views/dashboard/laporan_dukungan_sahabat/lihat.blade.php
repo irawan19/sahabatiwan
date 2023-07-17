@@ -5,8 +5,22 @@
 		<div class="col-sm-12">
 			<div class="card">
 				<div class="card-header">
-				    <strong>Laporan Dukungan Sahabat</strong>
+					<div class="row">
+						<div class="col-sm-6">
+							<strong>Laporan Dukungan Sahabat</strong>
+						</div>
+						<div class="col-sm-6 right-align">
+							{{General::cetak($link_laporan_dukungan_sahabat, 'laporan_dukungan_sahabat/cetak')}}
+						</div>
+					</div>
 				</div>
+				<div class="card-body">
+					
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="card">
 				<div class="card-body">
                     <div class="scrolltable">
                         <table id="tablesort" class="table table-responsive-sm table-bordered table-striped table-sm">
@@ -49,14 +63,26 @@
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_laporan_dukungan_sahabat) != 0)
-											<td colspan="6" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="12" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="5" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="11" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
