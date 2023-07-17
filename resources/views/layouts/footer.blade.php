@@ -100,7 +100,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                     <div class="footer-widget__column footer-widget__gallery">
                         <div class="footer-widget__title-box">
                             <h3 class="footer-widget__title">Galeri</h3>
