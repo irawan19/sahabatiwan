@@ -13,6 +13,7 @@
 				    		<thead>
 				    			<tr>
 				    				<th class="nowrap">Tanggal</th>
+				    				<th class="nowrap">KTP</th>
 				    				<th class="nowrap">NIK</th>
 				    				<th class="nowrap">Provinsi</th>
 				    				<th class="nowrap">Kota/Kab</th>
@@ -29,15 +30,20 @@
 		            				@foreach($lihat_laporan_dukungan_sahabats as $laporan_dukungan_sahabats)
 								    	<tr>
 								    		<td class="nowrap">{{General::ubahDBKeTanggalwaktu($laporan_dukungan_sahabats->created_at)}}</td>
+								    		<td class="nowrap">
+												<a data-fancybox="gallery" href="{{URL::asset('storage/'.$laporan_dukungan_sahabats->ktp_dukungan_sahabats)}}">
+													<img src="{{ URL::asset('storage/'.$laporan_dukungan_sahabats->ktp_dukungan_sahabats) }}" width="108">
+												</a>
+											</td>
 								    		<td class="nowrap">{{$laporan_dukungan_sahabats->nik_dukungan_sahabats}}</td>
 								    		<td class="nowrap">{{$laporan_dukungan_sahabats->nama_provinsis}}</td>
 								    		<td class="nowrap">{{$laporan_dukungan_sahabats->nama_kota_kabupatens}}</td>
 								    		<td class="nowrap">{{$laporan_dukungan_sahabats->nama_kecamatans}}</td>
 								    		<td class="nowrap">{{$laporan_dukungan_sahabats->nama_kelurahans}}</td>
-								    		<td class="nowrap">{!! $laporan_dukungan_sahabats->almaat_dukungan_sahabats !!}</td>
+								    		<td class="nowrap">{!! $laporan_dukungan_sahabats->alamat_dukungan_sahabats !!}</td>
 								    		<td class="nowrap">{{$laporan_dukungan_sahabats->nama_dukungan_sahabats}}</td>
-								    		<td class="nowrap">{{$laporan_dukungan_sahabats->telepon_dukungan_sahabats}}</td>
 								    		<td class="nowrap">{{$laporan_dukungan_sahabats->jenis_kelamin_dukungan_sahabats}}</td>
+								    		<td class="nowrap">{{$laporan_dukungan_sahabats->telepon_dukungan_sahabats}}</td>
 								    	</tr>
 								    @endforeach
 								@else

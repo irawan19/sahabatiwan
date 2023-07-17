@@ -16,7 +16,11 @@ class LaporanDukunganSahabatController extends AdminCoreController
             $data['link_laporan_dukungan_sahabat']      = $link_laporan_dukungan_sahabat;
             $data['hasil_kata']                         = '';
             $url_sekarang                               = $request->fullUrl();
-            $data['lihat_laporan_dukungan_sahabats']    = Dukungan_sahabat::orderBy('created_at')
+            $data['lihat_laporan_dukungan_sahabats']    = Dukungan_sahabat::join('master_kelurahans','dukungan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
+                                                                            ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
+                                                                            ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
+                                                                            ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
+                                                                            ->orderBy('created_at')
                                                                             ->get();
             session()->forget('halaman');
             session()->forget('hasil_kata');
