@@ -33,6 +33,9 @@ use App\Http\Controllers\Dashboard\KonfigurasiProfilController as DashboardKonfi
 //Konfigurasi Akun
 use App\Http\Controllers\Dashboard\KonfigurasiAkunController as DashboardKonfigurasiAkun;
 
+//Dashboard Wilayah
+use App\Http\Controllers\Dashboard\WilayahController as DashboardWilayah;
+
 //Konfigurasi Web
 use App\Http\Controllers\Dashboard\SlideshowController as DashboardSlideshow;
 use App\Http\Controllers\Dashboard\ProfilController as DashboardProfil;
@@ -115,6 +118,13 @@ Route::middleware([
         Route::group(['prefix' => 'konfigurasi_akun'], function() {
             Route::get('/', [DashboardKonfigurasiAkun::class, 'index']);
             Route::post('/prosesedit', [DashboardKonfigurasiAkun::class, 'prosesedit']);
+        });
+
+        //Wilayah
+        Route::group(['prefix' => 'wilayah'], function() {
+            Route::get('/kota-kabupaten/{id}', [DashboardWilayah::class, 'kotakabupaten']);
+            Route::get('/kecamatan/{id}', [DashboardWilayah::class, 'kecamatan']);
+            Route::get('/kelurahan/{id}', [DashboardWilayah::class, 'kelurahan']);
         });
 
         //Konfigurasi Web

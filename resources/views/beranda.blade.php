@@ -209,9 +209,9 @@
                         "margin": 30,
                         "smartSpeed": 700,
                         "loop":true,
-                        "autoplay": false,
+                        "autoplay": true,
                         "nav":false,
-                        "dots":false,
+                        "dots":true,
                         "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
                         "responsive":{
                             "0":{
