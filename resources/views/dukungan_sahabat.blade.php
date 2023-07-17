@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-xl-12">
                             <div class="contact-one__input-box">
-                                <input type="text" readonly class="getDate" name="tanggal_lahir_dukungan_sahabats" value="{{Request::old('tanggal_lahir_dukungan_sahabats')}}">
+                                <input type="text" readonly placeholder="Tanggal Lahir" class="getDate" name="tanggal_lahir_dukungan_sahabats" value="{{Request::old('tanggal_lahir_dukungan_sahabats')}}">
                                 {{General::pesanErrorForm($errors->first('tanggal_lahir_dukungan_sahabats'))}}
                             </div>
                         </div>

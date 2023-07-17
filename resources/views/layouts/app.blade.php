@@ -167,6 +167,19 @@
 
     <!-- template js -->
     <script src="{{URL::asset('template/front/js/govity.js')}}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $('.getDate').datepicker({
+	            dayNames: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
+	        	dayNamesMin: ['Mi', 'Sn', 'Sl', 'Rb', 'Km', 'Jm', 'Sb'],
+	        	dayNamesShort: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
+	        	monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des'],
+	        	dateFormat: "dd M yy",
+	        	changeMonth: true,
+	        	changeYear: true,
+	        });
+	    });
+    </script>
 </body>
 
 </html>
