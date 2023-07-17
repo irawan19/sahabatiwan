@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_dukungan_sahabats');
             $table->bigInteger('kelurahans_id')->unsigned()->index()->nullable();
             $table->foreign('kelurahans_id')->references('id_kelurahans')->on('master_kelurahans')->onUpdate('set null')->onDelete('set null');
-            $table->string('tanggal_lahir_dukungan_sahabats');
+            $table->date('tanggal_lahir_dukungan_sahabats');
             $table->string('jenis_kelamin_dukungan_sahabats');
             $table->string('ktp_dukungan_sahabats');
             $table->string('nama_dukungan_sahabats');
