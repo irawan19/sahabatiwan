@@ -52,8 +52,8 @@ class DukunganSahabatController extends AdminCoreController
     {
         $link_dukungan_sahabat = 'dukungan_sahabat';
         if (General::hakAkses($link_dukungan_sahabat, 'baca') == 'true') {
-            $cek_dukungan_sahabats = Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->first();
-            if(!empty($cek_dukungan_sahabats))
+            $cek_dukungan_sahabats = Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->count();
+            if($cek_dukungan_sahabats != 0)
             {
                 $data['link_dukungan_sahabat']       = $link_dukungan_sahabat;
                 $data['baca_dukungan_sahabats']      = Dukungan_sahabat::join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
