@@ -94,6 +94,15 @@ class General
 	//Notifikasi
 
 	//Tombol
+		public static function pencarian()
+		{
+			echo '<button class="btn btn-sm btn-primary" type="submit">
+					<svg class="c-icon" style="margin-right:5px;">
+						<use xlink:href="'.URL::asset('template/back/assets/icons/coreui/free.svg#cil-search').'"></use>
+					</svg> Cari
+				</button>';
+		}
+
 		public static function simpan()
 		{
 			echo '<button class="btn btn-sm btn-success" type="submit" name="simpan" value="simpan">
@@ -329,6 +338,14 @@ class General
 	//Tombol
 
     //Library
+		public static function hitungUsia($tanggal_lahir='')
+		{
+			$tanggallahir 		= new Datetime($tanggal_lahir);
+			$tanggalsekarang 	= new Datetime('today');
+			$tahun 				= $tanggalsekarang->diff($tanggallahir)->y;
+			return $tahun;
+		}
+
 		public static function greeting()
 		{
 			$jam = date('G');

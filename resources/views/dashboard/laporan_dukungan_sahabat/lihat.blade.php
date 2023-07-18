@@ -23,22 +23,54 @@
 									<label class="form-col-form-label" for="provinsis_id">Provinsi</label>
 									<select class="form-control select2" id="provinsis_id" name="provinsis_id">
 										@foreach($lihat_provinsis as $provinsis)
-											<option value="{{$provinsis->id_provinsis}}" {{ Request::old('provinsis_id') == $provinsis->id_provinsis ? $select='selected' : $select='' }}>{{$provinsis->nama_provinsis}}</option>
+											@php($selected = '')
+					                        @if($hasil_provinsi == '')
+					                        	@if($provinsis->id_provinsis == 13)
+					                        		@php($selected = 'selected')
+					                        	@endif
+					                        @else
+					                        	@if($provinsis->id_provinsis == $hasil_provinsi)
+					                        		@php($selected = 'selected')
+					                        	@endif
+					                        @endif
+											<option value="{{$provinsis->id_provinsis}}" {{ $selected }}>{{$provinsis->nama_provinsis}}</option>
 										@endforeach
 									</select>
 								</div>
 								<div class="form-group">
 									<label class="form-col-form-label" for="kota_kabupatens_id">Kota / Kabupaten</label>
 									<select class="form-control select2" id="kota_kabupatens_id" name="kota_kabupatens_id">
-										
+										@if($hasil_kota_kabupaten != '')
+											<option value="{{$hasil_kota_kabupaten}}">
+												@php($ambil_kota_kabupatens = \App\Models\Master_kota_kabupaten::where('id_kota_kabupatens',intval($hasil_kota_kabupaten))
+																									->first())
+												{{$ambil_kota_kabupatens->nama_kota_kabupatens}}
+											</option>
+										@endif
 									</select>
 								</div>
 								<div class="form-group">
-									<label class="form-col-form-label" for="nama_jenis_kelamins">Jenis Kelamin</label>
-				                    <select class="form-control select2" id="nama_jenis_kelamins" name="nama_jenis_kelamins">
-										    <option value="">Semua</option>
-										    <option value="laki-laki">Laki-laki</option>
-										    <option value="perempuan">Perempuan</option>
+									<label class="form-col-form-label" for="jenis_kelamin">Jenis Kelamin</label>
+				                    <select class="form-control select2" id="jenis_kelamin" name="jenis_kelamin">
+										@php($selected = '')
+										@php($selected_laki = '')
+										@php($selected_perempuan = '')
+										@if(Request::old('jenis_kelamin') == 'Laki-laki')
+											@php($selected = '')
+											@php($selected_laki = 'selected')
+											@php($selected_perempuan = '')
+										@elseif(Request::old('jenis_kelamin') == 'Perempuan')
+											@php($selected = '')
+											@php($selected_laki = '')
+											@php($selected_perempuan = 'selected')
+										@else
+											@php($selected = 'selected')
+											@php($selected_laki = '')
+											@php($selected_perempuan = '')
+										@endif
+										<option value="">Semua</option>
+										<option value="Laki-laki" {{ $selected_laki }}>Laki-laki</option>
+										<option value="Perempuan" {{ $selected_perempuan }}>Perempuan</option>
 				                    </select>
 		                      	</div>
 							</div>
@@ -46,13 +78,25 @@
 								<div class="form-group">
 									<label class="form-col-form-label" for="kecamatans_id">Kecamatan</label>
 									<select class="form-control select2" id="kecamatans_id" name="kecamatans_id">
-										
+										@if(Request::old('kecamatans_id') != NULL)
+                                            <option value="{{Request::old('kecamatans_id')}}">
+                                                @php($ambil_kecamatans = \App\Models\Master_kecamatan::where('id_kecamatans',intval(Request::old('kecamatans_id')))
+                                                                                                    ->first())
+                                                {{$ambil_kecamatans->nama_kecamatans}}
+                                            </option>
+                                        @endif
 									</select>
 								</div>
 								<div class="form-group">
 									<label class="form-col-form-label" for="kelurahans_id">Kelurahan</label>
 									<select class="form-control select2" id="kelurahans_id" name="kelurahans_id">
-										
+										@if(Request::old('kelurahans_id') != NULL)
+                                            <option value="{{Request::old('kelurahans_id')}}">
+                                                @php($ambil_kelurahans = \App\Models\Master_kelurahan::where('id_kelurahans',intval(Request::old('kelurahans_id')))
+                                                                                                    ->first())
+                                                {{$ambil_kelurahans->nama_kelurahans}}
+                                            </option>
+                                        @endif
 									</select>
 								</div>
 								<div class="form-group">
@@ -72,6 +116,9 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="card-footer right-align">
+						{{General::pencarian()}}
 					</div>
 				</form>
 			</div>
@@ -176,7 +223,7 @@
 						width: '100%',
 						placeholder: 'Pilih provinsi terlebih dahulu...',
 						ajax: {
-							url: '{{URL("kota-kabupaten")}}/'+idprovinsis,
+							url: '{{URL("dashboard/wilayah/kota-kabupaten")}}/'+idprovinsis,
 							dataType: 'json',
 							delay: 250,
 							type: "GET",
@@ -208,7 +255,7 @@
 						width: '100%',
 						placeholder: 'Pilih provinsi terlebih dahulu...',
 						ajax: {
-							url: '{{URL("kota-kabupaten")}}/'+idprovinsis,
+							url: '{{URL("dashboard/wilayah/kota-kabupaten")}}/'+idprovinsis,
 							dataType: 'json',
 							delay: 250,
 							type: "GET",
@@ -249,7 +296,7 @@
 						width: '100%',
 						placeholder: 'Pilih kota kabupaten terlebih dahulu...',
 						ajax: {
-							url: '{{URL("kecamatan")}}/'+idkotakabupatens,
+							url: '{{URL("dashboard/wilayah/kecamatan")}}/'+idkotakabupatens,
 							dataType: 'json',
 							delay: 250,
 							type: "GET",
@@ -281,7 +328,7 @@
 						width: '100%',
 						placeholder: 'Pilih kota kabupaten terlebih dahulu...',
 						ajax: {
-							url: '{{URL("kecamatan")}}/'+idkotakabupatens,
+							url: '{{URL("dashboard/wilayah/kecamatan")}}/'+idkotakabupatens,
 							dataType: 'json',
 							delay: 250,
 							type: "GET",
@@ -322,7 +369,7 @@
 						width: '100%',
 						placeholder: 'Pilih kecamatan terlebih dahulu...',
 						ajax: {
-							url: '{{URL("kelurahan")}}/'+idkecamatans,
+							url: '{{URL("dashboard/wilayah/kelurahan")}}/'+idkecamatans,
 							dataType: 'json',
 							delay: 250,
 							type: "GET",
@@ -354,7 +401,7 @@
 						width: '100%',
 						placeholder: 'Pilih kecamatan terlebih dahulu...',
 						ajax: {
-							url: '{{URL("kelurahan")}}/'+idkecamatans,
+							url: '{{URL("dashboard/wilayah/kelurahan")}}/'+idkecamatans,
 							dataType: 'json',
 							delay: 250,
 							type: "GET",

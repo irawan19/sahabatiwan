@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="contact-one__input-box">
-							    <label class="labelform" for="userfile_foto_testimoni">Foto </label>
+							    <label class="labelform" for="userfile_foto_testimoni">Foto (116x116px)</label>
                                 <br/>
                                 <input id="userfile_foto_testimoni" type="file" name="userfile_foto_testimoni">
                                 {{General::pesanErrorForm($errors->first('userfile_foto_testimoni'))}}
