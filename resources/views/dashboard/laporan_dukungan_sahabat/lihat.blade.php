@@ -55,11 +55,11 @@
 										@php($selected = '')
 										@php($selected_laki = '')
 										@php($selected_perempuan = '')
-										@if(Request::old('jenis_kelamin') == 'Laki-laki')
+										@if($hasil_jenis_kelamin == 'Laki-laki')
 											@php($selected = '')
 											@php($selected_laki = 'selected')
 											@php($selected_perempuan = '')
-										@elseif(Request::old('jenis_kelamin') == 'Perempuan')
+										@elseif($hasil_jenis_kelamin == 'Perempuan')
 											@php($selected = '')
 											@php($selected_laki = '')
 											@php($selected_perempuan = 'selected')
@@ -78,9 +78,9 @@
 								<div class="form-group">
 									<label class="form-col-form-label" for="kecamatans_id">Kecamatan</label>
 									<select class="form-control select2" id="kecamatans_id" name="kecamatans_id">
-										@if(Request::old('kecamatans_id') != NULL)
-                                            <option value="{{Request::old('kecamatans_id')}}">
-                                                @php($ambil_kecamatans = \App\Models\Master_kecamatan::where('id_kecamatans',intval(Request::old('kecamatans_id')))
+										@if($hasil_kecamatan != '')
+                                            <option value="{{$hasil_kecamatan}}">
+                                                @php($ambil_kecamatans = \App\Models\Master_kecamatan::where('id_kecamatans',intval($hasil_kecamatan))
                                                                                                     ->first())
                                                 {{$ambil_kecamatans->nama_kecamatans}}
                                             </option>
@@ -90,9 +90,9 @@
 								<div class="form-group">
 									<label class="form-col-form-label" for="kelurahans_id">Kelurahan</label>
 									<select class="form-control select2" id="kelurahans_id" name="kelurahans_id">
-										@if(Request::old('kelurahans_id') != NULL)
-                                            <option value="{{Request::old('kelurahans_id')}}">
-                                                @php($ambil_kelurahans = \App\Models\Master_kelurahan::where('id_kelurahans',intval(Request::old('kelurahans_id')))
+										@if($hasil_kelurahan != '')
+                                            <option value="{{$hasil_kelurahan}}">
+                                                @php($ambil_kelurahans = \App\Models\Master_kelurahan::where('id_kelurahans',intval($hasil_kelurahan))
                                                                                                     ->first())
                                                 {{$ambil_kelurahans->nama_kelurahans}}
                                             </option>
@@ -112,12 +112,13 @@
 							</div>
 							<div class="col-sm-12">
 								<div class="input-group">
-									<input class="form-control" id="input2-group2" type="text" name="cari_kata" placeholder="Cari" value="{{$hasil_kata}}">
+									<input class="form-control" id="cari_kata" type="text" name="cari_kata" placeholder="Cari" value="{{$hasil_kata}}">
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="card-footer right-align">
+						{{General::reset()}}
 						{{General::pencarian()}}
 					</div>
 				</form>
@@ -425,7 +426,17 @@
 						}
 					});
 				});
-				//Kecamatan
+			//Kecamatan
+
+			$('.resetbutton').on('click', function() {
+				$('#provinsis_id').val(13).trigger('change');
+				$('#kota_kabupatens_id').val('').trigger('change');
+				$('#kecamatans_id').val('').trigger('change');
+				$('#kelurahans_id').val('').trigger('change');
+				$('#jenis_kelamin').val('').trigger('change');
+				$('#usia').val('').trigger('change');
+				$('#cari_kata').val('');
+			});
 		});
 	</script>
 

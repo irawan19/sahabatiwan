@@ -97,9 +97,16 @@ class General
 		public static function pencarian()
 		{
 			echo '<button class="btn btn-sm btn-primary" type="submit">
+					<i class="c-icon cil-search"></i> Cari
+				</button>';
+		}
+
+		public static function reset()
+		{ 
+			echo '<button class="btn btn-sm btn-danger resetbutton" type="button">
 					<svg class="c-icon" style="margin-right:5px;">
-						<use xlink:href="'.URL::asset('template/back/assets/icons/coreui/free.svg#cil-search').'"></use>
-					</svg> Cari
+						<use xlink:href="'.URL::asset('template/back/assets/icons/coreui/free.svg#cil-sync').'"></use>
+					</svg> Reset
 				</button>';
 		}
 

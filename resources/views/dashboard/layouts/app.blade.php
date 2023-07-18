@@ -14,7 +14,7 @@
 	<link href="{{URL::asset('template/back/vendors/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
 	<link href="{{URL::asset('template/back/css/style.css')}}" rel="stylesheet">
 	<link href="{{URL::asset('template/back/vendors/pace-progress/css/pace.min.css')}}" rel="stylesheet">
-	<link href="{{URL::asset('template/back/vendors/@coreui/coreui-chartjs/css/coreui-chartjs.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('template/back/vendors/@coreui/chartjs/css/coreui-chartjs.css')}}" rel="stylesheet">
 	<link rel="icon" type="image/png" href="{{URL::asset('storage/'.$ambil_konfigurasi_aplikasis->icon_konfigurasi_aplikasis)}}" sizes="any" />
 	<link rel="stylesheet" href="{{URL::asset('template/back/vendors/fancybox/jquery.fancybox.min.css')}}" />
 	<link rel="stylesheet" href="{{URL::asset('template/back/vendors/sweetalert2/dist/sweetalert2.min.css')}}" />
@@ -24,7 +24,6 @@
 	<link type="text/css" media="screen" rel="stylesheet" href="{{{ URL::asset('template/back/vendors/select2/dist/css/select2.min.css')}}}" />
 	<link type="text/css" media="screen" rel="stylesheet" href="{{ URL::asset('template/back/vendors/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" />
 	<link href="{{URL::asset('template/back/vendors/@coreui/icons/css/free.min.css')}}" rel="stylesheet">
-	<link href="{{URL::asset('template/back/vendors/@coreui/icons/css/coreui-icons.min.css')}}" rel="stylesheet">
 	<link href="{{URL::asset('template/back/vendors/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
 	<link href="{{URL::asset('template/back/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 	<link href="{{URL::asset('template/back/vendors/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet">
