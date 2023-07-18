@@ -17,6 +17,7 @@ class SwaraNusvantaraController extends Controller
         $data['lihat_kategori_swara_nusvantaras']       = Master_kategori_swara_nusvantara::get();
         $data['lihat_swara_nusvantaras']                = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                 ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
+                                                                                ->orderBy('tanggal_publikasi_swara_nusvantaras','desc')
                                                                                 ->paginate(10);
         $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                 ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
@@ -43,6 +44,7 @@ class SwaraNusvantaraController extends Controller
             $data['lihat_swara_nusvantaras']                = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                     ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
                                                                                     ->where('id_kategori_swara_nusvantaras',$cek_kategori_swara_nusvantara->id_kategori_swara_nusvantaras)
+                                                                                    ->orderBy('tanggal_publikasi_swara_nusvantaras','desc')
                                                                                     ->paginate(10);
             $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                     ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
@@ -68,6 +70,7 @@ class SwaraNusvantaraController extends Controller
         $data['lihat_swara_nusvantaras']                = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                 ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
                                                                                 ->where('judul_swara_nusvantaras', 'LIKE', '%'.$hasil_kata.'%')
+                                                                                ->orderBy('tanggal_publikasi_swara_nusvantaras','desc')
                                                                                 ->paginate(10);
         $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                                 ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
