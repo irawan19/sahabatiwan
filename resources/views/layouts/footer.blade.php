@@ -5,7 +5,7 @@
                                                                                     slug_swara_nusvantaras')
                                                                         ->join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                         ->where('tanggal_publikasi_swara_nusvantaras','<=', date('Y-m-d H:i:s'))
-                                                                        ->orderBy('tanggal_publikasi_swara_nusvantaras','asc')
+                                                                        ->orderBy('tanggal_publikasi_swara_nusvantaras','desc')
                                                                         ->limit(5)
                                                                         ->get()))
 @php($lihat_galeris = \App\Models\Master_galeri::limit(6)->get())
