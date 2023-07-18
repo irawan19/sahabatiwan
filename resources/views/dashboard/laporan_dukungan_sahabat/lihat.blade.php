@@ -158,8 +158,51 @@
 				</form>
 			</div>
 		</div>
+
+		<div class="col-sm-4">
+			<div class="card">
+              	<div class="card-header">
+					<strong>Wilayah</strong>
+              	</div>
+              	<div class="card-body">
+                	<div class="c-chart-wrapper"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  		<canvas id="canvaswilayah" width="745" height="372" style="display: block; width: 745px; height: 372px;" class="chartjs-render-monitor"></canvas>
+                	</div>
+              	</div>
+            </div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="card">
+              	<div class="card-header">
+					<strong>Jenis Kelamin</strong>
+              	</div>
+              	<div class="card-body">
+                	<div class="c-chart-wrapper"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  		<canvas id="canvasjeniskelamin" width="745" height="372" style="display: block; width: 745px; height: 372px;" class="chartjs-render-monitor"></canvas>
+                	</div>
+              	</div>
+            </div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="card">
+              	<div class="card-header">
+					<strong>Usia</strong>
+              	</div>
+              	<div class="card-body">
+                	<div class="c-chart-wrapper"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                  		<canvas id="canvasusia" width="745" height="372" style="display: block; width: 745px; height: 372px;" class="chartjs-render-monitor"></canvas>
+                	</div>
+              	</div>
+            </div>
+		</div>
+
 		<div class="col-sm-12">
 			<div class="card">
+              	<div class="card-header">
+					<strong>Data</strong>
+              	</div>
 				<div class="card-body">
                     <div class="scrolltable">
                         <table id="tablesort" class="table table-responsive-sm table-bordered table-striped table-sm">
@@ -241,6 +284,7 @@
 		</div>
 	</div>
 
+	<script src="{{URL::asset('template/back/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js')}}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function () {
 			//Provinsi
@@ -470,6 +514,76 @@
 				$('#jenis_kelamin').val('').trigger('change');
 				$('#usia').val('').trigger('change');
 				$('#cari_kata').val('');
+			});
+
+
+			var random = function random() {
+				return Math.round(Math.random() * 100);
+			};
+			var wilayahchart = new Chart(document.getElementById('canvaswilayah'), {
+			type: 'bar',
+			data: {
+				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+				datasets: [
+					{
+						backgroundColor: 'rgba(220, 220, 220, 0.5)',
+						borderColor: 'rgba(220, 220, 220, 0.8)',
+						highlightFill: 'rgba(220, 220, 220, 0.75)',
+						highlightStroke: 'rgba(220, 220, 220, 1)',
+						data: [random(), random(), random(), random(), random(), random(), random()]
+					}
+				]
+			},
+			options: {
+					responsive: true,
+					legend: {
+						display: false,
+					}
+				}
+			});
+
+			var jeniskelaminchart = new Chart(document.getElementById('canvasjeniskelamin'), {
+			type: 'bar',
+			data: {
+				labels: ['Laki-laki', 'Perempuan'],
+				datasets: [
+					{
+						backgroundColor: 'rgba(220, 220, 220, 0.5)',
+						borderColor: 'rgba(220, 220, 220, 0.8)',
+						highlightFill: 'rgba(220, 220, 220, 0.75)',
+						highlightStroke: 'rgba(220, 220, 220, 1)',
+						data: [random(), random()]
+					}
+				]
+			},
+			options: {
+					responsive: true,
+					legend: {
+						display: false,
+					}
+				}
+			});
+
+			var usiachart = new Chart(document.getElementById('canvasusia'), {
+			type: 'bar',
+			data: {
+				labels: ['17-30', '31-40', '41-50', '51-60+'],
+				datasets: [
+					{
+						backgroundColor: 'rgba(220, 220, 220, 0.5)',
+						borderColor: 'rgba(220, 220, 220, 0.8)',
+						highlightFill: 'rgba(220, 220, 220, 0.75)',
+						highlightStroke: 'rgba(220, 220, 220, 1)',
+						data: [random(), random(), random(), random()]
+					}
+				]
+			},
+			options: {
+					responsive: true,
+					legend: {
+						display: false,
+					}
+				}
 			});
 		});
 	</script>
