@@ -121,14 +121,13 @@
                         </div>
                         <div class="sidebar__single sidebar__comments">
                             <div
-                                loading="lazy"
-                                data-mc-src="452bbb29-f077-4b31-8899-7241e2c31cff#null"></div>
-                                        
-                                <script 
-                                src="https://cdn2.woxo.tech/a.js#64b6d8846ef630a333ee20e7" 
-                                async data-usrc>
-                                </script>
-                            </div>
+                            loading="lazy"
+                            data-mc-src="452bbb29-f077-4b31-8899-7241e2c31cff#instagram"></div>
+                                    
+                            <script 
+                            src="https://cdn2.woxo.tech/a.js#64b6d8846ef630a333ee20e7" 
+                            async data-usrc>
+                            </script>
                         </div>
                     </div>
                 </div>

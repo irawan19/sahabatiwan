@@ -475,9 +475,9 @@
                     </div>
                     <div class="col-xl-4 col-lg-4">
                         <div class="portfolio-one__right">
-                        <div
-                            loading="lazy"
-                            data-mc-src="452bbb29-f077-4b31-8899-7241e2c31cff#null"></div>
+                            <div
+                                loading="lazy"
+                                data-mc-src="452bbb29-f077-4b31-8899-7241e2c31cff#instagram"></div>
                                     
                             <script 
                             src="https://cdn2.woxo.tech/a.js#64b6d8846ef630a333ee20e7" 
