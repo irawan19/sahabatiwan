@@ -68,7 +68,7 @@
 											@php($selected_laki = '')
 											@php($selected_perempuan = '')
 										@endif
-										<option value="">Semua</option>
+										<option value="" {{$selected}}>Semua</option>
 										<option value="Laki-laki" {{ $selected_laki }}>Laki-laki</option>
 										<option value="Perempuan" {{ $selected_perempuan }}>Perempuan</option>
 				                    </select>
@@ -102,11 +102,45 @@
 								<div class="form-group">
 									<label class="form-col-form-label" for="usia">Usia</label>
 				                    <select class="form-control select2" id="usia" name="usia">
-										<option value="">Semua</option>
-											<option value="17-30">17 - 30</option>
-											<option value="17-30">31- 40</option>
-											<option value="17-30">41 - 50</option>
-											<option value="17-30">51 - 60+</option>
+										@php($selected = '')
+										@php($selected1730 = '')
+										@php($selected3140 = '')
+										@php($selected4150 = '')
+										@php($selected51 = '')
+										@if($hasil_usia == '17-30')
+											@php($selected = '')
+											@php($selected1730 = 'selected')
+											@php($selected3140 = '')
+											@php($selected4150 = '')
+											@php($selected51 = '')
+										@elseif($hasil_usia == '31-40')
+											@php($selected = '')
+											@php($selected1730 = '')
+											@php($selected3140 = 'selected')
+											@php($selected4150 = '')
+											@php($selected51 = '')
+										@elseif($hasil_usia == '41-50')
+											@php($selected = '')
+											@php($selected1730 = '')
+											@php($selected3140 = '')
+											@php($selected4150 = 'selected')
+											@php($selected51 = '')
+										@elseif($hasil_usia == '51')
+											@php($selected = '')
+											@php($selected1730 = '')
+											@php($selected3140 = '')
+											@php($selected4150 = '')
+											@php($selected51 = 'selected')
+										@else
+											@php($selected = 'selected')
+											@php($selected1730 = '')
+											@php($selected3140 = '')
+										@endif
+										<option value="" {{$selected}}>Semua</option>
+										<option value="17-30" {{$selected1730}}>17 - 30</option>
+										<option value="31-40" {{$selected3140}}>31- 40</option>
+										<option value="41-50" {{$selected4150}}>41 - 50</option>
+										<option value="51" {{$selected51}}>51 - 60+</option>
 				                    </select>
 		                      	</div>
 							</div>

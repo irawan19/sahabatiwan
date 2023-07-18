@@ -61,15 +61,68 @@ class LaporanDukunganSahabatController extends AdminCoreController
             $hasil_usia                                 = $request->usia;
             $data['hasil_kata']                         = $hasil_kata;
             $data['hasil_provinsi']                     = $hasil_provinsi;
-            $data['hasil_kota_kabupaten']              = $hasil_kota_kabupaten;
+            $data['hasil_kota_kabupaten']               = $hasil_kota_kabupaten;
             $data['hasil_kecamatan']                    = $hasil_kecamatan;
             $data['hasil_kelurahan']                    = $hasil_kelurahan;
             $data['hasil_usia']                         = $hasil_usia;
-            $data['hasil_jenis_kelamin']               = $hasil_jenis_kelamin;
+            $data['hasil_jenis_kelamin']                = $hasil_jenis_kelamin;
             
             $data['lihat_provinsis']                    = Master_provinsi::orderBy('nama_provinsis')
                                                                         ->get();
-            $query_dukungan_sahabats                    = Dukungan_sahabat::selectRaw('*,
+            if(!empty($hasil_usia))
+            {
+                $pecah_hasil_usia                       = explode('-',$hasil_usia);
+                $usia_mulai                             = $pecah_hasil_usia[0];
+                $usia_selesai                           = '';
+                if(!empty($pecah_hasil_usia[1]))
+                    $usia_selesai                           = $pecah_hasil_usia[1];
+
+                if(!empty($usia_selesai))
+                {
+                    $query_dukungan_sahabats                    = Dukungan_sahabat::selectRaw('*,
+                                                                            dukungan_sahabats.created_at as tanggal_daftar')
+                                                                            ->join('master_kelurahans','dukungan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
+                                                                            ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
+                                                                            ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
+                                                                            ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
+                                                                            ->where('nama_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) >= '. $usia_mulai)
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) <= '. $usia_selesai)
+                                                                            ->orWhere('nik_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) >= '. $usia_mulai)
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) <= '. $usia_selesai)
+                                                                            ->orWhere('alamat_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) >= '. $usia_mulai)
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) <= '. $usia_selesai)
+                                                                            ->orWhere('telepon_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) >= '. $usia_mulai)
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) <= '. $usia_selesai)
+                                                                            ->orderBy('dukungan_sahabats.created_at')
+                                                                            ->get();
+                }
+                else
+                {
+                    $query_dukungan_sahabats                    = Dukungan_sahabat::selectRaw('*,
+                                                                            dukungan_sahabats.created_at as tanggal_daftar')
+                                                                            ->join('master_kelurahans','dukungan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
+                                                                            ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
+                                                                            ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
+                                                                            ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
+                                                                            ->where('nama_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) >= '. $usia_mulai)
+                                                                            ->orWhere('nik_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) >= '. $usia_mulai)
+                                                                            ->orWhere('alamat_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) >= '. $usia_mulai)
+                                                                            ->orWhere('telepon_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
+                                                                            ->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) >= '. $usia_mulai)
+                                                                            ->orderBy('dukungan_sahabats.created_at')
+                                                                            ->get();
+                }
+            }
+            else
+            {
+                $query_dukungan_sahabats                    = Dukungan_sahabat::selectRaw('*,
                                                                             dukungan_sahabats.created_at as tanggal_daftar')
                                                                             ->join('master_kelurahans','dukungan_sahabats.kelurahans_id','=','master_kelurahans.id_kelurahans')
                                                                             ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
@@ -81,6 +134,8 @@ class LaporanDukunganSahabatController extends AdminCoreController
                                                                             ->orWhere('telepon_dukungan_sahabats', 'LIKE', '%' . $hasil_kata . '%')
                                                                             ->orderBy('dukungan_sahabats.created_at')
                                                                             ->get();
+            }
+            
             if(!empty($hasil_provinsi))
             {
                 $query_dukungan_sahabats                = $query_dukungan_sahabats->where('provinsis_id',$hasil_provinsi);
@@ -97,6 +152,12 @@ class LaporanDukunganSahabatController extends AdminCoreController
             {
                 $query_dukungan_sahabats                = $query_dukungan_sahabats->where('kelurahans_id',$hasil_kelurahan);
             }
+            if(!empty($hasil_jenis_kelamin))
+            {
+                $query_dukungan_sahabats                = $query_dukungan_sahabats->where('jenis_kelamin_dukungan_sahabats',$hasil_jenis_kelamin);
+            }
+
+            
             $data['lihat_laporan_dukungan_sahabats']    = $query_dukungan_sahabats;
             session(['halaman'              => $url_sekarang]);
             session(['hasil_kata'           => $hasil_kata]);
