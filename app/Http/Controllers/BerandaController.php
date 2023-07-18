@@ -26,7 +26,7 @@ class BerandaController extends Controller
         $data['lihat_galeris']                  = Master_galeri::get();
         $data['lihat_swara_nusvantaras']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                             ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
-                                                                            ->orderBy('tanggal_publikasi_swara_nusvantaras')
+                                                                            ->orderBy('tanggal_publikasi_swara_nusvantaras','desc')
                                                                             ->limit(3)
                                                                             ->get();
         $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
@@ -49,6 +49,7 @@ class BerandaController extends Controller
                                                                             ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
                                                                             ->orWhere('nama_kategori_swara_nusvantaras', 'LIKE', '%'.$hasil_kata.'%')
                                                                             ->where('tanggal_publikasi_swara_nusvantaras','<=',date('Y-m-d H:i:s'))
+                                                                            ->orderBy('tanggal_publikasi_swara_nusvantaras','desc')
                                                                             ->get();
         return view('pencarian',$data);
     }
