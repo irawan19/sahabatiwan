@@ -284,6 +284,30 @@
 		</div>
 	</div>
 
+	@php($labelwilayah 		= [])
+	@php($totalwilayah 		= [])
+	@php($warnawilayah 		= [])
+
+	@php($labeljeniskelamin = [])
+	@php($totaljeniskelamin = [])
+	@php($warnajeniskelamin = [])
+
+	@php($labelusia 		= [])
+	@php($totalusia 		= [])
+	@php($warnausia 		= [])
+	@foreach($lihat_laporan_dukungan_sahabats as $laporan_dukungan_sahabat)
+		@php($labelwilayah[] 			= $laporan_dukungan_sahabat->nama_kelurahans.' '. $laporan_dukungan_sahabat->nama_kecamatans .' '. $laporan_dukungan_sahabat->nama_kota_kabupatens .' : '.round($laporan_dukungan_sahabat->count(),2).' %')
+		@php($totalwilayah[] 			= $laporan_dukungan_sahabat->where('kelurahans_id',$laporan_dukungan_sahabat->kelurahans_id)->count())
+		@php($warnawilayah[] 			= General::randomWarna())
+
+		@php($labeljeniskelamin[] 		= $laporan_dukungan_sahabat->jenis_kelamin_dukungan_sahabats)
+		@php($totaljeniskelamin[] 		= $laporan_dukungan_sahabat->where('jenis_kelamin_dukungan_sahabats',$laporan_dukungan_sahabat->jenis_kelamin_dukungan_sahabats)->count())
+		@php($warnajeniskelamin[] 		= General::randomWarna())
+
+		@php($labelusia[] 				= [])
+		@php($totalusia[] 				= $laporan_dukungan_sahabat->count())
+		@php($warnausia[] 				= General::randomWarna())
+	@endforeach
 	<script src="{{URL::asset('template/back/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js')}}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function () {
@@ -516,24 +540,16 @@
 				$('#cari_kata').val('');
 			});
 
-
-			var random = function random() {
-				return Math.round(Math.random() * 100);
-			};
+			var laporanwilayah       = {
+		        labels      : 	<?php print_r(json_encode($labelwilayah)); ?>,
+		        datasets    : 	[{
+			                        data : <?php print_r(json_encode($totalwilayah)); ?>,
+			                        backgroundColor: <?php print_r(json_encode($warnawilayah)); ?>,
+			                    }]
+		    };
 			var wilayahchart = new Chart(document.getElementById('canvaswilayah'), {
 			type: 'bar',
-			data: {
-				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-				datasets: [
-					{
-						backgroundColor: 'rgba(220, 220, 220, 0.5)',
-						borderColor: 'rgba(220, 220, 220, 0.8)',
-						highlightFill: 'rgba(220, 220, 220, 0.75)',
-						highlightStroke: 'rgba(220, 220, 220, 1)',
-						data: [random(), random(), random(), random(), random(), random(), random()]
-					}
-				]
-			},
+			data: laporanwilayah,
 			options: {
 					responsive: true,
 					legend: {
@@ -542,20 +558,16 @@
 				}
 			});
 
+			var laporanjeniskelamin       = {
+		        labels      : 	<?php print_r(json_encode($labeljeniskelamin)); ?>,
+		        datasets    : 	[{
+			                        data : <?php print_r(json_encode($totaljeniskelamin)); ?>,
+			                        backgroundColor: <?php print_r(json_encode($warnajeniskelamin)); ?>,
+			                    }]
+		    };
 			var jeniskelaminchart = new Chart(document.getElementById('canvasjeniskelamin'), {
 			type: 'bar',
-			data: {
-				labels: ['Laki-laki', 'Perempuan'],
-				datasets: [
-					{
-						backgroundColor: 'rgba(220, 220, 220, 0.5)',
-						borderColor: 'rgba(220, 220, 220, 0.8)',
-						highlightFill: 'rgba(220, 220, 220, 0.75)',
-						highlightStroke: 'rgba(220, 220, 220, 1)',
-						data: [random(), random()]
-					}
-				]
-			},
+			data: laporanjeniskelamin,
 			options: {
 					responsive: true,
 					legend: {
@@ -564,20 +576,16 @@
 				}
 			});
 
+			var laporanusia       = {
+		        labels      : 	<?php print_r(json_encode($labelusia)); ?>,
+		        datasets    : 	[{
+			                        data : <?php print_r(json_encode($totalusia)); ?>,
+			                        backgroundColor: <?php print_r(json_encode($warnausia)); ?>,
+			                    }]
+		    };
 			var usiachart = new Chart(document.getElementById('canvasusia'), {
 			type: 'bar',
-			data: {
-				labels: ['17-30', '31-40', '41-50', '51-60+'],
-				datasets: [
-					{
-						backgroundColor: 'rgba(220, 220, 220, 0.5)',
-						borderColor: 'rgba(220, 220, 220, 0.8)',
-						highlightFill: 'rgba(220, 220, 220, 0.75)',
-						highlightStroke: 'rgba(220, 220, 220, 1)',
-						data: [random(), random(), random(), random()]
-					}
-				]
-			},
+			data: laporanusia,
 			options: {
 					responsive: true,
 					legend: {
