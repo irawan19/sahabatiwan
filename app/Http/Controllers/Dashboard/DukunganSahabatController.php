@@ -81,7 +81,7 @@ class DukunganSahabatController extends AdminCoreController
             $cek_dukungan_sahabats = Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->first();
             if(!empty($cek_dukungan_sahabats))
             {
-                Storage::disk('public')->delete($cek_dukungan_sahabats->file_dukungan_sahabats);
+                Storage::disk('public')->delete($cek_dukungan_sahabats->ktp_dukungan_sahabats);
                 Dukungan_sahabat::where('id_dukungan_sahabats',$id_dukungan_sahabats)->delete();
                 return response()->json(["sukses" => "sukses"], 200);
             }
