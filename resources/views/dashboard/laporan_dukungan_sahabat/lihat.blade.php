@@ -159,7 +159,7 @@
 			</div>
 		</div>
 
-		<div class="col-sm-4">
+		<div class="col-sm-12">
 			<div class="card">
               	<div class="card-header">
 					<strong>Wilayah</strong>
@@ -172,7 +172,7 @@
             </div>
 		</div>
 
-		<div class="col-sm-4">
+		<div class="col-sm-6">
 			<div class="card">
               	<div class="card-header">
 					<strong>Jenis Kelamin</strong>
@@ -185,7 +185,7 @@
             </div>
 		</div>
 
-		<div class="col-sm-4">
+		<div class="col-sm-6">
 			<div class="card">
               	<div class="card-header">
 					<strong>Usia</strong>
