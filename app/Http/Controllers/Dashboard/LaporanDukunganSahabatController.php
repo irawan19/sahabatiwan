@@ -3,6 +3,8 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Helpers\General;
+use App\Exports\LaporanDukunganSahabat;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Dukungan_sahabat;
 use App\Models\Master_provinsi;
 
@@ -169,6 +171,18 @@ class LaporanDukunganSahabatController extends AdminCoreController
             session(['hasil_usia'           => $hasil_usia]);
             return view('dashboard.laporan_dukungan_sahabat.lihat', $data);
         } else
+            return redirect('dashboard/laporan_dukungan_sahabat');
+    }
+
+    public function cetak()
+    {
+        $link_laporan_dukungan_sahabat = 'laporan_dukungan_sahabat';
+        if(General::hakAkses($link_laporan_dukungan_sahabat,'cetak') == 'true')
+        {
+            $tanggal = date('Y-m-d H:i:s');
+            return Excel::download(new LaporanDukunganSahabat, 'laporandukungansahabat_'.General::ubahDBKeTanggal($tanggal).'.xlsx');
+        }
+        else
             return redirect('dashboard/laporan_dukungan_sahabat');
     }
 }

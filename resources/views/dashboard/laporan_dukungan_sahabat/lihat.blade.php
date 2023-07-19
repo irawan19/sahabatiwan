@@ -12,7 +12,7 @@
 								<strong>Laporan Dukungan Sahabat</strong>
 							</div>
 							<div class="col-sm-6 right-align">
-								{{General::cetak($link_laporan_dukungan_sahabat, 'laporan_dukungan_sahabat/cetak')}}
+								{{General::cetak($link_laporan_dukungan_sahabat, 'dashboard/laporan_dukungan_sahabat/cetak')}}
 							</div>
 						</div>
 					</div>
