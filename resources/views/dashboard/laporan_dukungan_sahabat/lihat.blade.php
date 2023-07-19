@@ -287,24 +287,26 @@
 	@php($labelwilayah 		= [])
 	@php($totalwilayah 		= [])
 	@php($warnawilayah 		= [])
+	@foreach($lihat_laporan_dukungan_sahabats_wilayah as $laporan_dukungan_sahabat)
+		@php($labelwilayah[] 			= $laporan_dukungan_sahabat->nama_kelurahans.' : '.round($laporan_dukungan_sahabat->where('kelurahans_id',$laporan_dukungan_sahabat->id_kelurahans)->count() / $laporan_dukungan_sahabat->count(),2).' %')
+		@php($totalwilayah[] 			= $laporan_dukungan_sahabat->where('kelurahans_id',$laporan_dukungan_sahabat->kelurahans_id)->count())
+		@php($warnawilayah[] 			= General::randomWarna())
+	@endforeach
 
 	@php($labeljeniskelamin = [])
 	@php($totaljeniskelamin = [])
 	@php($warnajeniskelamin = [])
+	@foreach($lihat_laporan_dukungan_sahabats_jenis_kelamin as $laporan_dukungan_sahabat)
+		@php($labeljeniskelamin[] 		= $laporan_dukungan_sahabat->jenis_kelamin_dukungan_sahabats.' : '.round($laporan_dukungan_sahabat->where('jenis_kelamin_dukungan_sahabats',$laporan_dukungan_sahabat->jenis_kelamin_dukungan_sahabats)->count() / $laporan_dukungan_sahabat->count(),2).' %')
+		@php($totaljeniskelamin[] 		= $laporan_dukungan_sahabat->where('jenis_kelamin_dukungan_sahabats',$laporan_dukungan_sahabat->jenis_kelamin_dukungan_sahabats)->count())
+		@php($warnajeniskelamin[] 		= General::randomWarna())
+	@endforeach
 
 	@php($labelusia 		= [])
 	@php($totalusia 		= [])
 	@php($warnausia 		= [])
-	@foreach($lihat_laporan_dukungan_sahabats as $laporan_dukungan_sahabat)
-		@php($labelwilayah[] 			= $laporan_dukungan_sahabat->nama_kelurahans.' '. $laporan_dukungan_sahabat->nama_kecamatans .' '. $laporan_dukungan_sahabat->nama_kota_kabupatens .' : '.round($laporan_dukungan_sahabat->count(),2).' %')
-		@php($totalwilayah[] 			= $laporan_dukungan_sahabat->where('kelurahans_id',$laporan_dukungan_sahabat->kelurahans_id)->count())
-		@php($warnawilayah[] 			= General::randomWarna())
-
-		@php($labeljeniskelamin[] 		= $laporan_dukungan_sahabat->jenis_kelamin_dukungan_sahabats)
-		@php($totaljeniskelamin[] 		= $laporan_dukungan_sahabat->where('jenis_kelamin_dukungan_sahabats',$laporan_dukungan_sahabat->jenis_kelamin_dukungan_sahabats)->count())
-		@php($warnajeniskelamin[] 		= General::randomWarna())
-
-		@php($labelusia[] 				= [])
+	@foreach($lihat_laporan_dukungan_sahabats_usia as $laporan_dukungan_sahabat)
+		@php($labelusia[] 				= $laporan_dukungan_sahabat->usia.' tahun : '.round($laporan_dukungan_sahabat->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) = "'.$laporan_dukungan_sahabat->usia.'"')->count() / $laporan_dukungan_sahabat->count(),2).' %')
 		@php($totalusia[] 				= $laporan_dukungan_sahabat->count())
 		@php($warnausia[] 				= General::randomWarna())
 	@endforeach
