@@ -124,7 +124,7 @@
 						</div>
 						<div class="form-group row">
 	                        <div class="col-md-12 center-align">
-								<label class="form-col-form-label" for="userfile_gambar_slideshow">256x256px</label>
+								<label class="form-col-form-label" for="userfile_logo_text">256x256px</label>
 								<br/>
 	                          	<input id="userfile_logo_text" type="file" name="userfile_logo_text">
 								{{General::pesanErrorFormFile($errors->first('userfile_logo_text'))}}
@@ -154,7 +154,7 @@
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12 center-align">
-								<label class="form-col-form-label" for="userfile_gambar_slideshow">732x562px</label>
+								<label class="form-col-form-label" for="userfile_gambar_subscribe">732x562px</label>
 								<br/>
 								<input id="userfile_gambar_subscribe" type="file" name="userfile_gambar_subscribe">
 								{{General::pesanErrorFormFile($errors->first('userfile_gambar_subscribe'))}}
@@ -184,7 +184,7 @@
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12 center-align">
-								<label class="form-col-form-label" for="userfile_gambar_slideshow">1894x381px</label>
+								<label class="form-col-form-label" for="userfile_header">1894x381px</label>
 								<br/>
 								<input id="userfile_header" type="file" name="userfile_header">
 								{{General::pesanErrorFormFile($errors->first('userfile_header'))}}
