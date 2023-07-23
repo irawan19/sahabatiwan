@@ -216,8 +216,7 @@ class LevelSistemController extends AdminCoreController
             {
                 if($id_level_sistems != 1)
                 {
-                    DB::raw("DELETE t1.*, t2.* FROM master_level_sistems t1 LEFT JOIN master_akses t2 ON t2.level_sistems_id=t1.id_level_sistems WHERE id_level_sistems='$id_level_sistems'");
-
+                    Master_level_sistem::where('id_level_sistems',$id_level_sistems)->delete();
                     return response()->json(["sukses" => "sukses"], 200);
                 }
                 else
