@@ -83,7 +83,7 @@ class SlideshowController extends AdminCoreController
                     'alert' => 'sukses',
                     'text' => 'Data berhasil ditambahkan',
                 ];
-                return redirect()->back()->with('setelah_simpan', $setelah_simpan);
+    	    	return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
             }
             if ($simpan_kembali) {
                 if (request()->session()->get('halaman') != '')
