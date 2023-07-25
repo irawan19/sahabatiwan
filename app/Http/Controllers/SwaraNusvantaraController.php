@@ -117,6 +117,11 @@ class SwaraNusvantaraController extends Controller
                                                                                         ->where('id_swara_nusvantaras','!=',$cek_swara_nusvantaras->id_swara_nusvantaras)
                                                                                         ->limit(2)
                                                                                         ->get();
+                $baca_swara_nusvantaras_data = [
+                    'total_baca_swara_nusvantaras'  => $cek_swara_nusvantaras->total_baca_swara_nusvantaras + 1,
+                ];
+                Master_swara_nusvantara::where('id_swara_nusvantaras',$cek_swara_nusvantaras->id_swara_nusvantaras)->update($baca_swara_nusvantaras_data);
+                
                 return view('swara_nusvantara_detail',$data);
             }
             else
