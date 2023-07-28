@@ -203,7 +203,7 @@ class ProgramController extends AdminCoreController
             $cek_programs = Master_program::where('id_programs', $id_programs)->first();
             if (!empty($cek_programs)) {
                 Storage::disk('public')->delete($cek_programs->gambar_programs);
-                Storage::disk('public')->delete($cek_programs->gambar_programs);
+                Storage::disk('public')->delete($cek_programs->icon_programs);
                 
                 
                 Master_program::where('id_programs', $id_programs)
