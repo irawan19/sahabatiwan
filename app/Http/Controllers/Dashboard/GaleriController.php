@@ -168,9 +168,7 @@ class GaleriController extends AdminCoreController
         if (General::hakAkses($link_galeri, 'hapus') == 'true') {
             $cek_galeris = Master_galeri::where('id_galeris', $id_galeris)->first();
             if (!empty($cek_galeris)) {
-                $foto_galeri_lama = $cek_galeris->foto_galeris;
-                if (file_exists($foto_galeri_lama))
-                    unlink($foto_galeri_lama);
+                Storage::disk('public')->delete($cek_galeris->foto_galeris);
                 Master_galeri::where('id_galeris', $id_galeris)
                                 ->delete();
                 return response()->json(["sukses" => "sukses"], 200);

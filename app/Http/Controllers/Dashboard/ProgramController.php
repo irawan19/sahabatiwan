@@ -202,14 +202,9 @@ class ProgramController extends AdminCoreController
         if (General::hakAkses($link_program, 'hapus') == 'true') {
             $cek_programs = Master_program::where('id_programs', $id_programs)->first();
             if (!empty($cek_programs)) {
+                Storage::disk('public')->delete($cek_programs->gambar_programs);
+                Storage::disk('public')->delete($cek_programs->gambar_programs);
                 
-                $gambar_program_lama = $cek_programs->gambar_programs;
-                if (file_exists($gambar_program_lama))
-                    unlink($gambar_program_lama);
-
-                $icon_program_lama = $cek_programs->icon_programs;
-                if (file_exists($icon_program_lama))
-                    unlink($icon_program_lama);
                 
                 Master_program::where('id_programs', $id_programs)
                                 ->delete();

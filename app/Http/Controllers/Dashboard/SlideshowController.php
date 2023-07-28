@@ -175,9 +175,8 @@ class SlideshowController extends AdminCoreController
         if (General::hakAkses($link_slideshow, 'hapus') == 'true') {
             $cek_slideshows = Master_slideshow::where('id_slideshows', $id_slideshows)->first();
             if (!empty($cek_slideshows)) {
-                $gambar_slideshow_lama = $cek_slideshows->gambar_slideshows;
-                if (file_exists($gambar_slideshow_lama))
-                    unlink($gambar_slideshow_lama);
+                Storage::disk('public')->delete($cek_slideshows->gambar_slideshows);
+                    
                 Master_slideshow::where('id_slideshows', $id_slideshows)
                     ->delete();
                 return response()->json(["sukses" => "sukses"], 200);
