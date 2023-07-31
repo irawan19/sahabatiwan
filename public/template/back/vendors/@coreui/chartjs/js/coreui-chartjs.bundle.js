@@ -16309,4 +16309,3 @@
 	return index_umd;
 
 })));
-/=coreui-chartjs.bundle.js.map
