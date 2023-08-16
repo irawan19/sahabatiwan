@@ -199,7 +199,7 @@
                 <div class="section-title__icon">
                     <span class="fa fa-star"></span>
                 </div>
-                <span class="section-title__tagline">Testimoni</span>
+                <span class="section-title__tagline">Apa Kata Mereka</span>
                 <h2 class="section-title__title">Testimonial {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}</h2>
             </div>
             <div class="testimonial-one__bottom">
