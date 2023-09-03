@@ -474,8 +474,21 @@
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
+                        <div class="portfolio-one__right">
+                            <div
+                                loading="lazy"
+                                data-mc-src="452bbb29-f077-4b31-8899-7241e2c31cff#instagram"></div>
+                                    
+                            <script 
+                            src="https://cdn2.woxo.tech/a.js#64b6d8846ef630a333ee20e7" 
+                            async data-usrc>
+                            </script>
+                        </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
+                        <div class="portfolio-one__right">
+                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sahabatiwan/video/7253462546018012417" data-video-id="7253462546018012417" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@sahabatiwan" href="https://www.tiktok.com/@sahabatiwan?refer=embed">@sahabatiwan</a> <p>Pasal 33</p> <a target="_blank" title="♬ original sound  - sahabatiwan" href="https://www.tiktok.com/music/original-sound-sahabatiwan-7253462932632177409?refer=embed">♬ original sound  - sahabatiwan</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+                        </div>
                     </div>
                 </div>
             </div>
