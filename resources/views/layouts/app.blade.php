@@ -157,7 +157,6 @@
     <script src="{{URL::asset('template/front/vendors/nouislider/nouislider.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/odometer/odometer.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/swiper/swiper.min.js')}}"></script>
-    <script src="{{URL::asset('template/front/vendors/tiny-slider/tiny-slider.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/wnumb/wNumb.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/wow/wow.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/isotope/isotope.js')}}"></script>
