@@ -116,19 +116,6 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="sidebar__single sidebar__comments">
-                            <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100094352257691" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100094352257691" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100094352257691">Sahabat Iwan</a></blockquote></div>
-                        </div>
-                        <div class="sidebar__single sidebar__comments">
-                            <div
-                            loading="lazy"
-                            data-mc-src="452bbb29-f077-4b31-8899-7241e2c31cff#instagram"></div>
-                                    
-                            <script 
-                            src="https://cdn2.woxo.tech/a.js#64b6d8846ef630a333ee20e7" 
-                            async data-usrc>
-                            </script>
-                        </div>
                     </div>
                 </div>
             </div>

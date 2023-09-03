@@ -464,37 +464,6 @@
         </div>
     </section>
 
-    <section class="portfolio-one">
-        <div class="portfolio-one__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="portfolio-one__left">
-                            <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100094352257691" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100094352257691" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100094352257691">Sahabat Iwan</a></blockquote></div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="portfolio-one__right">
-                            <div
-                                loading="lazy"
-                                data-mc-src="452bbb29-f077-4b31-8899-7241e2c31cff#instagram"></div>
-                                    
-                            <script 
-                                src="https://cdn2.woxo.tech/a.js#64b6d8846ef630a333ee20e7" 
-                                async data-usrc>
-                            </script>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="portfolio-one__right">
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sahabatiwan/video/7253462546018012417" data-video-id="7253462546018012417" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@sahabatiwan" href="https://www.tiktok.com/@sahabatiwan?refer=embed">@sahabatiwan</a> <p>Pasal 33</p> <a target="_blank" title="♬ original sound  - sahabatiwan" href="https://www.tiktok.com/music/original-sound-sahabatiwan-7253462932632177409?refer=embed">♬ original sound  - sahabatiwan</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <script type="text/javascript">
         jQuery(document).ready(function () {
             $('.btnemailsubcribeberanda').on('click', function() {
