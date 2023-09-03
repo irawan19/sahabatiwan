@@ -53,7 +53,7 @@
             animation-name: flipInY;
             animation-duration: 2s;
             animation-iteration-count: infinite;
-            background-image: url('storage/{{$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis}}');
+            background-image: url('{{"/storage/".$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis}}');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 256px auto;
