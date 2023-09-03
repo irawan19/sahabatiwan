@@ -77,7 +77,6 @@
 	        color: red;
 	    }
     </style>
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.facebook.com/">
     <script type="text/javascript">
         jQuery(document).ready(function () {
             //Select2
@@ -157,6 +156,7 @@
     <script src="{{URL::asset('template/front/vendors/nouislider/nouislider.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/odometer/odometer.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/swiper/swiper.min.js')}}"></script>
+    <script src="{{URL::asset('template/front/vendors/tiny-slider/tiny-slider.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/wnumb/wNumb.min.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/wow/wow.js')}}"></script>
     <script src="{{URL::asset('template/front/vendors/isotope/isotope.js')}}"></script>
