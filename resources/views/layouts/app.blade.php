@@ -77,7 +77,7 @@
 	        color: red;
 	    }
     </style>
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.facebook.com/">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.facebook.com/profile.php?id=100094352257691">
     <script type="text/javascript">
         jQuery(document).ready(function () {
             //Select2
