@@ -34,7 +34,7 @@ class BerandaController extends Controller
                                                                             ->orderBy('total_komentar_swara_nusvantaras','asc')
                                                                             ->limit(2)
                                                                             ->get();
-        $data['lihat_testimonis']               = Testimoni::where('status_publikasi_testimonis',1)->get();
+        $data['lihat_testimonis']               = Testimoni::where('status_publikasi_testimonis',1)->orderBy('created_at','desc')->get();
         return view('beranda',$data);
     }
 
