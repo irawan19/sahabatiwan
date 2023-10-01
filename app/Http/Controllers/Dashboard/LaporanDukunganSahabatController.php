@@ -388,7 +388,7 @@ class LaporanDukunganSahabatController extends AdminCoreController
         if(General::hakAkses($link_laporan_dukungan_sahabat,'cetak') == 'true')
         {
             $tanggal = date('Y-m-d H:i:s');
-            return Excel::download(new LaporanDukunganSahabat, 'laporandukungansahabat_'.General::ubahDBKeTanggal($tanggal).'.xlsx');
+            return Excel::download(new LaporanDukunganSahabat, 'laporandukungansahabat_'.General::ubahDBKeTanggalwaktu($tanggal).'.xlsx');
         }
         else
             return redirect('dashboard/laporan_dukungan_sahabat');
