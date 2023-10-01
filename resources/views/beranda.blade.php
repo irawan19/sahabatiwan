@@ -200,10 +200,10 @@
                     <span class="fa fa-star"></span>
                 </div>
                 <span class="section-title__tagline">Apa Kata Mereka</span>
-                <h2 class="section-title__title">Testimonial {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}</h2>
+                <h2 class="section-title__title">Apa Kata Mereka {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}</h2>
             </div>
             <div class="testimonial-one__bottom">
-                @if(!$lihat_testimonis->isEmpty())
+                @if(!$lihat_apa_kata_merekas->isEmpty())
                     <div class="testimonial-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
                         "items": 3,
                         "margin": 30,
@@ -225,7 +225,7 @@
                             }
                         }
                     }'>
-                        @foreach($lihat_testimonis as $testimonis)
+                        @foreach($lihat_apa_kata_merekas as $apa_kata_merekas)
                             <div class="item">
                                 <div class="testimonial-one__single">
                                     <div class="testimonial-one__single-inner">
@@ -238,16 +238,16 @@
                                         <div class="testimonial-one__quote">
                                             <span class="icon-quote"></span>
                                         </div>
-                                        <p class="testimonial-one__text">{!! nl2br($testimonis->konten_testimonis) !!}</p>
+                                        <p class="testimonial-one__text">{!! nl2br($apa_kata_merekas->konten_apa_kata_merekas) !!}</p>
                                         <div class="testimonial-one__client-info">
                                             <div class="testimonial-one__client-img-box">
                                                 <div class="testimonial-one__client-img">
-                                                    <img src="{{URL::asset('storage/'.$testimonis->foto_testimonis)}}" width="100px" alt="Testimoni {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
+                                                    <img src="{{URL::asset('storage/'.$apa_kata_merekas->foto_apa_kata_merekas)}}" width="100px" alt="Apa Kata Mereka {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
                                                 </div>
                                             </div>
                                             <div class="testimonial-one__client-content">
-                                                <h3 class="testimonial-one__client-name">{{$testimonis->nama_testimonis}}</h3>
-                                                <p class="testimonial-one__client-sub-title">{{$testimonis->profesi_testimonis}}</p>
+                                                <h3 class="testimonial-one__client-name">{{$apa_kata_merekas->nama_apa_kata_merekas}}</h3>
+                                                <p class="testimonial-one__client-sub-title">{{$apa_kata_merekas->profesi_apa_kata_merekas}}</p>
                                             </div>
                                         </div>
                                     </div>

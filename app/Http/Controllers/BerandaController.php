@@ -9,7 +9,7 @@ use App\Models\Master_slideshow;
 use App\Models\Master_profil;
 use App\Models\Master_program;
 use App\Models\Master_galeri;
-use App\Models\Testimoni;
+use App\Models\Apa_kata_mereka;
 use App\Models\Master_swara_nusvantara;
 
 class BerandaController extends Controller
@@ -29,12 +29,12 @@ class BerandaController extends Controller
                                                                             ->orderBy('tanggal_publikasi_swara_nusvantaras','desc')
                                                                             ->limit(3)
                                                                             ->get();
-        $data['lihat_swara_nusvantara_populers']        = Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
+        $data['lihat_swara_nusvantara_populers']= Master_swara_nusvantara::join('master_kategori_swara_nusvantaras','kategori_swara_nusvantaras_id','=','master_kategori_swara_nusvantaras.id_kategori_swara_nusvantaras')
                                                                             ->where('tanggal_publikasi_swara_nusvantaras','<=',$tanggalwaktu_sekarang)
                                                                             ->orderBy('total_komentar_swara_nusvantaras','asc')
                                                                             ->limit(2)
                                                                             ->get();
-        $data['lihat_testimonis']               = Testimoni::where('status_publikasi_testimonis',1)->orderBy('created_at','desc')->get();
+        $data['lihat_apa_kata_merekas']         = Apa_kata_mereka::where('status_publikasi_apa_kata_merekas',1)->orderBy('created_at','desc')->get();
         return view('beranda',$data);
     }
 

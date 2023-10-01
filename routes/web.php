@@ -3,63 +3,68 @@
 use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 
-//Beranda
-use App\Http\Controllers\BerandaController as Beranda;
+//Web
+    //Beranda
+    use App\Http\Controllers\BerandaController as Beranda;
 
-//Testimoni
-use App\Http\Controllers\TestimoniController as Testimoni;
+    //Apa Kata Mereka
+    use App\Http\Controllers\ApaKataMerekaController as ApaKataMereka;
 
-//Sosok
-use App\Http\Controllers\SosokController as Sosok;
+    //Sosok
+    use App\Http\Controllers\SosokController as Sosok;
 
-//Swara Nusvantara
-use App\Http\Controllers\SwaraNusvantaraController as SwaraNusvantara;
+    //Swara Nusvantara
+    use App\Http\Controllers\SwaraNusvantaraController as SwaraNusvantara;
 
-//Laporan Sahabat
-use App\Http\Controllers\LaporanSahabatController as LaporanSahabat;
+    //Laporan Sahabat
+    use App\Http\Controllers\LaporanSahabatController as LaporanSahabat;
 
-//Dukungan Sahabat
-use App\Http\Controllers\DukunganSahabatController as DukunganSahabat;
+    //Dukungan Sahabat
+    use App\Http\Controllers\DukunganSahabatController as DukunganSahabat;
 
-//Wilayah
-use App\Http\Controllers\WilayahController as Wilayah;
+    //Wilayah
+    use App\Http\Controllers\WilayahController as Wilayah;
+
+//Mobile
+    use App\Http\Controllers\Mobile\BerandaController as MobileBeranda;
 
 //Dashboard
-use App\Http\Controllers\Dashboard\DashboardController as Dashboard;
+    //Dashboard
+    use App\Http\Controllers\Dashboard\DashboardController as Dashboard;
 
-//Konfigurasi Profil
-use App\Http\Controllers\Dashboard\KonfigurasiProfilController as DashboardKonfigurasiProfil;
+    //Konfigurasi Profil
+    use App\Http\Controllers\Dashboard\KonfigurasiProfilController as DashboardKonfigurasiProfil;
 
-//Konfigurasi Akun
-use App\Http\Controllers\Dashboard\KonfigurasiAkunController as DashboardKonfigurasiAkun;
+    //Konfigurasi Akun
+    use App\Http\Controllers\Dashboard\KonfigurasiAkunController as DashboardKonfigurasiAkun;
 
-//Dashboard Wilayah
-use App\Http\Controllers\Dashboard\WilayahController as DashboardWilayah;
+    //Dashboard Wilayah
+    use App\Http\Controllers\Dashboard\WilayahController as DashboardWilayah;
 
-//Konfigurasi Web
-use App\Http\Controllers\Dashboard\SlideshowController as DashboardSlideshow;
-use App\Http\Controllers\Dashboard\ProfilController as DashboardProfil;
-use App\Http\Controllers\Dashboard\ProgramController as DashboardProgram;
-use App\Http\Controllers\Dashboard\SosialMediaController as DashboardSosialMedia;
-use App\Http\Controllers\Dashboard\TestimoniController as DashboardTestimoni;
-use App\Http\Controllers\Dashboard\KategoriSwaraNusvantaraController as DashboardKategoriSwaraNusvantara;
-use App\Http\Controllers\Dashboard\SwaraNusvantaraController as DashboardSwaraNusvantara;
-use App\Http\Controllers\Dashboard\KomentarSwaraNusvantaraController as DashboardKomentarSwaraNusvantara;
-use App\Http\Controllers\Dashboard\LaporanSahabatController as DashboardLaporanSahabat;
-use App\Http\Controllers\Dashboard\DukunganSahabatController as DashboardDukunganSahabat;
-use App\Http\Controllers\Dashboard\KontakKamiController as DashboardKontakKami;
-use App\Http\Controllers\Dashboard\SubscribeController as DashboardSubscribe;
-use App\Http\Controllers\Dashboard\GaleriController as DashboardGaleri;
-use App\Http\Controllers\Dashboard\WidgetController as DashboardWidget;
+    //Konfigurasi Web
+    use App\Http\Controllers\Dashboard\SlideshowController as DashboardSlideshow;
+    use App\Http\Controllers\Dashboard\ProfilController as DashboardProfil;
+    use App\Http\Controllers\Dashboard\ProgramController as DashboardProgram;
+    use App\Http\Controllers\Dashboard\SosialMediaController as DashboardSosialMedia;
+    use App\Http\Controllers\Dashboard\ApaKataMerekaController as DashboardApaKataMereka;
+    use App\Http\Controllers\Dashboard\KategoriSwaraNusvantaraController as DashboardKategoriSwaraNusvantara;
+    use App\Http\Controllers\Dashboard\SwaraNusvantaraController as DashboardSwaraNusvantara;
+    use App\Http\Controllers\Dashboard\KomentarSwaraNusvantaraController as DashboardKomentarSwaraNusvantara;
+    use App\Http\Controllers\Dashboard\LaporanSahabatController as DashboardLaporanSahabat;
+    use App\Http\Controllers\Dashboard\DukunganSahabatController as DashboardDukunganSahabat;
+    use App\Http\Controllers\Dashboard\KontakKamiController as DashboardKontakKami;
+    use App\Http\Controllers\Dashboard\SubscribeController as DashboardSubscribe;
+    use App\Http\Controllers\Dashboard\GaleriController as DashboardGaleri;
+    use App\Http\Controllers\Dashboard\WidgetController as DashboardWidget;
 
-//Laporan
-use App\Http\Controllers\Dashboard\LaporanDukunganSahabatController as DashboardLaporanDukunganSahabat;
+    //Laporan
+    use App\Http\Controllers\Dashboard\LaporanDukunganSahabatController as DashboardLaporanDukunganSahabat;
 
-//Konfigurasi Aplikasi
-use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
-use App\Http\Controllers\Dashboard\LevelSistemController as DashboardLevelSistem;
-use App\Http\Controllers\Dashboard\AdminController as DashboardAdmin;
-use App\Http\Controllers\Dashboard\KonfigurasiAplikasiController as DashboardKonfigurasiAplikasi;
+    //Konfigurasi Aplikasi
+    use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
+    use App\Http\Controllers\Dashboard\LevelSistemController as DashboardLevelSistem;
+    use App\Http\Controllers\Dashboard\AdminController as DashboardAdmin;
+    use App\Http\Controllers\Dashboard\KonfigurasiAplikasiController as DashboardKonfigurasiAplikasi;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,16 +77,16 @@ use App\Http\Controllers\Dashboard\KonfigurasiAplikasiController as DashboardKon
 |
 */
 
+//Web
 Route::get('/storage-link', function() {
     Artisan::call('storage:link'); 
     return 'The links have been created.';
 });
-
 Route::get('/', [Beranda::class, 'index']);
 Route::get('/cari', [Beranda::class, 'cari']);
-Route::post('/subscribe', [BerandaController::class, 'subscribe']);
-Route::get('/testimoni', [Testimoni::class, 'index']);
-Route::post('/testimoni/kirim', [Testimoni::class, 'kirim']);
+Route::post('/subscribe', [Beranda::class, 'subscribe']);
+Route::get('/apa_kata_mereka', [ApaKataMereka::class, 'index']);
+Route::post('/apa_kata_mereka/kirim', [ApaKataMereka::class, 'kirim']);
 Route::get('/sosok', [Sosok::class, 'index']);
 Route::get('/swara-nusvantara', [SwaraNusvantara::class, 'index']);
 Route::get('/swara-nusvantara/cari', [SwaraNusvantara::class, 'cari']);
@@ -99,6 +104,12 @@ Route::get('/kota-kabupaten/{id}', [Wilayah::class, 'kotakabupaten']);
 Route::get('/kecamatan/{id}', [Wilayah::class, 'kecamatan']);
 Route::get('/kelurahan/{id}', [Wilayah::class, 'kelurahan']);
 
+//Mobile
+Route::group(['prefix' => 'mobile'], function() {
+    Route::get('/', [MobileBeranda::class, 'index']);
+});
+
+//Dashboard
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -167,13 +178,13 @@ Route::middleware([
                 Route::get('/hapus/{id}', [DashboardSosialMedia::class, 'hapus']);
             });
 
-            //Testimoni
-            Route::group(['prefix' => 'testimoni'], function() {
-                Route::get('/', [DashboardTestimoni::class, 'index']);
-                Route::get('/cari', [DashboardTestimoni::class, 'cari']);
-                Route::get('/baca/{id}', [DashboardTestimoni::class, 'baca']);
-                Route::get('/publikasi/{id}', [DashboardTestimoni::class, 'publikasi']);
-                Route::get('/hapus/{id}', [DashboardTestimoni::class, 'hapus']);
+            //Apa Kata Mereka
+            Route::group(['prefix' => 'apa_kata_mereka'], function() {
+                Route::get('/', [DashboardApaKataMereka::class, 'index']);
+                Route::get('/cari', [DashboardApaKataMereka::class, 'cari']);
+                Route::get('/baca/{id}', [DashboardApaKataMereka::class, 'baca']);
+                Route::get('/publikasi/{id}', [DashboardApaKataMereka::class, 'publikasi']);
+                Route::get('/hapus/{id}', [DashboardApaKataMereka::class, 'hapus']);
             });
 
             //Kategori Swara Nusvantara

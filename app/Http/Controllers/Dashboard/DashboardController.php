@@ -10,7 +10,7 @@ use App\Models\Master_konfigurasi_aplikasi;
 use App\Models\Master_swara_nusvantara;
 use App\Models\Laporan_sahabat;
 use App\Models\Dukungan_sahabat;
-use App\Models\Testimoni;
+use App\Models\Apa_kata_mereka;
 use App\Models\Komentar_swara_nusvantara;
 
 class DashboardController extends AdminCoreController
@@ -39,7 +39,7 @@ class DashboardController extends AdminCoreController
         $data['total_komentar']                 = Komentar_swara_nusvantara::count();
         $data['total_laporan_sahabat']          = Laporan_sahabat::count();
         $data['total_dukungan_sahabat']         = Dukungan_sahabat::count();
-        $data['total_testimonis']               = Testimoni::count();
+        $data['total_apa_kata_merekas']         = Apa_kata_mereka::count();
         $data['total_admins']                   = User::count();
         return view('dashboard.dashboard.lihat',$data);
     }

@@ -115,7 +115,7 @@
 					    </a>
 					</div>
 					<div class="col-sm-6">
-					    <a href="{{URL('dashboard/testimoni')}}" class="nonstyle">
+					    <a href="{{URL('dashboard/apa_kata_mereka')}}" class="nonstyle">
 					        <div class="card" style="height: 100px; background-color: #fff; color: #000;">
 					            <div class="card-body pb-0">
 					                <div class="btn-group float-right">
@@ -123,8 +123,8 @@
 					                        <use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-list')}}"></use>
 					                    </svg>
 					                </div>
-					                <div class="text-value-lg">{{General::konversiNilai($total_testimonis)}} <span>{{General::konversiNilaiString($total_testimonis)}}</span></div>
-					                <div class="textnotifberanda">Testimoni</div>
+					                <div class="text-value-lg">{{General::konversiNilai($total_apa_kata_merekas)}} <span>{{General::konversiNilaiString($total_apa_kata_merekas)}}</span></div>
+					                <div class="textnotifberanda">Apa Kata Mereka</div>
 					            </div>
 					            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;"></div>
 					        </div>

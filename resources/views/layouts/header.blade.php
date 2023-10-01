@@ -73,7 +73,7 @@
                                 <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
                             </div>
                             <div class="main-menu__btn-box">
-                                <a href="{{URL('testimoni')}}" class="thm-btn main-menu__btn">Kirim Testimoni</a>
+                                <a href="{{URL('apa_kata_mereka')}}" class="thm-btn main-menu__btn">Kirim Apa Kata Mereka</a>
                             </div>
                         </div>
                     </div>

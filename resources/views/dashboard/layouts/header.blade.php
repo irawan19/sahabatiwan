@@ -13,11 +13,11 @@
 <ul class="c-header-nav ml-auto"></ul>
 <ul class="c-header-nav">
 	<li class="c-header-nav-item dropdown d-md-down-none mx-2"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-   	    @php($testimoni 			= \App\Models\Testimoni::where('status_baca_testimonis',0)->count())
+   	    @php($apa_kata_mereka 		= \App\Models\Apa_kata_mereka::where('status_baca_apa_kata_merekas',0)->count())
 		@php($dukungan_sahabat 		= \App\Models\Dukungan_sahabat::where('status_baca_dukungan_sahabats',0)->count())
 		@php($laporan_sahabat 		= \App\Models\Laporan_sahabat::where('status_baca_laporan_sahabats',0)->count())
 		@php($komentar 				= \App\Models\Komentar_swara_nusvantara::where('status_baca_komentar_swara_nusvantaras',0)->count())
-        @php($total_notifikasi 		= $testimoni + $dukungan_sahabat + $laporan_sahabat + $komentar)
+        @php($total_notifikasi 		= $apa_kata_mereka + $dukungan_sahabat + $laporan_sahabat + $komentar)
    		<svg class="c-icon">
    		  	<use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-bell')}}"></use>
    		</svg><span class="badge badge-pill badge-danger">{{$total_notifikasi}}</span></a>
@@ -31,10 +31,10 @@
 					@endif
 				</strong>
    			</div>
-   			<a class="dropdown-item" href="{{URL('dashboard/testimoni')}}">
+   			<a class="dropdown-item" href="{{URL('dashboard/apa_kata_mereka')}}">
 		   		<svg class="c-icon mr-2 text-success">
 		   		  	<use xlink:href="{{URL::asset('template/back/assets/icons/coreui/free.svg#cil-comment-square')}}"></use>
-		   		</svg> Testimoni <span class="badge badge-pill badge-danger">{{$testimoni}}</span>
+		   		</svg> Apa Kata Mereka <span class="badge badge-pill badge-danger">{{$apa_kata_mereka}}</span>
 		   	</a>
    			<a class="dropdown-item" href="{{URL('dashboard/dukungan_sahabat')}}">
 		   		<svg class="c-icon mr-2 text-success">
