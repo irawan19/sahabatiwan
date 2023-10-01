@@ -242,7 +242,17 @@
                                         <div class="testimonial-one__client-info">
                                             <div class="testimonial-one__client-img-box">
                                                 <div class="testimonial-one__client-img">
-                                                    <img src="{{URL::asset('storage/'.$apa_kata_merekas->foto_apa_kata_merekas)}}" width="100px" alt="Apa Kata Mereka {{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
+                                                    <div style=
+                                                        "background-color: #cccccc;
+                                                        background-image: url({{URL::asset("storage/".$apa_kata_merekas->foto_apa_kata_merekas)}});
+                                                        background-position: center;
+                                                        background-repeat: no-repeat;
+                                                        border-radius: 50%;
+                                                        background-size: cover;
+                                                        width: 140px;
+                                                        height: 140px;
+                                                        ">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="testimonial-one__client-content">
