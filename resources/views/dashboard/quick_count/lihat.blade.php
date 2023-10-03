@@ -59,6 +59,7 @@
 				    				@if(General::totalHakAkses($link_quick_count) != 0)
 						    			<th width="5px"></th>
 						    		@endif
+				    				<th class="nowrap">No</th>
 				    				<th class="nowrap">No TPS</th>
 				    				<th class="nowrap">RT</th>
 				    				<th class="nowrap">RW</th>
@@ -67,10 +68,13 @@
 				    				<th class="nowrap">Kecamatan</th>
 				    				<th class="nowrap">Kelurahan</th>
 				    				<th class="nowrap">Jumlah</th>
+				    				<th class="nowrap">Diinput Oleh</th>
 				    			</tr>
 				    		</thead>
 				    		<tbody>
 				    			@if(!$lihat_quick_counts->isEmpty())
+									@php($no = 1)
+									@php($skipped = ($lihat_quick_counts->currentPage() - 1) * $lihat_quick_counts->perPage())
 		            				@foreach($lihat_quick_counts as $quick_counts)
 								    	<tr>
 								    		@if(General::totalHakAkses($link_quick_count) != 0)
@@ -85,6 +89,7 @@
 										            </div>
 											    </td>
 								    		@endif
+								    		<td class="nowrap">{{$no}}</td>
 								    		<td class="nowrap">{{$quick_counts->tps_quick_counts}}</td>
 								    		<td class="nowrap">{{$quick_counts->rt_quick_counts}}</td>
 								    		<td class="nowrap">{{$quick_counts->rw_quick_counts}}</td>
@@ -93,12 +98,15 @@
 								    		<td class="nowrap">{{$quick_counts->nama_kecamatans}}</td>
 								    		<td class="nowrap">{{$quick_counts->nama_kelurahans}}</td>
 								    		<td class="nowrap">{{$quick_counts->jumlah_quick_counts}}</td>
+								    		<td class="nowrap">{{$quick_counts->name}}</td>
 								    	</tr>
+										@php($no++)
 								    @endforeach
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_quick_count) != 0)
-											<td colspan="9" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="10" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
@@ -108,7 +116,8 @@
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="8" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="9" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
@@ -122,6 +131,9 @@
 				    		</tbody>
 				    	</table>
 				    </div>
+					<div class="col-sm-12">
+						{{ $lihat_quick_counts->appends(Request::except('page'))->links('vendor.pagination.custom') }}
+					</div>
 				</div>
 			</div>
 		</div>

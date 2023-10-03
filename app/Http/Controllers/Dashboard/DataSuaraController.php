@@ -27,12 +27,13 @@ class DataSuaraController extends AdminCoreController
                                                         ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
                                                         ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
                                                         ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
+                                                        ->join('users','data_suaras.users_id','=','users.id')
                                                         ->where('tahun_data_suaras',$hasil_tahun)
                                                         ->orderBy('nama_provinsis','asc')
                                                         ->orderBy('nama_kota_kabupatens','asc')
                                                         ->orderBy('nama_kecamatans','asc')
                                                         ->orderBy('nama_kelurahans','asc')
-                                                        ->get();
+                                                        ->paginate(25);
             
             session()->forget('halaman');
             session()->forget('hasil_kata');
@@ -59,6 +60,7 @@ class DataSuaraController extends AdminCoreController
                                                         ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
                                                         ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
                                                         ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
+                                                        ->join('users','data_suaras.users_id','=','users.id')
                                                         ->where('nama_data_suaras', 'LIKE', '%'.$hasil_kata.'%')
                                                         ->where('tahun_data_suaras',$hasil_tahun)
                                                         ->orWhere('tps_data_suaras', 'LIKE', '%'.$hasil_kata.'%')
@@ -71,7 +73,7 @@ class DataSuaraController extends AdminCoreController
                                                         ->orderBy('nama_kota_kabupatens','asc')
                                                         ->orderBy('nama_kecamatans','asc')
                                                         ->orderBy('nama_kelurahans','asc')
-                                                        ->get();
+                                                        ->paginate(25);
             session(['halaman'              => $url_sekarang]);
             session(['hasil_kata'		    => $hasil_kata]);
             session(['hasil_tahun'          => $hasil_tahun]);

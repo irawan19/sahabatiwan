@@ -59,6 +59,7 @@
 				    				@if(General::totalHakAkses($link_data_suara) != 0)
 						    			<th width="5px"></th>
 						    		@endif
+				    				<th class="nowrap">No</th>
 				    				<th class="nowrap">Nama</th>
 				    				<th class="nowrap">No TPS</th>
 				    				<th class="nowrap">RT</th>
@@ -67,10 +68,13 @@
 				    				<th class="nowrap">Kota/Kabupaten</th>
 				    				<th class="nowrap">Kecamatan</th>
 				    				<th class="nowrap">Kelurahan</th>
+				    				<th class="nowrap">Diinput Oleh</th>
 				    			</tr>
 				    		</thead>
 				    		<tbody>
 				    			@if(!$lihat_data_suaras->isEmpty())
+									@php($no = 1)
+									@php($skipped = ($lihat_data_suaras->currentPage() - 1) * $lihat_data_suaras->perPage())
 		            				@foreach($lihat_data_suaras as $data_suaras)
 								    	<tr>
 								    		@if(General::totalHakAkses($link_data_suara) != 0)
@@ -85,6 +89,7 @@
 										            </div>
 											    </td>
 								    		@endif
+								    		<td class="nowrap">{{$no + $skipped}}</td>
 								    		<td class="nowrap">{{$data_suaras->nama_data_suaras}}</td>
 								    		<td class="nowrap">{{$data_suaras->tps_data_suaras}}</td>
 								    		<td class="nowrap">{{$data_suaras->rt_data_suaras}}</td>
@@ -93,12 +98,15 @@
 								    		<td class="nowrap">{{$data_suaras->nama_kota_kabupatens}}</td>
 								    		<td class="nowrap">{{$data_suaras->nama_kecamatans}}</td>
 								    		<td class="nowrap">{{$data_suaras->nama_kelurahans}}</td>
+								    		<td class="nowrap">{{$data_suaras->name}}</td>
 								    	</tr>
+										@php($no++)
 								    @endforeach
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_data_suara) != 0)
-											<td colspan="9" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="10" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
@@ -108,7 +116,8 @@
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="8" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="9" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
@@ -122,6 +131,9 @@
 				    		</tbody>
 				    	</table>
 				    </div>
+					<div class="col-sm-12">
+						{{ $lihat_data_suaras->appends(Request::except('page'))->links('vendor.pagination.custom') }}
+					</div>
 				</div>
 			</div>
 		</div>
