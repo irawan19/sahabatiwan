@@ -50,7 +50,7 @@
 					                    	@if($provinsis->id_provinsis == 13)
 					                    		@php($selected = 'selected')
 					                    	@endif
-											<option value="{{$provinsis->id_provinsis}}" {{ $selected }}>{{$provinsis->jumlah_provinsis}}</option>
+											<option value="{{$provinsis->id_provinsis}}" {{ $selected }}>{{$provinsis->nama_provinsis}}</option>
 										@endforeach
 									</select>
 									{{General::pesanErrorForm($errors->first('provinsis_id'))}}
@@ -62,7 +62,7 @@
 											<option value="{{Request::old('kota_kabupatens_id')}}">
 												@php($ambil_kota_kabupatens = \App\Models\Master_kota_kabupaten::where('id_kota_kabupatens',intval(Request::old('kota_kabupatens_id')))
 																									->first())
-												{{$ambil_kota_kabupatens->jumlah_kota_kabupatens}}
+												{{$ambil_kota_kabupatens->nama_kota_kabupatens}}
 											</option>
                                     	@endif
 									</select>
@@ -75,7 +75,7 @@
                                             <option value="{{Request::old('kecamatans_id')}}">
                                                 @php($ambil_kecamatans = \App\Models\Master_kecamatan::where('id_kecamatans',intval(Request::old('kecamatans_id')))
                                                                                                     ->first())
-                                                {{$ambil_kecamatans->jumlah_kecamatans}}
+                                                {{$ambil_kecamatans->nama_kecamatans}}
                                             </option>
                                         @endif
 									</select>
@@ -88,7 +88,7 @@
                                             <option value="{{Request::old('kelurahans_id')}}">
                                                 @php($ambil_kelurahans = \App\Models\Master_kelurahan::where('id_kelurahans',intval(Request::old('kelurahans_id')))
                                                                                                     ->first())
-                                                {{$ambil_kelurahans->jumlah_kelurahans}}
+                                                {{$ambil_kelurahans->nama_kelurahans}}
                                             </option>
                                         @endif
 									</select>
@@ -140,7 +140,7 @@
 							return {
 								results: $.map(data, function(item) {
 									return {
-										text: item.jumlah_kota_kabupatens
+										text: item.nama_kota_kabupatens
 										, id: item.id_kota_kabupatens
 									, }
 								})
@@ -172,7 +172,7 @@
 							return {
 								results: $.map(data, function(item) {
 									return {
-										text: item.jumlah_kota_kabupatens
+										text: item.nama_kota_kabupatens
 										, id: item.id_kota_kabupatens
 									, }
 								})
@@ -210,7 +210,7 @@
 							return {
 								results: $.map(data, function(item) {
 									return {
-										text: item.jumlah_kecamatans
+										text: item.nama_kecamatans
 										, id: item.id_kecamatans
 									, }
 								})
@@ -242,7 +242,7 @@
 							return {
 								results: $.map(data, function(item) {
 									return {
-										text: item.jumlah_kecamatans
+										text: item.nama_kecamatans
 										, id: item.id_kecamatans
 									, }
 								})
@@ -280,7 +280,7 @@
 							return {
 								results: $.map(data, function(item) {
 									return {
-										text: item.jumlah_kelurahans
+										text: item.nama_kelurahans
 										, id: item.id_kelurahans
 									, }
 								})
@@ -312,7 +312,7 @@
 							return {
 								results: $.map(data, function(item) {
 									return {
-										text: item.jumlah_kelurahans
+										text: item.nama_kelurahans
 										, id: item.id_kelurahans
 									, }
 								})
