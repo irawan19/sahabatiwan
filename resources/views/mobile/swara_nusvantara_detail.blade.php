@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('mobile.layouts.app')
 @section('content')
     
-    @include('layouts.pageheader')
+    @include('mobile.layouts.pageheader')
 
     <div class="news-sidebar">
         <div class="container">
@@ -63,7 +63,7 @@
                         </div>
                         <div class="comment-form">
                             <h3 class="comment-form__title">Berikan komentar</h3>
-                            <form action="{{URL('swara-nusvantara/komentar/kirim')}}" method="POST" class="comment-one__form"
+                            <form action="{{URL('mobile/swara-nusvantara/komentar/kirim')}}" method="POST" class="comment-one__form"
                                 novalidate="novalidate">
 					            {{ csrf_field() }}
                                 <input type="hidden" name="id_swara_nusvantaras" value="{{$lihat_swara_nusvantaras->id_swara_nusvantaras}}">
@@ -108,60 +108,6 @@
                                 </div>
                                 @endforeach
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="sidebar">
-                        <div class="sidebar__single sidebar__search">
-                            <form action="{{URL('swara-nusvantara/cari')}}" method="get" class="sidebar__search-form">
-                                <input type="search" placeholder="Cari Swara Nusvantara" name="cari_swara_nusvantara">
-                                <button type="submit"><i class="icon-magnifying-glass"></i></button>
-                            </form>
-                        </div>
-                        <div class="sidebar__single sidebar__post">
-                            <h3 class="sidebar__title">Populer</h3>
-                            <ul class="sidebar__post-list list-unstyled">
-                                @foreach($lihat_swara_nusvantara_populers as $swara_nusvantara_populers)
-                                    <li>
-                                        <div class="sidebar__post-image">
-                                            <img src="{{URL::asset('storage/'.$swara_nusvantara_populers->gambar_swara_nusvantaras)}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
-                                        </div>
-                                        <div class="sidebar__post-content">
-                                            <h3>
-                                                <span class="sidebar__post-content-meta"><i
-                                                        class="fas fa-tags"></i>{{$swara_nusvantara_populers->nama_kategori_swara_nusvantaras}}</span>
-                                                <a href="{{URL('swara-nusvantara/detail/'.$swara_nusvantara_populers->slug_kategori_swara_nusvantaras.'/'.$swara_nusvantara_populers->slug_swara_nusvantaras)}}">{{$swara_nusvantara_populers->judul_swara_nusvantaras}}</a>
-                                            </h3>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="sidebar__single sidebar__category">
-                            <h3 class="sidebar__title">Kategori</h3>
-                            <ul class="sidebar__category-list list-unstyled">
-                                @foreach($lihat_kategori_swara_nusvantaras as $kategori_swara_nusvantaras)
-                                    <li>
-                                        <a href="{{URL('swara-nusvantara/kategori/'.$kategori_swara_nusvantaras->slug_kategori_swara_nusvantaras)}}">{{$kategori_swara_nusvantaras->nama_kategori_swara_nusvantaras}}<span class="icon-right-arrow"></span></a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="sidebar__single sidebar__comments">
-                            <h3 class="sidebar__title">Komentar</h3>
-                            <ul class="sidebar__comments-list list-unstyled">
-                                @foreach($lihat_komentar_swara_nusvantaras as $komentar_swara_nusvantaras)
-                                    <li>
-                                        <div class="sidebar__comments-icon">
-                                            <i class="fas fa-comment"></i>
-                                        </div>
-                                        <div class="sidebar__comments-text-box">
-                                            <p>{!! $komentar_swara_nusvantaras->konten_komentar_swara_nusvantaras !!}</p>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
                         </div>
                     </div>
                 </div>

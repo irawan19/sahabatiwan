@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 
 //Web
@@ -27,6 +26,9 @@ use Illuminate\Support\Facades\Route;
 
 //Mobile
     use App\Http\Controllers\Mobile\BerandaController as MobileBeranda;
+    use App\Http\Controllers\Mobile\SwaraNusvantaraController as MobileSwaraNusvantara;
+    use App\Http\Controllers\Mobile\DataSuaraController as MobileDataSuara;
+    use App\Http\Controllers\Mobile\QuickCountController as MobileQuickCount;
 
 //Dashboard
     //Dashboard
@@ -55,7 +57,8 @@ use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\Dashboard\KontakKamiController as DashboardKontakKami;
     use App\Http\Controllers\Dashboard\SubscribeController as DashboardSubscribe;
     use App\Http\Controllers\Dashboard\GaleriController as DashboardGaleri;
-    use App\Http\Controllers\Dashboard\WidgetController as DashboardWidget;
+    use App\Http\Controllers\Dashboard\DataSuaraController as DashboardDataSuara;
+    use App\Http\Controllers\Dashboard\QuickCountController as DashboardQuickCount;
 
     //Laporan
     use App\Http\Controllers\Dashboard\LaporanDukunganSahabatController as DashboardLaporanDukunganSahabat;
@@ -106,7 +109,36 @@ Route::get('/kelurahan/{id}', [Wilayah::class, 'kelurahan']);
 
 //Mobile
 Route::group(['prefix' => 'mobile'], function() {
+    //Beranda
     Route::get('/', [MobileBeranda::class, 'index']);
+    
+    //Detail Swara Nusvantara
+    Route::get('/swara-nusvantara/detail/{slug_kategori_swara_nusvantara}/{slug_swara_nusvantara}', [MobileSwaraNusvantara::class, 'detail']);
+
+    Route::middleware([
+        'auth:sanctum',
+        config('jetstream.auth_session'),
+    ])->group(function () {
+        //Data Suara
+        Route::group(['prefix' => 'data-suara'], function() {
+            Route::get('/', [MobileDataSuara::class, 'index']);
+            Route::get('/tambah', [MobileDataSuara::class, 'tambah']);
+            Route::post('/prosestambah', [MobileDataSuara::class, 'prosestambah']);
+            Route::get('/edit/{id}', [MobileDataSuara::class, 'edit']);
+            Route::post('/prosesedit/{id}', [MobileDataSuara::class, 'prosesedit']);
+            Route::get('/hapus/{id}', [MobileDataSuara::class, 'hapus']);
+        });
+
+        //Data Quick Count
+        Route::group(['prefix' => 'quick-count'], function() {
+            Route::get('/', [MobileQuickCount::class, 'index']);
+            Route::get('/tambah', [MobileQuickCount::class, 'tambah']);
+            Route::post('/prosestambah', [MobileQuickCount::class, 'prosestambah']);
+            Route::get('/edit/{id}', [MobileQuickCount::class, 'edit']);
+            Route::post('/prosesedit/{id}', [MobileQuickCount::class, 'prosesedit']);
+            Route::get('/hapus/{id}', [MobileQuickCount::class, 'hapus']);
+        });
+    });
 });
 
 //Dashboard
@@ -258,9 +290,26 @@ Route::middleware([
                 Route::get('/hapus/{id}', [DashboardGaleri::class, 'hapus']);
             });
 
-            //Widget
-            Route::group(['prefix' => 'widget'], function() {
-                Route::get('/', [DashboardWidget::class, 'index']);
+            //Data Suara
+            Route::group(['prefix' => 'data_suara'], function() {
+                Route::get('/', [DashboardDataSuara::class, 'index']);
+                Route::get('/cari', [DashboardDataSuara::class, 'cari']);
+                Route::get('/tambah', [DashboardDataSuara::class, 'tambah']);
+                Route::post('/prosestambah', [DashboardDataSuara::class, 'prosestambah']);
+                Route::get('/edit/{id}', [DashboardDataSuara::class, 'edit']);
+                Route::post('/prosesedit/{id}', [DashboardDataSuara::class, 'prosesedit']);
+                Route::get('/hapus/{id}', [DashboardDataSuara::class, 'hapus']);
+            });
+
+            //Data Quick Count
+            Route::group(['prefix' => 'quick_count'], function() {
+                Route::get('/', [DashboardQuickCount::class, 'index']);
+                Route::get('/cari', [DashboardQuickCount::class, 'cari']);
+                Route::get('/tambah', [DashboardQuickCount::class, 'tambah']);
+                Route::post('/prosestambah', [DashboardQuickCount::class, 'prosestambah']);
+                Route::get('/edit/{id}', [DashboardQuickCount::class, 'edit']);
+                Route::post('/prosesedit/{id}', [DashboardQuickCount::class, 'prosesedit']);
+                Route::get('/hapus/{id}', [DashboardQuickCount::class, 'hapus']);
             });
         
         //Laporan
@@ -270,7 +319,7 @@ Route::middleware([
                 Route::get('/cari', [DashboardLaporanDukunganSahabat::class, 'cari']);
                 Route::get('/cetak', [DashboardLaporanDukunganSahabat::class, 'cetak']);
             });
-
+        
         //Konfigurasi Aplikasi
             //Menu
             Route::group(['prefix' => 'menu'], function () {

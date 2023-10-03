@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Master_sosial_media;
 use App\Models\Master_subscribe;
 use Illuminate\Http\Request;
 use App\Models\Master_konfigurasi_aplikasi;
