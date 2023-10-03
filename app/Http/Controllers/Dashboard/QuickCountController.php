@@ -33,7 +33,7 @@ class QuickCountController extends AdminCoreController
                                                         ->orderBy('nama_kota_kabupatens','asc')
                                                         ->orderBy('nama_kecamatans','asc')
                                                         ->orderBy('nama_kelurahans','asc')
-                                                        ->get();
+                                                        ->paginate(25);
             
             session()->forget('halaman');
             session()->forget('hasil_kata');
@@ -71,7 +71,7 @@ class QuickCountController extends AdminCoreController
                                                         ->orderBy('nama_kota_kabupatens','asc')
                                                         ->orderBy('nama_kecamatans','asc')
                                                         ->orderBy('nama_kelurahans','asc')
-                                                        ->get();
+                                                        ->paginate(25);
             session(['halaman'              => $url_sekarang]);
             session(['hasil_kata'		    => $hasil_kata]);
             session(['hasil_tahun'          => $hasil_tahun]);
