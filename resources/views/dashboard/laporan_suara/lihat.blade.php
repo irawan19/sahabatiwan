@@ -152,28 +152,16 @@
 								    @endforeach
 								@else
 									<tr>
-										@if(General::totalHakAkses($link_quick_count) != 0)
-											<td colspan="10" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-										@else
-											<td colspan="9" class="center-align">Tidak ada data ditampilkan</td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-											<td style="display:none"></td>
-										@endif
+										<td colspan="10" class="center-align">Tidak ada data ditampilkan</td>
+										<td style="display:none"></td>
+										<td style="display:none"></td>
+										<td style="display:none"></td>
+										<td style="display:none"></td>
+										<td style="display:none"></td>
+										<td style="display:none"></td>
+										<td style="display:none"></td>
+										<td style="display:none"></td>
+										<td style="display:none"></td>
 									</tr>
 								@endif
 				    		</tbody>
