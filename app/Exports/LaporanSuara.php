@@ -38,7 +38,7 @@ class LaporanSuara implements FromView, ShouldQueue
         if(!empty(session('hasil_kelurahan')))
             $hasil_kelurahan                            = session('hasil_kelurahan');
 
-            $query_suaras                               = Quick_count::selectRaw('tps_quick_counts,
+        $query_suaras                                   = Quick_count::selectRaw('tps_quick_counts,
                                                                     rt_quick_counts,
                                                                     rw_quick_counts,
                                                                     nama_provinsis,
@@ -63,7 +63,7 @@ class LaporanSuara implements FromView, ShouldQueue
                                                         ->where('tahun_quick_counts',$hasil_tahun)
                                                         ->orWhere('rw_quick_counts', 'LIKE', '%' . $hasil_kata . '%')
                                                         ->where('tahun_quick_counts',$hasil_tahun)
-                                                        ->orderBy('suaras.created_at')
+                                                        ->orderBy('quick_counts.created_at')
                                                         ->get();
 
         if(!empty($hasil_provinsi))
@@ -84,7 +84,7 @@ class LaporanSuara implements FromView, ShouldQueue
         }
 
         $data['lihat_laporan_suaras']   = $query_suaras;
-        
+        $data['tanggal']                = date('Y-m-d');
         return view('dashboard.laporan_suara.cetakexcel',$data);
     }
 }
