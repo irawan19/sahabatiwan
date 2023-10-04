@@ -550,12 +550,12 @@
 			                    }]
 		    };
 			var wilayahchart = new Chart(document.getElementById('canvaswilayah'), {
-			type: 'bar',
+			type: 'doughnut',
 			data: laporanwilayah,
 			options: {
 					responsive: true,
 					legend: {
-						display: false,
+						display: true,
 					}
 				}
 			});
@@ -568,12 +568,12 @@
 			                    }]
 		    };
 			var jeniskelaminchart = new Chart(document.getElementById('canvasjeniskelamin'), {
-			type: 'bar',
+			type: 'doughnut',
 			data: laporanjeniskelamin,
 			options: {
 					responsive: true,
 					legend: {
-						display: false,
+						display: true,
 					}
 				}
 			});
@@ -586,12 +586,12 @@
 			                    }]
 		    };
 			var usiachart = new Chart(document.getElementById('canvasusia'), {
-			type: 'bar',
+			type: 'doughnut',
 			data: laporanusia,
 			options: {
 					responsive: true,
 					legend: {
-						display: false,
+						display: true,
 					}
 				}
 			});
