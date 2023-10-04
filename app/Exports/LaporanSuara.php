@@ -38,7 +38,7 @@ class LaporanSuara implements FromView, ShouldQueue
         if(!empty(session('hasil_kelurahan')))
             $hasil_kelurahan                            = session('hasil_kelurahan');
 
-            $query_suaras                    = Quick_count::selectRaw('tps_quick_counts,
+            $query_suaras                               = Quick_count::selectRaw('tps_quick_counts,
                                                                     rt_quick_counts,
                                                                     rw_quick_counts,
                                                                     nama_provinsis,
@@ -57,13 +57,11 @@ class LaporanSuara implements FromView, ShouldQueue
                                                         ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
                                                         ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
                                                         ->join('users','quick_counts.users_id','=','users.id')
-                                                        ->where('nama_suaras', 'LIKE', '%' . $hasil_kata . '%')
+                                                        ->where('tps_quick_counts', 'LIKE', '%' . $hasil_kata . '%')
                                                         ->where('tahun_quick_counts',$hasil_tahun)
-                                                        ->orWhere('nik_suaras', 'LIKE', '%' . $hasil_kata . '%')
+                                                        ->orWhere('rt_quick_counts', 'LIKE', '%' . $hasil_kata . '%')
                                                         ->where('tahun_quick_counts',$hasil_tahun)
-                                                        ->orWhere('alamat_suaras', 'LIKE', '%' . $hasil_kata . '%')
-                                                        ->where('tahun_quick_counts',$hasil_tahun)
-                                                        ->orWhere('telepon_suaras', 'LIKE', '%' . $hasil_kata . '%')
+                                                        ->orWhere('rw_quick_counts', 'LIKE', '%' . $hasil_kata . '%')
                                                         ->where('tahun_quick_counts',$hasil_tahun)
                                                         ->orderBy('suaras.created_at')
                                                         ->get();
