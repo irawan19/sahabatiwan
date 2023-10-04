@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Helpers\General;
 use App\Models\Master_provinsi;
 use App\Models\Quick_count;
+use App\Exports\LaporanSuara;
+use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanSuaraController extends AdminCoreController
 {
@@ -152,7 +154,7 @@ class LaporanSuaraController extends AdminCoreController
         if(General::hakAkses($link_laporan_suara,'cetak') == 'true')
         {
             $tanggal = date('Y-m-d H:i:s');
-            // return Excel::download(new LaporanDukunganSahabat, 'laporandukungansahabat_'.General::ubahDBKeTanggalwaktu($tanggal).'.xlsx');
+            return Excel::download(new LaporanSuara, 'laporansuara_'.General::ubahDBKeTanggalwaktu($tanggal).'.xlsx');
         }
         else
             return redirect('dashboard/laporan_suara');
