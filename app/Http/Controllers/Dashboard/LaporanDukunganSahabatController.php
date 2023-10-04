@@ -365,8 +365,8 @@ class LaporanDukunganSahabatController extends AdminCoreController
                 $query_dukungan_sahabats_usia           = $query_dukungan_sahabats_usia->where('jenis_kelamin_dukungan_sahabats',$hasil_jenis_kelamin);
             }
             
-            $data['lihat_laporan_dukungan_sahabats']            = $query_dukungan_sahabats;
-            $data['lihat_laporan_dukungan_sahabats_wilayah']    = $query_dukungan_sahabats_wilayah;
+            $data['lihat_laporan_dukungan_sahabats']                    = $query_dukungan_sahabats;
+            $data['lihat_laporan_dukungan_sahabats_wilayah']            = $query_dukungan_sahabats_wilayah;
             $data['lihat_laporan_dukungan_sahabats_jenis_kelamin']      = $query_dukungan_sahabats_jenis_kelamin;
             $data['lihat_laporan_dukungan_sahabats_usia']               = $query_dukungan_sahabats_usia;
             session(['halaman'              => $url_sekarang]);

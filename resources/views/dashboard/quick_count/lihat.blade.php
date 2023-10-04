@@ -89,7 +89,7 @@
 										            </div>
 											    </td>
 								    		@endif
-								    		<td class="nowrap">{{$no}}</td>
+								    		<td class="nowrap">{{$no + $skipped}}</td>
 								    		<td class="nowrap">{{$quick_counts->tps_quick_counts}}</td>
 								    		<td class="nowrap">{{$quick_counts->rt_quick_counts}}</td>
 								    		<td class="nowrap">{{$quick_counts->rw_quick_counts}}</td>

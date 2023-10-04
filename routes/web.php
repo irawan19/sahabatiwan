@@ -62,6 +62,7 @@ use Illuminate\Support\Facades\Route;
 
     //Laporan
     use App\Http\Controllers\Dashboard\LaporanDukunganSahabatController as DashboardLaporanDukunganSahabat;
+    use App\Http\Controllers\Dashboard\LaporanSuaraController as DashboardLaporanSuara;
 
     //Konfigurasi Aplikasi
     use App\Http\Controllers\Dashboard\MenuController as DashboardMenu;
@@ -318,6 +319,13 @@ Route::middleware([
                 Route::get('/', [DashboardLaporanDukunganSahabat::class, 'index']);
                 Route::get('/cari', [DashboardLaporanDukunganSahabat::class, 'cari']);
                 Route::get('/cetak', [DashboardLaporanDukunganSahabat::class, 'cetak']);
+            });
+
+            //Laporan Suara
+            Route::group(['prefix' => 'laporan_suara'], function() {
+                Route::get('/', [DashboardLaporanSuara::class, 'index']);
+                Route::get('/cari', [DashboardLaporanSuara::class, 'cari']);
+                Route::get('/cetak', [DashboardLaporanSuara::class, 'cetak']);
             });
         
         //Konfigurasi Aplikasi
