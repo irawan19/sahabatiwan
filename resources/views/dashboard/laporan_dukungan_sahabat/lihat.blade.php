@@ -307,7 +307,7 @@
 	@php($warnausia 		= [])
 	@foreach($lihat_laporan_dukungan_sahabats_usia as $laporan_dukungan_sahabat)
 		@php($labelusia[] 				= $laporan_dukungan_sahabat->usia.' tahun : '.round($laporan_dukungan_sahabat->whereRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats)) = "'.$laporan_dukungan_sahabat->usia.'"')->count() / $laporan_dukungan_sahabat->count(),2).' %')
-		@php($totalusia[] 				= $laporan_dukungan_sahabat->groupByRaw('(YEAR(CURDATE()) - YEAR(tanggal_lahir_dukungan_sahabats))')->count())
+		@php($totalusia[] 				= $laporan_dukungan_sahabat->total)
 		@php($warnausia[] 				= General::randomWarna())
 	@endforeach
 	<script src="{{URL::asset('template/back/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js')}}"></script>
