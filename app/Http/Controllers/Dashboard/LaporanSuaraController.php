@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Helpers\General;
 use App\Models\Master_provinsi;
-use App\Models\Quick_count;
+use App\Models\Master_kelurahan;
 use App\Exports\LaporanSuara;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -15,10 +15,10 @@ class LaporanSuaraController extends AdminCoreController
         $link_laporan_suara = 'laporan_suara';
         if (General::hakAkses($link_laporan_suara, 'lihat') == 'true')
         {
-            $data['link_laporan_suara']      = $link_laporan_suara;
+            $data['link_laporan_suara']                 = $link_laporan_suara;
             $data['hasil_kata']                         = '';
-            $data['hasil_provinsi']                     = '';
-            $data['hasil_kota_kabupaten']               = '';
+            $data['hasil_provinsi']                     = 13;
+            $data['hasil_kota_kabupaten']               = 187;
             $data['hasil_kecamatan']                    = '';
             $data['hasil_kelurahan']                    = '';
             $hasil_tahun                                = date('Y');
@@ -26,26 +26,28 @@ class LaporanSuaraController extends AdminCoreController
             $url_sekarang                               = $request->fullUrl();
             $data['lihat_provinsis']                    = Master_provinsi::orderBy('nama_provinsis')
                                                                         ->get();
-            $data['lihat_laporan_suaras']               = Quick_count::selectRaw('tps_quick_counts,
-                                                                                rt_quick_counts,
-                                                                                rw_quick_counts,
-                                                                                nama_provinsis,
-                                                                                nama_kota_kabupatens,
-                                                                                nama_kecamatans,
-                                                                                nama_kelurahans,
-                                                                                jumlah_quick_counts,
-                                                                                (
-                                                                                    SELECT COUNT(*)
-                                                                                    FROM data_suaras
-                                                                                    WHERE kelurahans_id=quick_counts.kelurahans_id
-                                                                                ) AS jumlah_data_suaras
-                                                                                ')
-                                                                    ->join('master_kelurahans','quick_counts.kelurahans_id','=','master_kelurahans.id_kelurahans')
+            $data['lihat_laporan_suaras']               = Master_kelurahan::selectRaw('
+                                                                            nama_provinsis,
+                                                                            nama_kota_kabupatens,
+                                                                            nama_kecamatans,
+                                                                            nama_kelurahans,
+                                                                            IFNULL((
+                                                                                SELECT jumlah_quick_counts
+                                                                                FROM quick_counts
+                                                                                WHERE kelurahans_id=master_kelurahans.id_kelurahans
+                                                                                AND tahun_quick_counts='.$hasil_tahun.'
+                                                                            ),0) AS jumlah_quick_counts,
+                                                                            IFNULL((
+                                                                                SELECT COUNT(*)
+                                                                                FROM data_suaras
+                                                                                WHERE kelurahans_id=master_kelurahans.id_kelurahans
+                                                                                AND tahun_data_suaras='.$hasil_tahun.'
+                                                                            ),0) AS jumlah_data_suaras
+                                                                            ')
                                                                     ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
                                                                     ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
                                                                     ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
-                                                                    ->join('users','quick_counts.users_id','=','users.id')
-                                                                    ->where('tahun_quick_counts',$hasil_tahun)
+                                                                    ->where('kota_kabupatens_id',187)
                                                                     ->orderBy('nama_provinsis','asc')
                                                                     ->orderBy('nama_kota_kabupatens','asc')
                                                                     ->orderBy('nama_kecamatans','asc')
@@ -87,52 +89,47 @@ class LaporanSuaraController extends AdminCoreController
             $data['lihat_provinsis']         = Master_provinsi::orderBy('nama_provinsis')
                                                                 ->get();
 
-            $query_suaras                    = Quick_count::selectRaw('tps_quick_counts,
-                                                                    rt_quick_counts,
-                                                                    rw_quick_counts,
-                                                                    nama_provinsis,
-                                                                    nama_kota_kabupatens,
-                                                                    nama_kecamatans,
-                                                                    nama_kelurahans,
-                                                                    jumlah_quick_counts,
-                                                                    (
-                                                                        SELECT COUNT(*)
-                                                                        FROM data_suaras
-                                                                        WHERE kelurahans_id=quick_counts.kelurahans_id
-                                                                    ) AS jumlah_data_suaras
-                                                                    ')
-                                                        ->join('master_kelurahans','quick_counts.kelurahans_id','=','master_kelurahans.id_kelurahans')
+            $query_suaras                    = Master_kelurahan::selectRaw('
+                                                                            nama_provinsis,
+                                                                            nama_kota_kabupatens,
+                                                                            nama_kecamatans,
+                                                                            nama_kelurahans,
+                                                                            IFNULL((
+                                                                                SELECT jumlah_quick_counts
+                                                                                FROM quick_counts
+                                                                                WHERE kelurahans_id=master_kelurahans.id_kelurahans
+                                                                                AND tahun_quick_counts='.$hasil_tahun.'
+                                                                            ),0) AS jumlah_quick_counts,
+                                                                            IFNULL((
+                                                                                SELECT COUNT(*)
+                                                                                FROM data_suaras
+                                                                                WHERE kelurahans_id=master_kelurahans.id_kelurahans
+                                                                                AND tahun_data_suaras='.$hasil_tahun.'
+                                                                            ),0) AS jumlah_data_suaras
+                                                                            ')
                                                         ->join('master_kecamatans','master_kelurahans.kecamatans_id','master_kecamatans.id_kecamatans')
                                                         ->join('master_kota_kabupatens','master_kecamatans.kota_kabupatens_id','master_kota_kabupatens.id_kota_kabupatens')
                                                         ->join('master_provinsis','master_kota_kabupatens.provinsis_id','=','master_provinsis.id_provinsis')
-                                                        ->join('users','quick_counts.users_id','=','users.id')
-                                                        ->where('tps_quick_counts', 'LIKE', '%' . $hasil_kata . '%')
-                                                        ->where('tahun_quick_counts',$hasil_tahun)
-                                                        ->orWhere('rt_quick_counts', 'LIKE', '%' . $hasil_kata . '%')
-                                                        ->where('tahun_quick_counts',$hasil_tahun)
-                                                        ->orWhere('rw_quick_counts', 'LIKE', '%' . $hasil_kata . '%')
-                                                        ->where('tahun_quick_counts',$hasil_tahun)
-                                                        ->orderBy('suaras.created_at')
-                                                        ->get();
+                                                        ->orderBy('nama_kelurahans','asc');
             
             if(!empty($hasil_provinsi))
             {
-                $query_suaras                = $query_suaras->where('provinsis_id',$hasil_provinsi);
+                $query_suaras                = $query_suaras->where('id_provinsis',$hasil_provinsi);
             }
             if(!empty($hasil_kota_kabupaten))
             {
-                $query_suaras                = $query_suaras->where('kota_kabupatens_id',$hasil_kota_kabupaten);
+                $query_suaras                = $query_suaras->where('id_kota_kabupatens',$hasil_kota_kabupaten);
             }
             if(!empty($hasil_kecamatan))
             {
-                $query_suaras                = $query_suaras->where('kecamatans_id',$hasil_kecamatan);
+                $query_suaras                = $query_suaras->where('id_kecamatans',$hasil_kecamatan);
             }
             if(!empty($hasil_kelurahan))
             {
-                $query_suaras                = $query_suaras->where('kelurahans_id',$hasil_kelurahan);
+                $query_suaras                = $query_suaras->where('id_kelurahans',$hasil_kelurahan);
             }
             
-            $data['lihat_laporan_suaras']   = $query_suaras;
+            $data['lihat_laporan_suaras']   = $query_suaras->get();
 
             session(['halaman'              => $url_sekarang]);
             session(['hasil_kata'           => $hasil_kata]);
