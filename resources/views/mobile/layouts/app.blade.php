@@ -1,7 +1,7 @@
 @php($lihat_konfigurasi_aplikasis       = \App\Models\Master_konfigurasi_aplikasi::first())
 @php($lihat_sosial_medias               = \App\Models\Master_sosial_media::get())
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+<html lang="en" style="max-width:912px; margin:0 auto; text-align:center; border: 1px solid #000">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
