@@ -58,12 +58,10 @@
             <td style="display:none"></td>
         </tr>
         @endif
-    </tbody>
-	<tfooter>
 		<tr>
 			<th colspan="5" class="center-align" style="font-size:16px">Total</th>
 			<th class="right-align" style="font-size:16px">{{$total_quick_counts}}</th>
 			<th class="right-align" style="font-size:16px">{{$total_data_suaras}}</th>
 		</tr>
-	</tfooter>
+    </tbody>
 </table>
