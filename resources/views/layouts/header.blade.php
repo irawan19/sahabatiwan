@@ -55,6 +55,9 @@
                                 <li>
                                     <a href="{{URL('dukungan-sahabat')}}">Dukungan Sahabat</a>
                                 </li>
+                                <li>
+                                    <a href="{{URL::asset('storage/android/sahabatiwan.apk')}}">Download APK</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="main-menu__right">
