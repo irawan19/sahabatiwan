@@ -85,6 +85,7 @@
                             <li><a href="{{URL('/swara-nusvantara')}}">Swara Nusvantara</a></li>
                             <li><a href="{{URL('/laporan-sahabat')}}">Laporan Sahabat</a></li>
                             <li><a href="{{URL('/dukungan-sahabat')}}">Dukungan Sahabat</a></li>
+                            <li><a href="{{URL::asset('storage/android/sahabatiwan.apk')}}">Download Android</a></li>
                         </ul>
                     </div>
                 </div>
