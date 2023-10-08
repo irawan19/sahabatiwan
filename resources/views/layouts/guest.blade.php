@@ -30,9 +30,6 @@
             .titlelogin{
                 margin-bottom: 20px;
             }
-            #imglogin{
-                width: 420px;
-            }
             .card {
                 box-shadow: 0px 4px 8px 1px rgb(176 176 176 / 35%) !important;
                 border-top-left-radius: 15px;
@@ -73,7 +70,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card-group">
-                    <div class="card col-md-5">
+                    <div class="card col-lg-5 col-sm-12 col-md-12">
                         <div class="card-body">
                             <div class="logopds">
                                 <img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis)}}">
@@ -81,7 +78,7 @@
                             {{$slot}}
                         </div>
                     </div>
-                    <div class="card col-md-8 bg-custom d-md-down-none">
+                    <div class="card col-lg-8 col-sm-12 col-md-12 bg-custom d-md-down-none">
                     </div>
                 </div>
             </div>
