@@ -119,26 +119,40 @@ class QuickCountController extends AdminCoreController
                 'jumlah_quick_counts'           => $request->jumlah_quick_counts,
                 'created_at'                    => date('Y-m-d H:i:s'),
             ];
-            Quick_count::insert($data);
 
-            $simpan           = $request->simpan;
-            $simpan_kembali   = $request->simpan_kembali;
-            if($simpan)
-            {
+            $cek_data_quick_count = Quick_count::where('kelurahans_id',$request->kelurahans_id)
+                                            ->where('tps_quick_counts',$request->tps_quick_counts)
+                                            ->where('rt_quick_counts',$request->rt_quick_counts)
+                                            ->where('rw_quick_counts',$request->rw_quick_counts)
+                                            ->count();
+            if($cek_data_quick_count == 0) {
+                Quick_count::insert($data);
+
+                $simpan           = $request->simpan;
+                $simpan_kembali   = $request->simpan_kembali;
+                if($simpan)
+                {
+                    $setelah_simpan = [
+                        'alert'  => 'sukses',
+                        'text'   => 'Data berhasil ditambahkan',
+                    ];
+                    return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
+                }
+                if($simpan_kembali)
+                {
+                    if(request()->session()->get('halaman') != '')
+                        $redirect_halaman  = request()->session()->get('halaman');
+                    else
+                        $redirect_halaman  = 'dashboard/quick_count';
+
+                    return redirect($redirect_halaman);
+                }
+            } else {
                 $setelah_simpan = [
-                    'alert'  => 'sukses',
-                    'text'   => 'Data berhasil ditambahkan',
+                    'alert'  => 'error',
+                    'text'   => 'Data sudah ada di sistem',
                 ];
-    	    	return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
-            }
-            if($simpan_kembali)
-            {
-                if(request()->session()->get('halaman') != '')
-                    $redirect_halaman  = request()->session()->get('halaman');
-                else
-                    $redirect_halaman  = 'dashboard/quick_count';
-
-                return redirect($redirect_halaman);
+                return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
             }
         }
         else
@@ -200,15 +214,29 @@ class QuickCountController extends AdminCoreController
                     'jumlah_quick_counts'           => $request->jumlah_quick_counts,
                     'updated_at'                    => date('Y-m-d H:i:s'),
                 ];
-                Quick_count::where('id_quick_counts', $id_quick_counts)
-                                        ->update($data);
+                $cek_data_quick_count = Quick_count::where('kelurahans_id',$request->kelurahans_id)
+                                                ->where('tps_quick_counts',$request->tps_quick_counts)
+                                                ->where('rt_quick_counts',$request->rt_quick_counts)
+                                                ->where('rw_quick_counts',$request->rw_quick_counts)
+                                                ->where('id_quick_counts','!=',$id_quick_counts)
+                                                ->count();
+                if($cek_data_quick_count == 0) {
+                    Quick_count::where('id_quick_counts', $id_quick_counts)
+                                            ->update($data);
 
-                if(request()->session()->get('halaman') != '')
-                    $redirect_halaman    = request()->session()->get('halaman');
-                else
-                    $redirect_halaman  = 'dashboard/quick_count';
-                
-                return redirect($redirect_halaman);
+                    if(request()->session()->get('halaman') != '')
+                        $redirect_halaman    = request()->session()->get('halaman');
+                    else
+                        $redirect_halaman  = 'dashboard/quick_count';
+                    
+                    return redirect($redirect_halaman);
+                } else {
+                    $setelah_simpan = [
+                        'alert'  => 'error',
+                        'text'   => 'Data sudah ada di sistem',
+                    ];
+                    return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
+                }
             }
             else
                 return redirect('dashboard/quick_count');

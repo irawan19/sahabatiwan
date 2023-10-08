@@ -11,7 +11,10 @@
 					</div>
 					<div class="card-body">
 						@if (Session::get('setelah_simpan.alert') == 'sukses')
-						{{ General::pesanSuksesForm(Session::get('setelah_simpan.text')) }}
+							{{ General::pesanSuksesForm(Session::get('setelah_simpan.text')) }}
+						@endif
+						@if (Session::get('setelah_simpan.alert') == 'error')
+							{{ General::pesanFlashErrorForm(Session::get('setelah_simpan.text')) }}
 						@endif
 						<div class="row">
 							<div class="col-md-6">

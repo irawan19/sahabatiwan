@@ -121,26 +121,40 @@ class DataSuaraController extends AdminCoreController
                 'rw_data_suaras'                => $request->rw_data_suaras,
                 'created_at'                    => date('Y-m-d H:i:s'),
             ];
-            Data_suara::insert($data);
+            $cek_data_suaras = Data_suara::where('kelurahans_id',$request->kelurahans_id)
+                                        ->where('tps_data_suaras',$request->tps_data_suaras)
+                                        ->where('rt_data_suaras',$request->rt_data_suaras)
+                                        ->where('rw_data_suaras',$request->rw_data_suaras)
+                                        ->where('nama_data_suaras',$request->nama_data_suaras)
+                                        ->count();
+            if($cek_data_suaras == 0) {
+                Data_suara::insert($data);
 
-            $simpan           = $request->simpan;
-            $simpan_kembali   = $request->simpan_kembali;
-            if($simpan)
-            {
+                $simpan           = $request->simpan;
+                $simpan_kembali   = $request->simpan_kembali;
+                if($simpan)
+                {
+                    $setelah_simpan = [
+                        'alert'  => 'sukses',
+                        'text'   => 'Data berhasil ditambahkan',
+                    ];
+                    return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
+                }
+                if($simpan_kembali)
+                {
+                    if(request()->session()->get('halaman') != '')
+                        $redirect_halaman  = request()->session()->get('halaman');
+                    else
+                        $redirect_halaman  = 'dashboard/data_suara';
+
+                    return redirect($redirect_halaman);
+                }
+            } else {
                 $setelah_simpan = [
-                    'alert'  => 'sukses',
-                    'text'   => 'Data berhasil ditambahkan',
+                    'alert'  => 'error',
+                    'text'   => 'Data sudah ada di sistem',
                 ];
-    	    	return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
-            }
-            if($simpan_kembali)
-            {
-                if(request()->session()->get('halaman') != '')
-                    $redirect_halaman  = request()->session()->get('halaman');
-                else
-                    $redirect_halaman  = 'dashboard/data_suara';
-
-                return redirect($redirect_halaman);
+                return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
             }
         }
         else
@@ -202,15 +216,30 @@ class DataSuaraController extends AdminCoreController
                     'rw_data_suaras'                => $request->rw_data_suaras,
                     'updated_at'                    => date('Y-m-d H:i:s'),
                 ];
-                Data_suara::where('id_data_suaras', $id_data_suaras)
-                                        ->update($data);
+                $cek_data_suaras = Data_suara::where('kelurahans_id',$request->kelurahans_id)
+                                        ->where('tps_data_suaras',$request->tps_data_suaras)
+                                        ->where('rt_data_suaras',$request->rt_data_suaras)
+                                        ->where('rw_data_suaras',$request->rw_data_suaras)
+                                        ->where('nama_data_suaras',$request->nama_data_suaras)
+                                        ->where('id_data_suaras','!=',$id_data_suaras)
+                                        ->count();
+                if($cek_data_suaras == 0) {
+                    Data_suara::where('id_data_suaras', $id_data_suaras)
+                                            ->update($data);
 
-                if(request()->session()->get('halaman') != '')
-                    $redirect_halaman    = request()->session()->get('halaman');
-                else
-                    $redirect_halaman  = 'dashboard/data_suara';
-                
-                return redirect($redirect_halaman);
+                    if(request()->session()->get('halaman') != '')
+                        $redirect_halaman    = request()->session()->get('halaman');
+                    else
+                        $redirect_halaman  = 'dashboard/data_suara';
+                    
+                    return redirect($redirect_halaman);
+                } else {
+                    $setelah_simpan = [
+                        'alert'  => 'error',
+                        'text'   => 'Data sudah ada di sistem',
+                    ];
+                    return redirect()->back()->with('setelah_simpan', $setelah_simpan)->withInput($request->all());
+                }
             }
             else
                 return redirect('dashboard/data_suara');

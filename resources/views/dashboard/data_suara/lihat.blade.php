@@ -105,7 +105,8 @@
 								@else
 									<tr>
 										@if(General::totalHakAkses($link_data_suara) != 0)
-											<td colspan="10" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="11" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
@@ -116,7 +117,8 @@
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 										@else
-											<td colspan="9" class="center-align">Tidak ada data ditampilkan</td>
+											<td colspan="10" class="center-align">Tidak ada data ditampilkan</td>
+											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>
 											<td style="display:none"></td>

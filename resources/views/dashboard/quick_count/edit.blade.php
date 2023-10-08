@@ -10,6 +10,9 @@
 						<strong>Edit Quick Count</strong>
 					</div>
 					<div class="card-body">
+						@if (Session::get('setelah_simpan.alert') == 'error')
+							{{ General::pesanFlashErrorForm(Session::get('setelah_simpan.text')) }}
+						@endif
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">

@@ -123,21 +123,13 @@ Route::group(['prefix' => 'mobile'], function() {
         //Data Suara
         Route::group(['prefix' => 'data-suara'], function() {
             Route::get('/', [MobileDataSuara::class, 'index']);
-            Route::get('/tambah', [MobileDataSuara::class, 'tambah']);
             Route::post('/prosestambah', [MobileDataSuara::class, 'prosestambah']);
-            Route::get('/edit/{id}', [MobileDataSuara::class, 'edit']);
-            Route::post('/prosesedit/{id}', [MobileDataSuara::class, 'prosesedit']);
-            Route::get('/hapus/{id}', [MobileDataSuara::class, 'hapus']);
         });
 
         //Data Quick Count
         Route::group(['prefix' => 'quick-count'], function() {
             Route::get('/', [MobileQuickCount::class, 'index']);
-            Route::get('/tambah', [MobileQuickCount::class, 'tambah']);
             Route::post('/prosestambah', [MobileQuickCount::class, 'prosestambah']);
-            Route::get('/edit/{id}', [MobileQuickCount::class, 'edit']);
-            Route::post('/prosesedit/{id}', [MobileQuickCount::class, 'prosesedit']);
-            Route::get('/hapus/{id}', [MobileQuickCount::class, 'hapus']);
         });
     });
 });

@@ -1,11 +1,11 @@
 @php($lihat_profils = \App\Models\Master_profil::first())
-<footer class="site-footer">
+<footer class="site-footer" style="margin:0 auto; text-align:center">
     <div class="site-footer__img">
         <img src="{{URL::asset('template/front/images/resources/site-footer-img.jpg')}}" alt="{{$lihat_konfigurasi_aplikasis->nama_konfigurasi_aplikasis}}">
     </div>
     <div class="container">
         <div class="site-footer__top">
-            <div class="footer-widget__logo">
+            <div class="footer-widget__logo" style="margin:0 auto; text-align:center">
                 <a href="{{URL('/mobile')}}">
                     <img src="{{URL::asset('storage/'.$lihat_konfigurasi_aplikasis->logo_konfigurasi_aplikasis)}}" alt="Logo {{$lihat_konfigurasi_aplikasis->nama_logo_konfigurasi_aplikasis}}">
                 </a>
@@ -13,7 +13,7 @@
         </div>
         <div class="site-footer__middle">
             <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__Contact">
                         <div class="footer-widget__title-box">
                             <h3 class="footer-widget__title">{{$lihat_profils->nama_profils}}</h3>
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                     <div class="footer-widget__column footer-widget__link">
                         <div class="footer-widget__title-box">
                             <h3 class="footer-widget__title">Link</h3>
